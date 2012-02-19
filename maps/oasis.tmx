@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="36" height="21" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="Grass" tilewidth="16" tileheight="16">
+  <image source="../Downloads/hgss_tileset_terrain_and_paths_by_thunderdove-d3bnn5w.png" trans="c0c0c0" width="336" height="160"/>
+ </tileset>
+ <tileset firstgid="211" name="Water" tilewidth="16" tileheight="16">
+  <image source="../Downloads/transparent_water_by_serebii08-d3ajc8k.png" trans="ff00d2" width="160" height="96"/>
+ </tileset>
+ <tileset firstgid="271" name="Buildings and other stuff" tilewidth="16" tileheight="16">
+  <image source="../Downloads/hoenn_tiles_by_pokemon_diamond-d2qmbn3.png" trans="ea00ff" width="1088" height="480"/>
+ </tileset>
+ <tileset firstgid="2311" name="NPC" tilewidth="16" tileheight="16">
+  <image source="blackwhite.png" trans="589058" width="32" height="32"/>
+ </tileset>
+ <layer name="Grass" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztwwEJAAAMBKEr8v1rLsdAwVVTVVVfPqVeVaU=
+  </data>
+ </layer>
+ <layer name="Paths" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzt1N0JgDAMBGB/dlB3qO6g7qD7j2IECyKmSS9REDy4txY+StKi+E5KagW0fsiyUlugi7Mt1zILNovJ8i7eppTlnLdMjeDgcj0vzZXWhXo0TsS1e7jZ9DZpXIE6OVokT2yXuM+ZUJfFE/9jzY497dH8O96ekdpTh5t7d7vlYct1oB7JiDpiwnGWm2VLcxycK9bDl9pnqw8p8i5/vpEN6kEiXg==
+  </data>
+ </layer>
+ <layer name="Water" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztkssKwkAMRdOF+v/fVq0rH121Xaq4Eh8ZmAshZkQkURdz4UCbwvRwM0Q1NXFpmaVi9UOfDbNVrMl2a42ZV3B2lx0OzDFzKrh1YubtpHu5iOez4VXq0MtrYEZmn8+fNUQ39U94SbTjzskHkT3Jjkpcg31kT5/4RNyllNRT2tnc2Bu4M4vmee7dEXxwPrw0lkvPTAE+2Ju84+8Q0Y3llpz6F474FtFNyWlS76PgWx41Nf+cB3i7j4k=
+  </data>
+ </layer>
+ <layer name="Buildings" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzt1EtSwkAUheFLhQTWoqAiQxF0pDvQVSgoj6EisArZhYqiI63ywUoExTEoD/kHDKwUXaRNwyin6psl3ae6kysSJIhIIiSyiWTI3Jor9v/fLdCjiJLBPkc++jTpcY+HaZ93R6SNDj7wiS6+HDNd52VEjzF+p31WIyIxxLGGdWwgEVlOH3eO2TeLHE5wijwKGn1U388jZ/ykec5X7HuNGzRwizs0Nfqovh+bNRzNc+7xfB/f+MEAQ4w01zng/g8N/CNbUZEUtpFGBjvYjeqtc0mXukYf1V2ese85yrhABVXUNPu4M2/OzbpLyxIJw8Yz+7/gFW9o+ezjdc797b1Hj33L376quOecKouYz7PinnOqeO29rHjtHSSIyUwA8IU97A==
+  </data>
+ </layer>
+ <objectgroup name="NPC" width="36" height="21">
+  <object name="red" type="Player" x="256" y="256" width="16" height="16"/>
+ </objectgroup>
+</map>
