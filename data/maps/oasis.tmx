@@ -14,7 +14,7 @@
  </tileset>
  <layer name="Grass" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztwwEJAAAMBKEr8v1rLsdAwVVTVVVfPqVeVaU=
+   eJxjYBh8QHaQ4FH3jLpn1D2j7hl1z6h7Rt0z6p5R94y6B5t7BhMAAO8sSS8=
   </data>
  </layer>
  <layer name="Paths" width="36" height="21">
@@ -54,7 +54,7 @@
  </layer>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztk9EKgDAIRdfTkmD9/99WD4K5CcpMhHbgvgyVg7JSFhk4YJwMTo3EQr3rdyHafkqDPl4+Izf+xn1m0HhoPTWc2/c+3OvZF48F6V446+8+dIbHzSq8Z0b4SPXezPp4/n2O9X7YE+GDSLvKRDafxSKaCwzYDcs=
+   eJztldEKwCAIRXtzMuj/P3fsQXAum7bmhO3CfSm1g1IBlgLJnEWRPCu2/RYPZ6rMHp59b1Fskaxd8exZPC02uebtfY/HwmHlzMIjua7u9ui8KO/rPDxmxswAjzUjeLR4izzv4V0eyzmj77N3fpQTwUPSeuWt++T/lY3Hq5+nr6w8mbwBNZMUmw==
   </data>
  </layer>
 </map>
