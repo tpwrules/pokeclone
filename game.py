@@ -24,7 +24,7 @@ class Game: #class for our game engine
 		return obj #and return it
 	def get_tile_type(self, tile_x, tile_y): #get the type of tile at the given position
 		return self.map.collision_map.tilemap[tile_y][tile_x]
-	def update(self): #update the engine for this frame
+	def update(self): #update the engine for this frame	
 		map_image = self.map.update() #update the map
 		self.surf.fill((0, 0, 0)) #clear surface for black background
 		self.surf.blit(map_image, (0, 0), pygame.Rect(self.camera_pos, \

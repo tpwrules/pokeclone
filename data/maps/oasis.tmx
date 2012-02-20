@@ -39,9 +39,9 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="Collisions" width="36" height="21" visible="0">
+ <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztkzsOwCAIQN0oaeL9j9vJpKHQggVlYHiDBvGFD2JrWGznFMjg1G9YcxwCmrdAzp3By4dzo3fU5w8aD60nrdlgtQ/1AgaPOo1c5WP/+80J8OkV7SPFe+2Zdb4lH8/d52o226ton6+5j3KQ+pfFpygycgGZNjR0
+   eJzt0sEKgDAIgOF1WhKs93/b6CCYuaUzhgd/8BJrfWyVkkXoAHkimBoZazvIo6mydQ3eg52bzyPZ+DPuGfXl0Ti0TtptxFnt4S5q4SbPfeFe6bF/e2Sq8NzT8r/Penrr/87rmTkLbdb7w3dWeLDeWa0qmifLInYBVeYOgg==
   </data>
  </layer>
 </map>
