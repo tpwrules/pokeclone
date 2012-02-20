@@ -53,6 +53,7 @@ class MapTileLayer:
 							break #stop looking
 						#otherwise, store the current tileset
 						prev = tileset
+					tile_image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile image
 					prev[1].get_tile(tile-prev[0], dest=tile_image) #get the tile 
 					old_tile = tile #update old tile
 				i.blit(tile_image, (x*16, y*16)) #blit tile image

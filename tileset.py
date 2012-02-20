@@ -6,9 +6,10 @@ class Tileset:
 	#initialize the tileset
 	def __init__(self, image, tile_width, tile_height, trans=None):
 		self.image = pygame.image.load(image) #load the image provided
-		self.image.convert() #convert it to display format for faster blitting
 		if trans is not None: #if there is a transparent pixel color
+			self.image.set_alpha(None) #remove any alpha if it's there
 			self.image.set_colorkey(trans) #set it as the color key
+		self.image.convert() #convert it to display format for faster blitting
 		self.tile_width = tile_width #save attributes
 		self.tile_height = tile_height
 		self.tiles_x = self.image.get_width()/tile_width #store number of tiles

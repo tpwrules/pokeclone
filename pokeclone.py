@@ -14,6 +14,7 @@ g.keys = [False]*len(settings.keys) #variable to hold states of keys
 running = True #if this is true, we continue the main loop
 screen = pygame.display.set_mode((settings.screen_x*settings.screen_scale, \
 	settings.screen_y*settings.screen_scale)) #create a window to draw on
+g.screen = screen #store it in the globals
 pygame.display.set_caption("Pokeclone") #set screen title
 clock = pygame.time.Clock() #and a clock for keeping the framerate
 
