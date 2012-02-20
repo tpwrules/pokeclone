@@ -1,6 +1,6 @@
 <anim_group type="basic">
 	<!-- sprite sheet sources -->
-	<sheet from="data/objects/player/npc.png" width="32" height="32" id="main"/>
+	<sheet from="data/objects/player/npc.png" width="32" height="32" id="main" originx="16" originy="32"/>
 	
 	<!-- animations for standing still -->
 	<animation loop="true" id="stand_up">
