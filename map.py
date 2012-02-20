@@ -18,6 +18,7 @@ class MapTileLayer:
 		self.image.convert_alpha() #convert it to blit faster
 		if layer_node.getAttribute("name") == "Collisions": #if this is the collisions layer
 			self.collisions = True #mark it as such
+			self.map.collision_map = self #store ourselves
 		else: #if it isn't
 			self.collisions = False #mark it as such
 		#now, load the tilemap
