@@ -47,7 +47,6 @@
    </properties>
   </object>
  </objectgroup>
-<<<<<<< HEAD
  <layer name="house top" width="36" height="21">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4CBwZCRgcEIiI0ZB9olpIG3bAj2Gzbc6mgBXgDtewnEr4D4NRume+gJtNkZGHSAWBeI9YBYH4gNgNiQfWDckw+0twDN7hIgv3SA3LMZaO8WNLt3APk7B8g934H2/gDin0D8C+qGP0D67wC5Z6SAoVrODVV3j4JRMAroBwBFrhSy
@@ -56,11 +55,6 @@
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
    eJztldEKwCAIRXtzMuj/P3fsQXAum7bmhO3CfSm1g1IBlgLJnEWRPCu2/RYPZ6rMHp59b1Fskaxd8exZPC02uebtfY/HwmHlzMIjua7u9ui8KO/rPDxmxswAjzUjeLR4izzv4V0eyzmj77N3fpQTwUPSeuWt++T/lY3Hq5+nr6w8mbwBNZMUmw==
-=======
- <layer name="Collisions" width="36" height="21" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJzt0zEOgDAIQNFuSEx6/+M6NTEUFCoUB4Y/aLS+YIvYGlbpnUJ/MPVb1jUOIc27QK47k5eHs9F71PMljUPrpDMb7fZQFzB5zGmsVR77t59MgLMr2iM973XOrPtb8niefW5mq/8q2vO276MMq+5sQ1VldgGu0jR7
->>>>>>> Small Changes
   </data>
  </layer>
 </map>
