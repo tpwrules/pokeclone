@@ -19,18 +19,21 @@ class Animation:
 		#now, load the animation
 		child = anim_dom.firstChild #get the first frame
 		while child is not None: #loop while there are more frames
+			if child.localName != "frame": #if it's not a frame
+				child = child.nextSibling
+				continue #don't process it
 			sheet = child.getAttribute("sheet") #get the sheet to load from
 			pos = child.getAttribute("pos").split(",") #get position within sheet
 			wait = int(child.getAttribute("wait")) #get delay until next frame
-			pos_x = int(trim(pos[0])) #parse out position within sheet
-			pos_y = int(trim(pos[1]))
+			pos_x = int(pos[0].strip()) #parse out position within sheet
+			pos_y = int(pos[1].strip())
 			image = self.anim_group.sheets[sheet].get_tile(pos_x, pos_y) #get tile of this frame
 			self.frames.append([image, wait]) #add it to the list of frames
 			child = child.nextSibling #get next frame
 	#start the animation again
 	def start(self):
 		self.curr_anim_frame = 0 #set current frame to the first
-		self.anim_group.sprite = self.frames[0][0] #set image
+		self.anim_group.sprite.image = self.frames[0][0] #set image
 		self.frames_left = self.frames[0][1] #load delay
 	#update the animation
 	def update(self):
@@ -44,7 +47,7 @@ class Animation:
 					self.anim_group.curr_animation = self.anim_group.old_animation #go back to the old animation
 					self.anim_group.curr_animation.start() #and start it up
 					return
-			self.anim_group.sprite = self.frames[self.curr_anim_frame][0] #set image
+			self.anim_group.sprite.image = self.frames[self.curr_anim_frame][0] #set image
 			self.frames_left = self.frames[self.curr_anim_frame][1] #load delay
 	
 #group of animations
