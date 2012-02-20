@@ -22,16 +22,9 @@ class Game: #class for our game engine
 		obj = objects.obj_types[type](self, obj_node, properties) #load the object
 		self.objects[properties["id"]] = obj #store it
 		return obj #and return it
+	def get_tile_type(self, tile_x, tile_y): #get the type of tile at the given position
+		return self.map.collision_map.tilemap[tile_y][tile_x]
 	def update(self): #update the engine for this frame
-		#allow user to control camera
-		if self.g.keys[settings.key_up]: #if up is pressed
-			self.camera_pos[1] -= 1 #move up
-		elif self.g.keys[settings.key_down]: #if down is pressed
-			self.camera_pos[1] += 1 #move down
-		if self.g.keys[settings.key_left]: #if left is pressed
-			self.camera_pos[0] -= 1 #move left
-		elif self.g.keys[settings.key_right]: #if right is pressed
-			self.camera_pos[0] += 1 #move right
 		map_image = self.map.update() #update the map
 		self.surf.fill((0, 0, 0)) #clear surface for black background
 		self.surf.blit(map_image, (0, 0), pygame.Rect(self.camera_pos, \
