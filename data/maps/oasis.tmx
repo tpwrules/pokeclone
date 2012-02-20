@@ -38,6 +38,14 @@
     <property name="id" value="player"/>
    </properties>
   </object>
+  <object name="house_warp" type="warp" x="446" y="-94">
+   <properties>
+    <property name="dest_map" value="oasis_house.tmx"/>
+    <property name="dest_warp" value="in_house_warp"/>
+    <property name="id" value="house_warp"/>
+    <property name="tile_pos" value="28,10"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
