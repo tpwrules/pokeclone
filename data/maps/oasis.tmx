@@ -27,11 +27,6 @@
    eJztkssKwkAMRdOF+v/fVq0rH121Xaq4Eh8ZmAshZkQkURdz4UCbwvRwM0Q1NXFpmaVi9UOfDbNVrMl2a42ZV3B2lx0OzDFzKrh1YubtpHu5iOez4VXq0MtrYEZmn8+fNUQ39U94SbTjzskHkT3Jjkpcg31kT5/4RNyllNRT2tnc2Bu4M4vmee7dEXxwPrw0lkvPTAE+2Ju84+8Q0Y3llpz6F474FtFNyWlS76PgWx41Nf+cB3i7j4k=
   </data>
  </layer>
- <layer name="Buildings" width="36" height="21">
-  <data encoding="base64" compression="zlib">
-   eJzt1DlOw1AURuFrGSepWQZTCJTMFewAVhHGQMm8CtKzAMZABRJJWAmQQM0Y4BSRYhk/2TcPWSn8S19n+R3ZlkXS9cL6vXBJreCIjGHc+dt0nOnQbMCiv0THJrZ8Pf6ObnqKFj0VOq5w3e554OxHPKGBJp7xomzqdi06vvHT7hnMigxhGCPIYxSFbDI9wS1z7gpWsYZ1bKCk6DF9Pzc841vlcz7h3FOc4RwXuERF0WP6fjzukVE+51euf8M7PvCJL7SU91nk/S850ddFbSInMokpTGMGs5jL6e5zREtZ0WN6l9ucu4Nd7GEfBzhU9gQX9p/zL+xduq5IHzzccX4VNdRxb9kT9p+L6p6nY8G1O9e04H/OtLjdtgv+50yL253U4nanS/ef+wWSL0QM
-  </data>
- </layer>
  <objectgroup name="NPC" width="36" height="21">
   <object name="red" type="Player" x="256" y="256" width="16" height="16">
    <properties>
@@ -39,6 +34,11 @@
    </properties>
   </object>
  </objectgroup>
+ <layer name="Buildings" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzt1DlOw1AURuFrGSepWQZTCJTMFewAVhHGQMm8CtKzAMZABRJJWAmQQM0Y4BSRYhk/2TcPWSn8S19n+R3ZlkXS9cL6vXBJreCIjGHc+dt0nOnQbMCiv0THJrZ8Pf6ObnqKFj0VOq5w3e554OxHPKGBJp7xomzqdi06vvHT7hnMigxhGCPIYxSFbDI9wS1z7gpWsYZ1bKCk6DF9Pzc841vlcz7h3FOc4RwXuERF0WP6fjzukVE+51euf8M7PvCJL7SU91nk/S850ddFbSInMokpTGMGs5jL6e5zREtZ0WN6l9ucu4Nd7GEfBzhU9gQX9p/zL+xduq5IHzzccX4VNdRxb9kT9p+L6p6nY8G1O9e04H/OtLjdtgv+50yL253U4nanS/ef+wWSL0QM
+  </data>
+ </layer>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
    eJzt0sEKgDAIgOF1WhKs93/b6CCYuaUzhgd/8BJrfWyVkkXoAHkimBoZazvIo6mydQ3eg52bzyPZ+DPuGfXl0Ti0TtptxFnt4S5q4SbPfeFe6bF/e2Sq8NzT8r/Penrr/87rmTkLbdb7w3dWeLDeWa0qmifLInYBVeYOgg==
