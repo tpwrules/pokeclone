@@ -69,14 +69,18 @@ class MapObjectLayer:
 	def __init__(self, g, map, layer_node):
 		self.g = g #store globals
 		self.map = map
-		#for now, just create a garbage surface
-		self.image = pygame.Surface((map.map_width*16, map.map_height*16))
-		self.image.fill((0, 0, 0)) #clear it
-		self.image.set_colorkey((0, 0, 0)) #make the whole thing transparent
-		self.image.convert() #convert it for faster blitting
+		#create a surface to render on
+		self.image = pygame.Surface((map.map_width*16, map.map_height*16), SRCALPHA)
+		self.image.convert_alpha() #convert it for faster blitting
+		self.group = pygame.sprite.Group() #create a group of sprites for this layer
+		for object in layer_node.getElementsByTagName("object"): #load all objects
+			self.group.add(self.g.game.add_object(object)) #add it
 	def render(self):
 		pass
 	def update(self):
+		self.group.update() #update all the sprites in the group
+		self.image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear the image
+		self.group.draw(self.image) #render the sprites
 		return self.image
 
 #class to manage a map

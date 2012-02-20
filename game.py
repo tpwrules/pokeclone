@@ -3,6 +3,7 @@ from pygame.locals import *
 
 import settings #load settings
 import map #and map manager
+import objects #and objects
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -10,8 +11,17 @@ class Game: #class for our game engine
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y)) #create a new surface to display on
 		self.surf.convert() #convert it to the display format for faster blitting
 		self.camera_pos = [0, 0] #set default camera position
+		self.objects = {} #list of objects on the map
 	def start(self):
-		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map 
+		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
+	def add_object(self, obj_node): #add an object
+		properties = {} #dictionary of the object's properties
+		for property in obj_node.getElementsByTagName("property"): #get properties
+			properties[property.getAttribute("name")] = property.getAttribute("value") #get a property
+		type = obj_node.getAttribute("type") #get type of object
+		obj = objects.obj_types[type](self, obj_node, properties) #load the object
+		self.objects[properties["id"]] = obj #store it
+		return obj #and return it
 	def update(self): #update the engine for this frame
 		#allow user to control camera
 		if self.g.keys[settings.key_up]: #if up is pressed
