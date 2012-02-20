@@ -87,6 +87,8 @@ class Map:
 		map_dom = map_dom.documentElement #get the document element of the map
 		self.map_width = int(map_dom.getAttribute("width")) #load dimensions
 		self.map_height = int(map_dom.getAttribute("height"))
+		self.pix_width = self.map_width * 16 #calculate pixel dimensions
+		self.pix_height = self.map_height * 16
 		
 		self.tilesets = [] #list of tilesets in the map
 		self.layers = [] #list of layers in the map
