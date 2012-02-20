@@ -23,6 +23,8 @@ class Game: #class for our game engine
 		self.objects[properties["id"]] = obj #store it
 		return obj #and return it
 	def get_tile_type(self, tile_x, tile_y): #get the type of tile at the given position
+		if tile_y < 0 or tile_x < 0: #if the tile is negative
+			return -1 #it shouldn't exist
 		try: #try to get the tile
 			return self.map.collision_map.tilemap[tile_y][tile_x]
 		except: #if we can't

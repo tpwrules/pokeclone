@@ -28,15 +28,16 @@ class Player(pygame.sprite.Sprite):
 		self.collidepoint = (16, 23) #set where to check for collisions
 		self.size = (32, 32) #set sprite size
 		self.pos = [int(element.getAttribute("x")), int(element.getAttribute("y"))] #set sprite position
-		self.tile_pos = (self.pos[0]/16, (self.pos[1]/16)+1) #set position within tilemap
+		self.tile_pos = ((self.pos[0]/16)+1, (self.pos[1]/16)+1) #set position within tilemap
 		self.rect = pygame.Rect(self.pos, self.size) #turn it into a rect
 		self.move_direction = (0, 0) #we aren't moving in a particular direction
 		self.direction = 1 #we're facing down
 		self.moving = False #we aren't moving at all
+		self.was_moving = False
 		self.move_frames = 0 #amount of movement frames left
 	#move the player
 	def move(self, direction):
-		same = direction == self.direction #true if we aren't changing direction
+		same = (direction == self.direction) #true if we aren't changing direction
 		self.direction = direction #set current direction
 		self.move_frames = 8 #always 8 frames of movement
 		if direction == 0: #move up
@@ -67,8 +68,9 @@ class Player(pygame.sprite.Sprite):
 				self.move_direction = (2, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]+1, self.tile_pos[1]) #update tile position
-		if not same: #if we changed direction
+		if not same or not self.was_moving: #if we need to update our animation
 			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
+		self.was_moving = self.moving
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
@@ -90,6 +92,7 @@ class Player(pygame.sprite.Sprite):
 		elif self.g.keys[settings.key_right]:
 			self.move(3)
 		if self.moving == False: #if we're not moving
+			self.was_moving = False #clear was moving flag
 			self.animator.set_animation("stand_"+get_direction_name(self.direction)) #set our animation accordingly
 		self.animator.update() #update our animation	
 		

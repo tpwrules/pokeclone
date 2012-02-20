@@ -33,7 +33,7 @@
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21">
-  <object name="red" type="Player" x="256" y="256" width="16" height="16">
+  <object name="red" type="Player" x="248" y="256" width="16" height="16">
    <properties>
     <property name="id" value="player"/>
    </properties>
