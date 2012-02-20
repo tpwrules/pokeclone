@@ -33,9 +33,13 @@
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21">
-  <object name="red" type="Player" x="256" y="256" width="16" height="16"/>
+  <object name="red" type="Player" x="256" y="256" width="16" height="16">
+   <properties>
+    <property name="id" value="player"/>
+   </properties>
+  </object>
  </objectgroup>
- <layer name="Collisions" width="36" height="21">
+ <layer name="Collisions" width="36" height="21" visible="0">
   <data encoding="base64" compression="zlib">
    eJztkzsOwCAIQN0oaeL9j9vJpKHQggVlYHiDBvGFD2JrWGznFMjg1G9YcxwCmrdAzp3By4dzo3fU5w8aD60nrdlgtQ/1AgaPOo1c5WP/+80J8OkV7SPFe+2Zdb4lH8/d52o226ton6+5j3KQ+pfFpygycgGZNjR0
   </data>
