@@ -9,6 +9,9 @@
  <tileset firstgid="271" name="Buildings and other stuff" tilewidth="16" tileheight="16">
   <image source="../tilesets/hoenn_tiles_by_pokemon_diamond-d2qmbn3.png" trans="ea00ff" width="1088" height="480"/>
  </tileset>
+ <tileset firstgid="2311" name="Collisions and Stuff" tilewidth="16" tileheight="16">
+  <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
+ </tileset>
  <layer name="Grass" width="36" height="21">
   <data encoding="base64" compression="zlib">
    eJztwwEJAAAMBKEr8v1rLsdAwVVTVVVfPqVeVaU=
@@ -26,10 +29,15 @@
  </layer>
  <layer name="Buildings" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJzt1EtSwkAUheFLhQTWoqAiQxF0pDvQVSgoj6EisArZhYqiI63ywUoExTEoD/kHDKwUXaRNwyin6psl3ae6kysSJIhIIiSyiWTI3Jor9v/fLdCjiJLBPkc++jTpcY+HaZ93R6SNDj7wiS6+HDNd52VEjzF+p31WIyIxxLGGdWwgEVlOH3eO2TeLHE5wijwKGn1U388jZ/ykec5X7HuNGzRwizs0Nfqovh+bNRzNc+7xfB/f+MEAQ4w01zng/g8N/CNbUZEUtpFGBjvYjeqtc0mXukYf1V2ese85yrhABVXUNPu4M2/OzbpLyxIJw8Yz+7/gFW9o+ezjdc797b1Hj33L376quOecKouYz7PinnOqeO29rHjtHSSIyUwA8IU97A==
+   eJzt1DlOw1AURuFrGSepWQZTCJTMFewAVhHGQMm8CtKzAMZABRJJWAmQQM0Y4BSRYhk/2TcPWSn8S19n+R3ZlkXS9cL6vXBJreCIjGHc+dt0nOnQbMCiv0THJrZ8Pf6ObnqKFj0VOq5w3e554OxHPKGBJp7xomzqdi06vvHT7hnMigxhGCPIYxSFbDI9wS1z7gpWsYZ1bKCk6DF9Pzc841vlcz7h3FOc4RwXuERF0WP6fjzukVE+51euf8M7PvCJL7SU91nk/S850ddFbSInMokpTGMGs5jL6e5zREtZ0WN6l9ucu4Nd7GEfBzhU9gQX9p/zL+xduq5IHzzccX4VNdRxb9kT9p+L6p6nY8G1O9e04H/OtLjdtgv+50yL253U4nanS/ef+wWSL0QM
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21">
   <object name="red" type="Player" x="256" y="256" width="16" height="16"/>
  </objectgroup>
+ <layer name="Collisions" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztlEsKwCAMBd21oeD9j1u6CEj6NBprzSIDbyNqxm9KgQcuwvHglIuMchJOD4fol+kdi4/miNqRzwy9e4HcWuMeR47FxwpaT+liceJ5JSNzrfCprXOHD4+znp283/SzD6ozcw9r9P5B0of7fvn2UU3Nb+Vf1PIp60uflQ4aaL92+gSBB26ndgg6
+  </data>
+ </layer>
 </map>
