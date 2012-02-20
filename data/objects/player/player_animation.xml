@@ -13,7 +13,7 @@
 		<frame sheet="main" pos="0,2" wait="10" />
 	</animation>
 	<animation loop="true" id="stand_right">
-		<frame sheet="main" pos="0,1" wait="10" />
+		<frame sheet="main" pos="0,3" wait="10" />
 	</animation>
 	
 	<!-- animations for walking -->
