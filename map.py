@@ -73,12 +73,19 @@ class MapObjectLayer:
 		self.image = pygame.Surface((map.map_width*16, map.map_height*16), SRCALPHA)
 		self.image.convert_alpha() #convert it for faster blitting
 		self.group = pygame.sprite.Group() #create a group of sprites for this layer
+		self.fake_group = [] #group for non-rendered objects
 		for object in layer_node.getElementsByTagName("object"): #load all objects
-			self.group.add(self.g.game.add_object(object)) #add it
+			obj = self.g.game.add_object(object) #load the object
+			if hasattr(obj, "image"): #if it's renderable
+				self.group.add(obj) #add it to the render group
+			else: #otherwise
+				self.fake_group.append(obj) #add it to the non-render group
 	def render(self):
 		pass
 	def update(self):
-		self.group.update() #update all the sprites in the group
+		self.group.update() #update all the sprites in the groups
+		for obj in self.fake_group:
+			obj.update()
 		self.image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear the image
 		self.group.draw(self.image) #render the sprites
 		return self.image

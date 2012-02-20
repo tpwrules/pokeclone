@@ -26,9 +26,9 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="Collisions" width="20" height="20" visible="0">
+ <layer name="Collisions" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYKA+YKQSRjaPGm4aNW/UvFHzRs0biuYRwsxEqKEFAADcOABH
+   eJxjYKA+YKQSRjaPGm4aNW/UvFHzRs0biuYRU1YSW55SEwAA2tAARA==
   </data>
  </layer>
 </map>

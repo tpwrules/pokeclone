@@ -14,6 +14,7 @@ def get_direction_name(direction): #return a name for each direction
 		return "left"
 	elif direction == 3:
 		return "right"
+
 #class for the player object
 class Player(pygame.sprite.Sprite):
 	def __init__(self, game, element, properties):
@@ -80,6 +81,9 @@ class Player(pygame.sprite.Sprite):
 			self.move_frames -= 1 #decrement amount of movement frames
 			if self.move_frames == 0: #if we aren't moving any more
 				self.moving = False #say so
+				if self.tile_pos in self.game.warps: #if we're standing on a warp
+					self.game.prepare_warp(self.tile_pos) #warp
+					return #and just return
 			else: #if we are
 				self.animator.update() #update animation
 				return #don't do anything else
@@ -96,5 +100,20 @@ class Player(pygame.sprite.Sprite):
 			self.animator.set_animation("stand_"+get_direction_name(self.direction)) #set our animation accordingly
 		self.animator.update() #update our animation	
 		
+#warp point object
+class Warp:
+	def __init__(self, game, element, properties):
+		self.g = game.g #store parameters
+		self.game = game
+		self.properties = properties
+		#get tile we're monitoring
+		t = self.properties["tile_pos"].split(",")
+		self.tile_x = int(t[0].strip())
+		self.tile_y = int(t[1].strip())
+		game.add_warp((self.tile_x, self.tile_y), self.properties) #add the warp
+	def update(self): #we don't need to do any updates
+		pass
+		
 #dictionary to hold which classes go with which objects
-obj_types = {"Player": Player} #player object
+obj_types = {"Player": Player, #player object \
+"warp": Warp } #warp object
