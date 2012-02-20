@@ -74,6 +74,7 @@ class MapObjectLayer:
 		self.image.convert_alpha() #convert it for faster blitting
 		self.group = pygame.sprite.Group() #create a group of sprites for this layer
 		self.fake_group = [] #group for non-rendered objects
+		self.collisions = False #we're not a collisions layer
 		for object in layer_node.getElementsByTagName("object"): #load all objects
 			obj = self.g.game.add_object(object) #load the object
 			if hasattr(obj, "image"): #if it's renderable
@@ -82,12 +83,14 @@ class MapObjectLayer:
 				self.fake_group.append(obj) #add it to the non-render group
 	def render(self):
 		pass
-	def update(self):
+	def update(self, update_rect):
 		self.group.update() #update all the sprites in the groups
 		for obj in self.fake_group:
 			obj.update()
 		self.image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear the image
-		self.group.draw(self.image) #render the sprites
+		for sprite in self.group: #loop through all the sprites
+			if update_rect.colliderect(sprite.rect): #test if we should draw this sprite
+				self.image.blit(sprite.image, sprite.rect.topleft) #draw it if we should
 		return self.image
 
 #class to manage a map
@@ -104,6 +107,7 @@ class Map:
 		
 		self.tilesets = [] #list of tilesets in the map
 		self.layers = [] #list of layers in the map
+		self.grouped_layers = [] #list of layer groups
 		
 		child = map_dom.firstChild #get the first child of the map so we can process them
 		while child is not None: #loop through the children
@@ -125,16 +129,39 @@ class Map:
 				self.layers.append(MapObjectLayer(self.g, self, child)) #process it
 			child = child.nextSibling #get the next child to process it
 		
-		self.image = pygame.Surface((self.map_width*16, self.map_height*16)) #create a new surface to render on
+		self.image = pygame.Surface((settings.screen_x, settings.screen_y)) #create a new surface to render on
 		self.image.convert() #convert it to blit faster
 		
 		for layer in self.layers: #loop through all of our layers
 			layer.render() #tell them to render themselves
 	#function to update the map
-	def update(self):
+	def update(self, update_rect, dirty=False):
 		#render all the layers
 		self.image.fill((0, 0, 0)) #clear out the image
-		for layer in self.layers: #loop through all of our layers
-			surf = layer.update() #tell them to update themselves
-			self.image.blit(surf, (0, 0)) #draw the result
+		if dirty or self.grouped_layers == []: #if we need to redraw the whole thing
+			self.grouped_layers = []
+			t = pygame.Surface((self.map_width*16, self.map_height*16), SRCALPHA) #make a temporary surface
+			for layer in self.layers: #loop through all of our layers
+				last = False #last layer was an object layer
+				if layer.collisions: #if it's an attribute layer
+					continue #don't render it
+				if isinstance(layer, MapObjectLayer): #if it's an object layer
+					self.grouped_layers.append(t) #add the current layer group
+					self.grouped_layers.append(layer) #and the object layer
+					t = pygame.Surface((self.map_width*16, self.map_height*16), SRCALPHA) #make a temporary surface
+					last = True
+				else: #if it's a regular layer
+					surf = layer.update() #tell it to update
+					t.blit(surf, (0, 0)) #draw the result
+			if not last: #if the last layer wasn't an object layer
+				self.grouped_layers.append(t) #save the current layer group
+			for layer in self.grouped_layers: #remove all the alpha channels
+				if not isinstance(layer, MapObjectLayer): #if it's not an object layer
+					layer.convert() #convert it
+		for layer in self.grouped_layers: #loop through the grouped layers
+			if isinstance(layer, MapObjectLayer): #if it's an object layer
+				surf = layer.update(update_rect) #update it
+				self.image.blit(surf, (0, 0), update_rect) #and blit it
+			else: #if it's not
+				self.image.blit(layer, (0, 0), update_rect) #blit it
 		return self.image #return updated image

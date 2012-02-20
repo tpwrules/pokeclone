@@ -77,11 +77,11 @@ class Game: #class for our game engine
 		#center camera on player
 		pos = self.objects["player"].pos #get position of payer
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
+		update_rect = pygame.Rect(self.camera_pos, (settings.screen_x, settings.screen_y)) #calculate update rectangle
 		if self.warping != 1:
-			self.map_image = self.map.update() #update the map
+			self.map_image = self.map.update(update_rect) #update the map
 		self.surf.fill((0, 0, 0)) #clear surface for black background
-		self.surf.blit(self.map_image, (0, 0), pygame.Rect(self.camera_pos, \
-			(settings.screen_x, settings.screen_y))) #blit it
+		self.surf.blit(self.map_image, (0, 0)) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
 		return self.surf #return the rendered surface
