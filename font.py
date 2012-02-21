@@ -57,3 +57,4 @@ class Font:
 			#render a letter
 			dest.blit(self.image, (where[0]+x, where[1]), letter)
 			x += letter.width #go to the position of the next letter
+		return x #return the width of the rendered string
