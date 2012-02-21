@@ -1,20 +1,20 @@
 <font id="battle" height="9" image="data/fonts/battle_font.png">
 	<letter name="0" coord="0,0" size="5" />
-	<letter name="1" coord="0,0" size="5" />
-	<letter name="2" coord="6,0" size="5" />
-	<letter name="3" coord="12,0" size="5" />
-	<letter name="4" coord="18,0" size="5" />
-	<letter name="5" coord="24,0" size="5" />
-	<letter name="6" coord="30,0" size="5" />
-	<letter name="7" coord="36,0" size="5" />
-	<letter name="8" coord="42,0" size="5" />
-	<letter name="9" coord="48,0" size="5" />
-	<letter name=":" coord="54,0" size="4" />
-	<letter name=";" coord="60,0" size="4" />
-	<letter name="&lt;" coord="66,0" size="5" />
-	<letter name="=" coord="72,0" size="5" />
-	<letter name="?" coord="78,0" size="5" />
-	<letter name="&gt;" coord="84,0" size="5" />
+	<letter name="1" coord="6,0" size="4" />
+	<letter name="2" coord="11,0" size="5" />
+	<letter name="3" coord="17,0" size="5" />
+	<letter name="4" coord="23,0" size="5" />
+	<letter name="5" coord="29,0" size="5" />
+	<letter name="6" coord="35,0" size="5" />
+	<letter name="7" coord="41,0" size="5" />
+	<letter name="8" coord="47,0" size="5" />
+	<letter name="9" coord="53,0" size="5" />
+	<letter name=":" coord="59,0" size="4" />
+	<letter name=";" coord="64,0" size="4" />
+	<letter name="&lt;" coord="69,0" size="5" />
+	<letter name="=" coord="75,0" size="5" />
+	<letter name="?" coord="81,0" size="5" />
+	<letter name="&gt;" coord="87,0" size="5" />
 	<letter name="A" coord="0,10" size="5" />
 	<letter name="B" coord="6,10" size="5" />
 	<letter name="C" coord="12,10" size="5" />
@@ -23,7 +23,7 @@
 	<letter name="F" coord="30,10" size="5" />
 	<letter name="G" coord="36,10" size="5" />
 	<letter name="H" coord="42,10" size="5" />
-	<letter name="I" coord="49,10" size="5" />
+	<letter name="I" coord="49,10" size="3" />
 	<letter name="J" coord="54,10" size="5" />
 	<letter name="K" coord="60,10" size="5" />
 	<letter name="L" coord="66,10" size="5" />
@@ -32,15 +32,15 @@
 	<letter name="O" coord="84,10" size="5" />
 	<letter name="P" coord="90,10" size="5" />
 	<letter name="Q" coord="96,10" size="5" />
-	<letter name="R" coord="112,10" size="5" />
-	<letter name="S" coord="118,10" size="5" />
-	<letter name="T" coord="124,10" size="5" />
-	<letter name="U" coord="130,10" size="5" />
-	<letter name="V" coord="136,10" size="5" />
-	<letter name="W" coord="142,10" size="5" />
-	<letter name="X" coord="148,10" size="5" />
-	<letter name="Y" coord="154,10" size="5" />
-	<letter name="Z" coord="160,10" size="5" />
+	<letter name="R" coord="102,10" size="5" />
+	<letter name="S" coord="108,10" size="5" />
+	<letter name="T" coord="114,10" size="5" />
+	<letter name="U" coord="120,10" size="5" />
+	<letter name="V" coord="126,10" size="5" />
+	<letter name="W" coord="132,10" size="5" />
+	<letter name="X" coord="138,10" size="5" />
+	<letter name="Y" coord="144,10" size="5" />
+	<letter name="Z" coord="150,10" size="5" />
 	<letter name="a" coord="0,20" size="5" />
 	<letter name="b" coord="6,20" size="5" />
 	<letter name="c" coord="12,20" size="5" />
@@ -49,7 +49,7 @@
 	<letter name="f" coord="30,20" size="5" />
 	<letter name="g" coord="36,20" size="5" />
 	<letter name="h" coord="42,20" size="5" />
-	<letter name="i" coord="49,20" size="5" />
+	<letter name="i" coord="49,20" size="3" />
 	<letter name="j" coord="54,20" size="5" />
 	<letter name="k" coord="60,20" size="5" />
 	<letter name="l" coord="66,20" size="5" />
@@ -58,15 +58,15 @@
 	<letter name="o" coord="84,20" size="5" />
 	<letter name="p" coord="90,20" size="5" />
 	<letter name="q" coord="96,20" size="5" />
-	<letter name="r" coord="112,20" size="5" />
-	<letter name="s" coord="118,20" size="5" />
-	<letter name="t" coord="124,20" size="5" />
-	<letter name="u" coord="130,20" size="5" />
-	<letter name="v" coord="136,20" size="5" />
-	<letter name="w" coord="142,20" size="5" />
-	<letter name="x" coord="148,20" size="5" />
+	<letter name="r" coord="102,20" size="5" />
+	<letter name="s" coord="108,20" size="5" />
+	<letter name="t" coord="114,20" size="5" />
+	<letter name="u" coord="120,20" size="5" />
+	<letter name="v" coord="126,20" size="5" />
+	<letter name="w" coord="132,20" size="5" />
+	<letter name="x" coord="138,20" size="5" />
 	<letter name="y" coord="144,20" size="5" />
-	<letter name="z" coord="160,20" size="5" />
+	<letter name="z" coord="150,20" size="5" />
 	<letter name=" " coord="154,0" size="3" />
-	<letter name="heart" coord="16,42" size="8" />
+	<letter name="heart" coord="16,42" size="7" />
 </font>
