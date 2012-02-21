@@ -65,6 +65,8 @@
 	<letter name="v" coord="136,20" size="5" />
 	<letter name="w" coord="142,20" size="5" />
 	<letter name="x" coord="148,20" size="5" />
-	<letter name="y" coord="154,20" size="5" />
+	<letter name="y" coord="144,20" size="5" />
 	<letter name="z" coord="160,20" size="5" />
+	<letter name=" " coord="154,0" size="3" />
+	<letter name="heart" coord="16,42" size="8" />
 </font>

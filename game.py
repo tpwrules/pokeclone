@@ -4,6 +4,7 @@ from pygame.locals import *
 import settings #load settings
 import map #and map manager
 import objects #and objects
+import font #font manager
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -16,6 +17,9 @@ class Game: #class for our game engine
 		self.warping = 0 #set when we need to do a warp
 		self.warp_obj = None #warp object
 		self.overlay_color = None
+		self.dialog = pygame.image.load("data/dialog.png")
+		self.dialog.convert()
+		self.font = font.Font("data/fonts/battle_font.xml")
 	def start(self):
 		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
 		self.warping = 2
@@ -84,4 +88,9 @@ class Game: #class for our game engine
 			(settings.screen_x, settings.screen_y))) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
+		if self.g.keys[settings.key_accept]:
+			self.surf.blit(self.dialog, (1, 0)) #draw dialog box
+			self.font.render("abcdefhgijklmnopqrstuvwxyz", self.surf, (15, 8))
+			self.font.render("ABCDEFGHIJKLMNOPQRSTUVWXYZ", self.surf, (15, 18))
+			self.font.render("0123456789 {heart}:;<=>?", self.surf, (15, 28))
 		return self.surf #return the rendered surface
