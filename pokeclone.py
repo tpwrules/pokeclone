@@ -43,4 +43,4 @@ while running: #loop while we are still running
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
-	clock.tick(60) #and wait for next frame (at 60 fps)
+	clock.tick_busy_loop(60) #and wait for next frame (at 60 fps)
