@@ -93,4 +93,5 @@ class Game: #class for our game engine
 			self.font.render("abcdefhgijklmnopqrstuvwxyz", self.surf, (15, 9))
 			self.font.render("ABCDEFGHIJKLMNOPQRSTUVWXYZ", self.surf, (15, 19))
 			self.font.render("0123456789 {heart}:;<=>? This is a battle font test", self.surf, (15, 29))
+		self.font.render(str(self.g.clock.get_fps()).replace(".", ":"), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface

@@ -16,7 +16,7 @@ screen = pygame.display.set_mode((settings.screen_x*settings.screen_scale, \
 	settings.screen_y*settings.screen_scale)) #create a window to draw on
 g.screen = screen #store it in the globals
 pygame.display.set_caption("Pokeclone") #set screen title
-clock = pygame.time.Clock() #and a clock for keeping the framerate
+g.clock = pygame.time.Clock() #and a clock for keeping the framerate
 
 g.game = game.Game(g) #create a new game class and give it our globals
 
@@ -43,4 +43,4 @@ while running: #loop while we are still running
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
-	clock.tick_busy_loop(60) #and wait for next frame (at 60 fps)
+	g.clock.tick(60) #and wait for next frame (at 60 fps)
