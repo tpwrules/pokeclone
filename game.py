@@ -65,7 +65,7 @@ class Game: #class for our game engine
 			if self.overlay_color is None: #if we just started
 				self.overlay_color = [255, 0 ,0, 0] #start color
 			else:
-				self.overlay_color[0] -= 16 #decrement color
+				self.overlay_color[0] -= 32 #decrement color
 			self.overlay_color = [self.overlay_color[0]]*3
 			if self.overlay_color[0] <= 0: #if we're at full black
 				self.perform_warp() #do the warp
@@ -73,7 +73,7 @@ class Game: #class for our game engine
 			if self.overlay_color is None: #if we just started
 				self.overlay_color = [0, 0 ,0, 0] #start color
 			else:
-				self.overlay_color[0] += 16 #increment color
+				self.overlay_color[0] += 32 #increment color
 			self.overlay_color = [self.overlay_color[0]]*3
 			if self.overlay_color[0] > 255: #if we're at max brightness
 				self.overlay_color = None #stop fading
