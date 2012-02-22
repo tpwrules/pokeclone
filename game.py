@@ -89,8 +89,8 @@ class Game: #class for our game engine
 		if self.overlay_color is not None: #if there's a color to render over the surface
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
 		if self.g.keys[settings.key_accept]:
-			self.surf.blit(self.dialog, (1, 0)) #draw dialog box
-			self.font.render("abcdefhgijklmnopqrstuvwxyz", self.surf, (15, 8))
-			self.font.render("ABCDEFGHIJKLMNOPQRSTUVWXYZ", self.surf, (15, 18))
-			self.font.render("0123456789 {heart}:;<=>? This is a battle font test", self.surf, (15, 28))
+			self.surf.blit(self.dialog, (1, 1)) #draw dialog box
+			self.font.render("abcdefhgijklmnopqrstuvwxyz", self.surf, (15, 9))
+			self.font.render("ABCDEFGHIJKLMNOPQRSTUVWXYZ", self.surf, (15, 19))
+			self.font.render("0123456789 {heart}:;<=>? This is a battle font test", self.surf, (15, 29))
 		return self.surf #return the rendered surface
