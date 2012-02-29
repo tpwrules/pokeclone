@@ -5,6 +5,7 @@ import settings #load settings
 import map #and map manager
 import objects #and objects
 import font #font manager
+import player #class for player
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -21,6 +22,7 @@ class Game: #class for our game engine
 		self.dialog.convert()
 		self.font = font.Font("data/fonts/battle_font.xml")
 	def start(self):
+		self.player = player.Player(self) #initialize a player object
 		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
 		self.warping = 2
 	def add_object(self, obj_node): #add an object
@@ -28,7 +30,10 @@ class Game: #class for our game engine
 		for property in obj_node.getElementsByTagName("property"): #get properties
 			properties[property.getAttribute("name")] = property.getAttribute("value") #get a property
 		type = obj_node.getAttribute("type") #get type of object
-		obj = objects.obj_types[type](self, obj_node, properties) #load the object
+		if type == "Player": #if we're trying to load a player object
+			obj = self.player #return it
+		else: #otherwise
+			obj = objects.obj_types[type](self, obj_node, properties) #load the object
 		self.objects[properties["id"]] = obj #store it
 		return obj #and return it
 	def add_warp(self, pos, obj): #add a warp object
