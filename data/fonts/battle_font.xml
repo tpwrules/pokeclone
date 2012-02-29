@@ -14,7 +14,7 @@
 	<letter name="&lt;" coord="69,0" size="5" />
 	<letter name="=" coord="75,0" size="5" />
 	<letter name="?" coord="81,0" size="5" />
-	<letter name="&gt;" coord="87,0" size="5" />
+	<letter name="@" coord="87,0" size="5" />
 	<letter name="A" coord="0,10" size="5" />
 	<letter name="B" coord="6,10" size="5" />
 	<letter name="C" coord="12,10" size="5" />
@@ -68,5 +68,31 @@
 	<letter name="y" coord="144,20" size="5" />
 	<letter name="z" coord="150,20" size="5" />
 	<letter name=" " coord="154,0" size="3" />
-	<letter name="heart" coord="16,42" size="7" />
+	<letter name="{" coord="0,30" size="5" />
+	<letter name="|" coord="6,30" size="3" />
+	<letter name="}" coord="10,30" size="5" />
+	<letter name="~" coord="17,30" size="6" />
+	<letter name="f!" coord="23,30" size="3" />
+	<letter name="!" coord="26,30" size="3" />
+	<letter name="&quot;" coord="30,30" size="6" />
+	<letter name="weird_h" coord="37,31" size="5" />
+	<letter name="poke$" coord="43,31" size="6" />
+	<letter name="%" coord="50,31" size="5" />
+	<letter name="&amp;" coord="56,31" size="5" />
+	<letter name="'" coord="62,30" size="4" />
+	<letter name="(" coord="67,31" size="4" />
+	<letter name=")" coord="72,31" size="4" />
+	<letter name="*" coord="77,31" size="5" />
+	<letter name="+" coord="83,31" size="6" />
+	<letter name="," coord="89,31" size="4" />
+	<letter name="-" coord="0,41" size="4" />
+	<letter name="." coord="5,41" size="4" />
+	<letter name="/" coord="10,41" size="5" />
+	<letter name="heart" coord="16,41" size="7" />
+	<letter name="dot" coord="24,41" size="7" />
+	<letter name="note" coord="32,41" size="7" />
+	<letter name="flat" coord="40,41" size="6" />
+	<letter name="#" coord="47,41" size="9" />
+	<letter name="male" coord="57,41" size="7" />
+	<letter name="female" coord="65,41" size="7" />
 </font>
