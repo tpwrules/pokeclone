@@ -83,7 +83,7 @@
 	<letter name="(" coord="67,31" size="4" />
 	<letter name=")" coord="72,31" size="4" />
 	<letter name="*" coord="77,31" size="5" />
-	<letter name="+" coord="83,31" size="6" />
+	<letter name="+" coord="83,31" size="5" />
 	<letter name="," coord="89,31" size="4" />
 	<letter name="-" coord="0,41" size="4" />
 	<letter name="." coord="5,41" size="4" />

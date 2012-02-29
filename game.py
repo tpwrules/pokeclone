@@ -90,8 +90,17 @@ class Game: #class for our game engine
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
 		if self.g.keys[settings.key_accept]:
 			self.surf.blit(self.dialog, (1, 1)) #draw dialog box
-			self.font.render("abcdefhgijklmnopqrstuvwxyz", self.surf, (15, 9))
-			self.font.render("ABCDEFGHIJKLMNOPQRSTUVWXYZ", self.surf, (15, 19))
-			self.font.render("0123456789 {heart}:;<=>? This is a battle font test", self.surf, (15, 29))
+			y = 9
+			s = ""
+			for chr in self.font.letters:
+				if len(chr) > 1 or chr == "{":
+					s += ("{"+chr+"}")
+				else:
+					s += chr
+				if self.font.get_width(s) > 200:
+					self.font.render(s, self.surf, (15,y))
+					y += 10
+					s = ""
+			self.font.render(s, self.surf, (15, y))
 		self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
