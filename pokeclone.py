@@ -10,6 +10,8 @@ class Container: #blank class to store global variables
 g = Container() #get the global variable container
 
 g.keys = [False]*len(settings.keys) #variable to hold states of keys
+g.old_keys = [False]*len(settings.keys) #and previous keys
+g.curr_keys = [False]*len(settings.keys) #only true when key has been pressed this frame
 
 running = True #if this is true, we continue the main loop
 screen = pygame.display.set_mode((settings.screen_x*settings.screen_scale, \
@@ -39,6 +41,12 @@ while running: #loop while we are still running
 		break #stop running
 	if running == False: #if we aren't supposed to be running any more
 		break #stop running
+	#update key variables
+	for x in xrange(len(settings.keys)): #loop through key indices
+		t = g.keys[x] ^ g.old_keys[x] #get whether this key has changed this frame
+		t = t & g.keys[x] #make it true only if the key was pressed this frame
+		g.curr_keys[x] = t #save key state
+		g.old_keys[x] = g.keys[x] #and update old keys
 	surface = g.game.update() #tell the game engine to update for one frame
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
