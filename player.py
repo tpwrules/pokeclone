@@ -71,6 +71,19 @@ class Player(pygame.sprite.Sprite):
 		if not same or not self.was_moving: #if we need to update our animation
 			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
 		self.was_moving = self.moving
+	#have the player interact with an object
+	def interact(self):
+		t = None #tuple of tile position
+		#set direction tuple according to direction
+		if self.direction == 0: #if we're facing up
+			t = (0, -1)
+		elif self.direction == 1:
+			t = (0, 1)
+		elif self.direction == 2:
+			t = (-1, 0)
+		elif self.direction == 3:
+			t = (1, 0)
+		self.game.interact(self.tile_pos+t, self.direction) #interact with an object
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
@@ -97,4 +110,6 @@ class Player(pygame.sprite.Sprite):
 		if self.moving == False: #if we're not moving
 			self.was_moving = False #clear was moving flag
 			self.animator.set_animation("stand_"+get_direction_name(self.direction)) #set our animation accordingly
-		self.animator.update() #update our animation	
+			if self.g.curr_keys[settings.key_accept]: #if the accept key is pressed
+				self.interact() #try to interact with something
+		self.animator.update() #update our animation
