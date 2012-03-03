@@ -6,6 +6,7 @@ import map #and map manager
 import objects #and objects
 import font #font manager
 import player #class for player
+import dialog #class for dialogs
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -18,13 +19,13 @@ class Game: #class for our game engine
 		self.warping = 0 #set when we need to do a warp
 		self.warp_obj = None #warp object
 		self.overlay_color = None
-		self.dialog = pygame.image.load("data/dialog.png")
-		self.dialog.convert()
-		self.font = font.Font("data/fonts/battle_font.xml")
+		self.dialog = dialog.Dialog(self.g, "standard")
+		self.font = self.dialog.dlog_font
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
 		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
 		self.warping = 2
+		self.dialog.draw_text("WELCOME!{br}How are you today in this new map?{wait}{br}JAM!{br}JAM!{wait}{br}JAAAAAM!!!{wait}This is a test of a pretty long line. Word-wrapping doesn't work at this point, but it shouldn't draw off the edge.{wait}")
 	def add_object(self, obj_node): #add an object
 		properties = {} #dictionary of the object's properties
 		for property in obj_node.getElementsByTagName("property"): #get properties
@@ -93,19 +94,6 @@ class Game: #class for our game engine
 			(settings.screen_x, settings.screen_y))) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
-		if self.g.keys[settings.key_accept]:
-			self.surf.blit(self.dialog, (1, 1)) #draw dialog box
-			y = 9
-			s = ""
-			for chr in self.font.letters:
-				if len(chr) > 1 or chr == "{":
-					s += ("{"+chr+"}")
-				else:
-					s += chr
-				if self.font.get_width(s) > 200:
-					self.font.render(s, self.surf, (15,y))
-					y += 10
-					s = ""
-			self.font.render(s, self.surf, (15, y))
+		self.dialog.update(self.surf, (1, 1))
 		self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
