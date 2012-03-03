@@ -99,6 +99,8 @@ class Player(pygame.sprite.Sprite):
 			else: #if we are
 				self.animator.update() #update animation
 				return #don't do anything else
+		if self.game.dialog_drawing #if a dialog is currently being shown
+			return #don't do anything
 		if self.g.keys[settings.key_up]: #if up is pressed
 			self.move(0) #move up
 		elif self.g.keys[settings.key_down]: #same for other keys
