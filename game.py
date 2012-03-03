@@ -81,7 +81,8 @@ class Game: #class for our game engine
 		self.dialog_drawing = True #set that we're drawing one
 		self.dialog.draw_text(str) #and tell it to draw
 	def interact(self, pos, direction): #interact with an object
-		pass
+		if pos in self.pos2obj: #if this position has an object
+			self.pos2obj[pos].interact(direction) #tell the object to interact
 	def update(self): #update the engine for this frame
 		if self.warping == 1: #if we should warp
 			if self.overlay_color is None: #if we just started
