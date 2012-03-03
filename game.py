@@ -18,6 +18,8 @@ class Game: #class for our game engine
 		self.warps = {} #list of warps on the map
 		self.warping = 0 #set when we need to do a warp
 		self.warp_obj = None #warp object
+		self.obj2pos = {} #dictionary of objects mapped to positions
+		self.pos2obj = {} #dictionary of positions mapped to objects
 		self.overlay_color = None
 		self.dialog = dialog.Dialog(self.g, "standard")
 		self.font = self.dialog.dlog_font
@@ -66,6 +68,14 @@ class Game: #class for our game engine
 			return self.map.collision_map.tilemap[tile_y][tile_x]
 		except: #if we can't
 			return -1 #say so
+	def set_obj_pos(self, obj, pos): #set an object's position
+		if obj in self.obj2pos: #if the object has a postion associated with it
+			del self.pos2obj[self.obj2pos[obj]] #remove it from the position dict
+			del self.obj2pos[obj] #and the object dict
+		self.obj2pos[obj] = pos #set object -> position mapping
+		self.pos2obj[pos] = obj #set position -> object mapping
+	def interact(self, pos, direction): #interact with an object
+		pass
 	def update(self): #update the engine for this frame
 		if self.warping == 1: #if we should warp
 			if self.overlay_color is None: #if we just started
