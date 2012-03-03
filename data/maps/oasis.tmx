@@ -49,7 +49,7 @@
   <object name="oasis_sign" type="sign" x="490" y="-10" width="48" height="9">
    <properties>
     <property name="id" value="oasis_sign"/>
-    <property name="text" value="Welcome to the Testing Oasis!{br}Enjoy your stay!{wait}"/>
+    <property name="text" value="Welcome to the Testing Oasis.{br}Enjoy your stay!{wait}"/>
     <property name="tile_pos" value="26,13"/>
    </properties>
   </object>

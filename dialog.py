@@ -55,14 +55,11 @@ class Dialog:
 			#clear out new line
 			self.text_surf.fill((127, 182, 203), ((0, self.next_pos[1]), self.dlog_rect.size))
 		self.next_pos[0] = 0 #clear x coord
-	def update(self, surf, surf_pos): #update the dialog box, returns true when done
+	def _next_char(self): #draw the next character
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
 		#if we're waiting for the accept key to be pressed and it hasn't yet
 		if self.waiting and not self.g.curr_keys[settings.key_accept]:
-			#we need to render the dialog box
-			surf.blit(self.image, surf_pos) #draw dialog box image
-			surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
 			return #don't do anything
 		self.waiting = False #if we've ended up here, we're not waiting any more
 		if len(self.text) == 0: #if we don't have any more characters to draw
@@ -80,6 +77,13 @@ class Dialog:
 				self._next_line() #go to next line
 			self.dlog_font.render(letter, self.text_surf, self.next_pos) #render letter
 			self.next_pos[0] += width #add width to current position
-		#finally, draw the current dialog box
+	def update(self, surf, surf_pos): #update the dialog box, returns true when done
+		if not self.drawing: #if we're not drawing anything
+			return True #say so
+		r = self._next_char() #draw one character
+		r = r or self._next_char() #and another
+		if r == True: #if we've finished drawing
+			return True #say so
+		#draw the current dialog box
 		surf.blit(self.image, surf_pos) #draw dialog box image
 		surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
