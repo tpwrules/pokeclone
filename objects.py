@@ -24,7 +24,7 @@ class Sign:
 		self.game = game #store parameters
 		self.text = properties["text"] #store text to show
 		#get our tile position
-		t = self.properties["tile_pos"].split(",")
+		t = properties["tile_pos"].split(",")
 		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position
 		game.set_obj_pos(self, self.tile_pos) #set our position
 	def interact(self, pos): #handle the player interacting with us
@@ -33,5 +33,5 @@ class Sign:
 		pass #we don't need to do any updates
 		
 #dictionary to hold which classes go with which objects
-obj_types = {"warp": Warp #warp object \
+obj_types = {"warp": Warp, #warp object \
 "sign":Sign} #a sign object

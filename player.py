@@ -83,7 +83,7 @@ class Player(pygame.sprite.Sprite):
 			t = (-1, 0)
 		elif self.direction == 3:
 			t = (1, 0)
-		self.game.interact(self.tile_pos+t, self.direction) #interact with an object
+		self.game.interact((self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]), self.direction) #interact with an object
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
@@ -99,7 +99,7 @@ class Player(pygame.sprite.Sprite):
 			else: #if we are
 				self.animator.update() #update animation
 				return #don't do anything else
-		if self.game.dialog_drawing #if a dialog is currently being shown
+		if self.game.dialog_drawing: #if a dialog is currently being shown
 			return #don't do anything
 		if self.g.keys[settings.key_up]: #if up is pressed
 			self.move(0) #move up
