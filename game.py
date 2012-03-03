@@ -23,11 +23,11 @@ class Game: #class for our game engine
 		self.overlay_color = None
 		self.dialog = dialog.Dialog(self.g, "standard")
 		self.font = self.dialog.dlog_font
+		self.dialog_drawing = False #set when the dialog is showing text
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
 		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
 		self.warping = 2
-		self.dialog.draw_text("WELCOME!{br}How are you today in this new map?{wait}{br}JAM!{br}JAM!{wait}{br}JAAAAAM!!!{wait}This is a test of a pretty long line. Word-wrapping doesn't work at this point, but it shouldn't draw off the edge.{wait}")
 	def add_object(self, obj_node): #add an object
 		properties = {} #dictionary of the object's properties
 		for property in obj_node.getElementsByTagName("property"): #get properties
@@ -51,6 +51,9 @@ class Game: #class for our game engine
 		self.map = None
 		self.warping = 2 #we're in warp stage 2
 		self.warp_obj = False
+		self.obj2pos = {}
+		self.pos2obj = {}
+		self.dialog_drawing = False #we aren't drawing a dialog
 		map_file = "data/maps/"+warp_obj["dest_map"] #get destination of warp
 		self.map = map.Map(self.g, map_file) #load the map
 		new_warp = self.objects[warp_obj["dest_warp"]] #get the warp destination
@@ -74,6 +77,9 @@ class Game: #class for our game engine
 			del self.obj2pos[obj] #and the object dict
 		self.obj2pos[obj] = pos #set object -> position mapping
 		self.pos2obj[pos] = obj #set position -> object mapping
+	def show_dlog(self, str): #draw a dialog
+		self.dialog_drawing = True #set that we're drawing one
+		self.dialog.draw_text(str) #and tell it to draw
 	def interact(self, pos, direction): #interact with an object
 		pass
 	def update(self): #update the engine for this frame
@@ -104,6 +110,9 @@ class Game: #class for our game engine
 			(settings.screen_x, settings.screen_y))) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
-		self.dialog.update(self.surf, (1, 1))
+		if self.dialog_drawing: #if we're drawing a dialog
+			result = self.dialog.update(self.surf, (1, 1)) #draw it
+			if result: #if we're finished
+				self.dialog_drawing = False #stop drawing
 		self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
