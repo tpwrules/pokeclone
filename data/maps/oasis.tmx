@@ -56,6 +56,12 @@
     <property name="tile_pos" value="26,13"/>
    </properties>
   </object>
+  <object name="test_npc" type="npc" x="0" y="0">
+  	<properties>
+  	  <property name="id" value="test_npc" />
+  	  <property name="tile_pos" value="5,9"/>
+  	</properties>
+  </object>
  </objectgroup>
  <layer name="house top" width="36" height="21">
   <data encoding="base64" compression="zlib">

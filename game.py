@@ -78,11 +78,14 @@ class Game: #class for our game engine
 	def get_tile_type(self, tile_x, tile_y): #get the type of tile at the given position
 		if tile_y < 0 or tile_x < 0: #if the tile is negative
 			return -1 #it shouldn't exist
+		if (tile_x, tile_y) in self.pos2obj: #if it's an object
+			return -1 #say so
 		try: #try to get the tile
 			return self.map.collision_map.tilemap[tile_y][tile_x]
 		except: #if we can't
 			return -1 #say so
 	def set_obj_pos(self, obj, pos): #set an object's position
+		pos = tuple(pos[:]) #convert position to tuple
 		if obj in self.obj2pos: #if the object has a postion associated with it
 			del self.pos2obj[self.obj2pos[obj]] #remove it from the position dict
 			del self.obj2pos[obj] #and the object dict
@@ -118,6 +121,8 @@ class Game: #class for our game engine
 		if self.warping != 1:
 			self.map_image = self.map.update() #update the map
 		self.surf.fill((0, 0, 0)) #clear surface for black background
+		for pos in self.pos2obj: #draw object collision tiles
+			self.map_image.fill((255, 0, 0), rect=pygame.Rect(((pos[0]*16, pos[1]*16), (16, 16))), special_flags=BLEND_RGB_MULT)
 		self.surf.blit(self.map_image, (0, 0), pygame.Rect(self.camera_pos, \
 			(settings.screen_x, settings.screen_y))) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface

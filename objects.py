@@ -52,6 +52,7 @@ class MovementManager:
 				frames = int(child.getAttribute("frames")) #get number of frames to wait
 				dir = get_direction_num(child.getAttribute("dir")) #get direction
 				move_list.append([dir, frames, -1]) #add it to movement list
+			child = child.nextSibling #go to next movement command
 		self.load_move_list(move_list) #set movement list we generated
 	def load_move_list(self, move_list, repeat=True): #load a movement list
 		self.running = True #we're running now
@@ -69,7 +70,7 @@ class MovementManager:
 			else: #if we're not supposed to repeat
 				self.moving = False #stop doing things
 				self.running = False
-				self.obj.animator.set_animation("stand_"+get_movement_name(self.move_list[-1][0])) #set stand animation
+				self.obj.animator.set_animation("stand_"+get_direction_name(self.move_list[-1][0])) #set stand animation
 				return
 		self.curr_movement = self.move_list[self.move_index][:] #load move list
 		self._start_move() #start moving
@@ -79,22 +80,18 @@ class MovementManager:
 		#calculate movement deltas
 		if dir == 0: #moving up
 			delta = (0, -speed)
-			pix_pos = 15
 		elif dir == 1: #down
 			delta = (0, speed)
-			pix_pos = 0
 		elif dir == 2: #left
 			delta = (-speed, 0)
-			pix_pos = 15
 		elif dir == 3: #right
 			delta = (speed, 0)
-			pix_pos = 0
 		#set movement animation
 		if speed < 0: #if it's just a wait command
-			self.obj.animator.set_animation("stand_"+get_movement_name(dir)) #set stand animation
+			self.obj.animator.set_animation("stand_"+get_direction_name(dir)) #set stand animation
 		else: #otherwise, 
-			self.obj.animator.set_animation("walk_"+get_movement_name(dir)) #set walk animation
-		self.pix_pos = pix_pos #number of pixels we've moved within the tile
+			self.obj.animator.set_animation("walk_"+get_direction_name(dir)) #set walk animation
+		self.pix_pos = 0 #number of pixels we've moved within the tile
 		self.delta = delta #store delta
 	def move_to(self, dir, dist, speed, resume=True): #set a movement
 		self.resume = resume #set whether we're supposed to resume or not
@@ -112,11 +109,11 @@ class MovementManager:
 			self.curr_movement[1] -= 1 #decrement a frame
 			if self.curr_movement[1] == 0: #if we're finished waiting
 				self._next_movement() #go to next move command
-				return #and stop doing things
+			return #don't do anything else
 		self.obj.pos[0] += self.delta[0] #move object according to speed
 		self.obj.pos[1] += self.delta[1]
 		self.pix_pos += speed #add speed to pixel position
-		if self.pix_pox > 15: #if we've gone a whole tile
+		if self.pix_pos > 15: #if we've gone a whole tile
 			self.curr_movement[1] -= 1 #remove one from distance
 			self.pix_pos -= 16 #remove a tile's worth of pixels
 			#calculate new tile position
@@ -128,10 +125,11 @@ class MovementManager:
 				self.obj.tile_pos[0] -= 1
 			elif dir == 3:
 				self.obj.tile_pos[0] += 1
+			self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 		if self.curr_movement[1] == 0: #if we're finished moving
 			#snap object's position to tile
-			self.obj.pos[0] -= self.obj.pos[0] % 16
-			self.obj.pos[1] -= self.obj.pos[1] % 16
+			self.obj.pos = [((self.obj.tile_pos[0]-1)*16)+8, (self.obj.tile_pos[1]-1)*16]
+			self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 			if self.running: #if we're supposed to be automatically running
 				self._next_movement() #go to the next movement
 			elif self.resume: #otherwise, if we're supposed to resume auto movement
@@ -152,6 +150,8 @@ class Warp:
 		self.tile_x = int(t[0].strip())
 		self.tile_y = int(t[1].strip())
 		game.add_warp((self.tile_x, self.tile_y), self.properties) #add the warp
+	def interact(self, pos):
+		pass #don't interact
 	def update(self): #we don't need to do any updates
 		pass
 
@@ -169,6 +169,50 @@ class Sign:
 	def update(self):
 		pass #we don't need to do any updates
 		
+#generic NPC
+class NPC(pygame.sprite.Sprite):
+	def __init__(self, game, element, properties):
+		pygame.sprite.Sprite.__init__(self) #init the sprite class
+		self.properties = properties #store parameters
+		self.game = game
+		t = properties["tile_pos"].split(",") #load tile position
+		self.tile_pos = [int(t[0].strip()), int(t[1].strip())]
+		self.pos = [((self.tile_pos[0]-1)*16), (self.tile_pos[1]-1)*16] #set real position
+		self.image = None #we have no image for now
+		self.inited = False #mark that we haven't been initialized fully yet
+		self.interacting = False #mark that we're not interacting
+	def do_init(self): #perform initialization on first update
+		self.inited = True #we've initialized now
+		properties = self.properties #load properties
+		game = self.game #and game object
+		self.obj_data = game.object_data[properties["id"]] #get our associated data
+		#load an animator
+		self.animator = animation.AnimationGroup(game.g, self, self.obj_data.getElementsByTagName("anim")[0].getAttribute("file"))
+		self.animator.set_animation("stand_down") #set animation
+		self.animator.update() #update animation once
+		#and a movement manager
+		self.move_manager = MovementManager(self)
+		#load movement list
+		self.move_manager.load_move_dom(self.obj_data.getElementsByTagName("movement")[0])
+	def interact(self, pos):
+		#make ourselves face to who's talking
+		new_pos = [1, 0, 3, 2][pos]
+		self.stored_anim = self.animator.curr_animation #store current animation
+		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
+		self.interacting = True #we're currently interacting
+		self.game.show_dlog("Oh, hey there.{br}Funny how similar we look, isn't it?{wait}{br}Ah well, must be some crazy coincidence.{wait}")
+	def update(self):
+		if not self.inited: self.do_init() #intialize if we haven't already
+		if not self.interacting: #if we aren't interacting
+			self.move_manager.update() #update our movement
+			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
+		else: #if we are
+			self.interacting = self.game.dialog_drawing #set whether we're interacting
+			if not self.interacting: #if we've stopped needing to
+				self.animator.curr_animation = self.stored_anim #restore stored animation
+		self.animator.update() #and our animation
+		
 #dictionary to hold which classes go with which objects
 obj_types = {"warp": Warp, #warp object \
-"sign":Sign} #a sign object
+"sign":Sign, #a sign object\
+"npc":NPC} #an NPC
