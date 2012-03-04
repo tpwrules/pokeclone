@@ -1,5 +1,12 @@
 <objects>
-	<object id="boring">
-		<junk />
+	<object id="test_npc">
+		<anim file="data/objects/player/player_animation.xml" />
+		<movement speed="2">
+			<move dir="up" dist="4" />
+			<wait frames="20" />
+			<move dir="left" dist="0" />
+			<wait frames="20" />
+			<move dir="down" dist="4" />
+		<movement>
 	</object>
 </objects>
