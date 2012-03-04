@@ -1,5 +1,6 @@
 import pygame #import all of pygame
 from pygame.locals import *
+from xml.dom.minidom import parse #import xml parser
 
 import settings #load settings
 import map #and map manager
@@ -24,10 +25,20 @@ class Game: #class for our game engine
 		self.dialog = dialog.Dialog(self.g, "standard")
 		self.font = self.dialog.dlog_font
 		self.dialog_drawing = False #set when the dialog is showing text
+		self.object_data = {} #dictionary of loaded object data
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
-		self.map = map.Map(self.g, "data/maps/oasis.tmx") #load map
+		self.load_map("data/maps/oasis.tmx") #load map
 		self.warping = 2
+	def load_map(self, map_file): #load a map
+		self.map = map.Map(self.g, map_file) #load the map
+		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
+		self.object_data = {} #clear previous object data
+		child = objects_dom.firstChild #get first object data element
+		while child is not None: #loop through object data
+			if child.localName == "object": #if it's an object element
+				self.object_data[child.getAttribute("id")] = child #store it under its id
+			child = child.nextSibling #go to next element
 	def add_object(self, obj_node): #add an object
 		properties = {} #dictionary of the object's properties
 		for property in obj_node.getElementsByTagName("property"): #get properties
@@ -55,7 +66,7 @@ class Game: #class for our game engine
 		self.pos2obj = {}
 		self.dialog_drawing = False #we aren't drawing a dialog
 		map_file = "data/maps/"+warp_obj["dest_map"] #get destination of warp
-		self.map = map.Map(self.g, map_file) #load the map
+		self.load_map(map_file) #load the map
 		new_warp = self.objects[warp_obj["dest_warp"]] #get the warp destination
 		player = self.objects["player"] #get the player object
 		new_pos = new_warp.properties["tile_pos"].split(",") #calculate warp destination
