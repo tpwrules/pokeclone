@@ -1,5 +1,14 @@
 <objects>
-	<object id="fun">
-		<amazing />
+	<object id="test_npc">
+		<anim file="data/objects/player/player_animation.xml" />
+		<movement speed="2">
+			<move dir="right" dist="10" />
+			<move dir="down" dist="10" />
+			<move dir="left" dist="10" />
+			<move dir="up" dist="10" />
+		</movement>
+		<script>
+			<dialog>Wait, what? A third?{br}Why are there so many...?{wait}</dialog>
+		</script>
 	</object>
 </objects>
