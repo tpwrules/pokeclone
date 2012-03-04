@@ -3,10 +3,9 @@
 		<anim file="data/objects/player/player_animation.xml" />
 		<movement speed="2">
 			<move dir="up" dist="4" />
-			<wait frames="20" />
-			<move dir="left" dist="0" />
-			<wait frames="20" />
-			<move dir="down" dist="4" />
-		<movement>
+			<wait dir="up" frames="20" />
+			<wait dir="left" frames="20" />
+			<move dir="down" dist="4" speed="4" />
+		</movement>
 	</object>
 </objects>
