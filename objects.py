@@ -3,6 +3,7 @@ from pygame.locals import *
 
 import settings #load settings
 import animation #load animation manager
+import script #load script manager
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -204,20 +205,23 @@ class NPC(pygame.sprite.Sprite):
 		self.move_manager = MovementManager(self)
 		#load movement list
 		self.move_manager.load_move_dom(self.obj_data.getElementsByTagName("movement")[0])
+		self.script_manager = script.Script(self) #initialize script manager
+		self.interaction_script = self.obj_data.getElementsByTagName("script")[0] #load script
 	def interact(self, pos):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][pos]
 		self.stored_anim = self.animator.curr_animation #store current animation
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
 		self.interacting = True #we're currently interacting
-		self.game.show_dlog("Oh, hey there.{br}Funny how similar we look, isn't it?{wait}{br}Ah well, must be some crazy coincidence.{wait}")
+		self.script_manager.start_script(self.interaction_script) #start interaction script
 	def update(self):
 		if not self.inited: self.do_init() #intialize if we haven't already
 		if not self.interacting: #if we aren't interacting
 			self.move_manager.update() #update our movement
 			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 		else: #if we are
-			self.interacting = self.game.dialog_drawing #set whether we're interacting
+			self.script_manager.update() #update script
+			self.interacting = self.script_manager.running #set whether we're interacting
 			if not self.interacting: #if we've stopped needing to
 				self.animator.curr_animation = self.stored_anim #restore stored animation
 		self.animator.update() #and our animation

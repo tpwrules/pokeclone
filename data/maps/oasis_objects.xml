@@ -8,7 +8,8 @@
 			<move dir="down" dist="4" speed="4" />
 		</movement>
 		<script>
-			<dialog>Oh, hey there.{wait}{br}Funny how similar we look, isn&apos;t it?{br}Ah well. Must be some weird coincidence.{wait}</dialog>
+			<dialog>Oh, hey there.{wait}{br}Funny how similar we look, isn&apos;t it?{br}
+			Ah well. Must be some weird coincidence.{wait}{clear}Kind of odd though, there&apos;s another one of me{br}inside too...{wait}</dialog>
 		</script>
 	</object>
 </objects>
