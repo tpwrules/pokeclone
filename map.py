@@ -101,6 +101,7 @@ class Map:
 		self.map_height = int(map_dom.getAttribute("height"))
 		self.pix_width = self.map_width * 16 #calculate pixel dimensions
 		self.pix_height = self.map_height * 16
+		self.properties = {} #dictionary to store map properties
 		
 		self.tilesets = [] #list of tilesets in the map
 		self.layers = [] #list of layers in the map
@@ -123,6 +124,13 @@ class Map:
 				self.layers.append(MapTileLayer(self.g, self, child)) #process it
 			elif child.localName == "objectgroup": #if it's an object layer
 				self.layers.append(MapObjectLayer(self.g, self, child)) #process it
+			elif child.localName == "properties": #if it's the properties list
+				curr_prop = child.firstChild #get the first property
+				while curr_prop is not None: #loop through properties
+					if curr_prop.localName == "property": #if it's a property
+						self.properties[curr_prop.getAttribute("name")] = \
+							curr_prop.getAttribute("value") #load a property
+					curr_prop = curr_prop.nextSibling #go to next property
 			child = child.nextSibling #get the next child to process it
 		
 		self.image = pygame.Surface((self.map_width*16, self.map_height*16)) #create a new surface to render on
