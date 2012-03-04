@@ -37,6 +37,8 @@ class Font:
 				letter_rects.append(self.letters[code]) #save rect
 				code = None #clear code
 				continue #go to next letter
+			if letter not in self.letters: #if we don't know what it is
+				continue #go to next letter
 			if code is not None: #if we're in a code
 				code += letter #add a letter to the code
 			else: #if we're not
