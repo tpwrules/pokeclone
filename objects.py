@@ -95,6 +95,21 @@ class MovementManager:
 		self.pix_pos = 0 #number of pixels we've moved within the tile
 		self.delta = delta #store delta
 		self.check_collide = False
+		if speed > 0: #if we're not doing a wait command
+			#calculate new tile position
+			if dir == 0:
+				self.obj.tile_pos[1] -= 1
+			elif dir == 1:
+				self.obj.tile_pos[1] += 1
+			elif dir == 2:
+				self.obj.tile_pos[0] -= 1
+			elif dir == 3:
+				self.obj.tile_pos[0] += 1
+			#if we're going to collide with something
+			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) != 0:
+				self.check_collide = True #mark that we need to check it
+			else: #if we can move fine
+				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 	def move_to(self, dir, dist, speed, resume=True): #set a movement
 		self.resume = resume #set whether we're supposed to resume or not
 		self.store_movement = self.curr_movement[:] #back up movement
@@ -138,6 +153,15 @@ class MovementManager:
 			else: #if we can move fine
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 		if self.curr_movement[1] == 0 and self.check_collide == False: #if we're finished moving
+			#un-calculate tile position
+			if dir == 0:
+				self.obj.tile_pos[1] += 1
+			elif dir == 1:
+				self.obj.tile_pos[1] -= 1
+			elif dir == 2:
+				self.obj.tile_pos[0] += 1
+			elif dir == 3:
+				self.obj.tile_pos[0] -= 1
 			#snap object's position to tile
 			self.obj.pos = [((self.obj.tile_pos[0]-1)*16)+8, (self.obj.tile_pos[1]-1)*16]
 			self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
