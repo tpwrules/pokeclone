@@ -68,6 +68,7 @@ class Player(pygame.sprite.Sprite):
 				self.move_direction = (4, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]+1, self.tile_pos[1]) #update tile position
+		self.game.set_obj_pos(self, self.tile_pos) #set our position
 		if not same or not self.was_moving: #if we need to update our animation
 			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
 		self.was_moving = self.moving

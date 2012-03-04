@@ -93,6 +93,7 @@ class MovementManager:
 			self.obj.animator.set_animation("walk_"+get_direction_name(dir)) #set walk animation
 		self.pix_pos = 0 #number of pixels we've moved within the tile
 		self.delta = delta #store delta
+		self.check_collide = False
 	def move_to(self, dir, dist, speed, resume=True): #set a movement
 		self.resume = resume #set whether we're supposed to resume or not
 		self.store_movement = self.curr_movement[:] #back up movement
@@ -110,9 +111,14 @@ class MovementManager:
 			if self.curr_movement[1] == 0: #if we're finished waiting
 				self._next_movement() #go to next move command
 			return #don't do anything else
-		self.obj.pos[0] += self.delta[0] #move object according to speed
-		self.obj.pos[1] += self.delta[1]
-		self.pix_pos += speed #add speed to pixel position
+		if self.check_collide: #if we need to check for collisions
+			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) == 0: #if we can move into our tile
+				self.check_collide = False
+				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
+		if not self.check_collide and self.curr_movement[1] > 0: #if we can collide fine
+			self.obj.pos[0] += self.delta[0] #move object according to speed
+			self.obj.pos[1] += self.delta[1]
+			self.pix_pos += speed #add speed to pixel position
 		if self.pix_pos > 15: #if we've gone a whole tile
 			self.curr_movement[1] -= 1 #remove one from distance
 			self.pix_pos -= 16 #remove a tile's worth of pixels
@@ -125,8 +131,12 @@ class MovementManager:
 				self.obj.tile_pos[0] -= 1
 			elif dir == 3:
 				self.obj.tile_pos[0] += 1
-			self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
-		if self.curr_movement[1] == 0: #if we're finished moving
+			#if we're going to collide with something
+			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) != 0:
+				self.check_collide = True #mark that we need to check it
+			else: #if we can move fine
+				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
+		if self.curr_movement[1] == 0 and self.check_collide == False: #if we're finished moving
 			#snap object's position to tile
 			self.obj.pos = [((self.obj.tile_pos[0]-1)*16)+8, (self.obj.tile_pos[1]-1)*16]
 			self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
