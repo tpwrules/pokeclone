@@ -71,6 +71,9 @@ class Dialog:
 			self._next_line() #go to next line
 		elif letter == "{wait}": #if we've hit a wait command
 			self.waiting = True #mark that we're waiting
+		elif letter == "{clear}": #if we've hit a clear screen command
+			self.next_pos = [0, 0] #reset next position
+			self.text_surf.fill((127, 182, 203)) #clear text
 		else: #if we've hit anything else
 			width = self.dlog_font.get_width(letter) #get the letter's width
 			if self.next_pos[0]+width >= self.dlog_rect.width: #if we've exceeded width
