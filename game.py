@@ -91,9 +91,10 @@ class Game: #class for our game engine
 			del self.obj2pos[obj] #and the object dict
 		self.obj2pos[obj] = pos #set object -> position mapping
 		self.pos2obj[pos] = obj #set position -> object mapping
-	def show_dlog(self, str): #draw a dialog
+	def show_dlog(self, str, talker=None): #draw a dialog
 		self.dialog_drawing = True #set that we're drawing one
 		self.dialog.draw_text(str) #and tell it to draw
+		self.dialog_talking = talker #store who's talking
 	def interact(self, pos, direction): #interact with an object
 		if pos in self.pos2obj: #if this position has an object
 			self.pos2obj[pos].interact(direction) #tell the object to interact
@@ -131,5 +132,10 @@ class Game: #class for our game engine
 			result = self.dialog.update(self.surf, (1, 1)) #draw it
 			if result: #if we're finished
 				self.dialog_drawing = False #stop drawing
+			elif self.dialog_talking != None: #if somebody is talking
+				#draw an arrow to them
+				pos = self.dialog_talking.pos
+				pos = (pos[0]-self.camera_pos[0]+12, pos[1]-self.camera_pos[1]+8)
+				pygame.draw.polygon(self.surf, (255, 255, 255), [[35, 46], pos, [65, 46]])
 		self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface

@@ -19,7 +19,7 @@ class Script:
 		for n in cmd.childNodes: #loop through text
 			if n.nodeType == n.TEXT_NODE: #if it's a text node
 				text_list.append(n.data) #add it to text list
-		self.obj.game.show_dlog("".join(text_list)) #show the dialog
+		self.obj.game.show_dlog("".join(text_list), self.obj) #show the dialog
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running
 		#if we're waiting for a dialog and one is being drawn
