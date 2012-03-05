@@ -6,7 +6,7 @@ import settings #and settings
 
 #dialog definitions
 dialogs = {"standard": {"file":"data/dialog.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/battle_font.xml"},\
-{"notify": {"file":"data/selfdialog.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
+"notify": {"file":"data/selfdialog.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
 
 #dialog we can use to draw text
 class Dialog:
