@@ -106,7 +106,7 @@ class MovementManager:
 			elif dir == 3:
 				self.obj.tile_pos[0] += 1
 			#if we're going to collide with something
-			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) != 0:
+			if self.obj.game.collide(self.obj.tile_pos):
 				self.check_collide = True #mark that we need to check it
 			else: #if we can move fine
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
@@ -128,7 +128,7 @@ class MovementManager:
 				self._next_movement() #go to next move command
 			return #don't do anything else
 		if self.check_collide: #if we need to check for collisions
-			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) == 0: #if we can move into our tile
+			if not self.obj.game.collide(self.obj.tile_pos): #if we can move into our tile
 				self.check_collide = False
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 		if not self.check_collide and self.curr_movement[1] > 0: #if we can collide fine
@@ -148,7 +148,7 @@ class MovementManager:
 			elif dir == 3:
 				self.obj.tile_pos[0] += 1
 			#if we're going to collide with something
-			if self.obj.game.get_tile_type(self.obj.tile_pos[0], self.obj.tile_pos[1]) != 0:
+			if self.obj.game.collide(self.obj.tile_pos):
 				self.check_collide = True #mark that we need to check it
 			else: #if we can move fine
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
