@@ -101,7 +101,7 @@ class Game: #class for our game engine
 	def update(self): #update the engine for this frame
 		if self.warping == 1: #if we should warp
 			if self.overlay_color is None: #if we just started
-				self.overlay_color = [255, 0 ,0, 0] #start color
+				self.overlay_color = [255, 0, 0, 0] #start color
 			else:
 				self.overlay_color[0] -= 32 #decrement color
 			self.overlay_color = [self.overlay_color[0]]*3
@@ -117,7 +117,7 @@ class Game: #class for our game engine
 				self.overlay_color = None #stop fading
 				self.warping = 0
 		#center camera on player
-		pos = self.objects["player"].pos #get position of payer
+		pos = self.objects["player"].pos #get position of player
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
 		if self.warping != 1:
 			self.map_image = self.map.update() #update the map

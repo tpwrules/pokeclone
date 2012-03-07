@@ -30,6 +30,28 @@ class MapTileLayer:
 			row_data = s.unpack(data[:self.map.map_width*4]) #unpack one row of data
 			data = data[self.map.map_width*4:] #delete it from the data array
 			self.tilemap.append([x for x in row_data]) #add it to the tilemap, converted to a list
+		if not self.collisions: #if we're not a collision map
+			return #we can return now
+		#otherwise, we have to make all the tiles start at 0
+		tile_offset = None #variable to hold the tile number offset
+		x, y = 0, 0
+		for row in self.tilemap: #loop through tilemap
+			x = 0
+			for tile in row:
+				if tile == 0: #if this tile is already zero
+					x += 1
+					continue #ignore it
+				if tile_offset == None: #if we haven't found a tile offset yet
+					#we need to find the tileset that belongs to this map
+					prev = None #store previous tileset
+					for tileset in self.map.tilesets: #loop through available tilesets
+						if tile < tileset[0]: #if this tile is before this tileset
+							break #stop looking
+						prev = tileset #otherwise, store the current tileset
+					tile_offset = prev[0]-1 #store tile offset
+				self.tilemap[y][x] -= tile_offset #subtract tile offset from current tile
+				x += 1
+			y += 1
 	#function to render the tilemap
 	def render(self):
 		if self.collisions: #if this is a collisions surface
