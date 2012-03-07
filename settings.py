@@ -12,3 +12,9 @@ key_down = 3
 key_left = 4
 key_right = 5
 key_accept = 6
+
+TILE_SOLID = 1
+TILE_WATER = 2
+TILE_WARP = 3
+TILE_GRASS = 5
+TILE_DOUBLEGRASS = 8
