@@ -3,6 +3,7 @@ from pygame.locals import *
 
 import settings #load settings
 import animation #load animation manager
+import dialog #load dialog manager
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -84,7 +85,14 @@ class Player(pygame.sprite.Sprite):
 			t = (-1, 0)
 		elif self.direction == 3:
 			t = (1, 0)
-		self.game.interact((self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]), self.direction) #interact with an object
+		dest_pos = (self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]) #calculate the position of what we're interacting with
+		if dest_pos in self.game.pos2obj: #if there's an object at this position
+			self.game.interact(dest_pos, self.direction) #interact with an object
+			return
+		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1]) #get type of tile we're interacting with
+		if tile_type == settings.TILE_WATER: #if it's a water tile
+			dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
+			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog) #ask if the user wants to surf
 	def collide(self, tile_pos): #check for collisions
 		type = self.game.get_tile_type(tile_pos[0], tile_pos[1]) #get type of tile
 		#if we can walk through it
