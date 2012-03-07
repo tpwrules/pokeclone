@@ -86,7 +86,11 @@ class Player(pygame.sprite.Sprite):
 			t = (1, 0)
 		self.game.interact((self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]), self.direction) #interact with an object
 	def collide(self, tile_pos): #check for collisions
-		return self.game.collide(tile_pos)
+		type = self.game.get_tile_type(tile_pos[0], tile_pos[1]) #get type of tile
+		#if we can walk through it
+		if type in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]:
+			return False #we haven't collided
+		return True #otherwise, we have
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
