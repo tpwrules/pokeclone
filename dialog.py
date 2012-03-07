@@ -29,12 +29,22 @@ class ChoiceDialog:
 		self.drawing = False #whether we're currently showing choices
 		self.curr_choice = None #index of the currently selected choice
 	def show_choices(self, choices): #draw a list of choices
-		max_width = -1 #maximum choice width
+		dlog_width = -1 #maximum choice width
 		#calculate width of dialog box
 		for choice in choices: #loop through choices provided:
 			width = self.dlog_font.get_width(choice) #get its width
-			if width > max_width: #if it's greater than the current maximum
-				max_width = width #update maximum
+			if width > dlog_width: #if it's greater than the current maximum
+				dlog_width = width #update maximum
+		dlog_height = 16 + (self.font.height*len(choices)) #calculate height of dialog
+		#turn height and width into multiples of eight
+		if dlog_height % 8 == 0:
+			dlog_height /= 8
+		else:
+			dlog_height = (dlog_height/8)+1
+		if dlog_width % 8 == 0:
+			dlog_width /= 8
+		else:
+			dlog_width = (dlog_width/8)+1
 
 #dialog we can use to draw text
 class Dialog:
