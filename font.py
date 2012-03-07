@@ -34,6 +34,9 @@ class Font:
 				code = "" #clear out the code
 				continue #go to next letter
 			if letter == "}" and code is not None: #if it's the end of a code
+				if code not in self.letters: #if we don't know what it is
+					code = None #clear code
+					continue #go to next letter
 				letter_rects.append(self.letters[code]) #save rect
 				code = None #clear code
 				continue #go to next letter
