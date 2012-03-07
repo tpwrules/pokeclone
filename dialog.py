@@ -9,6 +9,33 @@ import tileset #import tileset manager
 dialogs = {"standard": {"file":"data/dialog.png", "choice_file":"data/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/battle_font.xml"},\
 "notify": {"file":"data/selfdialog.png", "choice_file":"data/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
 
+#dialog we can use to ask a choice
+class ChoiceDialog:
+	def __init__(self, g, type, dlog=None):
+		self.g = g #store parameters
+		if dlog is not None: #if a dialog has been provided
+			#copy its parameters
+			self.type = dlog.type
+			self.choice_tiles = dlog.choice_tiles
+			self.dlog_font = dlog.dlog_font
+			self.dlog = dialogs[self.type]
+		else: #otherwise, if none was given
+			dlog = dialogs[type] #get type
+			self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8) #load choice tileset
+			self.dlog_font = font.Font(dlog["font"]) #load font
+			self.dlog = dlog
+			self.type = type
+		self.choices = [] #list of choices
+		self.drawing = False #whether we're currently showing choices
+		self.curr_choice = None #index of the currently selected choice
+	def show_choices(self, choices): #draw a list of choices
+		max_width = -1 #maximum choice width
+		#calculate width of dialog box
+		for choice in choices: #loop through choices provided:
+			width = self.dlog_font.get_width(choice) #get its width
+			if width > max_width: #if it's greater than the current maximum
+				max_width = width #update maximum
+
 #dialog we can use to draw text
 class Dialog:
 	def __init__(self, g, type):
@@ -19,13 +46,13 @@ class Dialog:
 		self.dlog = dlog #store it
 		self.image = pygame.image.load(dlog["file"]) #load image file
 		self.image.convert() #convert it so it will draw faster
-		self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8)
+		self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8) #load choice tileset
 		self.dlog_rect = dlog["text_rect"] #get text rect
 		self.dlog_font = font.Font(dlog["font"]) #load font we're going to use for drawing
 		self.waiting = False #whether we're waiting for the player to press action
 		self.text = [] #list of characters to draw
 		self.text_surf = pygame.Surface(self.dlog_rect.size) #create a surface to draw text on
-		self.text_surf.set_colorkey((127, 182, 203)	) #set a colorkey for it
+		self.text_surf.set_colorkey((127, 182, 203)) #set a colorkey for it
 		self.text_surf.fill((127, 182, 203)) #fill it with the colorkey value
 		self.text_surf.convert() #convert it to blit faster
 		self.drawing = False #whether we're currently drawing the dialog box
