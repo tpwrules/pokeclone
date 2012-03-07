@@ -41,28 +41,28 @@ class Player(pygame.sprite.Sprite):
 		self.direction = direction #set current direction
 		self.move_frames = 4 #always 8 frames of movement
 		if direction == 0: #move up
-			if self.game.collide((self.tile_pos[0], self.tile_pos[1]-1)): #if it's a solid tile
+			if self.collide((self.tile_pos[0], self.tile_pos[1]-1)): #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (0, -4) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]-1) #update tile position
 		elif direction == 1:
-			if self.game.collide((self.tile_pos[0], self.tile_pos[1]+1)): #if it's a solid tile
+			if self.collide((self.tile_pos[0], self.tile_pos[1]+1)): #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (0, 4) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]+1) #update tile position
 		elif direction == 2:
-			if self.game.collide((self.tile_pos[0]-1, self.tile_pos[1])): #if it's a solid tile
+			if self.collide((self.tile_pos[0]-1, self.tile_pos[1])): #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (-4, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]-1, self.tile_pos[1]) #update tile position
 		elif direction == 3:
-			if self.game.collide((self.tile_pos[0]+1, self.tile_pos[1])): #if it's a solid tile
+			if self.collide((self.tile_pos[0]+1, self.tile_pos[1])): #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (4, 0) #set movement
@@ -85,6 +85,8 @@ class Player(pygame.sprite.Sprite):
 		elif self.direction == 3:
 			t = (1, 0)
 		self.game.interact((self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]), self.direction) #interact with an object
+	def collide(self, tile_pos): #check for collisions
+		return self.game.collide(tile_pos)
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
