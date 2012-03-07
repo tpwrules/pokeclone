@@ -22,7 +22,7 @@ class Dialog:
 		self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8)
 		self.dlog_rect = dlog["text_rect"] #get text rect
 		self.dlog_font = font.Font(dlog["font"]) #load font we're going to use for drawing
-		self.waiting = False #whether we're waiting for the player ot press action
+		self.waiting = False #whether we're waiting for the player to press action
 		self.text = [] #list of characters to draw
 		self.text_surf = pygame.Surface(self.dlog_rect.size) #create a surface to draw text on
 		self.text_surf.set_colorkey((127, 182, 203)	) #set a colorkey for it

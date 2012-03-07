@@ -22,8 +22,9 @@ class Game: #class for our game engine
 		self.obj2pos = {} #dictionary of objects mapped to positions
 		self.pos2obj = {} #dictionary of positions mapped to objects
 		self.overlay_color = None
-		self.dialog = dialog.Dialog(self.g, "standard")
-		self.font = self.dialog.dlog_font
+		self.default_dialog = dialog.Dialog(self.g, "standard")
+		self.dialog = None
+		self.font = self.default_dialog.dlog_font
 		self.dialog_drawing = False #set when the dialog is showing text
 		self.object_data = {} #dictionary of loaded object data
 	def start(self):
@@ -96,8 +97,12 @@ class Game: #class for our game engine
 			del self.obj2pos[obj] #and the object dict
 		self.obj2pos[obj] = pos #set object -> position mapping
 		self.pos2obj[pos] = obj #set position -> object mapping
-	def show_dlog(self, str, talker=None): #draw a dialog
+	def show_dlog(self, str, talker=None, dlog=None): #draw a dialog
 		self.dialog_drawing = True #set that we're drawing one
+		if dlog is not None: #if a specific dialog has been specified
+			self.dialog = dlog #set it
+		else: #otherwise, if none was given
+			self.dialog = self.default_dialog #use the default one
 		self.dialog.draw_text(str) #and tell it to draw
 		self.dialog_talking = talker #store who's talking
 	def interact(self, pos, direction): #interact with an object
