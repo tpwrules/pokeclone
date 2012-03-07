@@ -3,10 +3,11 @@ from pygame.locals import *
 
 import font #import font manager
 import settings #and settings
+import tileset #import tileset manager
 
 #dialog definitions
-dialogs = {"standard": {"file":"data/dialog.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/battle_font.xml"},\
-"notify": {"file":"data/selfdialog.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
+dialogs = {"standard": {"file":"data/dialog.png", "choice_file":"data/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/battle_font.xml"},\
+"notify": {"file":"data/selfdialog.png", "choice_file":"self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
 
 #dialog we can use to draw text
 class Dialog:
@@ -18,6 +19,7 @@ class Dialog:
 		self.dlog = dlog #store it
 		self.image = pygame.image.load(dlog["file"]) #load image file
 		self.image.convert() #convert it so it will draw faster
+		self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8)
 		self.dlog_rect = dlog["text_rect"] #get text rect
 		self.dlog_font = font.Font(dlog["font"]) #load font we're going to use for drawing
 		self.waiting = False #whether we're waiting for the player ot press action
