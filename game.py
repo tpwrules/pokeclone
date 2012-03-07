@@ -84,6 +84,11 @@ class Game: #class for our game engine
 			return self.map.collision_map.tilemap[tile_y][tile_x]
 		except: #if we can't
 			return -1 #say so
+	def collide(self, tile_pos): #test for a collision
+		type = self.get_tile_type(tile_pos[0], tile_pos[1]) #get tile type
+		if type != settings.TILE_NORMAL: #if it's not a normal tile
+			return True #this is a collison
+		return False #otherwise, we're fine
 	def set_obj_pos(self, obj, pos): #set an object's position
 		pos = tuple(pos[:]) #convert position to tuple
 		if obj in self.obj2pos: #if the object has a postion associated with it

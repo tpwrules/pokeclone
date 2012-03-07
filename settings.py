@@ -13,6 +13,7 @@ key_left = 4
 key_right = 5
 key_accept = 6
 
+TILE_NORMAL = 0
 TILE_SOLID = 1
 TILE_WATER = 2
 TILE_WARP = 3
