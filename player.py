@@ -38,6 +38,7 @@ class Player(pygame.sprite.Sprite):
 		self.was_moving = False
 		self.move_frames = 0 #amount of movement frames left
 		self.in_water = False #whether we're currently walking in water
+		self.notify_dlog = dialog.Dialog(self.g, "notify") #intiialize a notify dialog
 	#move the player
 	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
@@ -92,22 +93,20 @@ class Player(pygame.sprite.Sprite):
 			self.game.interact(dest_pos, self.direction) #interact with an object
 			return
 		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1], True) #get type of tile we're interacting with
-		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
 		if tile_type == settings.TILE_WATER and not self.in_water: #if it's a water tile and we're not in water
-			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog, callback=self.surf_cb) #ask if the user wants to surf
+			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=self.notify_dlog, callback=self.surf_cb) #ask if the user wants to surf
 		elif tile_type == settings.TILE_NORMAL and self.in_water: #if it's a normal tile and we're in water
-			self.game.show_dlog("Red took off his JESUS BOOTS.{wait}", dlog=dlog) #show take off message
+			self.game.show_dlog("Red took off his JESUS BOOTS.{wait}", dlog=self.notify_dlog) #show take off message
 			self.move(self.direction, True) #move out of water
 			self.in_water = False #we're not in water any more
 	def surf_cb(self, result): #callback for surf dialog
-		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
 		if result == 0: #if they said yes
-			self.game.show_dlog("Red put on his JESUS BOOTS!{wait}", dlog=dlog) #show message
+			self.game.show_dlog("Red put on his JESUS BOOTS!{wait}", dlog=self.notify_dlog) #show message
 			self.move(self.direction, True) #start movement
 			self.in_water = True #we're in water now
 		else:
 			#if they say no, don't surf
-			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=dlog)
+			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=self.notify_dlog)
 	def collide(self, tile_pos): #check for collisions
 		type = self.game.get_tile_type(tile_pos[0], tile_pos[1], True) #get type of tile
 		if self.in_water: #if we're in water
