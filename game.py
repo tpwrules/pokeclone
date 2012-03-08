@@ -27,6 +27,7 @@ class Game: #class for our game engine
 		self.font = self.default_dialog.dlog_font
 		self.dialog_drawing = False #set when the dialog is showing text
 		self.dialog_result = None #hold result of a dialog
+		self.dialog_callback = None #callback for dialog completion
 		self.object_data = {} #dictionary of loaded object data
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
@@ -98,7 +99,7 @@ class Game: #class for our game engine
 			del self.obj2pos[obj] #and the object dict
 		self.obj2pos[obj] = pos #set object -> position mapping
 		self.pos2obj[pos] = obj #set position -> object mapping
-	def show_dlog(self, str, talker=None, dlog=None): #draw a dialog
+	def show_dlog(self, str, talker=None, dlog=None, callback=None): #draw a dialog
 		self.dialog_drawing = True #set that we're drawing one
 		if dlog is not None: #if a specific dialog has been specified
 			self.dialog = dlog #set it
@@ -106,6 +107,8 @@ class Game: #class for our game engine
 			self.dialog = self.default_dialog #use the default one
 		self.dialog.draw_text(str) #and tell it to draw
 		self.dialog_talking = talker #store who's talking
+		self.dialog_callback = callback #store callback
+		self.dialog_result = None #clear result
 	def interact(self, pos, direction): #interact with an object
 		if pos in self.pos2obj: #if this position has an object
 			self.pos2obj[pos].interact(direction) #tell the object to interact
@@ -144,6 +147,8 @@ class Game: #class for our game engine
 			if result: #if we're finished
 				self.dialog_drawing = False #stop drawing
 				self.dialog_result = result #store result
+				if self.dialog_callback: #if there's a callback
+					self.dialog_callback(result) #call it with result
 			elif self.dialog_talking != None: #if somebody is talking
 				#draw an arrow to them
 				pos = self.dialog_talking.pos
