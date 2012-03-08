@@ -28,6 +28,7 @@ class ChoiceDialog:
 		self.choices = [] #list of choices
 		self.drawing = False #whether we're currently showing choices
 		self.curr_choice = None #index of the currently selected choice
+		self.cursor_tile = pygame.Surface((8, 8), SRCALPHA) #surface to hold cursor tile
 	def show_choices(self, choices): #draw a list of choices
 		dlog_width = -1 #maximum choice width
 		#calculate width of dialog box
@@ -35,14 +36,50 @@ class ChoiceDialog:
 			width = self.dlog_font.get_width(choice) #get its width
 			if width > dlog_width: #if it's greater than the current maximum
 				dlog_width = width #update maximum
-		dlog_height = 16 + (self.font.height*len(choices)) #calculate height of dialog
+		dlog_height = 16 + (self.dlog_font.height*len(choices)) #calculate height of dialog
+		dlog_width += 16 #add border size to width
 		#turn height and width into multiples of eight
 		if dlog_height % 8 > 0: dlog_height += (8-(dlog_height%8))
 		if dlog_width % 8 > 0: dlog_width += (8-(dlog_width%8))
 		self.dlog_height = dlog_height #store dimensions
 		self.dlog_width = dlog_width
 		self.dlog_surf = pygame.Surface((dlog_width, dlog_height), SRCALPHA) #create surface for the textbox
-		#now draw dialog corners
+		#now draw dialog background
+		tile_buf = pygame.Surface((8, 8), SRCALPHA) #create a surface to hold a tile
+		#draw four corners
+		self.choice_tiles.get_tile(0, 0, tile_buf) #get top left corner
+		self.dlog_surf.blit(tile_buf, (0, 0)) #draw it
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(2, 0, tile_buf) #get top right corner
+		self.dlog_surf.blit(tile_buf, (dlog_width-8, 0)) #draw it
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(0, 2, tile_buf) #get bottom left corner
+		self.dlog_surf.blit(tile_buf, (0, dlog_height-8)) #draw it
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(2, 2, tile_buf) #get bottom right corner
+		self.dlog_surf.blit(tile_buf, (dlog_width-8, dlog_height-8)) #draw it
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		#now, draw top and bottom edges
+		self.choice_tiles.get_tile(1, 0, tile_buf) #get top edge tile
+		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(1, 2, self.cursor_tile) #get bottom edge tile
+		for x in xrange(8, dlog_width-8, 8): #loop through tile positions
+			self.dlog_surf.blit(tile_buf, (x, 0)) #draw top edge tile
+			self.dlog_surf.blit(self.cursor_tile, (x, dlog_height-8)) #draw bottom edge tile
+		#draw left and right edges
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(0, 1, tile_buf) #get left edge tile
+		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(2, 1, self.cursor_tile) #get right edge tile
+		for y in xrange(8, dlog_height-8, 8): #loop through tile positions
+			self.dlog_surf.blit(tile_buf, (0, y)) #draw left edge tile
+			self.dlog_surf.blit(self.cursor_tile, (dlog_height-8, y)) #draw right edge tile
+		#now, fill in dialog middle
+		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(1, 1, tile_buf) #get center tile
+		for y in xrange(8, dlog_height-8, 8): #loop through rows
+			for x in xrange(8, dlog_width-8, 8): #and tiles
+				self.dlog_surf.blit(tile_buf, (x, y)) #fill one tile
 
 #dialog we can use to draw text
 class Dialog:
