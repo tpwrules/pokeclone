@@ -26,6 +26,7 @@ class Game: #class for our game engine
 		self.dialog = None
 		self.font = self.default_dialog.dlog_font
 		self.dialog_drawing = False #set when the dialog is showing text
+		self.dialog_result = None #hold result of a dialog
 		self.object_data = {} #dictionary of loaded object data
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
@@ -142,6 +143,7 @@ class Game: #class for our game engine
 			result = self.dialog.update(self.surf, (0, 1)) #draw it
 			if result: #if we're finished
 				self.dialog_drawing = False #stop drawing
+				self.dialog_result = result #store result
 			elif self.dialog_talking != None: #if somebody is talking
 				#draw an arrow to them
 				pos = self.dialog_talking.pos
