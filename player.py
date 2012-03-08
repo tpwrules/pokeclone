@@ -4,6 +4,7 @@ from pygame.locals import *
 import settings #load settings
 import animation #load animation manager
 import dialog #load dialog manager
+import random
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -90,7 +91,7 @@ class Player(pygame.sprite.Sprite):
 		if dest_pos in self.game.pos2obj: #if there's an object at this position
 			self.game.interact(dest_pos, self.direction) #interact with an object
 			return
-		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1]) #get type of tile we're interacting with
+		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1], True) #get type of tile we're interacting with
 		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
 		if tile_type == settings.TILE_WATER and not self.in_water: #if it's a water tile and we're not in water
 			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog, callback=self.surf_cb) #ask if the user wants to surf
@@ -108,11 +109,17 @@ class Player(pygame.sprite.Sprite):
 			#if they say no, don't surf
 			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=dlog)
 	def collide(self, tile_pos): #check for collisions
-		type = self.game.get_tile_type(tile_pos[0], tile_pos[1]) #get type of tile
+		type = self.game.get_tile_type(tile_pos[0], tile_pos[1], True) #get type of tile
 		if self.in_water: #if we're in water
 			return type not in [settings.TILE_WATER] #return collisions
 		else: #if we're on land
 			return type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
+	def step(self): #handle stepping on a tile
+		type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
+		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]:
+			i = random.randrange(1, 187/7)
+			if i == 1:
+				self.game.show_dlog("A wild ZUBAT appeared!{wait}{clear}Heh, just kidding.{wait}")
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
@@ -125,6 +132,7 @@ class Player(pygame.sprite.Sprite):
 				if self.tile_pos in self.game.warps: #if we're standing on a warp
 					self.game.prepare_warp(self.tile_pos) #warp
 					return #and just return
+				self.step() #handle stepping on a new tile
 			else: #if we are
 				self.animator.update() #update animation
 				return #don't do anything else
