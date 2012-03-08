@@ -78,11 +78,15 @@ class Game: #class for our game engine
 		player.pos = [((player.tile_pos[0]-1)*16)+8, (player.tile_pos[1]-1)*16]
 		player.rect = pygame.Rect(player.pos, player.size)
 		self.overlay_color = None
-	def get_tile_type(self, tile_x, tile_y): #get the type of tile at the given position
+	def get_tile_type(self, tile_x, tile_y, player_req=False): #get the type of tile at the given position
 		if tile_y < 0 or tile_x < 0: #if the tile is negative
 			return -1 #it shouldn't exist
-		if (tile_x, tile_y) in self.pos2obj: #if it's an object
-			return -1 #say so
+		try: #test if there's an object in the given position
+			t = self.pos2obj[(tile_x, tile_y)] #get object
+			if t != self.player or not player_req: #if it's not a player or not a player is requesting it
+				return -1 #say so
+		except: #if there wasn't an object
+			pass #don't do anything
 		try: #try to get the tile
 			return self.map.collision_map.tilemap[tile_y][tile_x]
 		except: #if we can't
