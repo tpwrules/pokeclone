@@ -36,34 +36,35 @@ class Player(pygame.sprite.Sprite):
 		self.moving = False #we aren't moving at all
 		self.was_moving = False
 		self.move_frames = 0 #amount of movement frames left
+		self.in_water = False #whether we're currently walking in water
 	#move the player
-	def move(self, direction):
+	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
 		self.direction = direction #set current direction
 		self.move_frames = 4 #always 8 frames of movement
 		if direction == 0: #move up
-			if self.collide((self.tile_pos[0], self.tile_pos[1]-1)): #if it's a solid tile
+			if self.collide((self.tile_pos[0], self.tile_pos[1]-1)) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (0, -4) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]-1) #update tile position
 		elif direction == 1:
-			if self.collide((self.tile_pos[0], self.tile_pos[1]+1)): #if it's a solid tile
+			if self.collide((self.tile_pos[0], self.tile_pos[1]+1)) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (0, 4) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]+1) #update tile position
 		elif direction == 2:
-			if self.collide((self.tile_pos[0]-1, self.tile_pos[1])): #if it's a solid tile
+			if self.collide((self.tile_pos[0]-1, self.tile_pos[1])) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (-4, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]-1, self.tile_pos[1]) #update tile position
 		elif direction == 3:
-			if self.collide((self.tile_pos[0]+1, self.tile_pos[1])): #if it's a solid tile
+			if self.collide((self.tile_pos[0]+1, self.tile_pos[1])) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
 				self.move_direction = (4, 0) #set movement
@@ -90,21 +91,28 @@ class Player(pygame.sprite.Sprite):
 			self.game.interact(dest_pos, self.direction) #interact with an object
 			return
 		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1]) #get type of tile we're interacting with
-		if tile_type == settings.TILE_WATER: #if it's a water tile
-			dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
+		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
+		if tile_type == settings.TILE_WATER and not self.in_water: #if it's a water tile and we're not in water
 			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog, callback=self.surf_cb) #ask if the user wants to surf
+		elif tile_type == settings.TILE_NORMAL and self.in_water: #if it's a normal tile and we're in water
+			self.game.show_dlog("Red took off his JESUS BOOTS.{wait}", dlog=dlog) #show take off message
+			self.move(self.direction, True) #move out of water
+			self.in_water = False #we're not in water any more
 	def surf_cb(self, result): #callback for surf dialog
 		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
 		if result == 0: #if they said yes
-			self.game.show_dlog("You should probably stay out of the water.{wait}", dlog=dlog)
+			self.game.show_dlog("Red put on his JESUS BOOTS!{wait}", dlog=dlog) #show message
+			self.move(self.direction, True) #start movement
+			self.in_water = True #we're in water now
 		else:
+			#if they say no, don't surf
 			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=dlog)
 	def collide(self, tile_pos): #check for collisions
 		type = self.game.get_tile_type(tile_pos[0], tile_pos[1]) #get type of tile
-		#if we can walk through it
-		if type in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]:
-			return False #we haven't collided
-		return True #otherwise, we have
+		if self.in_water: #if we're in water
+			return type not in [settings.TILE_WATER] #return collisions
+		else: #if we're on land
+			return type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
