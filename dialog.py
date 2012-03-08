@@ -91,7 +91,20 @@ class ChoiceDialog:
 		self.choices = choices #store choices
 		self.drawing = True #we're currently showing something
 		self.curr_choice = 0 #zero current choice
-		
+	def update(self, dest, where): #update ourselves
+		if not self.drawing: return #return if we're not drawing
+		if self.g.curr_keys[settings.key_up]: #if up has been pressed
+			if self.curr_choice > 0: #if we're not already at the topmost choice
+				self.curr_choice -= 1 #go up one choice
+		elif self.g.curr_keys[settings.key_down]: #if down has been pressed
+			if self.curr_choice < len(self.choices)-1: #if we're not already at the bottom choice
+				self.curr_choice += 1 #go down one choice
+		if self.g.curr_keys[settings.key_accept]: #if the accept key has been pressed
+			self.drawing = False #we're not drawing
+			return self.curr_choice #return current choice
+		dest.blit(self.dlog_surf, where) #draw the dialog
+		#draw cursor
+		dest.blit(self.cursor_tile, (where[0]+8, where[1]+8+(self.curr_choice*self.dlog_font.height)))
 
 #dialog we can use to draw text
 class Dialog:
@@ -142,6 +155,19 @@ class Dialog:
 			#clear out new line
 			self.text_surf.fill((127, 182, 203), ((0, self.next_pos[1]), self.dlog_rect.size))
 		self.next_pos[0] = 0 #clear x coord
+	def _parse_choices(self): #parse a choice command
+		choices = [] #list of choices found
+		curr_choice = "" #text of the current choice
+		while True: #parse the choices
+			letter = self.text.pop() #get a letter
+			if letter == "{endchoice}": #if we've hit the end of a choice
+				choices.append(curr_choice) #add it to the choice list
+				curr_choice = "" #clear current choice
+			elif letter == "{endchoices}": #If we've hit the end of all choices
+				break #stop parsing choices
+			else: #otherwise
+				curr_choice += letter #add the letter to the current choice text
+		print choices
 	def _next_char(self): #draw the next character
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
@@ -161,6 +187,8 @@ class Dialog:
 		elif letter == "{clear}": #if we've hit a clear screen command
 			self.next_pos = [0, 0] #reset next position
 			self.text_surf.fill((127, 182, 203)) #clear text
+		elif letter == "{choices}": #if we've hit a choice command
+			self._parse_choices() #handle it
 		else: #if we've hit anything else
 			width = self.dlog_font.get_width(letter) #get the letter's width
 			if self.next_pos[0]+width >= self.dlog_rect.width: #if we've exceeded width
