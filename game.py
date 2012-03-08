@@ -162,5 +162,5 @@ class Game: #class for our game engine
 				pos = self.dialog_talking.pos
 				pos = (pos[0]-self.camera_pos[0]+12, pos[1]-self.camera_pos[1]+8)
 				pygame.draw.polygon(self.surf, (255, 255, 255), [[35, 46], pos, [65, 46]])
-		self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
+		if self.debug: self.font.render(str(self.g.clock.get_fps()).split(".")[0], self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
