@@ -29,6 +29,7 @@ class Game: #class for our game engine
 		self.dialog_result = None #hold result of a dialog
 		self.dialog_callback = None #callback for dialog completion
 		self.object_data = {} #dictionary of loaded object data
+		self.debug = False #whether we're in debug mode or not
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
 		self.load_map("data/maps/oasis.tmx") #load map
@@ -134,14 +135,17 @@ class Game: #class for our game engine
 			if self.overlay_color[0] > 255: #if we're at max brightness
 				self.overlay_color = None #stop fading
 				self.warping = 0
+		if self.g.curr_keys[settings.key_debug]: #if the debug key is pressed
+			self.debug = not self.debug #invert debug flag
 		#center camera on player
 		pos = self.objects["player"].pos #get position of player
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
 		if self.warping != 1:
 			self.map_image = self.map.update() #update the map
 		self.surf.fill((0, 0, 0)) #clear surface for black background
-		for pos in self.pos2obj: #draw object collision tiles
-			self.map_image.fill((255, 0, 0), rect=pygame.Rect(((pos[0]*16, pos[1]*16), (16, 16))), special_flags=BLEND_RGB_MULT)
+		if self.debug: #if we're in debug mode
+			for pos in self.pos2obj: #draw object collision tiles
+				self.map_image.fill((255, 0, 0), rect=pygame.Rect(((pos[0]*16, pos[1]*16), (16, 16))), special_flags=BLEND_RGB_MULT)
 		self.surf.blit(self.map_image, (0, 0), pygame.Rect(self.camera_pos, \
 			(settings.screen_x, settings.screen_y))) #blit it
 		if self.overlay_color is not None: #if there's a color to render over the surface
