@@ -109,7 +109,13 @@ class MapObjectLayer:
 		for obj in self.fake_group:
 			obj.update()
 		self.image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear the image
-		self.group.draw(self.image) #render the sprites
+		sprites = [] #list to hold drawn sprites
+		for sprite in self.group.spritedict: #loop through sprites in group
+			#add sprite to sprites list
+			sprites.append((sprite.rect.y, sprite))
+		sprites.sort() #sort the sprite list by y position
+		for sprite in sprites: #loop through sprites in sprite list
+			self.image.blit(sprite[1].image, sprite[1].rect.topleft) #draw image
 		return self.image
 
 #class to manage a map
