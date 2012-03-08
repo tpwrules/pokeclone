@@ -126,6 +126,7 @@ class Dialog:
 		self.text_surf.fill((127, 182, 203)) #fill it with the colorkey value
 		self.text_surf.convert() #convert it to blit faster
 		self.drawing = False #whether we're currently drawing the dialog box
+		self.choice_dialog = None #store current choice dialog, if any
 	def draw_text(self, str): #draw a string
 		if str == "": #if it's an empty string
 			self.drawing = False #stop drawing
@@ -167,7 +168,8 @@ class Dialog:
 				break #stop parsing choices
 			else: #otherwise
 				curr_choice += letter #add the letter to the current choice text
-		print choices
+		self.choice_dialog = ChoiceDialog(self.g, 0, dlog=self) #create a new choice dialog
+		self.choice_dialog.show_choices(choices) #show found choices
 	def _next_char(self): #draw the next character
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
@@ -198,10 +200,21 @@ class Dialog:
 	def update(self, surf, surf_pos): #update the dialog box, returns true when done
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
-		r = self._next_char() #draw one character
-		r = r or self._next_char() #and another
-		if r == True: #if we've finished drawing
-			return True #say so
+		if self.choice_dialog is None: #if we're not currently drawing a choice dialog
+			r = self._next_char() #draw one character
+			r = r or self._next_char() #and another
+			if r == True: #if we've finished drawing
+				if self.choice_dialog is not None: #if we drew a choice dialog
+					self.drawing = True #we're still drawing
+				else: #otherwise
+					return True #say so
+		choice_ret = None #store the result of a choice update
+		if self.choice_dialog is not None: #if we're drawing a choice dialog
+			choice_ret = self.choice_dialog.update(surf, (0, self.image.get_height()+1)) #draw it
 		#draw the current dialog box
 		surf.blit(self.image, surf_pos) #draw dialog box image
 		surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
+		if choice_ret is not None: #if the choice dialog has returned something
+			self.drawing = False #we're not drawing
+			self.choice_dialog = None #destroy choice dialog
+			return choice_ret #and return result
