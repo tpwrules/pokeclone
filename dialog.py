@@ -37,14 +37,12 @@ class ChoiceDialog:
 				dlog_width = width #update maximum
 		dlog_height = 16 + (self.font.height*len(choices)) #calculate height of dialog
 		#turn height and width into multiples of eight
-		if dlog_height % 8 == 0:
-			dlog_height /= 8
-		else:
-			dlog_height = (dlog_height/8)+1
-		if dlog_width % 8 == 0:
-			dlog_width /= 8
-		else:
-			dlog_width = (dlog_width/8)+1
+		if dlog_height % 8 > 0: dlog_height += (8-(dlog_height%8))
+		if dlog_width % 8 > 0: dlog_width += (8-(dlog_width%8))
+		self.dlog_height = dlog_height #store dimensions
+		self.dlog_width = dlog_width
+		self.dlog_surf = pygame.Surface((dlog_width, dlog_height), SRCALPHA) #create surface for the textbox
+		#now draw dialog corners
 
 #dialog we can use to draw text
 class Dialog:
