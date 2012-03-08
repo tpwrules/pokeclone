@@ -33,7 +33,7 @@ class ChoiceDialog:
 		dlog_width = -1 #maximum choice width
 		#calculate width of dialog box
 		for choice in choices: #loop through choices provided:
-			width = self.dlog_font.get_width(choice) #get its width
+			width = self.dlog_font.get_width(choice)+10 #get its width
 			if width > dlog_width: #if it's greater than the current maximum
 				dlog_width = width #update maximum
 		dlog_height = 16 + (self.dlog_font.height*len(choices)) #calculate height of dialog
@@ -73,13 +73,25 @@ class ChoiceDialog:
 		self.choice_tiles.get_tile(2, 1, self.cursor_tile) #get right edge tile
 		for y in xrange(8, dlog_height-8, 8): #loop through tile positions
 			self.dlog_surf.blit(tile_buf, (0, y)) #draw left edge tile
-			self.dlog_surf.blit(self.cursor_tile, (dlog_height-8, y)) #draw right edge tile
+			self.dlog_surf.blit(self.cursor_tile, (dlog_width-8, y)) #draw right edge tile
 		#now, fill in dialog middle
 		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
 		self.choice_tiles.get_tile(1, 1, tile_buf) #get center tile
 		for y in xrange(8, dlog_height-8, 8): #loop through rows
 			for x in xrange(8, dlog_width-8, 8): #and tiles
 				self.dlog_surf.blit(tile_buf, (x, y)) #fill one tile
+		#load cursor tile
+		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.choice_tiles.get_tile(0, 3, self.cursor_tile) #load it
+		#now, draw options
+		y = 8 #current y position of drawing
+		for choice in choices: #loop through choices
+			self.dlog_font.render(choice, self.dlog_surf, (18, y)) #render one
+			y += self.dlog_font.height #go to next line
+		self.choices = choices #store choices
+		self.drawing = True #we're currently showing something
+		self.curr_choice = 0 #zero current choice
+		
 
 #dialog we can use to draw text
 class Dialog:
