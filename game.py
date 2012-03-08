@@ -144,7 +144,7 @@ class Game: #class for our game engine
 			self.surf.fill(self.overlay_color, special_flags=BLEND_RGB_MULT) #do so
 		if self.dialog_drawing: #if we're drawing a dialog
 			result = self.dialog.update(self.surf, (0, 1)) #draw it
-			if result: #if we're finished
+			if result is not None: #if we're finished
 				self.dialog_drawing = False #stop drawing
 				self.dialog_result = result #store result
 				if self.dialog_callback: #if there's a callback

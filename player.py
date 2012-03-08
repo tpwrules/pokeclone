@@ -92,7 +92,13 @@ class Player(pygame.sprite.Sprite):
 		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1]) #get type of tile we're interacting with
 		if tile_type == settings.TILE_WATER: #if it's a water tile
 			dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
-			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog) #ask if the user wants to surf
+			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=dlog, callback=self.surf_cb) #ask if the user wants to surf
+	def surf_cb(self, result): #callback for surf dialog
+		dlog = dialog.Dialog(self.g, "notify") #make a notify dialog
+		if result == 0: #if they said yes
+			self.game.show_dlog("You should probably stay out of the water.{wait}", dlog=dlog)
+		else:
+			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=dlog)
 	def collide(self, tile_pos): #check for collisions
 		type = self.game.get_tile_type(tile_pos[0], tile_pos[1]) #get type of tile
 		#if we can walk through it
