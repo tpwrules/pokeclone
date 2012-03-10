@@ -7,6 +7,20 @@ import game #and game engine
 class Container: #blank class to store global variables
 	pass
 	
+def wait_frame(): #wait for the next frame
+	global g
+	g.next_frame += 1000.0/settings.framerate #calculate time of next frame
+	now = pygame.time.get_ticks() #get current number of ticks
+	g.next_fps += 1 #increment one frame
+	if g.next_frame < now: #if we've already passed the next frame
+		g.next_frame = now #try to go as fast as possible
+	else: #if we haven't
+		pygame.time.wait(int(g.next_frame)-now) #wait for next frame
+	if now / 1000 != g.prev_secs: #if one frame has passed
+		g.fps = g.next_fps #set framerate
+		g.next_fps = 0 #clear next framerate
+		g.prev_secs = now/1000 #store the second this number was calculated
+	
 g = Container() #get the global variable container
 
 g.keys = [False]*len(settings.keys) #variable to hold states of keys
@@ -18,7 +32,11 @@ screen = pygame.display.set_mode((settings.screen_x*settings.screen_scale, \
 	settings.screen_y*settings.screen_scale)) #create a window to draw on
 g.screen = screen #store it in the globals
 pygame.display.set_caption("Pokeclone") #set screen title
-g.clock = pygame.time.Clock() #and a clock for keeping the framerate
+
+g.next_frame = 0 #tick number of the next frame
+g.fps = 0 #current FPS
+g.next_fps = 0 #next FPS
+g.prev_secs = 0 #previous number of seconds
 
 g.game = game.Game(g) #create a new game class and give it our globals
 
@@ -51,4 +69,5 @@ while running: #loop while we are still running
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
-	g.clock.tick(30) #and wait for next frame (at 30 fps)
+	#g.clock.tick(30) #and wait for next frame (at 30 fps)
+	wait_frame()
