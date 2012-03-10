@@ -241,6 +241,7 @@ class NPC(pygame.sprite.Sprite):
 	def update(self):
 		if not self.inited: self.do_init() #intialize if we haven't already
 		if not self.interacting: #if we aren't interacting
+			if self.game.dialog_drawing: return #return if a dialog is being drawn
 			self.move_manager.update() #update our movement
 			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 		else: #if we are
