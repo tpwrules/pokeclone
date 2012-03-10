@@ -157,6 +157,7 @@ class Game: #class for our game engine
 				self.dialog_result = result #store result
 				if self.dialog_callback: #if there's a callback
 					self.dialog_callback(result) #call it with result
+				self.dialog_callback = None #clear callback
 			elif self.dialog_talking != None: #if somebody is talking
 				#draw an arrow to them
 				pos = self.dialog_talking.pos
