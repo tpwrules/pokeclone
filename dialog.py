@@ -127,6 +127,7 @@ class Dialog:
 		self.text_surf.convert() #convert it to blit faster
 		self.drawing = False #whether we're currently drawing the dialog box
 		self.choice_dialog = None #store current choice dialog, if any
+		self.fill_allowed = False #whether the user can draw the whole dialog at once
 	def draw_text(self, str): #draw a string
 		if str == "": #if it's an empty string
 			self.drawing = False #stop drawing
@@ -147,6 +148,7 @@ class Dialog:
 				else: #otherwise
 					self.text.insert(0, char) #add the current character to the list of characters
 		self.text_surf.fill((127, 182, 203)) #clear the text surface
+		self.fill_allowed = False #dialog can't be filled yet
 		self.drawing = True #and we're currently drawing!
 	def _next_line(self): #go to the next line
 		self.next_pos[1] += self.dlog_font.height #increment height
@@ -180,7 +182,7 @@ class Dialog:
 		elif self.waiting == 2: #if we're waiting fopr a transition
 			if self.g.game.curr_transition is None: #if none are happening
 				self.waiting = False #stop waiting
-		if self.waiting != False: return #if we're still waiting, return
+		if self.waiting != False: return True #if we're still waiting, return
 		if len(self.text) == 0: #if we don't have any more characters to draw
 			self.drawing = False #we're not drawing any more
 			return True #we've finished drawing
@@ -190,8 +192,10 @@ class Dialog:
 			self._next_line() #go to next line
 		elif letter == "{wait}": #if we've hit a wait command
 			self.waiting = 1 #mark that we're waiting for a keypress
+			return True #we're waiting
 		elif letter == "{tr_wait}": #if we've hit a transition wait command
 			self.waiting = 2 #mark it
+			return True #we're waiting
 		elif letter == "{clear}": #if we've hit a clear screen command
 			self.next_pos = [0, 0] #reset next position
 			self.text_surf.fill((127, 182, 203)) #clear text
@@ -207,10 +211,15 @@ class Dialog:
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
 		if self.choice_dialog is None: #if we're not currently drawing a choice dialog
-			r = self._next_char() #draw one character
-			r = r or self._next_char() #and another
+			if self.g.curr_keys[settings.key_accept] and self.fill_allowed: #if the accept key has been pressed
+				r = False
+				while r != True: #loop until we're told to stop
+					r = self._next_char() #render another character
+			else:
+				r = self._next_char() #draw one character
+				r = r or self._next_char() #and another
 			if r == True: #if we've finished drawing
-				if self.choice_dialog is not None: #if we drew a choice dialog
+				if self.choice_dialog is not None or self.drawing is True: #if we drew a choice dialog
 					self.drawing = True #we're still drawing
 				else: #otherwise
 					return True #say so
@@ -224,3 +233,4 @@ class Dialog:
 			self.drawing = False #we're not drawing
 			self.choice_dialog = None #destroy choice dialog
 			return choice_ret #and return result
+		self.fill_allowed = True #we can fill the dialog now
