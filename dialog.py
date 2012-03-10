@@ -173,10 +173,14 @@ class Dialog:
 	def _next_char(self): #draw the next character
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
-		#if we're waiting for the accept key to be pressed and it hasn't yet
-		if self.waiting and not self.g.curr_keys[settings.key_accept]:
-			return #don't do anything
-		self.waiting = False #if we've ended up here, we're not waiting any more
+		#test various wait conditions
+		if self.waiting == 1: #if we're waiting for a keypress
+			if self.g.curr_keys[settings.key_accept]: #if it has been pressed
+				self.waiting = False #we're not waiting any more
+		elif self.waiting == 2: #if we're waiting fopr a transition
+			if self.g.game.curr_transition is None: #if none are happening
+				self.waiting = False #stop waiting
+		if self.waiting != False: return #if we're still waiting, return
 		if len(self.text) == 0: #if we don't have any more characters to draw
 			self.drawing = False #we're not drawing any more
 			return True #we've finished drawing
@@ -185,7 +189,9 @@ class Dialog:
 		if letter == "{br}": #if we've hit a line break command
 			self._next_line() #go to next line
 		elif letter == "{wait}": #if we've hit a wait command
-			self.waiting = True #mark that we're waiting
+			self.waiting = 1 #mark that we're waiting for a keypress
+		elif letter == "{tr_wait}": #if we've hit a transition wait command
+			self.waiting = 2 #mark it
 		elif letter == "{clear}": #if we've hit a clear screen command
 			self.next_pos = [0, 0] #reset next position
 			self.text_surf.fill((127, 182, 203)) #clear text
