@@ -5,6 +5,7 @@ import settings #load settings
 import animation #load animation manager
 import dialog #load dialog manager
 import random
+import transition
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -118,7 +119,8 @@ class Player(pygame.sprite.Sprite):
 		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]:
 			i = random.randrange(1, 187/7)
 			if i == 1:
-				self.game.show_dlog("A wild ZUBAT appeared!{wait}{clear}Heh, just kidding.{wait}")
+				self.game.transition(transition.ScreenShift(12))
+				self.game.show_dlog("A wild ZUBAT appeared!{tr_wait}{br}Heh, just kidding.{wait}")
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
