@@ -179,6 +179,7 @@ class Dialog:
 		if self.waiting == 1: #if we're waiting for a keypress
 			if self.g.curr_keys[settings.key_accept]: #if it has been pressed
 				self.waiting = False #we're not waiting any more
+				self.fill_allowed = False #we're not allowed to fill
 		elif self.waiting == 2: #if we're waiting fopr a transition
 			if self.g.game.curr_transition is None: #if none are happening
 				self.waiting = False #stop waiting
@@ -192,6 +193,7 @@ class Dialog:
 			self._next_line() #go to next line
 		elif letter == "{wait}": #if we've hit a wait command
 			self.waiting = 1 #mark that we're waiting for a keypress
+			self.fill_allowed = False #we aren't allowed to fill the dialog
 			return True #we're waiting
 		elif letter == "{tr_wait}": #if we've hit a transition wait command
 			self.waiting = 2 #mark it
@@ -199,6 +201,7 @@ class Dialog:
 		elif letter == "{clear}": #if we've hit a clear screen command
 			self.next_pos = [0, 0] #reset next position
 			self.text_surf.fill((127, 182, 203)) #clear text
+			self.fill_allowed = False #we can't fill the dialog
 		elif letter == "{choices}": #if we've hit a choice command
 			self._parse_choices() #handle it
 		else: #if we've hit anything else
@@ -211,11 +214,12 @@ class Dialog:
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
 		if self.choice_dialog is None: #if we're not currently drawing a choice dialog
-			if self.g.curr_keys[settings.key_accept] and self.fill_allowed: #if the accept key has been pressed
+			if self.g.curr_keys[settings.key_accept] and self.fill_allowed and self.waiting == False: #if the accept key has been pressed and we're allowed to fill
 				r = False
 				while r != True: #loop until we're told to stop
 					r = self._next_char() #render another character
 			else:
+				self.fill_allowed = True #we can fill the dialog now
 				r = self._next_char() #draw one character
 				r = r or self._next_char() #and another
 			if r == True: #if we've finished drawing
@@ -233,4 +237,3 @@ class Dialog:
 			self.drawing = False #we're not drawing
 			self.choice_dialog = None #destroy choice dialog
 			return choice_ret #and return result
-		self.fill_allowed = True #we can fill the dialog now
