@@ -9,7 +9,17 @@
 		</movement>
 		<script>
 			<dialog>Oh, hey there.{wait}{br}Funny how similar we look, isn&apos;t it?{br}
-			Ah well. Must be some weird coincidence.{wait}{clear}Kind of odd though, there&apos;s another one of me{br}inside too...{wait}</dialog>
+			Ah well. Must be some weird coincidence.{wait}{clear}Kind of odd though, there&apos;s another one of me{br}inside too...{wait}
+			{clear}Have you seen him?{choices}Yes{endchoice}No{endchoice}{endchoices}</dialog>
+			<if left=".dlog_result" op="=" right="0">
+				<then>
+					<dialog>He&apos;s a bit odd, isn&apos;t he?{wait}</dialog>
+				</then>
+				<else>
+					<dialog>I suggest you check him out.{wait}</dialog>
+				</else>
+			</if>
+			<dialog>Heh, see ya.{wait}</dialog>
 		</script>
 	</object>
 </objects>
