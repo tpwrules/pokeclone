@@ -213,6 +213,7 @@ class Dialog:
 	def update(self, surf, surf_pos): #update the dialog box, returns true when done
 		if not self.drawing: #if we're not drawing anything
 			return True #say so
+		choice_ret = None #store the result of a choice update
 		if self.choice_dialog is None: #if we're not currently drawing a choice dialog
 			if self.g.curr_keys[settings.key_accept] and self.fill_allowed and self.waiting == False: #if the accept key has been pressed and we're allowed to fill
 				r = False
@@ -227,8 +228,7 @@ class Dialog:
 					self.drawing = True #we're still drawing
 				else: #otherwise
 					return True #say so
-		choice_ret = None #store the result of a choice update
-		if self.choice_dialog is not None: #if we're drawing a choice dialog
+		else: #if we are drawing a choice dialog
 			choice_ret = self.choice_dialog.update(surf, (0, self.image.get_height()+1)) #draw it
 		#draw the current dialog box
 		surf.blit(self.image, surf_pos) #draw dialog box image
