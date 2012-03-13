@@ -1,0 +1,38 @@
+<!-- data for each pokemon/move type -->
+<types>
+	<type name="normal">
+		<!-- a modifier for when damage is calculated.
+			here, when a normal move is used on a rock pokemon, the damage is halved. -->
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="ghost" amount="0" />
+		<modifier defender="steel" amount="1/2" />
+	</type>
+	<type name="fight">
+		<modifier defender="normal" amount="2" />
+		<modifier defender="flying" amount="1/2" />
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="bug" amount="1/2" />
+		<modifier defender="ghost" amount="0" />
+		<modifier defender="steel" amount="2" />
+		<modifier defender="psychic" amount="1/2" />
+		<modifier defender="ice" amount="2" />
+		<modifier defender="dark" amount="2" />
+	</type>
+	<type name="flying">
+		<modifier defender="fight" amount="2" />
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="bug" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="grass" amount="2" />
+		<modifier defender="electric" amount="1/2" />
+	</type>
+	<type name="poison">
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="ground" amount="1/2" />
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="ghost" amount="1/2" />
+		<modifier defender="steel" amount="0" />
+		<modifier defender="grass" amount="2" />
+	</type>
+</types>
