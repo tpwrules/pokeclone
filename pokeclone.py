@@ -4,6 +4,9 @@ from pygame.locals import *
 import settings #load game settings
 import game #and game engine
 
+#import parts of game that need loading
+import poke_types
+
 class Container: #blank class to store global variables
 	pass
 	
@@ -37,6 +40,8 @@ g.next_frame = 0 #tick number of the next frame
 g.fps = 0 #current FPS
 g.next_fps = 0 #next FPS
 g.prev_secs = 0 #previous number of seconds
+
+poke_types.load_data() #load pokemon type data
 
 g.game = game.Game(g) #create a new game class and give it our globals
 
