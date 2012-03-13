@@ -35,4 +35,23 @@
 		<modifier defender="steel" amount="0" />
 		<modifier defender="grass" amount="2" />
 	</type>
+	<type name="ground">
+		<modifier defender="flying" amount="0" />
+		<modifier defender="poison" amount="2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="bug" amount="1/2" />
+		<modifier defender="steel" amount="2" />
+		<modifier defender="fire" amount="2" />
+		<modifier defender="grass" amount="1/2" />
+		<modifier defender="electric" amount="2" />
+	</type>
+	<type name="rock">
+		<modifier defender="fight" amount="1/2" />
+		<modifier defender="flying" amount="2" />
+		<modifier defender="ground" amount="1/2" />
+		<modifier defender="bug" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="ice" amount="2" />
+	</type>
 </types>
