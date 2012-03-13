@@ -1,0 +1,12 @@
+<part_anim>
+	<image from="place" id="danny" />
+	<part from="danny" from_coord="0,0,32,26" dest_coord="3,4" id="legs"/>
+	<anim id="jabba">
+		<frame time="20">
+			<set_src part="legs" coord="64,30" />
+			<set_dest part="legs" coord="26,26" />
+			<rotate part="legs" degrees="4" />
+			<scale part="legs" amount="2.34" />
+		</frame>
+	</anim>
+</part_anim>
