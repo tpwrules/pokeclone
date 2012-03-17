@@ -6,8 +6,8 @@ import settings #and settings
 import tileset #import tileset manager
 
 #dialog definitions
-dialogs = {"standard": {"file":"data/dialog.png", "choice_file":"data/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/dialog_font.xml"},\
-"notify": {"file":"data/selfdialog.png", "choice_file":"data/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/selfdialog_font.xml"}}
+dialogs = {"standard": {"file":"data/dialogboxes/dialog.png", "choice_file":"data/dialogboxes/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/dialog_font.xml"},\
+"notify": {"file":"data/dialogboxes/selfdialog.png", "choice_file":"data/dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/selfdialog_font.xml"}}
 
 #dialog we can use to ask a choice
 class ChoiceDialog:
@@ -229,7 +229,7 @@ class Dialog:
 				else: #otherwise
 					return True #say so
 		else: #if we are drawing a choice dialog
-			choice_ret = self.choice_dialog.update(surf, (1, self.image.get_height()+1)) #draw it
+			choice_ret = self.choice_dialog.update(surf, (2, self.image.get_height()+25)) #draw it
 		#draw the current dialog box
 		surf.blit(self.image, surf_pos) #draw dialog box image
 		surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
