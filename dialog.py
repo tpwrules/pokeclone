@@ -229,7 +229,7 @@ class Dialog:
 				else: #otherwise
 					return True #say so
 		else: #if we are drawing a choice dialog
-			choice_ret = self.choice_dialog.update(surf, (0, self.image.get_height()+1)) #draw it
+			choice_ret = self.choice_dialog.update(surf, (1, self.image.get_height()+1)) #draw it
 		#draw the current dialog box
 		surf.blit(self.image, surf_pos) #draw dialog box image
 		surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
