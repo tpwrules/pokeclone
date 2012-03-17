@@ -6,8 +6,8 @@ import settings #and settings
 import tileset #import tileset manager
 
 #dialog definitions
-dialogs = {"standard": {"file":"data/dialog.png", "choice_file":"data/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/battle_font.xml"},\
-"notify": {"file":"data/selfdialog.png", "choice_file":"data/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/battle_font.xml"}}
+dialogs = {"standard": {"file":"data/dialog.png", "choice_file":"data/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/dialog_font.xml"},\
+"notify": {"file":"data/selfdialog.png", "choice_file":"data/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/selfdialog_font.xml"}}
 
 #dialog we can use to ask a choice
 class ChoiceDialog:
