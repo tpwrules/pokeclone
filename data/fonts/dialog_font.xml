@@ -1,2 +1,12 @@
 <font id="dialog" height="13" image="data/fonts/dialog_font.png">
+	<letter name="0" coord="0,0" size="6" />
+	<letter name="1" coord="6,0" size="4" />
+	<letter name="2" coord="12,0" size="6" />
+	<letter name="3" coord="18,0" size="6" />
+	<letter name="4" coord="24,0" size="6" />
+	<letter name="5" coord="30,0" size="6" />
+	<letter name="6" coord="36,0" size="6" />
+	<letter name="7" coord="42,0" size="6" />
+	<letter name="8" coord="48,0" size="6" />
+	<letter name="9" coord="54,0" size="6" />
 </font>
