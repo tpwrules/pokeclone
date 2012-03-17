@@ -61,4 +61,23 @@
 	<letter name="x" coord="138,27" size="6" />
 	<letter name="y" coord="144,27" size="6" />
 	<letter name="z" coord="150,27" size="6" />
+	<letter name=";" coord="62,0" size="3" />
+	<letter name=":" coord="68,0" size="3" />
+	<letter name="{" coord="1,43" size="4" />
+	<letter name="|" coord="8,43" size="2" />
+	<letter name="}" coord="13,43" size="4" />
+	<letter name="/" coord="18,43" size="6" />
+	<letter name="(" coord="25,43" size="4" />
+	<letter name=")" coord="31,43" size="4" />
+	<letter name="-" coord="36,43" size="6" />
+	<letter name="=" coord="42,44" size="6" />
+	<letter name="+" coord="48,43" size="6" />
+	<letter name=">" coord="55,43" size="5" />
+	<letter name="&lt;" coord="60,43" size="5" />
+	<letter name="_" coord="66,43" size="6" />
+	<letter name="!" coord="86,43" size="2" />
+	<letter name="@" coord="90,43" size="6" />
+	<letter name="%" coord="97,43" size="6" />
+	<letter name="?" coord="114,43" size="6" />
+	<letter name="#" coord="120,43" size="6" />
 </font>
