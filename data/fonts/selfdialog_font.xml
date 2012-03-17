@@ -35,32 +35,32 @@
 	<letter name="X" coord="138,13" size="6" />
 	<letter name="Y" coord="144,13" size="6" />
 	<letter name="Z" coord="150,13" size="6" />
-	<letter name="a" coord="0,27" size="6" />
-	<letter name="b" coord="6,27" size="6" />
-	<letter name="c" coord="12,27" size="6" />
-	<letter name="d" coord="18,27" size="6" />
-	<letter name="e" coord="24,27" size="6" />
-	<letter name="f" coord="30,27" size="5" />
-	<letter name="g" coord="36,27" size="6" />
-	<letter name="h" coord="42,27" size="6" />
-	<letter name="i" coord="50,27" size="2" />
-	<letter name="j" coord="54,27" size="5" />
-	<letter name="k" coord="60,27" size="6" />
-	<letter name="l" coord="67,27" size="3" />
-	<letter name="m" coord="72,27" size="6" />
-	<letter name="n" coord="78,27" size="6" />
-	<letter name="o" coord="84,27" size="6" />
-	<letter name="p" coord="90,27" size="6" />
-	<letter name="q" coord="96,27" size="6" />
-	<letter name="r" coord="102,27" size="6" />
-	<letter name="s" coord="108,27" size="6" />
-	<letter name="t" coord="114,27" size="5" />
-	<letter name="u" coord="120,27" size="6" />
-	<letter name="v" coord="126,27" size="6" />
-	<letter name="w" coord="132,27" size="6" />
-	<letter name="x" coord="138,27" size="6" />
-	<letter name="y" coord="144,27" size="6" />
-	<letter name="z" coord="150,27" size="6" />
+	<letter name="a" coord="0,26" size="6" />
+	<letter name="b" coord="6,26" size="6" />
+	<letter name="c" coord="12,26" size="6" />
+	<letter name="d" coord="18,26" size="6" />
+	<letter name="e" coord="24,26" size="6" />
+	<letter name="f" coord="30,26" size="5" />
+	<letter name="g" coord="36,26" size="6" />
+	<letter name="h" coord="42,26" size="6" />
+	<letter name="i" coord="50,26" size="2" />
+	<letter name="j" coord="54,26" size="5" />
+	<letter name="k" coord="60,26" size="6" />
+	<letter name="l" coord="67,26" size="3" />
+	<letter name="m" coord="72,26" size="6" />
+	<letter name="n" coord="78,26" size="6" />
+	<letter name="o" coord="84,26" size="6" />
+	<letter name="p" coord="90,26" size="6" />
+	<letter name="q" coord="96,26" size="6" />
+	<letter name="r" coord="102,26" size="6" />
+	<letter name="s" coord="108,26" size="6" />
+	<letter name="t" coord="114,26" size="5" />
+	<letter name="u" coord="120,26" size="6" />
+	<letter name="v" coord="126,26" size="6" />
+	<letter name="w" coord="132,26" size="6" />
+	<letter name="x" coord="138,26" size="6" />
+	<letter name="y" coord="144,26" size="6" />
+	<letter name="z" coord="150,26" size="6" />
 	<letter name=";" coord="62,0" size="3" />
 	<letter name=":" coord="68,0" size="3" />
 	<letter name="{" coord="1,43" size="4" />
@@ -80,4 +80,5 @@
 	<letter name="%" coord="97,43" size="6" />
 	<letter name="?" coord="114,43" size="6" />
 	<letter name="#" coord="120,43" size="6" />
+	<letter name=" " coord="108,0" size="3" />
 </font>
