@@ -156,7 +156,8 @@ class Game: #class for our game engine
 			elif self.dialog_talking != None: #if somebody is talking
 				#draw an arrow to them
 				pos = self.dialog_talking.pos
-				pos = (pos[0]-self.camera_pos[0]+12, pos[1]-self.camera_pos[1]+8)
-				pygame.draw.polygon(self.surf, (255, 255, 255), [[35, 46], pos, [65, 46]])
+				pos = (pos[0]-self.camera_pos[0]+2, pos[1]-self.camera_pos[1]+10)
+				pygame.draw.polygon(self.surf, (161, 161, 161), [[64, 44], [pos[0]+2, pos[1]+2], [82, 44]])
+				pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
