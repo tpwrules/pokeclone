@@ -32,7 +32,7 @@
  </layer>
  <layer name="Buildings" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlEkKwkAQRSvEDGuP4RWcV3oDPYWgoi6dT6F7T6CirhScTuLKE4jDXwgJkibpatEo+fA2Id316CqKKEoYEje8CYPTxHSQSULBv6ERNUFLc765PTg+FQWfBTyWYPX0OQlqnyWduLnC4wbumv+/30zVIqqBuiV/VjQ/a7zxhvnOU3jMwJzhI5ofA3eZjPvcuTDPl9D/8htmIGkTpUAaZEAW5EDelrtnBJexhI+ol23U7YAu6IE+GIChpI9svHqp60QxYIAt6u/AHhzAUdHHa8/5pQCPoq5WV5TXPScKx5uToHsuqPen8iv7Ocp/5QF99DFB
+   eJztlEkKwkAQRSuEDGuP4RWcV3oDPYWgoi4doqfQvSdQUVcKTidx5QnE4S+EBEmTdLVolHx4m5DuenQVRRQnCkkY/kTBaWK6yCSp4N/UiFqgrbnfvB4cn6qCzwIeS7B6+pwEtc+STtxc4XEDdy3432+mZhHVQcOSPyuanzXeeMN85yk8ZmDO8BHNj4G7TMZ93lyY58vof+UNM5CyidIgA7IgB/KgYMvdM4LLWMJH1MsO6nZBD/SBAwZgKOkjm6BeblF/B/bgAI6KPn57LihFnaikq9UV5XXPicLx5iTsngvr/an8yn6O8195ABw9MSw=
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21">
@@ -65,12 +65,12 @@
  </objectgroup>
  <layer name="house top" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4CBwZCRgcEIiI0ZB9olpIG3bAj2Gzbc6mgBXgDtewnEr4D4NRume+gJtNkZGHSAWBeI9YBYH4gNgNiQfWDckw+0twDN7hIgv3SA3LMZaO8WNLt3APk7B8g934H2/gDin0D8C+qGP0D67wC5Z6SAoVrODVV3j4JRMAroBwBFrhSy
+   eJztlEkKwkAUBV9o7RzGMXowXejJdKE3MlHXDihYC0FICKKQfMRfUKQbAq9WLTmOlCXSBKeJdclnHOPrfIj1/zXBjr0cC9zHak+b9FKpjwMc4gjHmKU2PTN256XtBfelUc+K3XVpe8N9a9RzYveMF7w+G25870Y9/8I371wIUge7obmud/zq++w4Tns8AKdlFMc=
   </data>
  </layer>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJzt1d0KgDAIBtDdmQR7/8eNLgZmc9PlllAfeNN+OCgVYEoQrKJkpWfHer3loaZMyuI51zahNOF3Z7yXl6dm48+svW95NA6tM4qHu3rv9ui8yrmve+gej5kBXu9c4ZH2a2L5Hj7x0N54efi50VnN9pRIvbLeO/P/Fc1jze9pJ6onUh3mIRSK
+   eJzt1bEOgCAMBFC22pjw/5/r1AQr1B5q7cAltxjAF4hIXAola5ZEenbu9y9Pa6pNUc/G/Xqi16587Vuenk0/Q/fe8ngcXmcWj3bdfduz5yXzlgd/t2UiPq8Z4RmN9wS5D594vJm9n9HzkzkRHslor9B1v/x/ZfOgWR47WT2ZegCYsBQ6
   </data>
  </layer>
 </map>
