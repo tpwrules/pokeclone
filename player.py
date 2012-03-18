@@ -45,33 +45,39 @@ class Player(pygame.sprite.Sprite):
 	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
 		self.direction = direction #set current direction
-		self.move_frames = 8 #always 4 frames of movement
+		#decide our speed
+		if self.g.keys[settings.key_cancel]: #if cancel key is pressed
+			speed = 4 #we're moving at 4 pixels/frame
+			self.move_frames = 4
+		else: #if it isn't pressed
+			speed = 2 #we're moving at 2 pixels/frame
+			self.move_frames = 8
 		if direction == 0: #move up
 			if self.collide((self.tile_pos[0], self.tile_pos[1]-1)) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
-				self.move_direction = (0, -2) #set movement
+				self.move_direction = (0, -speed) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]-1) #update tile position
 		elif direction == 1:
 			if self.collide((self.tile_pos[0], self.tile_pos[1]+1)) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
-				self.move_direction = (0, 2) #set movement
+				self.move_direction = (0, speed) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0], self.tile_pos[1]+1) #update tile position
 		elif direction == 2:
 			if self.collide((self.tile_pos[0]-1, self.tile_pos[1])) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
-				self.move_direction = (-2, 0) #set movement
+				self.move_direction = (-speed, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]-1, self.tile_pos[1]) #update tile position
 		elif direction == 3:
 			if self.collide((self.tile_pos[0]+1, self.tile_pos[1])) and not force: #if it's a solid tile
 				pass #don't move
 			else: #otherwise
-				self.move_direction = (2, 0) #set movement
+				self.move_direction = (speed, 0) #set movement
 				self.moving = True #and we're moving
 				self.tile_pos = (self.tile_pos[0]+1, self.tile_pos[1]) #update tile position
 		self.game.set_obj_pos(self, self.tile_pos) #set our position
