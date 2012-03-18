@@ -174,6 +174,24 @@ class MovementManager:
 				self.delta = self.store_delta
 				self.pix_pos = self.store_pix_pos
 
+#class that handles rendering generic objects, pretty much
+#the same as a pygame sprite
+class RenderedObject:
+	def __init__(self): #have init defined for consistency
+		pass #but it doesn't need to do anything
+	def draw(self, surf): #draw ourselves onto a surface
+		surf.blit(self.image, self.rect.topleft) #perform the blit
+		
+#class that renders NPCs, automatically draws shadow
+class RenderedNPC(RenderedObject):
+	def __init__(self):
+		RenderedObject.__init__(self) #init parent class
+		self.shadow = pygame.image.load("data/objects/npcshadow.png") #load shadow image
+		self.shadow.convert_alpha() #convert the image for faster drawing
+	def draw(self, surf): #draw ourselves onto a given surface
+		surf.blit(self.shadow, (self.rect.x+8, self.rect.y.24)) #draw shadow
+		RenderedObject.draw(self, surf) #call renderer for parent class
+
 #warp point object
 class Warp:
 	def __init__(self, game, element, properties):
