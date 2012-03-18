@@ -57,10 +57,10 @@
    </properties>
   </object>
   <object name="test_npc" type="npc" x="0" y="0">
-  	<properties>
-  	  <property name="id" value="test_npc" />
-  	  <property name="tile_pos" value="5,9"/>
-  	</properties>
+   <properties>
+    <property name="id" value="test_npc"/>
+    <property name="tile_pos" value="5,9"/>
+   </properties>
   </object>
  </objectgroup>
  <layer name="house top" width="36" height="21">
@@ -70,7 +70,7 @@
  </layer>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztldEKwCAIRXtzMuj/P3fsQXAum7bmhO3CfSm1g1IBlgLJnEWRPCu2/RYPZ6rMHp59b1Fskaxd8exZPC02uebtfY/HwmHlzMIjua7u9ui8KO/rPDxmxswAjzUjeLR4izzv4V0eyzmj77N3fpQTwUPSeuWt++T/lY3Hq5+nr6w8mbwBNZMUmw==
+   eJzt1d0KgDAIBtDdmQR7/8eNLgZmc9PlllAfeNN+OCgVYEoQrKJkpWfHer3loaZMyuI51zahNOF3Z7yXl6dm48+svW95NA6tM4qHu3rv9ui8yrmve+gej5kBXu9c4ZH2a2L5Hj7x0N54efi50VnN9pRIvbLeO/P/Fc1jze9pJ6onUh3mIRSK
   </data>
  </layer>
 </map>
