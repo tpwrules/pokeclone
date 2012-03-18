@@ -189,7 +189,7 @@ class RenderedNPC(RenderedObject):
 		self.shadow = pygame.image.load("data/objects/npcshadow.png") #load shadow image
 		self.shadow.convert_alpha() #convert the image for faster drawing
 	def draw(self, surf): #draw ourselves onto a given surface
-		surf.blit(self.shadow, (self.rect.x+8, self.rect.y+24)) #draw shadow
+		surf.blit(self.shadow, (self.rect.x+8, self.rect.y+25)) #draw shadow
 		RenderedObject.draw(self, surf) #call renderer for parent class
 
 #warp point object
@@ -225,9 +225,9 @@ class Sign:
 		pass #we don't need to do any updates
 		
 #generic NPC
-class NPC(pygame.sprite.Sprite):
+class NPC(RenderedNPC):
 	def __init__(self, game, element, properties):
-		pygame.sprite.Sprite.__init__(self) #init the sprite class
+		RenderedNPC.__init__(self) #init the renderer class
 		self.properties = properties #store parameters
 		self.game = game
 		t = properties["tile_pos"].split(",") #load tile position

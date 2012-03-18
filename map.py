@@ -110,7 +110,7 @@ class MapObjectLayer:
 			sprites.append((sprite.rect.y, sprite))
 		sprites.sort() #sort the sprite list by y position
 		for sprite in sprites: #loop through sprites in sprite list
-			self.image.blit(sprite[1].image, sprite[1].rect.topleft) #draw image
+			sprite[1].draw(self.image) #tell sprite to draw itself
 		return self.image
 
 #class to manage a map

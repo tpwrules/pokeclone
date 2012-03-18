@@ -6,6 +6,7 @@ import animation #load animation manager
 import dialog #load dialog manager
 import random
 import transition
+import objects #used for the render things
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -19,9 +20,9 @@ def get_direction_name(direction): #return a name for each direction
 		return "right"
 
 #class for the player object
-class Player(pygame.sprite.Sprite):
+class Player(objects.RenderedNPC):
 	def __init__(self, game):
-		pygame.sprite.Sprite.__init__(self) #init the sprite class
+		objects.RenderedNPC.__init__(self) #init NPC renderer
 		self.g = game.g #store parameters
 		self.game = game
 		#load animations
