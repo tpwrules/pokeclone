@@ -5,12 +5,12 @@
 			<move dir="up" dist="4" />
 			<wait dir="up" frames="20" />
 			<wait dir="left" frames="20" />
-			<move dir="down" dist="4" speed="4" />
+			<move dir="down" dist="4" />
 		</movement>
 		<script>
 			<dialog>Oh, hey there.{wait}{br}Funny how similar we look, isn&apos;t it?{br}
 			Ah well. Must be some weird coincidence.{wait}{clear}Kind of odd though, there&apos;s another one of me{br}inside too...{wait}
-			{clear}Have you seen him?{choices}Yes{endchoice}No{endchoice}{endchoices}</dialog>
+			{clear}Have you seen him?{choices}YES{endchoice}NO{endchoice}{endchoices}</dialog>
 			<if left=".dlog_result" op="=" right="0">
 				<then>
 					<dialog>He&apos;s a bit odd, isn&apos;t he?{wait}</dialog>
