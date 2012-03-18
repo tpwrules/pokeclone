@@ -185,6 +185,7 @@ class Warp:
 		self.tile_x = int(t[0].strip())
 		self.tile_y = int(t[1].strip())
 		game.add_warp((self.tile_x, self.tile_y), self.properties) #add the warp
+		self.visible = False #we're not rendering anything
 	def interact(self, pos):
 		pass #don't interact
 	def update(self): #we don't need to do any updates
@@ -199,6 +200,7 @@ class Sign:
 		t = properties["tile_pos"].split(",")
 		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position
 		game.set_obj_pos(self, self.tile_pos) #set our position
+		self.visible = False #we're not rendering anything
 	def interact(self, pos): #handle the player interacting with us
 		self.game.show_dlog(self.text) #show our text
 	def update(self):
@@ -216,6 +218,7 @@ class NPC(pygame.sprite.Sprite):
 		self.image = None #we have no image for now
 		self.inited = False #mark that we haven't been initialized fully yet
 		self.interacting = False #mark that we're not interacting
+		self.visible = True #and we should be showing ourselves
 	def do_init(self): #perform initialization on first update
 		self.inited = True #we've initialized now
 		properties = self.properties #load properties
