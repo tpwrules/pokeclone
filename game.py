@@ -38,6 +38,7 @@ class Game: #class for our game engine
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
 		self.partanimation = animation.PartAnimationSet(self.g, "data/part_animation_test.xml")
+		self.partanimation.set_animation("demo")
 	def load_map(self, map_file): #load a map
 		self.map = map.Map(self.g, map_file) #load the map
 		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
@@ -162,11 +163,6 @@ class Game: #class for our game engine
 				pygame.draw.polygon(self.surf, (161, 161, 161), [[64, 44], [pos[0]+2, pos[1]+2], [82, 44]])
 				pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
 		if self.debug:
-			self.partanimation.render(self.surf, 50, 30)
-			self.partanimation.parts["hand_left"].rot += 5
-			self.partanimation.parts["whole"].rot += 1
-			self.partanimation.parts["nose"].xscale += 0.1
-			if self.partanimation.parts["nose"].xscale > 2.0:
-				self.partanimation.parts["nose"].xscale = 1.0
+			self.partanimation.update(self.surf, 50, 30)
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface

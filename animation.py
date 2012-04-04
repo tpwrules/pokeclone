@@ -239,6 +239,27 @@ class PartAnimation: #class for one animation
 					elif curr_cmd.localName == "set": #if it's a set command
 						#add to command list
 						cmds.append([3, curr_cmd.getAttribute("id"), curr_cmd.getAttribute("to")])
+					elif curr_cmd.localName == "scale": #if it's a scale command
+						x, y = None, None #initialize scale values
+						try: #load scale
+							x = float(curr_cmd.getAttribute("scale"))
+						except:
+							pass
+						y = x
+						try:
+							x = float(curr_cmd.getAttribute("xscale"))
+						except:
+							pass
+						try:
+							y = float(curr_cmd.getAttribute("yscale"))
+						except:
+							pass
+						if x != None: #if there was an xscale
+							#add it to list
+							cmds.append([4, curr_cmd.getAttribute("id"), x])
+						if y != None: #if there was a yscale
+							#add it to list
+							cmds.append([5, curr_cmd.getAttribute("id"), x])
 					curr_cmd = curr_cmd.nextSibling #go to next command
 				self.frame_list.append([delay, cmds]) #add loaded data
 			curr_frame = curr_frame.nextSibling #go to next frame
@@ -266,6 +287,14 @@ class PartAnimation: #class for one animation
 				img = self.set.part_images[cmd[2]] #load new image
 				self.set.parts[cmd[1]].image = img[0] #set data
 				self.set.parts[cmd[1]].center = img[1]
+			elif cmd[0] == 4: #if this is an xscale command
+				#calculate step
+				step = (cmd[2]-self.set.parts[cmd[1]].xscale)/self.wait
+				self.tweens.append([4, cmd[1], step, cmd[2]]) #add to list
+			elif cmd[0] == 5: #yscale command
+				#calculate step
+				step = (cmd[2]-self.set.parts[cmd[1]].yscale)/self.wait
+				self.tweens.append([5, cmd[1], step, cmd[2]]) #add to list
 	def _update_tween(self, tween): #update a tween
 		if tween[0] == 1: #if it's a rotation tween
 			self.set.parts[tween[1]].rot += tween[2] #update rotation
@@ -274,11 +303,19 @@ class PartAnimation: #class for one animation
 			tween[3][1] += tween[2][1]
 			pos = [int(x) for x in tween[3]] #convert to integer
 			self.set.parts[tween[1]].pos = pos #store position in object
+		elif tween[0] == 4: #if this is an xscale command
+			self.set.parts[tween[1]].xscale += tween[2] #update scale
+		elif tween[0] == 5: #yscale command
+			self.set.parts[tween[1]].yscale += tween[2] #update scale
 	def _finish_tween(self, tween): #finish up a tween command
 		if tween[0] == 1: #if it's a rotation tween
 			self.set.parts[tween[1]].rot = tween[3] #set end position
 		elif tween[0] == 2: #if this is a movement tween
 			self.set.parts[tween[1]].pos = tween[4][:] #set final position
+		elif tween[0] == 4: #xscale command
+			self.set.parts[tween[1]].xscale = tween[3] #set final scale
+		elif tween[0] == 5: #yscale command
+			self.set.parts[tween[1]].yscale = tween[3] #set final scale
 	def update(self): #update animation
 		if self.wait == 0: #if this is the end of this frame
 			for tween in self.tweens: #go through tweens

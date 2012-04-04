@@ -8,7 +8,7 @@
 	<part_image from="main" coord="162,175,32,20" id="eye_closed" />
 	<part_image from="main" coord="158,143,38,21" id="eye_open" />
 	<part_image from="main" coord="109,140,42,20" id="mouth" />
-	<layout id="whole" pos="0,0">
+	<layout id="whole" pos="30,0">
 			<group id="legs" pos="20,90">
 				<part id="leg_left" from="leg" pos="0,0"/>
 				<part id="leg_right" from="leg" pos="70,0" />
@@ -51,11 +51,19 @@
 			<move delta="0,-10" id="face" />
 			<move delta="0,-10" id="hands" />
 		</frame>
-		<frame time="5">
+		<frame time="15">
 			<set id="eye_left" to="eye_closed" />
+			<scale id="nose" xscale="1.2" />
 		</frame>
-		<frame time="5">
+		<frame time="15">
 			<set id="eye_left" to="eye_open" />
+			<scale id="nose" xscale="1" />
+		</frame>
+		<frame time="10">
+			<rotate id="hand_left" degrees="-30" />
+		</frame>
+		<frame time="20">
+			<rotate id="hand_left" degrees="60" />
 		</frame>
 	</anim>
 </part_anim>
