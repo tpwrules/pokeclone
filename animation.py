@@ -178,7 +178,11 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		center[1] /= numcenters
 		self.center = center
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
-		pos = self.pos[:]
+		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
+		npos = [0,0]
+		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))+center[0]-self.center[0]
+		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))+center[1]-self.center[1]
+		pos = npos[:]
 		for child in self.children: #render each child
 			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, self.center)
 
