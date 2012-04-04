@@ -1,6 +1,7 @@
 import pygame #import all of pygame
 from pygame.locals import *
 from xml.dom.minidom import parse #import XML parser for loading animations
+import math #import math library for part animation calculation
 
 import settings #load settings
 import tileset #and the tileset manager
@@ -90,7 +91,7 @@ class PartAnimationPart: #class for one part in the layout
 		self.set = set_
 
 		self.id = dom.getAttribute("id") #get id of this part
-		set_.parts[id] = self #store ourselves
+		set_.parts[self.id] = self #store ourselves
 		self.pos = [int(x.strip()) for x in dom.getAttribute("pos").split(",")] #and position
 		try: #load rotation
 			self.rot = int(dom.getAttribute("rotation"))
@@ -109,15 +110,26 @@ class PartAnimationPart: #class for one part in the layout
 			self.yscale = float(dom.getAttribute("yscale"))
 		except:
 			pass
-		self.image = set_.part_images[dom.getAttribute("from")] #load our image
-	def render(surf, x, y, xs, ys, rot): #render ourselves
+		self.image = set_.part_images[dom.getAttribute("from")][0] #load our image
+		self.center = set_.part_images[dom.getAttribute("from")][1] #and store center
+	def render(self, surf, x, y, xs, ys, rot): #render ourselves
 		img = self.image #get starting surface
+		#we need to rotate our coordinates to be in the correct position
+		pos = [0, 0]
+		pos[0] = (self.pos[0]*math.cos(math.radians(-rot))) - (self.pos[1]*math.sin(math.radians(-rot)))
+		pos[1] = (self.pos[0]*math.sin(math.radians(-rot))) + (self.pos[1]*math.cos(math.radians(-rot)))
 		if rot+self.rot != 0: #if we need to rotate
+			old = (img.get_width(), img.get_height())
 			img = pygame.transform.rotate(img, rot+self.rot) #do so
+			pygame.draw.rect(img, (0, 255, 0), (0, 0, img.get_width(), img.get_height()), 1)
+			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
 		if xs*self.xscale != 1.0 or ys*self.yscale != 1.0: #if we need to scale
-			size = (img.get_width()*xs*self.xscale, img.get_height()*ys*self.yscale) #calculate new size
-			img = pygame.transform.smoothscale(img, size) #do the scale
-		surf.blit(img, (x+self.pos[0], y+self.pos[1])) #draw transformed image
+			old = (img.get_width(), img.get_height())
+			size = (int(img.get_width()*xs*self.xscale), int(img.get_height()*ys*self.yscale)) #calculate new size
+			img = pygame.transform.scale(img, size) #do the scale
+			pygame.draw.rect(img, (0, 0, 255), (0, 0, img.get_width(), img.get_height()), 1)
+			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
+		surf.blit(img, (x+pos[0], y+pos[1])) #draw transformed image
 
 class PartAnimationGroup: #class for a layout group in a part animation
 	def __init__(self, set_, g, dom): #create a group based on a dom
@@ -125,7 +137,7 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		self.set = set_
 
 		self.id = dom.getAttribute("id") #get id of this group
-		set_.parts[id] = self #store ourselves
+		set_.parts[self.id] = self #store ourselves
 		self.pos = [int(x.strip()) for x in dom.getAttribute("pos").split(",")] #and position
 		try: #load rotation
 			self.rot = int(dom.getAttribute("rotation"))
@@ -195,6 +207,9 @@ class PartAnimationSet:
 				pos = (max(0, center_diff[0]), max(0, center_diff[1]))
 				surf = pygame.Surface(size, SRCALPHA) #create new surface
 				surf.blit(image, pos, coord) #blit proper section of image
+			pygame.draw.rect(surf, (255, 0, 0), (0, 0, surf.get_width(), surf.get_height()), 1)
 			self.part_images[part_image.getAttribute("id")] = surf #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
+	def render(self, surf, x, y):
+		self.layout.render(surf, x, y, 1, 1, 0)
 			
