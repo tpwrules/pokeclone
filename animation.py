@@ -94,9 +94,9 @@ class PartAnimationPart: #class for one part in the layout
 		set_.parts[self.id] = self #store ourselves
 		self.pos = [int(x.strip()) for x in dom.getAttribute("pos").split(",")] #and position
 		try: #load rotation
-			self.rot = int(dom.getAttribute("rotation"))
+			self.rot = float(dom.getAttribute("rotation"))
 		except:
-			self.rot = 0
+			self.rot = 0.0
 		try: #load scale
 			t = float(dom.getAttribute("scale"))
 		except:
@@ -154,9 +154,9 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		set_.parts[self.id] = self #store ourselves
 		self.pos = [int(x.strip()) for x in dom.getAttribute("pos").split(",")] #and position
 		try: #load rotation
-			self.rot = int(dom.getAttribute("rotation"))
+			self.rot = float(dom.getAttribute("rotation"))
 		except:
-			self.rot = 0
+			self.rot = 0.0
 		try: #load scale
 			t = float(dom.getAttribute("scale"))
 		except:
@@ -232,16 +232,59 @@ class PartAnimation: #class for one animation
 					if curr_cmd.localName == "rotate": #if this is a rotate command
 						#add it to command list
 						cmds.append([1, curr_cmd.getAttribute("id"), int(curr_cmd.getAttribute("degrees"))])
+					elif curr_cmd.localName == "move": #if it's a move command
+						#get delta
+						delta = [int(x.strip()) for x in curr_cmd.getAttribute("delta").split(",")]
+						cmds.append([2, curr_cmd.getAttribute("id"), delta])
 					curr_cmd = curr_cmd.nextSibling #go to next command
 				self.frame_list.append([delay, cmds]) #add loaded data
 			curr_frame = curr_frame.nextSibling #go to next frame
 	def start(self): #start animation running
-		self.curr_frame = 0 #reset variables
+		self.curr_frame = -1 #reset variables
 		self.wait = 0
 		self.tweens = []
 		self.update() #update once
+	def _process_frame(self, frame): #process tweens for a frame
+		self.tweens = [] #clear tween list
+		self.wait = frame[0] #initialize proper wait
+		for cmd in frame[1]: #loop through each command
+			part_id = cmd[1] #get id of specified part
+			if cmd[0] == 1: #if it's a rotation command
+				#calculate step for each frame
+				step = (cmd[2]*1.0)/self.wait
+				self.tweens.append([cmd[0], cmd[1], step, cmd[2]+self.set.parts[part_id].rot]) #add it to list
+			elif cmd[0] == 2: #if this is a movement command
+				t = [float(x) for x in self.set.parts[part_id].pos] #store current position
+				step = [cmd[2][0]/self.wait, cmd[2][1]/self.wait] #calculate step
+				#calculate final position
+				final = [cmd[2][0]+int(t[0]), cmd[2][1]+int(t[1])]
+				self.tweens.append([2, cmd[1], step, t, final])
+	def _update_tween(self, tween): #update a tween
+		if tween[0] == 1: #if it's a rotation tween
+			self.set.parts[tween[1]].rot += tween[2] #update rotation
+		elif tween[0] == 2: #if this is a movement tween
+			tween[3][0] += tween[2][0] #update stored position
+			tween[3][1] += tween[2][1]
+			pos = [int(x) for x in tween[3]] #convert to integer
+			self.set.parts[tween[1]].pos = pos #store position in object
+	def _finish_tween(self, tween): #finish up a tween command
+		if tween[0] == 1: #if it's a rotation tween
+			self.set.parts[tween[1]].rot = tween[3] #set end position
+		elif tween[0] == 2: #if this is a movement tween
+			self.set.parts[tween[1]].pos = tween[4][:] #set final position
 	def update(self): #update animation
 		if self.wait == 0: #if this is the end of this frame
+			for tween in self.tweens: #go through tweens
+				self._finish_tween(tween) #finish each one
+			self.curr_frame += 1 #go to next frames
+			if self.curr_frame == len(self.frame_list): #if we're off the end of the list
+				self.curr_frame = 0 #go back to first one
+				#reset layout if requested
+				if self.loopreset: self.set.layout.reset()
+			self._process_frame(self.frame_list[self.curr_frame]) #process data for next frame
+		for tween in self.tweens: #go through tweens
+			self._update_tween(tween) #update each of them
+		self.wait -= 1 #one frame has passed		
 
 #set of part animations from one file
 class PartAnimationSet:
