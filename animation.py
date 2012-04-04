@@ -115,7 +115,11 @@ class PartAnimationPart: #class for one part in the layout
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		img = self.image #get starting surface
 		#we need to rotate our coordinates to be in the correct position
-		pos = self.pos[:]
+		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
+		npos = [0,0]
+		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))+center[0]-self.center[0]
+		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))+center[1]-self.center[1]
+		pos = npos[:]
 		if rot+self.rot != 0: #if we need to rotate
 			old = (img.get_width(), img.get_height())
 			img = pygame.transform.rotate(img, rot+self.rot) #do so
@@ -164,11 +168,12 @@ class PartAnimationGroup: #class for a layout group in a part animation
 				self.children.append(PartAnimationPart(set_, g, node))
 			node = node.nextSibling
 		#calculate average center
-		center = [x for x in self.children[0].center]
-		numcenters = 1
-		for child in self.children[1:]:
-			center[0] += child.center[0]
-			center[1] += child.center[1]
+		center = [0, 0]
+		numcenters = 0
+		for child in self.children:
+			center[0] += child.center[0]+child.pos[0]
+			center[1] += child.center[1]+child.pos[1]
+			numcenters += 1
 		center[0] /= numcenters
 		center[1] /= numcenters
 		self.center = center
