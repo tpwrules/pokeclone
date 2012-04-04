@@ -220,6 +220,8 @@ class PartAnimation: #class for one animation
 		self.curr_frame = 0 #index of current frame
 		self.tweens = [] #list of different tweens to do this frame
 
+		self.loopreset = dom.getAttribute("loopreset") != ""
+
 		curr_frame = dom.firstChild #load frames
 		while curr_frame is not None:
 			if curr_frame.localName == "frame": #if this is a frame
@@ -236,9 +238,10 @@ class PartAnimation: #class for one animation
 	def start(self): #start animation running
 		self.curr_frame = 0 #reset variables
 		self.wait = 0
+		self.tweens = []
 		self.update() #update once
 	def update(self): #update animation
-		pass
+		if self.wait == 0: #if this is the end of this frame
 
 #set of part animations from one file
 class PartAnimationSet:

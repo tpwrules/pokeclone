@@ -25,7 +25,7 @@
 				<part id="hand_right" from="hand_right" pos="100,0" />
 			</group>
 	</layout>
-	<anim id="demo">
+	<anim id="demo" loopreset="true">
 		<frame time="20">
 			<rotate id="leg_left" degrees="30" />
 			<rotate id="leg_right" degrees="30" />
