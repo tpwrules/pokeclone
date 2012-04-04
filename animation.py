@@ -110,8 +110,15 @@ class PartAnimationPart: #class for one part in the layout
 			self.yscale = float(dom.getAttribute("yscale"))
 		except:
 			pass
+		#back up loaded data
+		self.orig_pos = self.pos
+		self.orig_rot = self.rot
+		self.orig_xscale = self.xscale
+		self.orig_yscale = self.yscale
 		self.image = set_.part_images[dom.getAttribute("from")][0] #load our image
+		self.orig_image = self.image
 		self.center = set_.part_images[dom.getAttribute("from")][1] #and store center
+		self.orig_center = self.center
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		img = self.image #get starting surface
 		#we need to rotate our coordinates to be in the correct position
@@ -130,6 +137,13 @@ class PartAnimationPart: #class for one part in the layout
 			img = pygame.transform.rotate(img, rot+self.rot) #do so
 			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
 		surf.blit(img, (x+pos[0], y+pos[1])) #draw transformed image
+	def reset(self): #reset our state
+		self.pos = self.orig_pos
+		self.rot = self.orig_rot
+		self.xscale = self.orig_xscale
+		self.yscale = self.orig_yscale
+		self.image = self.orig_image
+		self.center = self.orig_center
 
 class PartAnimationGroup: #class for a layout group in a part animation
 	def __init__(self, set_, g, dom): #create a group based on a dom
@@ -156,6 +170,11 @@ class PartAnimationGroup: #class for a layout group in a part animation
 			self.yscale = float(dom.getAttribute("yscale"))
 		except:
 			pass
+		#back up loaded data
+		self.orig_pos = self.pos
+		self.orig_rot = self.rot
+		self.orig_xscale = self.xscale
+		self.orig_yscale = self.yscale
 		#load children
 		node = dom.firstChild
 		self.children = []
@@ -183,6 +202,14 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		pos = npos[:]
 		for child in self.children: #render each child
 			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, self.center)
+	def reset(self): #reset our state
+		self.pos = self.orig_pos
+		self.rot = self.orig_rot
+		self.xscale = self.orig_xscale
+		self.yscale = self.orig_yscale
+		#reset state of all our children
+		for child in self.children:
+			child.reset()
 
 #set of part animations from one file
 class PartAnimationSet:
