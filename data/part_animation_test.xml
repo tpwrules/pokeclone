@@ -11,7 +11,7 @@
 	<layout id="whole" pos="30,0">
 			<group id="legs" pos="20,90">
 				<part id="leg_left" from="leg" pos="0,0"/>
-				<part id="leg_right" from="leg" pos="70,0" />
+				<part id="leg_right" from="leg" pos="65,-4" />
 			</group>
 			<part id="body" pos="0,0" from="body" />
 			<group id="face" pos="10,30">
@@ -65,5 +65,9 @@
 		<frame time="20">
 			<rotate id="hand_left" degrees="60" />
 		</frame>
+		<frame time="40">
+			<rotate id="face" degrees="360" />
+		</frame>
+		<frame time="30" />
 	</anim>
 </part_anim>
