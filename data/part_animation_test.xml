@@ -10,17 +10,17 @@
 	<part_image from="main" coord="109,140,42,20" id="mouth" />
 	<layout id="whole" pos="0,0">
 			<group id="legs" pos="20,90">
-				<part id="leg_left" from="leg" pos="0,0" />
+				<part id="leg_left" from="leg" pos="0,0"/>
 				<part id="leg_right" from="leg" pos="70,0" />
 			</group>
 			<part id="body" pos="0,0" from="body" />
-			<group id="face" pos="30,30">
+			<group id="face" pos="10,30">
 				<part id="eye_left" from="eye_open" pos="0,0" />
-				<part id="eye_right" from="eye_open" pos="70,0" />
+				<part id="eye_right" from="eye_open" pos="60,0" />
 				<part id="nose" from="nose" pos="40,0" />
-				<part id="mouth" from="mouth" pos="35,70" />
+				<part id="mouth" from="mouth" pos="35,40" />
 			</group>
-			<group id="hands" pos="-20,20">
+			<group id="hands" pos="-20,40">
 				<part id="hand_left" from="hand_left" pos="0,0" />
 				<part id="hand_right" from="hand_right" pos="100,0" />
 			</group>
