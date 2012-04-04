@@ -236,6 +236,9 @@ class PartAnimation: #class for one animation
 						#get delta
 						delta = [int(x.strip()) for x in curr_cmd.getAttribute("delta").split(",")]
 						cmds.append([2, curr_cmd.getAttribute("id"), delta])
+					elif curr_cmd.localName == "set": #if it's a set command
+						#add to command list
+						cmds.append([3, curr_cmd.getAttribute("id"), curr_cmd.getAttribute("to")])
 					curr_cmd = curr_cmd.nextSibling #go to next command
 				self.frame_list.append([delay, cmds]) #add loaded data
 			curr_frame = curr_frame.nextSibling #go to next frame
@@ -259,6 +262,10 @@ class PartAnimation: #class for one animation
 				#calculate final position
 				final = [cmd[2][0]+int(t[0]), cmd[2][1]+int(t[1])]
 				self.tweens.append([2, cmd[1], step, t, final])
+			elif cmd[0] == 3: #if this is a set command
+				img = self.set.part_images[cmd[2]] #load new image
+				self.set.parts[cmd[1]].image = img[0] #set data
+				self.set.parts[cmd[1]].center = img[1]
 	def _update_tween(self, tween): #update a tween
 		if tween[0] == 1: #if it's a rotation tween
 			self.set.parts[tween[1]].rot += tween[2] #update rotation

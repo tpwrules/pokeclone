@@ -27,16 +27,19 @@
 	</layout>
 	<anim id="demo" loopreset="true">
 		<frame time="10">
-			<rotate id="leg_left" degrees="30" />
+			<rotate id="leg_left" degrees="-30" />
 			<rotate id="leg_right" degrees="30" />
+			<move id="whole" delta="-10,0" />
 		</frame>
 		<frame time="20">
-			<rotate id="leg_left" degrees="-60" />
+			<rotate id="leg_left" degrees="60" />
 			<rotate id="leg_right" degrees="-60" />
+			<move id="whole" delta="-20,0" />
 		</frame>
 		<frame time="10">
-			<rotate id="leg_left" degrees="30" />
+			<rotate id="leg_left" degrees="-30" />
 			<rotate id="leg_right" degrees="30" />
+			<move id="whole" delta="-10,0" />
 		</frame>
 		<frame time="10">
 			<move delta="0,10" id="body" />
@@ -47,6 +50,12 @@
 			<move delta="0,-10" id="body" />
 			<move delta="0,-10" id="face" />
 			<move delta="0,-10" id="hands" />
+		</frame>
+		<frame time="5">
+			<set id="eye_left" to="eye_closed" />
+		</frame>
+		<frame time="5">
+			<set id="eye_left" to="eye_open" />
 		</frame>
 	</anim>
 </part_anim>
