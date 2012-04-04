@@ -120,16 +120,14 @@ class PartAnimationPart: #class for one part in the layout
 		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))+center[0]-self.center[0]
 		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))+center[1]-self.center[1]
 		pos = npos[:]
-		if rot+self.rot != 0: #if we need to rotate
-			old = (img.get_width(), img.get_height())
-			img = pygame.transform.rotate(img, rot+self.rot) #do so
-			pygame.draw.rect(img, (0, 255, 0), (0, 0, img.get_width(), img.get_height()), 1)
-			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
 		if xs*self.xscale != 1.0 or ys*self.yscale != 1.0: #if we need to scale
 			old = (img.get_width(), img.get_height())
 			size = (int(img.get_width()*xs*self.xscale), int(img.get_height()*ys*self.yscale)) #calculate new size
 			img = pygame.transform.scale(img, size) #do the scale
-			pygame.draw.rect(img, (0, 0, 255), (0, 0, img.get_width(), img.get_height()), 1)
+			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
+		if rot+self.rot != 0: #if we need to rotate
+			old = (img.get_width(), img.get_height())
+			img = pygame.transform.rotate(img, rot+self.rot) #do so
 			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
 		surf.blit(img, (x+pos[0], y+pos[1])) #draw transformed image
 
@@ -224,7 +222,6 @@ class PartAnimationSet:
 				pos = (max(0, center_diff[0]), max(0, center_diff[1]))
 				surf = pygame.Surface(size, SRCALPHA) #create new surface
 				surf.blit(image, pos, coord) #blit proper section of image
-			pygame.draw.rect(surf, (255, 0, 0), (0, 0, surf.get_width(), surf.get_height()), 1)
 			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
 			self.part_images[part_image.getAttribute("id")] = (surf, center) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
