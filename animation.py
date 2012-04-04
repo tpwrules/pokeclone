@@ -211,6 +211,35 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		for child in self.children:
 			child.reset()
 
+class PartAnimation: #class for one animation
+	def __init__(self, set_, dom): #initialize ourselves
+		self.set = set_ #store given parameters
+
+		self.frame_list = [] #list of frames in this animation
+		self.wait = 0 #wait until next frame
+		self.curr_frame = 0 #index of current frame
+		self.tweens = [] #list of different tweens to do this frame
+
+		curr_frame = dom.firstChild #load frames
+		while curr_frame is not None:
+			if curr_frame.localName == "frame": #if this is a frame
+				delay = int(curr_frame.getAttribute("time")) #load delay
+				cmds = [] #load command list
+				curr_cmd = curr_frame.firstChild
+				while curr_cmd is not None:
+					if curr_cmd.localName == "rotate": #if this is a rotate command
+						#add it to command list
+						cmds.append([1, curr_cmd.getAttribute("id"), int(curr_cmd.getAttribute("degrees"))])
+					curr_cmd = curr_cmd.nextSibling #go to next command
+				self.frame_list.append([delay, cmds]) #add loaded data
+			curr_frame = curr_frame.nextSibling #go to next frame
+	def start(self): #start animation running
+		self.curr_frame = 0 #reset variables
+		self.wait = 0
+		self.update() #update once
+	def update(self): #update animation
+		pass
+
 #set of part animations from one file
 class PartAnimationSet:
 	def __init__(self, g, anim_file):
@@ -252,6 +281,18 @@ class PartAnimationSet:
 			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
 			self.part_images[part_image.getAttribute("id")] = (surf, center) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
-	def render(self, surf, x, y):
+		self.curr_animation = None #clear list of animations
+		self.animations = {}
+		for anim in anim_dom.getElementsByTagName("anim"): #load list of animations
+			#initialize and store an animation
+			self.animations[anim.getAttribute("id")] = PartAnimation(self, anim)
+	def set_animation(self, anim): #start a specific animation
+		self.layout.reset() #reset position of everything
+		self.curr_animation = self.animations[anim] #set animation
+		self.curr_animation.start() #start animation running
+	def update(self, surf, x, y):
+		if self.curr_animation is not None: #if there's a current animation
+			self.curr_animation.update() #update current animation
+		#render out layout
 		self.layout.render(surf, x, y, 1, 1, 0, self.layout.center)
 			
