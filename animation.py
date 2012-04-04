@@ -112,12 +112,10 @@ class PartAnimationPart: #class for one part in the layout
 			pass
 		self.image = set_.part_images[dom.getAttribute("from")][0] #load our image
 		self.center = set_.part_images[dom.getAttribute("from")][1] #and store center
-	def render(self, surf, x, y, xs, ys, rot): #render ourselves
+	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		img = self.image #get starting surface
 		#we need to rotate our coordinates to be in the correct position
-		pos = [0, 0]
-		pos[0] = (self.pos[0]*math.cos(math.radians(-rot))) - (self.pos[1]*math.sin(math.radians(-rot)))
-		pos[1] = (self.pos[0]*math.sin(math.radians(-rot))) + (self.pos[1]*math.cos(math.radians(-rot)))
+		pos = self.pos[:]
 		if rot+self.rot != 0: #if we need to rotate
 			old = (img.get_width(), img.get_height())
 			img = pygame.transform.rotate(img, rot+self.rot) #do so
@@ -165,9 +163,19 @@ class PartAnimationGroup: #class for a layout group in a part animation
 			elif node.localName == "part": #or part
 				self.children.append(PartAnimationPart(set_, g, node))
 			node = node.nextSibling
-	def render(self, surf, x, y, xs, ys, rot): #render ourselves
+		#calculate average center
+		center = [x for x in self.children[0].center]
+		numcenters = 1
+		for child in self.children[1:]:
+			center[0] += child.center[0]
+			center[1] += child.center[1]
+		center[0] /= numcenters
+		center[1] /= numcenters
+		self.center = center
+	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
+		pos = self.pos[:]
 		for child in self.children: #render each child
-			child.render(surf, x+self.pos[0], y+self.pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot)
+			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, self.center)
 
 #set of part animations from one file
 class PartAnimationSet:
@@ -208,8 +216,9 @@ class PartAnimationSet:
 				surf = pygame.Surface(size, SRCALPHA) #create new surface
 				surf.blit(image, pos, coord) #blit proper section of image
 			pygame.draw.rect(surf, (255, 0, 0), (0, 0, surf.get_width(), surf.get_height()), 1)
-			self.part_images[part_image.getAttribute("id")] = surf #store created image
+			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
+			self.part_images[part_image.getAttribute("id")] = (surf, center) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
 	def render(self, surf, x, y):
-		self.layout.render(surf, x, y, 1, 1, 0)
+		self.layout.render(surf, x, y, 1, 1, 0, self.layout.center)
 			
