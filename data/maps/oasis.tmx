@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="36" height="21" tilewidth="16" tileheight="16">
  <properties>
+  <property name="id" value="oasis"/>
   <property name="object_data" value="data/maps/oasis_objects.xml"/>
  </properties>
  <tileset firstgid="1" name="Grass" tilewidth="16" tileheight="16">

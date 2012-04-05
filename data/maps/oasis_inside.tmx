@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
  <properties>
- 	<property name="object_data" value="data/maps/oasis_inside_objects.xml" />
+  <property name="id" value="oasis_inside"/>
+  <property name="object_data" value="data/maps/oasis_inside_objects.xml"/>
  </properties>
  <tileset firstgid="1" name="maptypetileset" tilewidth="16" tileheight="16">
   <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
@@ -29,10 +30,10 @@
    </properties>
   </object>
   <object name="test_npc" type="npc" x="0" y="0">
-  	<properties>
-  	  <property name="id" value="test_npc" />
-  	  <property name="tile_pos" value="3,3" />
-  	</properties>
+   <properties>
+    <property name="id" value="test_npc"/>
+    <property name="tile_pos" value="3,3"/>
+   </properties>
   </object>
  </objectgroup>
  <layer name="Collisions" width="20" height="20">
