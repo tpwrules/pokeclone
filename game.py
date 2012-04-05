@@ -38,6 +38,7 @@ class Game: #class for our game engine
 		self.transition(transition.FadeIn(32)) #start fade in
 	def load_map(self, map_file): #load a map
 		self.map = map.Map(self.g, map_file) #load the map
+		self.map_file = map_file #save map file
 		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
 		self.object_data = {} #clear previous object data
 		child = objects_dom.firstChild #get first object data element
@@ -131,6 +132,13 @@ class Game: #class for our game engine
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
 		if self.curr_transition is None: #if there is no transition going on now
 			self.map_image = self.map.update() #update the map
+			if self.debug: #if we're debugging
+				if self.g.curr_keys[settings.key_dbg_save]: #if save key is pressed
+					self.save() #do a save
+				elif self.g.curr_keys[settings.key_dbg_load]: #if load key is pressed
+					self.g.save.load("test.pokesav") #load save file
+					self.g.reset() #call game reset function
+					return self.surf #and return
 		self.surf.fill((0, 0, 0)) #clear surface for black background
 		if self.debug: #if we're in debug mode
 			for pos in self.pos2obj: #draw object collision tiles
@@ -164,3 +172,5 @@ class Game: #class for our game engine
 	def save(self): #save our data
 		for id in self.objects: #loop through all our objects
 			self.objects[id].save() #tell them to save
+		self.g.save.set_game_prop("game", "curr_map", self.map_file) #store map
+		self.g.save.save("test.pokesav") #write out save file
