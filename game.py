@@ -9,7 +9,6 @@ import font #font manager
 import player #class for player
 import dialog #class for dialogs
 import transition #import all the transitions
-import animation
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -37,8 +36,6 @@ class Game: #class for our game engine
 		self.load_map("data/maps/oasis.tmx") #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
-		self.partanimation = animation.PartAnimationSet(self.g, "data/part_animation_test.xml")
-		self.partanimation.set_animation("demo")
 	def load_map(self, map_file): #load a map
 		self.map = map.Map(self.g, map_file) #load the map
 		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
@@ -162,8 +159,6 @@ class Game: #class for our game engine
 				pos = (pos[0]-self.camera_pos[0]+2, pos[1]-self.camera_pos[1]+10)
 				pygame.draw.polygon(self.surf, (161, 161, 161), [[64, 44], [pos[0]+2, pos[1]+2], [82, 44]])
 				pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
-		if self.debug:
-			self.partanimation.update(self.surf, 50, 30)
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
 	def save(self): #save our data
