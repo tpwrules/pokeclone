@@ -33,7 +33,7 @@ class Game: #class for our game engine
 		self.debug = False #whether we're in debug mode or not
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
-		self.load_map("data/maps/oasis.tmx") #load map
+		self.load_map(self.g.save.get_game_prop("game", "curr_map", "data/maps/oasis.tmx")) #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
 	def load_map(self, map_file): #load a map
