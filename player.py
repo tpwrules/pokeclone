@@ -27,15 +27,15 @@ class Player(objects.RenderedNPC):
 		self.game = game
 		#load animations
 		self.animator = animation.AnimationGroup(self.g, self, "data/objects/player/player_animation.xml")
-		self.animator.set_animation("stand_down") #set current animation
-		self.animator.update() #let it update once
 		self.collidepoint = (16, 23) #set where to check for collisions
 		self.size = (32, 32) #set sprite size
-		self.pos = [248, 256]
+		self.pos = self.g.save.get_prop("player", "pos", [248, 256]) #load current position
 		self.tile_pos = ((self.pos[0]/16)+1, (self.pos[1]/16)+1) #set position within tilemap
 		self.rect = pygame.Rect(self.pos, self.size) #turn it into a rect
 		self.move_direction = (0, 0) #we aren't moving in a particular direction
-		self.direction = 1 #we're facing down
+		self.direction = self.g.save.get_prop("player", "direction", 1) #load direction
+		self.animator.set_animation("stand_"+get_direction_name(self.direction)) #set proper direction
+		self.animator.update() #let it update
 		self.moving = False #we aren't moving at all
 		self.was_moving = False
 		self.move_frames = 0 #amount of movement frames left
@@ -162,4 +162,5 @@ class Player(objects.RenderedNPC):
 				self.interact() #try to interact with something
 		self.animator.update() #update our animation
 	def save(self): #save our data
-		pass
+		self.g.save.set_prop("player", "pos", self.pos[:]) #store our position
+		self.g.save.set_prop("player", "direction", self.direction) #and direction
