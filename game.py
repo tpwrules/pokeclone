@@ -135,7 +135,7 @@ class Game: #class for our game engine
 			self.debug = not self.debug #invert debug flag
 		if self.g.curr_keys[settings.key_menu]: #if the menu key is pressed
 			#if no transition is happening and the menu isn't already being shown
-			if self.curr_transition is None and self.menu_showing is False:
+			if self.curr_transition is None and self.menu_showing is False and self.dialog_drawing is False:
 				self.menu.show() #show menu
 				self.menu_showing = True #and mark it as being shown
 		#center camera on player
