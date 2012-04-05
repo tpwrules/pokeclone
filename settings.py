@@ -22,3 +22,9 @@ TILE_WATER = 2
 TILE_WARP = 3
 TILE_GRASS = 5
 TILE_DOUBLEGRASS = 8
+
+def load(s): #load our data
+	pass
+
+def save(s): #save our data
+	pass
