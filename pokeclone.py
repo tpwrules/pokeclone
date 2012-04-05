@@ -3,6 +3,7 @@ from pygame.locals import *
 
 import settings #load game settings
 import game #and game engine
+import savegame #load savegame manager
 
 #import parts of game that need loading
 import poke_types
@@ -42,6 +43,9 @@ g.next_fps = 0 #next FPS
 g.prev_secs = 0 #previous number of seconds
 
 poke_types.load_data() #load pokemon type data
+
+g.save = savegame.SaveGame(g) #initialize a new savegame manager
+g.save.new() #create a new savefile
 
 g.game = game.Game(g) #create a new game class and give it our globals
 
