@@ -4,6 +4,7 @@ from pygame.locals import *
 import settings #load game settings
 import game #and game engine
 import savegame #load savegame manager
+import titlescreen #load title screen
 
 #import parts of game that need loading
 import poke_types
@@ -27,8 +28,10 @@ def wait_frame(): #wait for the next frame
 
 def reset(): #reset the game
 	global g
-	g.game = game.Game(g) #initialize new game class
-	g.game.start() #tell it to start over
+	g.game = None #destroy current game
+	g.save.new() #create a new save file
+	g.title_screen = titlescreen.TitleScreen(g) #initialize title screen
+	g.update_func = g.title_screen.update #set update function
 	
 g = Container() #get the global variable container
 
@@ -50,13 +53,10 @@ g.prev_secs = 0 #previous number of seconds
 poke_types.load_data() #load pokemon type data
 
 g.save = savegame.SaveGame(g) #initialize a new savegame manager
-g.save.new() #create a new savefile
 
 g.reset = reset #store reset function
 
 reset() #reset game
-
-update_func = g.game.update #store current update function
 
 while running: #loop while we are still running
 	for event in pygame.event.get(): #process events
@@ -81,7 +81,7 @@ while running: #loop while we are still running
 		t = t & g.keys[x] #make it true only if the key was pressed this frame
 		g.curr_keys[x] = t #save key state
 		g.old_keys[x] = g.keys[x] #and update old keys
-	surface = update_func() #tell current object to update for one frame
+	surface = g.update_func() #tell current object to update for one frame
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
