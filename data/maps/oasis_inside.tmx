@@ -31,7 +31,7 @@
   </object>
   <object name="test_npc" type="npc" x="0" y="0">
    <properties>
-    <property name="id" value="test_npc"/>
+    <property name="id" value="test_npc2"/>
     <property name="tile_pos" value="3,3"/>
    </properties>
   </object>
