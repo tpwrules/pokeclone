@@ -67,7 +67,10 @@ class Game: #class for our game engine
 		#start transition
 		self.transition(transition.FadeOut(32), callback=self.perform_warp)
 	def perform_warp(self): #actually warp
-		warp_obj = self.warp_obj #get the warp objectx
+		warp_obj = self.warp_obj #get the warp object
+		#save object data
+		for id in self.objects: #loop through all our objects
+			self.objects[id].save() #tell them to save
 		self.objects = {} #destroy map objects
 		self.warps = {}
 		self.map = None
