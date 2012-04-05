@@ -104,7 +104,7 @@ class ChoiceDialog:
 			return self.curr_choice #return current choice
 		dest.blit(self.dlog_surf, where) #draw the dialog
 		#draw cursor
-		dest.blit(self.cursor_tile, (where[0]+8, where[1]+8+(self.curr_choice*self.dlog_font.height)))
+		dest.blit(self.cursor_tile, (where[0]+8, where[1]+10+(self.curr_choice*self.dlog_font.height)))
 
 #dialog we can use to draw text
 class Dialog:
