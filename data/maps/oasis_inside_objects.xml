@@ -1,5 +1,5 @@
 <objects>
-	<object id="test_npc">
+	<object id="test_npc2">
 		<anim file="data/objects/player/player_animation.xml" />
 		<movement speed="2">
 			<move dir="right" dist="10" />
