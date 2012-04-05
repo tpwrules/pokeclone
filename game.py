@@ -9,6 +9,7 @@ import font #font manager
 import player #class for player
 import dialog #class for dialogs
 import transition #import all the transitions
+import menu #import menu manager
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -31,6 +32,8 @@ class Game: #class for our game engine
 		self.dialog_callback = None #callback for dialog completion
 		self.object_data = {} #dictionary of loaded object data
 		self.debug = False #whether we're in debug mode or not
+		self.menu = menu.Menu(self) #initialize a menu manager
+		self.menu_showing = False #whether the menu is being shown
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
 		self.load_map(self.g.save.get_game_prop("game", "curr_map", "data/maps/oasis.tmx")) #load map
@@ -127,10 +130,15 @@ class Game: #class for our game engine
 	def update(self): #update the engine for this frame
 		if self.g.curr_keys[settings.key_debug]: #if the debug key is pressed
 			self.debug = not self.debug #invert debug flag
+		if self.g.curr_keys[settings.key_menu]: #if the menu key is pressed
+			#if no transition is happening and the menu isn't already being shown
+			if self.curr_transition is None and self.menu_showing is False:
+				self.menu.show() #show menu
+				self.menu_showing = True #and mark it as being shown
 		#center camera on player
 		pos = self.objects["player"].pos #get position of player
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
-		if self.curr_transition is None: #if there is no transition going on now
+		if self.curr_transition is None and self.menu_showing is False: #if there is no transition going on now
 			self.map_image = self.map.update() #update the map
 			if self.debug: #if we're debugging
 				if self.g.curr_keys[settings.key_dbg_save]: #if save key is pressed
@@ -145,6 +153,8 @@ class Game: #class for our game engine
 		#draw map
 		self.surf.blit(self.map_image, (0, 0), pygame.Rect(self.camera_pos, \
 			(settings.screen_x, settings.screen_y))) #blit it
+		if self.menu_showing is True: #if the menu is being shown
+			self.menu.update(self.surf) #update the menu
 		if self.curr_transition is not None: #if there is a transition happening
 			r = self.curr_transition.update(self.surf) #update it
 			if r: #if it finished
