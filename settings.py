@@ -19,6 +19,8 @@ key_cancel = 8
 key_dbg_save = 9
 key_dbg_load = 10
 
+save_name = "save.pokesav"
+
 TILE_NORMAL = 0
 TILE_SOLID = 1
 TILE_WATER = 2

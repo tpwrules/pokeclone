@@ -136,7 +136,6 @@ class Game: #class for our game engine
 				if self.g.curr_keys[settings.key_dbg_save]: #if save key is pressed
 					self.save() #do a save
 				elif self.g.curr_keys[settings.key_dbg_load]: #if load key is pressed
-					self.g.save.load("test.pokesav") #load save file
 					self.g.reset() #call game reset function
 					return self.surf #and return
 		self.surf.fill((0, 0, 0)) #clear surface for black background
@@ -173,4 +172,4 @@ class Game: #class for our game engine
 		for id in self.objects: #loop through all our objects
 			self.objects[id].save() #tell them to save
 		self.g.save.set_game_prop("game", "curr_map", self.map_file) #store map
-		self.g.save.save("test.pokesav") #write out save file
+		self.g.save.save(settings.save_name) #write out save file

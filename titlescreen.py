@@ -36,7 +36,7 @@ class TitleScreen: #class for the title screen
 			self.update_func = self.choice_update #switch update funcion
 			self.start_choices() #start choice updates
 	def start_choices(self): #show load choice screen
-		if path.exists("test.pokesav"): #if save file exists
+		if path.exists(settings.save_name): #if save file exists
 			self.save_exists = True #mark it
 		else:
 			self.save_exists = False
@@ -53,7 +53,7 @@ class TitleScreen: #class for the title screen
 		if self.save_exists == False: #if no save exists
 			choice += 1 #bump up choice number to account for missing option
 		if choice == 0: #if load was pressed
-			self.g.save.load("test.pokesav") #load savegame
+			self.g.save.load(settings.save_name) #load savegame
 		elif choice == 1: #if new was pressed
 			self.g.save.new() #start a new savegame
 		self.start_game() #start the game running
