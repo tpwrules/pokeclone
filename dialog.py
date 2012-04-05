@@ -102,6 +102,9 @@ class ChoiceDialog:
 		if self.g.curr_keys[settings.key_accept]: #if the accept key has been pressed
 			self.drawing = False #we're not drawing
 			return self.curr_choice #return current choice
+		elif self.g.curr_keys[settings.key_cancel]: #if cancel key has been pressed
+			self.drawing = False #we're not drawing
+			return len(self.choices)-1 #return last choice
 		dest.blit(self.dlog_surf, where) #draw the dialog
 		#draw cursor
 		dest.blit(self.cursor_tile, (where[0]+8, where[1]+10+(self.curr_choice*self.dlog_font.height)))
