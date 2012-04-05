@@ -161,3 +161,5 @@ class Player(objects.RenderedNPC):
 			if self.g.curr_keys[settings.key_accept]: #if the accept key is pressed
 				self.interact() #try to interact with something
 		self.animator.update() #update our animation
+	def save(self): #save our data
+		pass

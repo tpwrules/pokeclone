@@ -181,6 +181,8 @@ class RenderedObject:
 		pass #but it doesn't need to do anything
 	def draw(self, surf): #draw ourselves onto a surface
 		surf.blit(self.image, self.rect.topleft) #perform the blit
+	def save(self):
+		pass #we don't need to save anything
 		
 #class that renders NPCs, automatically draws shadow
 class RenderedNPC(RenderedObject):
@@ -208,6 +210,8 @@ class Warp:
 		pass #don't interact
 	def update(self): #we don't need to do any updates
 		pass
+	def save(self): #we don't need to save anything
+		pass
 
 #sign object
 class Sign:
@@ -223,6 +227,8 @@ class Sign:
 		self.game.show_dlog(self.text) #show our text
 	def update(self):
 		pass #we don't need to do any updates
+	def save(self): #we don't need to save anything
+		pass
 		
 #generic NPC
 class NPC(RenderedNPC):

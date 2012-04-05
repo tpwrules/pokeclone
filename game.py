@@ -166,3 +166,6 @@ class Game: #class for our game engine
 			self.partanimation.update(self.surf, 50, 30)
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
+	def save(self): #save our data
+		for id in self.objects: #loop through all our objects
+			self.objects[id].save() #tell them to save
