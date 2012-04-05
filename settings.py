@@ -6,7 +6,7 @@ screen_y = 192
 framerate = 30 #framerate to keep
 
 keys = [-1, K_ESCAPE, K_UP, K_DOWN, K_LEFT, K_RIGHT, ord("x"), ord("p"), ord("z"),
-ord("j"), ord("k")] #array of keys
+ord("j"), ord("k"), ord("i")] #array of keys
 
 key_escape = 1 #index into keys array
 key_up = 2
@@ -18,6 +18,7 @@ key_debug = 7
 key_cancel = 8
 key_dbg_save = 9
 key_dbg_load = 10
+key_menu = 11
 
 save_name = "save.pokesav"
 
