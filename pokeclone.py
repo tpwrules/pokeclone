@@ -24,6 +24,11 @@ def wait_frame(): #wait for the next frame
 		g.fps = g.next_fps #set framerate
 		g.next_fps = 0 #clear next framerate
 		g.prev_secs = now/1000 #store the second this number was calculated
+
+def reset(): #reset the game
+	global g
+	g.game = game.Game(g) #initialize new game class
+	g.game.start() #tell it to start over
 	
 g = Container() #get the global variable container
 
@@ -47,9 +52,9 @@ poke_types.load_data() #load pokemon type data
 g.save = savegame.SaveGame(g) #initialize a new savegame manager
 g.save.new() #create a new savefile
 
-g.game = game.Game(g) #create a new game class and give it our globals
+g.reset = reset #store reset function
 
-g.game.start() #tell it to start from scratch
+reset() #reset game
 
 while running: #loop while we are still running
 	for event in pygame.event.get(): #process events
