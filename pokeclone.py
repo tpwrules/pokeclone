@@ -56,6 +56,8 @@ g.reset = reset #store reset function
 
 reset() #reset game
 
+update_func = g.game.update #store current update function
+
 while running: #loop while we are still running
 	for event in pygame.event.get(): #process events
 		if event.type == QUIT: #if we're being told to quit
@@ -79,7 +81,7 @@ while running: #loop while we are still running
 		t = t & g.keys[x] #make it true only if the key was pressed this frame
 		g.curr_keys[x] = t #save key state
 		g.old_keys[x] = g.keys[x] #and update old keys
-	surface = g.game.update() #tell the game engine to update for one frame
+	surface = update_func() #tell current object to update for one frame
 	pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
