@@ -5,7 +5,8 @@ screen_x = 256 #size of screen before scaling
 screen_y = 192
 framerate = 30 #framerate to keep
 
-keys = [-1, K_ESCAPE, K_UP, K_DOWN, K_LEFT, K_RIGHT, ord("x"), ord("p"), ord("z")] #array of keys
+keys = [-1, K_ESCAPE, K_UP, K_DOWN, K_LEFT, K_RIGHT, ord("x"), ord("p"), ord("z"),
+ord("j"), ord("k")] #array of keys
 
 key_escape = 1 #index into keys array
 key_up = 2
@@ -15,6 +16,8 @@ key_right = 5
 key_accept = 6
 key_debug = 7
 key_cancel = 8
+key_dbg_save = 9
+key_dbg_load = 10
 
 TILE_NORMAL = 0
 TILE_SOLID = 1
