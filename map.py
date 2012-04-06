@@ -83,7 +83,7 @@ class MapTileLayer:
 				x += 1 #go to next tile
 			y += 1 #go to next row
 	#funtion to update the current image
-	def update(self):
+	def update(self, surf):
 		return self.image #just return the current image
 		
 #class for an object layer
@@ -91,17 +91,13 @@ class MapObjectLayer:
 	def __init__(self, g, map, layer_node):
 		self.g = g #store globals
 		self.map = map
-		#create a surface to render on
-		self.image = pygame.Surface((map.map_width*16, map.map_height*16), SRCALPHA)
-		self.image.convert_alpha() #convert it for faster blitting
 		self.objects = [] #list of objects on this layer
 		for object in layer_node.getElementsByTagName("object"): #load all objects
 			obj = self.g.game.add_object(object) #load the object
 			self.objects.append(obj) #save it to the object list
 	def render(self):
 		pass
-	def update(self):
-		self.image.fill((0, 0, 0, 0)) #clear layer to render on
+	def update(self, surf):
 		sprites = [] #list to hold sprites to draw
 		for sprite in self.objects: #loop through object list
 			sprite.update() #update this sprite
@@ -110,9 +106,8 @@ class MapObjectLayer:
 			sprites.append((sprite.rect.y, sprite))
 		sprites.sort() #sort the sprite list by y position
 		for sprite in sprites: #loop through sprites in sprite list
-			sprite[1].draw(self.image) #tell sprite to draw itself
+			sprite[1].draw(surf) #tell sprite to draw itself
 			pass
-		return self.image
 
 #class to manage a map
 class Map:
@@ -167,6 +162,7 @@ class Map:
 		#render all the layers
 		self.image.fill((0, 0, 0)) #clear out the image
 		for layer in self.layers: #loop through all of our layers
-			surf = layer.update() #tell them to update themselves
-			self.image.blit(surf, (0, 0)) #draw the result
+			surf = layer.update(self.image) #tell them to update themselves
+			if surf is not None: #if a surface to draw was returned
+				self.image.blit(surf, (0, 0)) #draw the result
 		return self.image #return updated image
