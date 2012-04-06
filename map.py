@@ -57,7 +57,7 @@ class MapTileLayer:
 		if self.collisions: #if this is a collisions surface
 			return #we don't have to worry about rendering
 		i = self.image
-		i.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear the image
+		i.fill((0, 0, 0, 0)) #clear the image
 		tile_image = pygame.Surface((16, 16), SRCALPHA) #create a temporary surface for storing the current tile
 		tile_image.convert_alpha() #make it more efficient
 		x, y = 0, 0 #set current position
@@ -76,7 +76,7 @@ class MapTileLayer:
 							break #stop looking
 						#otherwise, store the current tileset
 						prev = tileset
-					tile_image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile image
+					tile_image.fill((0, 0, 0, 0)) #clear tile image
 					prev[1].get_tile(tile-prev[0], dest=tile_image) #get the tile 
 					old_tile = tile #update old tile
 				i.blit(tile_image, (x*16, y*16)) #blit tile image
@@ -101,7 +101,7 @@ class MapObjectLayer:
 	def render(self):
 		pass
 	def update(self):
-		self.image.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear layer to render on
+		self.image.fill((0, 0, 0, 0)) #clear layer to render on
 		sprites = [] #list to hold sprites to draw
 		for sprite in self.objects: #loop through object list
 			sprite.update() #update this sprite
@@ -111,6 +111,7 @@ class MapObjectLayer:
 		sprites.sort() #sort the sprite list by y position
 		for sprite in sprites: #loop through sprites in sprite list
 			sprite[1].draw(self.image) #tell sprite to draw itself
+			pass
 		return self.image
 
 #class to manage a map

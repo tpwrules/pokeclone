@@ -49,39 +49,39 @@ class ChoiceDialog:
 		#draw four corners
 		self.choice_tiles.get_tile(0, 0, tile_buf) #get top left corner
 		self.dlog_surf.blit(tile_buf, (0, 0)) #draw it
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(2, 0, tile_buf) #get top right corner
 		self.dlog_surf.blit(tile_buf, (dlog_width-8, 0)) #draw it
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(0, 2, tile_buf) #get bottom left corner
 		self.dlog_surf.blit(tile_buf, (0, dlog_height-8)) #draw it
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(2, 2, tile_buf) #get bottom right corner
 		self.dlog_surf.blit(tile_buf, (dlog_width-8, dlog_height-8)) #draw it
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		#now, draw top and bottom edges
 		self.choice_tiles.get_tile(1, 0, tile_buf) #get top edge tile
-		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(1, 2, self.cursor_tile) #get bottom edge tile
 		for x in xrange(8, dlog_width-8, 8): #loop through tile positions
 			self.dlog_surf.blit(tile_buf, (x, 0)) #draw top edge tile
 			self.dlog_surf.blit(self.cursor_tile, (x, dlog_height-8)) #draw bottom edge tile
 		#draw left and right edges
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(0, 1, tile_buf) #get left edge tile
-		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(2, 1, self.cursor_tile) #get right edge tile
 		for y in xrange(8, dlog_height-8, 8): #loop through tile positions
 			self.dlog_surf.blit(tile_buf, (0, y)) #draw left edge tile
 			self.dlog_surf.blit(self.cursor_tile, (dlog_width-8, y)) #draw right edge tile
 		#now, fill in dialog middle
-		tile_buf.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(1, 1, tile_buf) #get center tile
 		for y in xrange(8, dlog_height-8, 8): #loop through rows
 			for x in xrange(8, dlog_width-8, 8): #and tiles
 				self.dlog_surf.blit(tile_buf, (x, y)) #fill one tile
 		#load cursor tile
-		self.cursor_tile.fill((0, 0, 0, 0), special_flags=BLEND_RGBA_MIN) #clear tile buffer
+		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(0, 3, self.cursor_tile) #load it
 		#now, draw options
 		y = 8 #current y position of drawing
