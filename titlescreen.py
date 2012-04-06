@@ -6,6 +6,7 @@ import game #load game engine
 import dialog #and dialog manager
 import font #and font manager
 import settings #and game settings
+import error #import various exceptions
 
 class TitleScreen: #class for the title screen
 	def __init__(self, g):
@@ -27,13 +28,8 @@ class TitleScreen: #class for the title screen
 		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
 	def check_environment(self): #make sure environment is up to snuff
-		expected = (1,9,1) #expected version to compare with
+		expected = (2,9,1) #expected version to compare with
 		real = pygame.version.vernum #given version
-		incorrect = True
-		if real[0] >= expected[0]: #check first number
-			if real[1] >= expected[1]: #and second
-				incorrect = False #correct version
-		real = pygame.version.ver #given version
 		incorrect = False
 		for num in zip(real, expected): #check version tuples
 			if num[0] > num[1]: #if real number is > expected, automatic win
@@ -52,12 +48,12 @@ class TitleScreen: #class for the title screen
 				print "-----ENVIRONMENT ERROR-----"
 				print "Pygame is not up to date, game will not run!"
 				print "-----ENVIRONMENT ERROR-----"
-				raise Exception("Pygame not up to date")
+				raise error.QuitException()
 	def environ_error(self): #show environment error
 		self.surf.fill((0, 0, 0)) #clear out surface
 		result = self.dlog.update(self.surf, (0, 1)) #show error dialog
 		if result is True: #if dialog finished
-			raise Exception("Pygame not up to date") #die
+			raise error.QuitException() #die
 	def start_game(self): #start the game running
 		self.g.title_screen = None #remove ourselves from the globals
 		self.g.game = game.Game(self.g) #initialize a new game
