@@ -10,31 +10,39 @@ import settings #and game settings
 class TitleScreen: #class for the title screen
 	def __init__(self, g):
 		self.g = g #store globals
-		self.font = font.Font("data/fonts/dialog_font.xml") #load font for drawing press start
-		self.msg_width = self.font.get_width("Press Start!") #get width of message so we can center it
 		self.dlog = dialog.ChoiceDialog(self.g, "standard") #initialize new dialog for choices
 		#initialize new surface to draw stuff on
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y))
-		self.title_pic = pygame.image.load("data/titlescreen.png") #load title picture
-		self.title_pic.convert() #convert it for faster drawing
+		#now we need to load all of the title pictures
+		def tstr(n): #converts a number to a string with a leading zero
+			s = str(n)
+			return s if len(s) == 2 else "0"+s
+		self.title_pics = [] #list of pictures
+		for x in xrange(39): #load 39 frames
+			#load one frame
+			pic = pygame.image.load("data/titlescreen/titlescreen"+tstr(x)+".png")
+			pic.convert() #convert picture for faster drawing
+			self.title_pics.append(pic) #add it to picture list
 		self.update_func = self.main_update #store update function
-		self.frames = 0 #number of frames for showing start message
+		self.start_main() #start main function
 	def start_game(self): #start the game running
 		self.g.title_screen = None #remove ourselves from the globals
 		self.g.game = game.Game(self.g) #initialize a new game
 		self.g.game.start() #tell it to start running
 		self.g.update_func = self.g.game.update #store new update function
+	def start_main(self): #start showing main title screen
+		self.switch = False #whether we should switch this frame
+		self.curr_frame = 0 #current frame to display
 	def main_update(self): #update showing the picture
-		self.surf.blit(self.title_pic, (0, 0)) #draw title screen picture
-		if self.frames <= 20: #if half a second hasn't passed yet
-			#draw press start
-			self.font.render("Press Start!", self.surf, ((settings.screen_x-self.msg_width)/2, 130))
-		elif self.frames == 40: #if a full second has passed
-			self.frames = 0 #reset counter
-		self.frames += 1 #update frame counter
-		if self.g.curr_keys[settings.key_accept]: #if accept key has been pressed
-			self.update_func = self.choice_update #switch update funcion
-			self.start_choices() #start choice updates
+		if self.switch is True: #if we should switch this frame
+			self.curr_frame += 1 #increment picture
+			if self.curr_frame == len(self.title_pics): #if we're at the end
+				self.curr_frame = 0 #go back to beginning
+		self.switch = not self.switch #invert switch so we switch every other frame
+		self.surf.blit(self.title_pics[self.curr_frame], (0, 0)) #show current picture
+		if self.g.curr_keys[settings.key_accept]: #if accept key was pressed
+			self.update_func = self.choice_update #switch update functions
+			self.start_choices() #and start showing choices
 	def start_choices(self): #show load choice screen
 		if path.exists(settings.save_name): #if save file exists
 			self.save_exists = True #mark it
