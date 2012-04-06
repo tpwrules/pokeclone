@@ -24,7 +24,32 @@ class TitleScreen: #class for the title screen
 			pic.convert() #convert picture for faster drawing
 			self.title_pics.append(pic) #add it to picture list
 		self.update_func = self.main_update #store update function
+		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
+	def check_environment(self): #make sure environment is up to snuff
+		expected = (1,9,1) #expected version to compare with
+		real = pygame.version.vernum #given version
+		incorrect = True
+		if real[0] >= expected[0]: #check first number
+			if real[1] >= expected[1]: #and second
+				incorrect = False #correct version
+		if incorrect: #if version number is incorrect
+			try: #attempt to show pretty error
+				self.dlog = dialog.Dialog(self.g, "standard") #load standard dialog
+				#show error
+				self.dlog.draw_text("Error! Your pygame version isn't up to snuff  and the game won't be able to run.{wait}")
+				self.environ_error() #run function once to check for issues
+				self.update_func = self.environ_error #set new update function
+			except Exception as e: #if that couldn't be done
+				print "-----ENVIRONMENT ERROR-----"
+				print "Pygame is not up to date, game will not run!"
+				print "-----ENVIRONMENT ERROR-----"
+				raise Exception("Pygame not up to date")
+	def environ_error(self): #show environment error
+		self.surf.fill((0, 0, 0)) #clear out surface
+		result = self.dlog.update(self.surf, (0, 1)) #show error dialog
+		if result is True: #if dialog finished
+			raise Exception("Pygame not up to date") #die
 	def start_game(self): #start the game running
 		self.g.title_screen = None #remove ourselves from the globals
 		self.g.game = game.Game(self.g) #initialize a new game
