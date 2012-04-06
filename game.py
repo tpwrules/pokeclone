@@ -181,8 +181,12 @@ class Game: #class for our game engine
 				pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
 		return self.surf #return the rendered surface
-	def save(self): #save our data
+	def save(self, fname=None): #save our data
 		for id in self.objects: #loop through all our objects
 			self.objects[id].save() #tell them to save
+		if fname is None: #if no save file was specified
+			f = settings.save_name #use one in settings
+		else: #otherwise
+			f = fname #use passed one
 		self.g.save.set_game_prop("game", "curr_map", self.map_file) #store map
-		self.g.save.save(settings.save_name) #write out save file
+		self.g.save.save(f) #write out save file
