@@ -154,7 +154,9 @@ class Map:
 		
 		self.image = pygame.Surface((self.map_width*16, self.map_height*16)) #create a new surface to render on
 		self.image.convert() #convert it to blit faster
-		
+
+		self.render() #render all our surfaces
+	def render(self): #render all our surfaces
 		for layer in self.layers: #loop through all of our layers
 			layer.render() #tell them to render themselves
 	#function to update the map
