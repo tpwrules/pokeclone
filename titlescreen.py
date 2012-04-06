@@ -29,6 +29,7 @@ class TitleScreen: #class for the title screen
 		self.start_main() #start main function
 	def check_environment(self): #make sure environment is up to snuff
 		expected = (2,9,1) #expected version to compare with
+		expected = (1,9,1) #expected version to compare with
 		real = pygame.version.vernum #given version
 		incorrect = False
 		for num in zip(real, expected): #check version tuples
