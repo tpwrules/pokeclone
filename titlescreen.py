@@ -33,6 +33,14 @@ class TitleScreen: #class for the title screen
 		if real[0] >= expected[0]: #check first number
 			if real[1] >= expected[1]: #and second
 				incorrect = False #correct version
+		real = pygame.version.ver #given version
+		incorrect = False
+		for num in zip(real, expected): #check version tuples
+			if num[0] > num[1]: #if real number is > expected, automatic win
+				break
+			elif num[0] < num[1]: #otherwise, if real is < expected, automatic fail
+				incorrect = True
+				break
 		if incorrect: #if version number is incorrect
 			try: #attempt to show pretty error
 				self.dlog = dialog.Dialog(self.g, "standard") #load standard dialog
