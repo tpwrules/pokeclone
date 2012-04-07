@@ -62,7 +62,7 @@ def mainloop(): #main loop of the game
 			g.old_keys[x] = g.keys[x] #and update old keys
 		surface = g.update_func() #tell current object to update for one frame
 		pygame.transform.scale(surface, (settings.screen_x*settings.screen_scale, \
-			settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
+			settings.screen_y*settings.screen_scale), g.screen) #draw the screen scaled properly
 		pygame.display.flip() #flip double buffers
 		wait_frame()
 
@@ -95,3 +95,5 @@ try:
 	mainloop()
 except error.QuitException: #if it was just a forced quit
 	pass #don't do anything
+except Exception as e: #if it's any other exception
+	error.exception_handler(g, e) #pass it to exception handler
