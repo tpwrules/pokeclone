@@ -82,17 +82,14 @@ g.fps = 0 #current FPS
 g.next_fps = 0 #next FPS
 g.prev_secs = 0 #previous number of seconds
 
-poke_types.load_data() #load pokemon type data
+g.reset = reset #store reset handler
 
-g.save = savegame.SaveGame(g) #initialize a new savegame manager
-
-g.reset = reset #store reset function
-
-reset() #reset game
-
-#run main loop
+#start the game running
 try:
-	mainloop()
+	poke_types.load_data() #load pokemon type data
+	g.save = savegame.SaveGame(g) #initialize a new savegame manager
+	reset() #reset the game
+	mainloop() #start the main loop
 except error.QuitException: #if it was just a forced quit
 	pass #don't do anything
 except Exception as e: #if it's any other exception
