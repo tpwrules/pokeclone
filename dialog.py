@@ -213,9 +213,15 @@ class Dialog:
 				self._next_line() #go to next line
 			self.dlog_font.render(letter, self.text_surf, self.next_pos) #render letter
 			self.next_pos[0] += width #add width to current position
-	def update(self, surf, surf_pos): #update the dialog box, returns true when done
+	def update(self, surf, surf_pos, force=False): #update the dialog box, returns true when done
 		if not self.drawing: #if we're not drawing anything
-			return True #say so
+			if not force: return True #return saying we're done if we're not supposed to draw anyway
+			try: #attempt to draw the dialog box
+				surf.blit(self.image, surf_pos) #draw dialog box image
+				surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top)) #and text surface
+			except: #if it couldn't be done for some reason
+				pass #don't worry about it
+			return True #say we're done
 		choice_ret = None #store the result of a choice update
 		if self.choice_dialog is None: #if we're not currently drawing a choice dialog
 			if self.g.curr_keys[settings.key_accept] and self.fill_allowed and self.waiting == False: #if the accept key has been pressed and we're allowed to fill
