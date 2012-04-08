@@ -54,9 +54,10 @@ class ScreenShift:
 class WavyScreen:
 	def __init__(self):
 		self.running = True #we're currently running
-		self.amplitude = 1 #store initial settings
+		self.amplitude = 1.0 #store initial settings
 		self.degrees = 0.1
-		self.frames = 20
+		self.frames = 40
+		self.fade = 255.0
 	def update(self, surf):
 		if not self.running: return True #return if we're not running
 		#loop through all the rows in the screen and shift them individually
@@ -70,8 +71,13 @@ class WavyScreen:
 			else: #if screen was scrolled right
 				surf.fill((0, 0, 0), (0, y, delta, 1)) #fill scrolled off area
 		surf.set_clip(None) #clear clipping rect
-		self.amplitude += 1 #increment amplitude for next frame
+		self.amplitude += 0.7 #increment amplitude for next frame
 		self.frames -= 1 #and decrement frames
-		if self.frames == 0: #if we've run out of frames
+		if self.frames < 15: #if we're supposed to fade
+			surf.fill((max(int(self.fade), 0), )*4, special_flags=BLEND_RGBA_MULT) #draw it
+			self.fade -= 255/15 #decrement fade color
+		if self.frames <= 0:
+			surf.fill((0, 0, 0))
+		if self.frames == -30: #if we've run out of frames
 			self.running = False #we're not running
 			return True #say we're done
