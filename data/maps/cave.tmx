@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="id" value="cave"/>
+ </properties>
+ <tileset firstgid="1" name="spotthing" tilewidth="23" tileheight="25">
+  <image source="../tilesets/spotthing.png" trans="808080" width="23" height="25"/>
+ </tileset>
+ <tileset firstgid="2" name="cavebackground" tilewidth="16" tileheight="16">
+  <image source="../tilesets/cavebackground.png" trans="808080" width="32" height="32"/>
+ </tileset>
+ <tileset firstgid="6" name="cavetiles" tilewidth="16" tileheight="16">
+  <image source="../tilesets/cavetiles.png" trans="808080" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="14" name="watertiles" tilewidth="16" tileheight="16">
+  <image source="../tilesets/watertiles.png" trans="808080" width="64" height="80"/>
+ </tileset>
+ <tileset firstgid="34" name="maptypetileset" tilewidth="16" tileheight="16">
+  <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="42" name="rockthing" tilewidth="16" tileheight="16">
+  <image source="../tilesets/rockthing.png" trans="808080" width="32" height="32"/>
+ </tileset>
+ <layer name="Tile Layer 2" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYmBgYAZiJirRLEDMSkWaWu4a6u4j1/2E7Bkp4TfqvlH3jbqP+u4DAOfQBXk=
+  </data>
+ </layer>
+ <layer name="Tile Layer 3" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFpALGgXbAMAej4TsKYICeaWE03ZEOABHMAAU=
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztx0cNADAMwMAg6N6DP80aRH6NpXtYxLIs688cPAKiwidkFFSFb+gYmAq/sHFwFf4ByE0GuQ==
+  </data>
+ </layer>
+ <layer name="Tile Layer 4" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKhAdiAmJ2KNBcQc1ORVgBiRSrSyECeAB8fIEUtKfoB1bUEWw==
+  </data>
+ </layer>
+ <layer name="Tile Layer 5" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzjYmBg4AZirhFC8wAxLxVpENACYm0G6gEdINalonmUguHuP3LBaLiMgpEOADUdBXs=
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="20" height="20">
+  <object name="red" type="Player" x="48" y="206" width="16" height="16">
+   <properties>
+    <property name="id" value="player"/>
+   </properties>
+  </object>
+  <object name="indoorhouse_warp2" type="warp" x="315" y="-64">
+   <properties>
+    <property name="dest_map" value="oasis_inside.tmx"/>
+    <property name="dest_warp" value="cave_warp"/>
+    <property name="id" value="cave_entrance"/>
+    <property name="tile_pos" value="10,8"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Tile Layer 7" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFlAItINYeaEfQEAx3/5ELRsNlFIx0AAAJxAEA
+  </data>
+ </layer>
+ <layer name="Collisions" width="20" height="20" opacity="0.28">
+  <data encoding="base64" compression="zlib">
+   eJxTYmBgUBrFZGNaAFqaPRjAcPcfuWA0XAiDgc7vhLDyCMMAcUcY8Q==
+  </data>
+ </layer>
+</map>
