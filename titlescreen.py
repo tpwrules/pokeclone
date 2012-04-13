@@ -38,7 +38,6 @@ class TitleScreen: #class for the title screen
 		#set up variables for fading text
 		self.fadein = True
 		self.textopacity = 10 #opacity goes backwards for faster drawing
-		self.update_func = self.main_update #store update function
 		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
 	def check_environment(self): #make sure environment is up to snuff
@@ -74,8 +73,7 @@ class TitleScreen: #class for the title screen
 		self.g.game.start() #tell it to start running
 		self.g.update_func = self.g.game.update #store new update function
 	def start_main(self): #start showing main title screen
-		self.switch = False #whether we should switch this frame
-		self.curr_frame = 0 #current frame to display
+		self.update_func = self.main_update #set our update function
 	def main_update(self): #update showing the picture
 		self.shinesurf.fill((0, 0, 0, 0)) #clear out temp shine
 		self.shinesurf.blit(self.shine, (self.shine_x, self.shine_y)) #draw shine
