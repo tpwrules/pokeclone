@@ -38,8 +38,8 @@
   <object name="cave_warp" type="warp" x="67" y="-59">
    <properties>
     <property name="dest_map" value="cave.tmx"/>
-    <property name="dest_warp" value="cave_entrance"/>
-    <property name="id" value="cave_warp"/>
+    <property name="dest_warp" value="cave_indoor_warp"/>
+    <property name="id" value="indoor_cave_warp"/>
     <property name="tile_pos" value="17,2"/>
    </properties>
   </object>
