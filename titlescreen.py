@@ -35,11 +35,21 @@ class TitleScreen: #class for the title screen
 		self.logomask.convert()
 		self.shine = pygame.image.load("data/titlescreen/shine.png")
 		self.shine.convert_alpha()
+		self.textbg = pygame.image.load("data/titlescreen/fadetoblack.png")
+		self.textbg.convert_alpha()
 		#create a surface to draw the shine on with the same dimensions as the logo
 		self.shinesurf = pygame.Surface(self.logo.get_size(), SRCALPHA)
+		#create a surface for the text
+		self.textsurf = pygame.Surface(self.textbg.get_size(), SRCALPHA)
+		#now, we need to draw Press X! on screen
+		f = font.Font("data/fonts/selfdialog_font.xml") #load font to draw with
+		f.render("Press X!", self.textbg, (15, 2))
 		#calculate dimensions for everything
 		self.shine_y = (self.logo.get_height()-self.shine.get_height())/2
 		self.shine_x = -40 #current x position of shine
+		#set up variables for fading text
+		self.fadein = True
+		self.textopacity = 255 #opacity goes backwards for faster drawing
 		self.update_func = self.main_update #store update function
 		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
@@ -85,9 +95,26 @@ class TitleScreen: #class for the title screen
 		self.surf.blit(self.bg, (0, 0)) #draw background of titlescreen
 		self.surf.blit(self.logo, (18, 12)) #and logo
 		self.surf.blit(self.shinesurf, (18, 12)) #and shine
+		#move shine
 		self.shine_x += 3
-		if self.shine_x > 240:
+		if self.shine_x > 250:
 			self.shine_x = -40
+		#now, calculate for press x!
+		self.textsurf.fill((0, 0, 0, 0))  #clear out text buffer
+		self.textsurf.blit(self.textbg, (0, 0)) #draw text onto it
+		#draw transparency
+		self.textsurf.fill((0, 0, 0, self.textopacity), special_flags=BLEND_RGBA_SUB)
+		self.surf.blit(self.textsurf, (0, 145)) #draw faded surface onto screen
+		if self.fadein: #change opacity
+			self.textopacity -= 10
+			if self.textopacity < 0:
+				self.textopacity = 0
+				self.fadein = False
+		else:
+			self.textopacity += 10
+			if self.textopacity > 205:
+				self.textopacity = 205
+				self.fadein = True
 		if self.g.curr_keys[settings.key_accept]: #if accept key was pressed
 			self.update_func = self.choice_update #switch update functions
 			self.start_choices() #and start showing choices
