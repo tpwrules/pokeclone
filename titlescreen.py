@@ -49,7 +49,7 @@ class TitleScreen: #class for the title screen
 		self.shine_x = -40 #current x position of shine
 		#set up variables for fading text
 		self.fadein = True
-		self.textopacity = 255 #opacity goes backwards for faster drawing
+		self.textopacity = 10 #opacity goes backwards for faster drawing
 		self.update_func = self.main_update #store update function
 		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
@@ -103,17 +103,17 @@ class TitleScreen: #class for the title screen
 		self.textsurf.fill((0, 0, 0, 0))  #clear out text buffer
 		self.textsurf.blit(self.textbg, (0, 0)) #draw text onto it
 		#draw transparency
-		self.textsurf.fill((0, 0, 0, self.textopacity), special_flags=BLEND_RGBA_SUB)
+		self.textsurf.fill((255, 255, 255, self.textopacity), special_flags=BLEND_RGBA_MULT)
 		self.surf.blit(self.textsurf, (0, 145)) #draw faded surface onto screen
 		if self.fadein: #change opacity
-			self.textopacity -= 10
-			if self.textopacity < 0:
-				self.textopacity = 0
+			self.textopacity += 12
+			if self.textopacity > 255:
+				self.textopacity = 255
 				self.fadein = False
 		else:
-			self.textopacity += 10
-			if self.textopacity > 205:
-				self.textopacity = 205
+			self.textopacity -= 12
+			if self.textopacity < 20:
+				self.textopacity = 20
 				self.fadein = True
 		if self.g.curr_keys[settings.key_accept]: #if accept key was pressed
 			self.update_func = self.choice_update #switch update functions
