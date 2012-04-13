@@ -8,6 +8,8 @@ import font #and font manager
 import settings #and game settings
 import error #import various exceptions
 
+#18,12
+
 class TitleScreen: #class for the title screen
 	def __init__(self, g):
 		self.g = g #store globals
@@ -24,6 +26,20 @@ class TitleScreen: #class for the title screen
 			pic = pygame.image.load("data/titlescreen/titlescreen"+tstr(x)+".png")
 			pic.convert() #convert picture for faster drawing
 			self.title_pics.append(pic) #add it to picture list
+		#load and create surfaces for all the title screen parts
+		self.logo = pygame.image.load("data/titlescreen/bronzelogo.png")
+		self.logo.convert_alpha()
+		self.bg = pygame.image.load("data/titlescreen/background.png")
+		self.bg.convert()
+		self.logomask = pygame.image.load("data/titlescreen/logomask.png")
+		self.logomask.convert()
+		self.shine = pygame.image.load("data/titlescreen/shine.png")
+		self.shine.convert_alpha()
+		#create a surface to draw the shine on with the same dimensions as the logo
+		self.shinesurf = pygame.Surface(self.logo.get_size(), SRCALPHA)
+		#calculate dimensions for everything
+		self.shine_y = (self.logo.get_height()-self.shine.get_height())/2
+		self.shine_x = -40 #current x position of shine
 		self.update_func = self.main_update #store update function
 		self.check_environment() #make sure the environment is up to snuff
 		self.start_main() #start main function
@@ -63,12 +79,15 @@ class TitleScreen: #class for the title screen
 		self.switch = False #whether we should switch this frame
 		self.curr_frame = 0 #current frame to display
 	def main_update(self): #update showing the picture
-		if self.switch is True: #if we should switch this frame
-			self.curr_frame += 1 #increment picture
-			if self.curr_frame == len(self.title_pics): #if we're at the end
-				self.curr_frame = 0 #go back to beginning
-		self.switch = not self.switch #invert switch so we switch every other frame
-		self.surf.blit(self.title_pics[self.curr_frame], (0, 0)) #show current picture
+		self.shinesurf.fill((0, 0, 0, 0)) #clear out temp shine
+		self.shinesurf.blit(self.shine, (self.shine_x, self.shine_y)) #draw shine
+		self.shinesurf.blit(self.logomask, (0, 0), special_flags=BLEND_RGBA_MULT) #mask it to fit logo
+		self.surf.blit(self.bg, (0, 0)) #draw background of titlescreen
+		self.surf.blit(self.logo, (18, 12)) #and logo
+		self.surf.blit(self.shinesurf, (18, 12)) #and shine
+		self.shine_x += 3
+		if self.shine_x > 240:
+			self.shine_x = -40
 		if self.g.curr_keys[settings.key_accept]: #if accept key was pressed
 			self.update_func = self.choice_update #switch update functions
 			self.start_choices() #and start showing choices
