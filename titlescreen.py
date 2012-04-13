@@ -8,24 +8,12 @@ import font #and font manager
 import settings #and game settings
 import error #import various exceptions
 
-#18,12
-
 class TitleScreen: #class for the title screen
 	def __init__(self, g):
 		self.g = g #store globals
 		self.dlog = dialog.ChoiceDialog(self.g, "standard") #initialize new dialog for choices
 		#initialize new surface to draw stuff on
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y))
-		#now we need to load all of the title pictures
-		def tstr(n): #converts a number to a string with a leading zero
-			s = str(n)
-			return s if len(s) == 2 else "0"+s
-		self.title_pics = [] #list of pictures
-		for x in xrange(39): #load 39 frames
-			#load one frame
-			pic = pygame.image.load("data/titlescreen/titlescreen"+tstr(x)+".png")
-			pic.convert() #convert picture for faster drawing
-			self.title_pics.append(pic) #add it to picture list
 		#load and create surfaces for all the title screen parts
 		self.logo = pygame.image.load("data/titlescreen/bronzelogo.png")
 		self.logo.convert_alpha()
