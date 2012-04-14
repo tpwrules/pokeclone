@@ -4,7 +4,7 @@ from pygame.locals import *
 import sys
 import os
 
-sys.path.append("/users/mauriziovit/documents/pokeclone")
+sys.path.append("..")
 
 import animation
 import settings
