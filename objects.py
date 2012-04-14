@@ -205,12 +205,9 @@ class Warp:
 		t = element.getAttribute("pos").split(",")
 		self.tile_x = int(t[0].strip())
 		self.tile_y = int(t[1].strip())
-		dest_warp = None
-		for n in element.childNodes: #try to find our properties
-			if n.localName == "dest_warp": #if it's the destination
-				dest_warp = data.get_node_text(n) #store it
-			elif n.localName == "dest_map": #or destination map
-				dest_map = data.get_node_text(n) #store it
+		#load destination properties
+		dest_warp = data.get_xml_prop(element, "dest_warp")
+		dest_map = data.get_xml_prop(element, "dest_map")
 		if dest_warp is not None: #if there is a destination
 			properties["dest_warp"] = dest_warp #store properties
 			properties["dest_map"] = dest_map
@@ -227,7 +224,7 @@ class Warp:
 class Sign:
 	def __init__(self, game, element):
 		self.game = game #store parameters
-		self.text = data.get_node_text(element.getElementsByTagName("text")[0]) #store text to show
+		self.text = data.get_xml_prop(element, "text") #store text to show
 		#get our tile position
 		t = element.getAttribute("pos").split(",")
 		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position

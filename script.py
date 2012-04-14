@@ -2,6 +2,7 @@ import pygame #import everything pygame-related
 from pygame.locals import *
 
 import settings #load settings manager
+import data
 
 #class for object scripts
 class Script:
@@ -15,12 +16,6 @@ class Script:
 		self.dlog_wait = False #mark whether we're waiting for a dialog
 		self.callstack = [] #callstack for command execution
 		self.vars = {} #dictionary of variables for the current script
-	def get_text(self, node): #get text from an element
-		nodes = [] #list of found text nodes
-		for n in node.childNodes: #loop through text
-			if n.nodeType == n.TEXT_NODE: #if it's a text node
-				nodes.append(n.data) #add it to the list of text
-		return "".join(nodes) #return combined string
 	def get_var(self, var): #parse a variable string and return its value
 		try: #try to parse it as a variable
 			type = var[0] #get parts
@@ -38,7 +33,7 @@ class Script:
 		self.vars["dlog_result"] = result #store result in variables
 	def cmd_dialog(self, cmd): #handle command
 		self.dlog_wait = True #we're waiting for a dialog
-		self.obj.game.show_dlog(self.get_text(cmd), self.obj, callback=self.dialog_cb) #show the dialog
+		self.obj.game.show_dlog(data.get_node_text(cmd), self.obj, callback=self.dialog_cb) #show the dialog
 	def cmd_if(self, cmd): #handle if command
 		#get parameters
 		left = self.get_var(cmd.getAttribute("left"))

@@ -17,7 +17,10 @@ def get_node_text(node, strip_newlines=True): #get all the text from a node
 	return texts #return combined text
 
 def get_xml_prop(root, name, strip_newlines=True): #get the text from a "property" node with the given name
-	return get_node_text(root.getElementsByTagName(name)[0], strip_newlines)
+	try:
+		return get_node_text(root.getElementsByTagName(name)[0], strip_newlines)
+	except:
+		return None
 
 def get_path(path, with_data=True): #convert a path to one appropriate for the host with the data directory
 	path = path.replace("\\", "/") #convert backslashes to forward slashes
