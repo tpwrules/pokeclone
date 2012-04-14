@@ -84,7 +84,7 @@ class MapTileLayer:
 			y += 1 #go to next row
 	#funtion to update the current image
 	def update(self, surf):
-		return self.image #just return the current image
+		if not self.collisions: return self.image #just return the current image
 		
 #class for an object layer
 class MapObjectLayer:
