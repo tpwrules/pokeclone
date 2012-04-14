@@ -29,6 +29,7 @@ class Game: #class for our game engine
 		self.default_dialog = dialog.Dialog(self.g, "standard")
 		self.dialog = None
 		self.font = self.default_dialog.dlog_font
+		self.stopped = False #set when things should stop moving
 		self.dialog_drawing = False #set when the dialog is showing text
 		self.dialog_result = None #hold result of a dialog
 		self.dialog_callback = None #callback for dialog completion
@@ -167,7 +168,7 @@ class Game: #class for our game engine
 			self.debug = not self.debug #invert debug flag
 		if self.g.curr_keys[settings.key_menu]: #if the menu key is pressed
 			#if no transition is happening and the menu isn't already being shown
-			if self.curr_transition is None and self.menu_showing is False and self.dialog_drawing is False:
+			if self.curr_transition is None and self.menu_showing is False and self.dialog_drawing is False and self.stopped is False:
 				self.menu.show() #show menu
 				self.menu_showing = True #and mark it as being shown
 		#center camera on player
