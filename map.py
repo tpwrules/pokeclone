@@ -95,6 +95,9 @@ class MapObjectLayer:
 		for object in layer_node.getElementsByTagName("object"): #load all objects
 			obj = self.g.game.add_object(object) #load the object
 			self.objects.append(obj) #save it to the object list
+		self.map.obj_layer = self #store ourselves in the map
+	def add_object(self, obj): #add an object to the render list
+		self.objects.append(obj)
 	def render(self):
 		pass
 	def update(self, surf):
@@ -121,6 +124,7 @@ class Map:
 		self.pix_width = self.map_width * 16 #calculate pixel dimensions
 		self.pix_height = self.map_height * 16
 		self.properties = {} #dictionary to store map properties
+		self.obj_layer = None #the object layer in the map
 		
 		self.tilesets = [] #list of tilesets in the map
 		self.layers = [] #list of layers in the map
@@ -156,6 +160,8 @@ class Map:
 		self.image.convert() #convert it to blit faster
 
 		self.render() #render all our surfaces
+	def add_object(self, obj): #add an object to the object layer
+		self.obj_layer.add_object(obj) #tell our object layer to add the object
 	def render(self): #render all our surfaces
 		for layer in self.layers: #loop through all of our layers
 			layer.render() #tell them to render themselves
