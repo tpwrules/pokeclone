@@ -124,8 +124,12 @@ class PartAnimationPart: #class for one part in the layout
 		#we need to rotate our coordinates to be in the correct position
 		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
 		npos = [0,0]
-		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))+center[0]-self.center[0]
-		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))+center[1]-self.center[1]
+		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))
+		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))
+		npos[0] *= (1.0*xs*self.xscale)
+		npos[1] *= (1.0*ys*self.yscale)
+		npos[0] += center[0]-self.center[0]
+		npos[1] += center[1]-self.center[1]
 		pos = npos[:]
 		if xs*self.xscale != 1.0 or ys*self.yscale != 1.0: #if we need to scale
 			old = (img.get_width(), img.get_height())
@@ -197,8 +201,12 @@ class PartAnimationGroup: #class for a layout group in a part animation
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
 		npos = [0,0]
-		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))+center[0]-self.center[0]
-		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))+center[1]-self.center[1]
+		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))
+		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))
+		npos[0] *= (1.0*xs*self.xscale)
+		npos[1] *= (1.0*ys*self.yscale)
+		npos[0] += center[0]-self.center[0]
+		npos[1] += center[1]-self.center[1]
 		pos = npos[:]
 		for child in self.children: #render each child
 			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, self.center)
