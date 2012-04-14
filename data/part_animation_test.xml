@@ -4,7 +4,7 @@
 	<part_image from="main" coord="225,0,24,14" center="12,0" id="body" />
 	<part_image from="main" coord="74,19,34,25" center="34,25" id="gelhand_left" />
 	<part_image from="main" coord="113,18,34,25" center="0,25" id="gelhand_right" />
-	<part_image from="main" coord="
+	<part_image from="main" coord="104,0,20,14" center="20,14" id="innerhand_left" />
 	<part_image from="main" coord="0,27,20,8" id="eye_closed" />
 	<part_image from="main" coord="0,11,20,8" id="eye_open" />
 	<part_image from="main" coord="194,0,25,25" id="face" />
@@ -13,6 +13,7 @@
 			<group id="hands" pos="-24,6">
 				<group id="hand_left" pos="0,0">
 					<part id="gelhand_left" from="gelhand_left" pos="0,0" />
+					<part id="innerhand_left" from="innerhand_left" pos="0,0" />
 				</group>
 				<group id="hand_right" pos="38,0">
 					<part id="gelhand_right" from="gelhand_right" pos="0,0" />
@@ -37,13 +38,14 @@
 			<rotate id="hand_left" degrees="30" />
 			<rotate id="hand_right" degrees="-30" />
 			<rotate id="head" degrees="10" />
-
+			<move id="whole" delta="0,2" />
 		</frame>
 		<frame time="15">
 			<scale id="whole" scale="1" />
 			<rotate id="hand_left" degrees="-30" />
 			<rotate id="hand_right" degrees="30" />
 			<rotate id="head" degrees="-15" />
+			<move id="whole" delta="0,-2" />
 		</frame>
 
 		<frame time="15">
