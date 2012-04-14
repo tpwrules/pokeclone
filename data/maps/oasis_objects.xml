@@ -1,4 +1,8 @@
-<objects>
+<map>
+	<wild for="grass">
+		<pokemon type="zubat" level="6-8|12" />
+		<pokemon type="geodude" level="4-5|7" rarity="2" />
+	</wild>
 	<object id="test_npc">
 		<anim file="data/objects/player/player_animation.xml" />
 		<movement speed="2">
@@ -22,4 +26,4 @@
 			<dialog>Heh, see ya.{wait}</dialog>
 		</script>
 	</object>
-</objects>
+</map>
