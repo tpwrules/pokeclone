@@ -4,7 +4,6 @@
 	<part_image from="main" coord="225,0,24,14" center="12,0" id="body" />
 	<part_image from="main" coord="74,19,34,25" center="34,25" id="gelhand_left" />
 	<part_image from="main" coord="113,18,34,25" center="0,25" id="gelhand_right" />
-	<part_image from="main" coord="
 	<part_image from="main" coord="0,27,20,8" id="eye_closed" />
 	<part_image from="main" coord="0,11,20,8" id="eye_open" />
 	<part_image from="main" coord="194,0,25,25" id="face" />
