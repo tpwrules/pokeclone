@@ -78,6 +78,6 @@ class WavyScreen:
 			self.fade -= 255/15 #decrement fade color
 		if self.frames <= 0:
 			surf.fill((0, 0, 0))
-		if self.frames == -30: #if we've run out of frames
+		if self.frames == -15: #if we've run out of frames
 			self.running = False #we're not running
 			return True #say we're done

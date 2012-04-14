@@ -125,7 +125,7 @@ class Player(objects.RenderedNPC):
 	def step(self): #handle stepping on a tile
 		type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
 		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]: #if there's the potential for a battle
-			self.game.try_battle() #try to start one
+			return self.game.try_battle() #try to start one
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
@@ -138,7 +138,9 @@ class Player(objects.RenderedNPC):
 				if self.tile_pos in self.game.warps: #if we're standing on a warp
 					self.game.prepare_warp(self.tile_pos) #warp
 					return #and just return
-				self.step() #handle stepping on a new tile
+				r = self.step() #handle stepping on a new tile
+				if r is True: #if something special happened
+					return #stop doing things
 			else: #if we are
 				self.animator.update() #update animation
 				return #don't do anything else

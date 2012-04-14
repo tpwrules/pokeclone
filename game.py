@@ -11,6 +11,7 @@ import player #class for player
 import dialog #class for dialogs
 import transition #import all the transitions
 import menu #import menu manager
+import battle
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -156,7 +157,16 @@ class Game: #class for our game engine
 		self.curr_transition = obj #store transition object
 		self.transition_cb = callback #and callback
 	def try_battle(self): #decide whether to run a battle or not
-		pass
+		t = random.randrange(1, 187/7) #decide whether a battle should happen
+		if t == 1: #if it should, start it
+			self.transition(transition.WavyScreen(), callback=self.start_battle) #start transition
+			return True #say we did something
+	def start_battle(self): #callback to actually begin the battle
+		data = self.wild_pokemon["grass"] #load proper wild pokemon data
+		type = random.randrange(0, len(data)) #generate a random type
+		level = random.randrange(0, len(data[type][1])) #and random level
+		t = battle.Battle(self) #create a new battle
+		t.start_wild(data[type][0], data[type][1][level]) #start an encounter
 	def update(self): #update the engine for this frame
 		if self.g.curr_keys[settings.key_debug]: #if the debug key is pressed
 			self.debug = not self.debug #invert debug flag
