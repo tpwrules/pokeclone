@@ -117,14 +117,17 @@ class Player(objects.RenderedNPC):
 			#if they say no, don't surf
 			self.game.show_dlog("Excellent. The land is better anyways.{wait}", dlog=self.notify_dlog)
 	def collide(self, tile_pos): #check for collisions
-		type = self.game.get_tile_type(tile_pos[0], tile_pos[1], True) #get type of tile
+		tile_type = self.game.get_tile_type(tile_pos[0], tile_pos[1], True) #get type of tile
 		if self.in_water: #if we're in water
-			return type not in [settings.TILE_WATER] #return collisions
+			return tile_type not in [settings.TILE_WATER] #return collisions
 		else: #if we're on land
-			return type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
+			return tile_type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
 	def step(self): #handle stepping on a tile
-		type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
-		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]: #if there's the potential for a battle
+		if self.tile_pos in self.game.warps: #if we're standing on a warp
+			self.game.prepare_warp(self.tile_pos) #do the warp
+			return True #something happened
+		tile_type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
+		if tile_type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]: #if there's the potential for a battle
 			return self.game.try_battle() #try to start one
 	#update the player
 	def update(self):
@@ -135,9 +138,6 @@ class Player(objects.RenderedNPC):
 			self.move_frames -= 1 #decrement amount of movement frames
 			if self.move_frames == 0: #if we aren't moving any more
 				self.moving = False #say so
-				if self.tile_pos in self.game.warps: #if we're standing on a warp
-					self.game.prepare_warp(self.tile_pos) #warp
-					return #and just return
 				r = self.step() #handle stepping on a new tile
 				if r is True: #if something special happened
 					return #stop doing things
