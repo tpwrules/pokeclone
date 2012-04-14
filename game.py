@@ -159,6 +159,7 @@ class Game: #class for our game engine
 	def try_battle(self): #decide whether to run a battle or not
 		t = random.randrange(1, 187/7) #decide whether a battle should happen
 		if t == 1: #if it should, start it
+			if "grass" not in self.wild_pokemon: return #if there isn't proper wild data then return
 			self.transition(transition.WavyScreen(), callback=self.start_battle) #start transition
 			return True #say we did something
 	def start_battle(self): #callback to actually begin the battle
