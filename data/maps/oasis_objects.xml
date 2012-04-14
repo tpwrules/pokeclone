@@ -1,9 +1,16 @@
-<map>
+<map id="oasis" tiles="maps/oasis.tmx">
 	<wild for="grass">
 		<pokemon type="zubat" level="6-8|12" />
 		<pokemon type="geodude" level="4-5|7" rarity="2" />
 	</wild>
-	<object id="test_npc">
+	<object id="oasis_sign" type="sign" pos="26,13">
+		<text>Welcome to the Testing Oasis.{br}Enjoy your stay!{wait}</text>
+	</object>
+	<object id="house_warp" type="warp" pos="28,10">
+		<dest_map>oasis_inside.tmx</dest_map>
+		<dest_warp>in_house_warp</dest_warp>
+	</object>
+	<object id="test_npc" type="npc" pos="5,9">
 		<anim file="objects/player/player_animation.xml" />
 		<movement speed="2">
 			<move dir="up" dist="4" />
