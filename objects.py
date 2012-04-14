@@ -118,10 +118,11 @@ class MovementManager:
 		self.store_pix_pos = self.pix_pos #and pixel position
 		self.curr_movement = [dir, dist, speed] #store current movement
 		self.running = False #we're not supposed to be automatically moving any more
+		self.moving = True #we're moving
 		self._start_move() #start moving
 	def update(self): #update movement
 		if not self.moving: #if we're not doing anything
-			return #don't do anything
+			return True #don't do anything
 		dir, dist, speed = self.curr_movement #load current movement
 		if speed < 0: #if this is a wait command
 			self.curr_movement[1] -= 1 #decrement a frame
@@ -153,6 +154,8 @@ class MovementManager:
 				self.check_collide = True #mark that we need to check it
 			else: #if we can move fine
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
+		if not self.running and not self.resume and self.curr_movement[1] == 0: #if we're finished moving manually
+			self.moving = False #we're not moving any more
 		if self.curr_movement[1] == 0 and self.check_collide == False: #if we're finished moving
 			#un-calculate tile position
 			if dir == 0:
@@ -174,6 +177,9 @@ class MovementManager:
 				self.curr_movement = self.store_movement[:] #restore backed up stuff
 				self.delta = self.store_delta
 				self.pix_pos = self.store_pix_pos
+			else: #otherwise
+				self.moving = False #we're not moving any more
+				return True #say so
 
 #class that handles rendering generic objects, pretty much
 #the same as a pygame sprite
@@ -241,10 +247,11 @@ class Sign:
 class NPC(RenderedNPC):
 	def __init__(self, game, element):
 		RenderedNPC.__init__(self) #init the renderer class
+		self.id = element.getAttribute("id")
 		self.game = game
 		t = element.getAttribute("pos").split(",") #load tile position
 		self.tile_pos = [int(t[0].strip()), int(t[1].strip())]
-		self.pos = [((self.tile_pos[0]-1)*16), (self.tile_pos[1]-1)*16] #set real position
+		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set real position
 		self.interacting = False #mark that we're not interacting
 		self.visible = True #and we should be showing ourselves
 		#load an animator

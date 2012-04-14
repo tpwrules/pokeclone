@@ -40,13 +40,15 @@
 			<move dir="up" dist="5" />
 		</movement>
 		<vision>3</vision>
+		<class>cooltrainer</class>
+		<reward>120</reward>
+		<name>James</name>
 		<pre_script>
 			<dialog>Oh snap!{br}It's MEEEEE!{wait}</dialog>
 		</pre_script>
 		<post_script>
 			<dialog>Darn. You won, fair then square.{wait}</dialog>
 		</post_script>
-		<reward>120</reward>
 		<party>
 			<pokemon type="zubat" level="5" />
 			<pokemon type="magpole" level="7" />
