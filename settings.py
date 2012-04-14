@@ -21,6 +21,7 @@ key_dbg_load = 10
 key_menu = 11
 
 save_name = "save.pokesav"
+data_path = "data"
 
 TILE_NORMAL = 0
 TILE_SOLID = 1
