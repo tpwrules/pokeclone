@@ -20,6 +20,15 @@ class Battle: #class to manage a battle
 		self.dlog = dialog.Dialog(self.g, "standard") #initialize a new dialog to draw with temporarily
 		#say what the encounter was
 		self.dlog.draw_text("You encountered a {br}"+type+" at level "+str(level)+"!{wait}")
+	def start_trainer(self, trainer): #start a trainer battle
+		self.wild = False #this is not a wild battle
+		self.dlog = dialog.Dialog(self.g, "standard") #initialize a new dialog to draw with temporarily
+		#generate encounter text
+		s = "You encountered "+trainer.class_name+" "+trainer.trainer_name+"{br}with the following pok{ae}mon:{wait}{br}"
+		for mon in trainer.party:
+			s += "A level "+str(mon[1])+" "+mon[0]+"{wait}{br}"
+		s += "That's it!{wait}"
+		self.dlog.draw_text(s)
 	def done(self): #called when battle is done
 		self.g.battle = None #remove ourselves from globals
 		self.g.update_func = self.game.update #restore game update function

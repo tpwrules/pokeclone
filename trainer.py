@@ -31,7 +31,7 @@ class TrainerObject(objects.NPC):
 	def start_battle(self):
 		#begin battle
 		t = battle.Battle(self.game) #create new battle
-		t.start_wild("zubat", 6)
+		t.start_trainer(self)
 		self.fought = True #we've been fought now
 	def move_done(self):
 		self.moving = False #we're not moving any more
