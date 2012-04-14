@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="36" height="21" tilewidth="16" tileheight="16">
- <properties>
-  <property name="id" value="oasis"/>
-  <property name="object_data" value="maps/oasis_objects.xml"/>
- </properties>
  <tileset firstgid="1" name="Grass" tilewidth="16" tileheight="16">
   <image source="../tilesets/hgss_tileset_terrain_and_paths_by_thunderdove-d3bnn5w.png" trans="c0c0c0" width="336" height="160"/>
  </tileset>
@@ -40,32 +36,6 @@
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21">
-  <object name="player" type="Player" x="248" y="256" width="16" height="16">
-   <properties>
-    <property name="id" value="player"/>
-   </properties>
-  </object>
-  <object name="house_warp" type="warp" x="446" y="-94">
-   <properties>
-    <property name="dest_map" value="oasis_inside.tmx"/>
-    <property name="dest_warp" value="in_house_warp"/>
-    <property name="id" value="house_warp"/>
-    <property name="tile_pos" value="28,10"/>
-   </properties>
-  </object>
-  <object name="oasis_sign" type="sign" x="490" y="-10" width="48" height="9">
-   <properties>
-    <property name="id" value="oasis_sign"/>
-    <property name="text" value="Welcome to the Testing Oasis.{br}Enjoy your stay!{wait}"/>
-    <property name="tile_pos" value="26,13"/>
-   </properties>
-  </object>
-  <object name="test_npc" type="npc" x="0" y="0">
-   <properties>
-    <property name="id" value="test_npc"/>
-    <property name="tile_pos" value="5,9"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="house top" width="36" height="21">
   <data encoding="base64" compression="zlib">
