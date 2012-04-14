@@ -1,73 +1,55 @@
 <part_anim>
-	<image from="part_test.png" id="main" />
-	<part_image from="main" coord="32,17,114,103" center="58,47" id="body" />
-	<part_image from="main" coord="6,167,18,29" center="12,5" id="leg" />
-	<part_image from="main" coord="33,167,37,31" center="31,16" id="hand_left" />
-	<part_image from="main" coord="79,167,37,32" center="5,15" id="hand_right" />
-	<part_image from="main" coord="134,169,24,28" center="12,7" id="nose" />
-	<part_image from="main" coord="162,175,32,20" id="eye_closed" />
-	<part_image from="main" coord="158,143,38,21" id="eye_open" />
-	<part_image from="main" coord="109,140,42,20" id="mouth" />
-	<layout id="whole" pos="30,0">
-			<group id="legs" pos="20,90">
-				<part id="leg_left" from="leg" pos="0,0"/>
-				<part id="leg_right" from="leg" pos="65,-4" />
+	<image from="reiniculus.png" id="main" />
+	<part_image from="main" coord="27,0,42,52" center="21,26" id="gelbody" />
+	<part_image from="main" coord="225,0,24,14" center="12,0" id="body" />
+	<part_image from="main" coord="74,19,34,25" center="34,25" id="gelhand_left" />
+	<part_image from="main" coord="113,18,34,25" center="0,25" id="gelhand_right" />
+	<part_image from="main" coord="
+	<part_image from="main" coord="0,27,20,8" id="eye_closed" />
+	<part_image from="main" coord="0,11,20,8" id="eye_open" />
+	<part_image from="main" coord="194,0,25,25" id="face" />
+	<layout id="whole" pos="30,30">
+			<part id="gelbody" pos="0,0" from="gelbody" />
+			<group id="hands" pos="-24,6">
+				<group id="hand_left" pos="0,0">
+					<part id="gelhand_left" from="gelhand_left" pos="0,0" />
+				</group>
+				<group id="hand_right" pos="38,0">
+					<part id="gelhand_right" from="gelhand_right" pos="0,0" />
+				</group>
 			</group>
-			<part id="body" pos="0,0" from="body" />
-			<group id="face" pos="10,30">
-				<part id="eye_left" from="eye_open" pos="0,0" />
-				<part id="eye_right" from="eye_open" pos="60,0" />
-				<part id="nose" from="nose" pos="40,0" />
-				<part id="mouth" from="mouth" pos="35,40" />
+			<group id="head" pos="6,12">
+				<part id="body" from="body" pos="0,12" />
+				<part id="face" from="face" pos="0,0" />
+				<part id="eyes" from="eye_open" pos="1,9" />
 			</group>
-			<group id="hands" pos="-20,40">
-				<part id="hand_left" from="hand_left" pos="0,0" />
-				<part id="hand_right" from="hand_right" pos="100,0" />
-			</group>
+		
 	</layout>
-	<anim id="demo" loopreset="true">
-		<frame time="10">
-			<rotate id="leg_left" degrees="-30" />
-			<rotate id="leg_right" degrees="30" />
-			<move id="whole" delta="-10,0" />
-		</frame>
-		<frame time="20">
-			<rotate id="leg_left" degrees="60" />
-			<rotate id="leg_right" degrees="-60" />
-			<move id="whole" delta="-20,0" />
-		</frame>
-		<frame time="10">
-			<rotate id="leg_left" degrees="-30" />
-			<rotate id="leg_right" degrees="30" />
-			<move id="whole" delta="-10,0" />
-		</frame>
-		<frame time="10">
-			<move delta="0,10" id="body" />
-			<move delta="0,10" id="face" />
-			<move delta="0,10" id="hands" />
-		</frame>
-		<frame time="10">
-			<move delta="0,-10" id="body" />
-			<move delta="0,-10" id="face" />
-			<move delta="0,-10" id="hands" />
-		</frame>
+	<anim id="demo" loopreset="false">
+
 		<frame time="15">
-			<set id="eye_left" to="eye_closed" />
-			<scale id="nose" xscale="1.2" />
-		</frame>
-		<frame time="15">
-			<set id="eye_left" to="eye_open" />
-			<scale id="nose" xscale="1" />
-		</frame>
-		<frame time="10">
 			<rotate id="hand_left" degrees="-30" />
+			<rotate id="hand_right" degrees="30" />
+			<rotate id="head" degrees="-5" />
 		</frame>
-		<frame time="20">
-			<rotate id="hand_left" degrees="60" />
+		<frame time="15">			
+			<scale id="whole" scale="1.1" />
+			<rotate id="hand_left" degrees="30" />
+			<rotate id="hand_right" degrees="-30" />
+			<rotate id="head" degrees="10" />
+
 		</frame>
-		<frame time="40">
-			<rotate id="face" degrees="360" />
+		<frame time="15">
+			<scale id="whole" scale="1" />
+			<rotate id="hand_left" degrees="-30" />
+			<rotate id="hand_right" degrees="30" />
+			<rotate id="head" degrees="-15" />
 		</frame>
-		<frame time="30" />
+
+		<frame time="15">
+			<rotate id="hand_left" degrees="30" />
+			<rotate id="hand_right" degrees="-30" />
+			<rotate id="head" degrees="10" />
+		</frame>
 	</anim>
 </part_anim>
