@@ -95,3 +95,5 @@ class TrainerObject(objects.NPC):
 				dist = self.tile_pos[0]-player_pos[0] #get distance between us and player
 				if dist > self.vision: return #return if we can't see them
 				self.do_seen(2, dist-1)
+	def save(self): #save our data
+		self.g.save.set_prop(self.id, "fought", self.fought) #save whether we've been fought

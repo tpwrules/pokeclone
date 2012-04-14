@@ -31,7 +31,6 @@ def get_path(path, with_data=True): #convert a path to one appropriate for the h
 		ret = get_path(settings.data_path, False) #get it
 	else: #if we aren't
 		ret = "" #start with a blank string
-	if path[:5] == "data/": raise Exception
 	for part in path.split("/"): #loop through path components
 		ret = os.path.join(ret, part) #join them together
 	return ret #return finished product

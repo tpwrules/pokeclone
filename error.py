@@ -41,7 +41,7 @@ def exception_write(g, strin): #writes a line to exception outputs
 def exception_handler(g, e): #handles exception
 	tb = traceback.format_exc() #get exception
 	try: #attempt to load a font
-		g.font = font.Font("data/fonts/battle_font.xml")
+		g.font = font.Font("fonts/battle_font.xml")
 		g.surf = pygame.Surface((settings.screen_x, settings.screen_y)) #and a surface to draw on
 		g.surf.fill((0, 0, 100)) #fill with pretty blue
 		g.linepos = 0
