@@ -43,9 +43,11 @@ class TrainerObject(objects.NPC):
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
-	def do_seen(self, dir, dist): #somebody has been seen
-		self.seen = True #we've seen somebody
+	def do_seen(self, dir, dist, tp): #somebody has been seen
+		self.tile_pos = tp[:]
+		self.game.set_obj_pos(self, tp)
 		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
+		self.seen = True #we've seen somebody
 		self.move_manager.move_to(dir, dist, 2, False) #move to player
 		self.game.stopped = True #stop player from moving
 	def update(self): #update ourselves
@@ -71,29 +73,38 @@ class TrainerObject(objects.NPC):
 		if self.seen or self.fought: return #don't try to find people if we've seen somebody already
 		player_pos = self.game.player.tile_pos[:] #get position of player
 		curr_dir = self.move_manager.curr_movement[0] #and the direction we're facing
+		tile_pos = self.tile_pos[:] #adjust our position
+		if curr_dir == 0:
+			tile_pos[1] += 1
+		elif curr_dir == 1:
+			tile_pos[1] -= 1
+		elif curr_dir == 2:
+			tile_pos[0] += 1
+		elif curr_dir == 3:
+			tile_pos[0] -= 1
 		if curr_dir < 2: #facing up or down
-			if self.tile_pos[0] != player_pos[0]: return #if X is different, we can't be interacting
+			if tile_pos[0] != player_pos[0]: return #if X is different, we can't be interacting
 			if curr_dir == 1: #facing down
-				if self.tile_pos[1] > player_pos[1]: return #we can't be interacting if the player is below us
-				dist = player_pos[1]-self.tile_pos[1] #get distance between us and player
+				if tile_pos[1] > player_pos[1]: return #we can't be interacting if the player is below us
+				dist = player_pos[1]-tile_pos[1] #get distance between us and player
 				if dist > self.vision: return #return if we can't see them
-				self.do_seen(1, dist-1) #do move
+				self.do_seen(1, dist-1, tile_pos) #do move
 			elif curr_dir == 0: #facing up
-				if self.tile_pos[1] < player_pos[1]: return #we can't be interacting if the player is above us
-				dist = self.tile_pos[1]-player_pos[1] #get distance between us and player
+				if tile_pos[1] < player_pos[1]: return #we can't be interacting if the player is above us
+				dist = tile_pos[1]-player_pos[1] #get distance between us and player
 				if dist > self.vision: return #return if we can't see them
-				self.do_seen(0, dist-1)
+				self.do_seen(0, dist-1, tile_pos)
 		else: #facing left or right
-			if self.tile_pos[1] != player_pos[1]: return #if Y is different, we can't be interacting
+			if tile_pos[1] != player_pos[1]: return #if Y is different, we can't be interacting
 			if curr_dir == 3: #facing right
-				if self.tile_pos[0] > player_pos[0]: return #we can't be interacting if the player is below us
-				dist = player_pos[0]-self.tile_pos[0] #get distance between us and player
+				if tile_pos[0] > player_pos[0]: return #we can't be interacting if the player is below us
+				dist = player_pos[0]-tile_pos[0] #get distance between us and player
 				if dist > self.vision: return #return if we can't see them
-				self.do_seen(3, dist-1)
+				self.do_seen(3, dist-1, tile_pos)
 			elif curr_dir == 2: #facing left
-				if self.tile_pos[0] < player_pos[0]: return #we can't be interacting if the player is above us
-				dist = self.tile_pos[0]-player_pos[0] #get distance between us and player
+				if tile_pos[0] < player_pos[0]: return #we can't be interacting if the player is above us
+				dist = tile_pos[0]-player_pos[0] #get distance between us and player
 				if dist > self.vision: return #return if we can't see them
-				self.do_seen(2, dist-1)
+				self.do_seen(2, dist-1, tile_pos)
 	def save(self): #save our data
 		self.g.save.set_prop(self.id, "fought", self.fought) #save whether we've been fought
