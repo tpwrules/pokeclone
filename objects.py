@@ -276,7 +276,12 @@ class NPC(RenderedNPC):
 				self.animator.curr_animation = self.stored_anim #restore stored animation
 		self.animator.update() #and our animation
 		
+#import other files which need to be in this list
+import trainer
+
 #dictionary to hold which classes go with which objects
-obj_types = {"warp": Warp, #warp object \
-"sign":Sign, #a sign object\
-"npc":NPC} #an NPC
+obj_types = {"warp": Warp, #warp object
+"sign":Sign, #a sign object
+"npc":NPC, #an NPC
+"trainer":trainer.TrainerObject #a trainer
+}

@@ -33,4 +33,26 @@
 			<dialog>Heh, see ya.{wait}</dialog>
 		</script>
 	</object>
+	<object id="test_trainer" type="trainer" pos="33,4">
+		<anim file="objects/player/player_animation.xml" />
+		<movement speed="2">
+			<move dir="down" dist="5" />
+			<move dir="up" dist="5" />
+		</movement>
+		<vision>3</vision>
+		<pre_script>
+			<dialog>Oh snap!{br}It's MEEEEE!{wait}</dialog>
+		</pre_script>
+		<post_script>
+			<dialog>Darn. You won, fair then square.{wait}</dialog>
+		</post_script>
+		<reward>120</reward>
+		<party>
+			<pokemon type="zubat" level="5" />
+			<pokemon type="magpole" level="7" />
+		</party>
+		<script>
+			<dialog>What a bore I am...{wait}</dialog>
+		</script>
+	</object>
 </map>
