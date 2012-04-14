@@ -33,6 +33,9 @@ while running: #loop while we are still running
 		elif event.type == KEYDOWN: #if a key has been pressed
 			if event.key == K_ESCAPE: #if it's one we care about
 				running = False
+			elif event.key == ord("r"):
+				anim = animation.PartAnimationSet(None, sys.argv[1])
+				anim.set_animation(sys.argv[2])
 	if running == False: #if we aren't supposed to be running any more
 		break #stop running
 	anim_dest.fill((255, 255, 255))
