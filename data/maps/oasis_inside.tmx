@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
- <properties>
-  <property name="id" value="oasis_inside"/>
-  <property name="object_data" value="maps/oasis_inside_objects.xml"/>
- </properties>
  <tileset firstgid="1" name="maptypetileset" tilewidth="16" tileheight="16">
   <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
  </tileset>
@@ -16,33 +12,6 @@
   </data>
  </layer>
  <objectgroup name="objs" width="20" height="20">
-  <object name="player" type="Player" x="274" y="-68">
-   <properties>
-    <property name="id" value="player"/>
-   </properties>
-  </object>
-  <object name="house_inside" type="warp" x="183" y="-68">
-   <properties>
-    <property name="dest_map" value="oasis.tmx"/>
-    <property name="dest_warp" value="house_warp"/>
-    <property name="id" value="in_house_warp"/>
-    <property name="tile_pos" value="10,18"/>
-   </properties>
-  </object>
-  <object name="test_npc" type="npc" x="0" y="0">
-   <properties>
-    <property name="id" value="test_npc2"/>
-    <property name="tile_pos" value="3,3"/>
-   </properties>
-  </object>
-  <object name="cave_warp" type="warp" x="67" y="-59">
-   <properties>
-    <property name="dest_map" value="cave.tmx"/>
-    <property name="dest_warp" value="cave_indoor_warp"/>
-    <property name="id" value="indoor_cave_warp"/>
-    <property name="tile_pos" value="17,2"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="Collisions" width="20" height="20">
   <data encoding="base64" compression="zlib">

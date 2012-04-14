@@ -1,0 +1,6 @@
+<map id="cave" tiles="maps/cave.tmx">
+	<object id="cave_indoor_warp" type="warp" pos="10,8">
+		<dest_map>oasis_inside.xml</dest_map>
+		<dest_warp>indoor_cave_warp</dest_warp>
+	</object>
+</map>

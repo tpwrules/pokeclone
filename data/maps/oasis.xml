@@ -7,7 +7,7 @@
 		<text>Welcome to the Testing Oasis.{br}Enjoy your stay!{wait}</text>
 	</object>
 	<object id="house_warp" type="warp" pos="28,10">
-		<dest_map>oasis_inside.tmx</dest_map>
+		<dest_map>oasis_inside.xml</dest_map>
 		<dest_warp>in_house_warp</dest_warp>
 	</object>
 	<object id="test_npc" type="npc" pos="5,9">

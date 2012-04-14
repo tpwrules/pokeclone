@@ -192,7 +192,7 @@ class RenderedNPC(RenderedObject):
 		self.shadow = data.load_image("objects/npcshadow.png") #load shadow image
 		self.shadow.convert_alpha() #convert the image for faster drawing
 	def draw(self, surf): #draw ourselves onto a given surface
-		surf.blit(self.shadow, (self.rect.x+8, self.rect.y+25)) #draw shadow
+		surf.blit(self.shadow, (self.rect.x+8, self.rect.y+24)) #draw shadow
 		RenderedObject.draw(self, surf) #call renderer for parent class
 
 #warp point object

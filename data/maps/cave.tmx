@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
- <properties>
-  <property name="id" value="cave"/>
-  <property name="object_data" value="maps/cave_objects.xml"/>
- </properties>
  <tileset firstgid="1" name="cavebackground" tilewidth="16" tileheight="16">
   <image source="../tilesets/cavebackground.png" trans="808080" width="32" height="32"/>
  </tileset>
@@ -48,19 +44,6 @@
   </data>
  </layer>
  <objectgroup name="Objects" width="20" height="20">
-  <object name="player" type="Player" x="48" y="206" width="16" height="16">
-   <properties>
-    <property name="id" value="player"/>
-   </properties>
-  </object>
-  <object name="cave_indoor_warp" type="warp" x="315" y="-64">
-   <properties>
-    <property name="dest_map" value="oasis_inside.tmx"/>
-    <property name="dest_warp" value="indoor_cave_warp"/>
-    <property name="id" value="cave_indoor_warp"/>
-    <property name="tile_pos" value="10,8"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer name="Tile Layer 7" width="20" height="20">
   <data encoding="base64" compression="zlib">

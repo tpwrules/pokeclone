@@ -1,0 +1,22 @@
+<map id="oasis_inside" tiles="maps/oasis_inside.tmx">
+	<object id="test_npc2" type="npc" pos="3,3">
+		<anim file="objects/player/player_animation.xml" />
+		<movement speed="2">
+			<move dir="right" dist="10" />
+			<move dir="down" dist="10" />
+			<move dir="left" dist="10" />
+			<move dir="up" dist="10" />
+		</movement>
+		<script>
+			<dialog>Wait, what? A third?{br}Why are there so many...?{wait}</dialog>
+		</script>
+	</object>
+	<object id="in_house_warp" type="warp" pos="10,18">
+		<dest_map>oasis.xml</dest_map>
+		<dest_warp>house_warp</dest_warp>
+	</object>
+	<object id="indoor_cave_warp" type="warp" pos="17,2">
+		<dest_map>cave.xml</dest_map>
+		<dest_warp>cave_indoor_warp</dest_warp>
+	</object>
+</map>

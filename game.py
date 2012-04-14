@@ -103,9 +103,8 @@ class Game: #class for our game engine
 		self.load_map(map_file) #load the map
 		new_warp = self.objects[warp_obj["dest_warp"]] #get the warp destination
 		player = self.objects["player"] #get the player object
-		new_pos = new_warp.properties["tile_pos"].split(",") #calculate warp destination
-		new_pos = (int(new_pos[0].strip()), int(new_pos[1].strip()))
-		player.tile_pos = new_pos #set player position
+		new_pos = (new_warp.tile_x, new_warp.tile_y) #get warp destination
+		player.tile_pos = new_pos[:] #set player position
 		player.pos = [((player.tile_pos[0]-1)*16)+8, (player.tile_pos[1]-1)*16]
 		player.rect = pygame.Rect(player.pos, player.size)
 		self.map_image = self.map.update() #update map once
