@@ -1,6 +1,7 @@
 import pygame #import all of pygame
 from pygame.locals import *
 from xml.dom.minidom import parse #import xml parser
+import random #import rng for battle
 
 import settings #load settings
 import map #and map manager
@@ -154,6 +155,8 @@ class Game: #class for our game engine
 	def transition(self, obj, callback=None): #start a transition
 		self.curr_transition = obj #store transition object
 		self.transition_cb = callback #and callback
+	def try_battle(self): #decide whether to run a battle or not
+		pass
 	def update(self): #update the engine for this frame
 		if self.g.curr_keys[settings.key_debug]: #if the debug key is pressed
 			self.debug = not self.debug #invert debug flag

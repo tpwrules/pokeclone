@@ -124,11 +124,8 @@ class Player(objects.RenderedNPC):
 			return type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
 	def step(self): #handle stepping on a tile
 		type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
-		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]:
-			i = random.randrange(1, 187/7)
-			if i == 1:
-				self.game.transition(transition.WavyScreen())
-				self.game.show_dlog("A wild ZUBAT appeared!{tr_wait}{br}Heh, just kidding.{wait}")
+		if type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]: #if there's the potential for a battle
+			self.game.try_battle() #try to start one
 	#update the player
 	def update(self):
 		if self.moving == True: #if we're currently moving
