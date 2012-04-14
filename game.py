@@ -44,11 +44,35 @@ class Game: #class for our game engine
 		self.map_file = map_file #save map file
 		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
 		self.object_data = {} #clear previous object data
+		self.wild_pokemon = {} #clear wild pokemon data too
 		child = objects_dom.firstChild #get first object data element
 		while child is not None: #loop through object data
 			if child.localName == "object": #if it's an object element
 				self.object_data[child.getAttribute("id")] = child #store it under its id
+			elif child.localName == "wild": #if it's wild pokemon data
+				self.parse_wild(child) #handle it
 			child = child.nextSibling #go to next element
+	def parse_wild(self, wild): #parse wild pokemon data
+		when = wild.getAttribute("for") #get when the data will be used
+		data = []
+		for node in wild.childNodes: #loop through node data to get wild pokemon
+			if node.localName != "pokemon": continue #loop if it's not what we want
+			name = node.getAttribute("type") #get type of pokemon
+			levels = node.getAttribute("level").replace(" ", "") #and level
+			#and rarity
+			rarity = 1 if node.getAttribute("rarity") == "" else int(node.getAttribute("rarity"))
+			level_list = [] #we need to generate a list of possible levels
+			for level in levels.split("|"): #loop through different level groups
+				if "-" not in level: #if there's no range separator
+					level_list.append(int(level)) #add it as normal
+				else: #if we found one
+					t = level.split("-") #get both parts of range
+					start, end = int(t[0]), int(t[1])+1 #parse it
+					level_list.extend(range(start, end)) #add range to levels
+			t = [name, level_list] #generate data
+			for x in xrange(rarity): #add it once for each rarity
+				data.append(t)
+		self.wild_pokemon[when] = data #add generated list to wild data
 	def add_object(self, obj_node): #add an object
 		properties = {} #dictionary of the object's properties
 		for property in obj_node.getElementsByTagName("property"): #get properties
