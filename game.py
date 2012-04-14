@@ -32,28 +32,34 @@ class Game: #class for our game engine
 		self.dialog_drawing = False #set when the dialog is showing text
 		self.dialog_result = None #hold result of a dialog
 		self.dialog_callback = None #callback for dialog completion
-		self.object_data = {} #dictionary of loaded object data
 		self.debug = False #whether we're in debug mode or not
 		self.menu = menu.Menu(self) #initialize a menu manager
 		self.menu_showing = False #whether the menu is being shown
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
-		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis.tmx")) #load map
+		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis_objects.xml")) #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
 	def load_map(self, map_file): #load a map
-		self.map = map.Map(self.g, map_file) #load the map
+		map_dom = data.load_xml(map_file).documentElement #load map xml data
+		tile_file = map_dom.getAttribute("tiles") #get tile map file
+		self.map = map.Map(self.g, tile_file) #load the map
 		self.map_file = map_file #save map file
-		objects_dom = data.load_xml(self.map.properties["object_data"]).documentElement #parse object data file
-		self.object_data = {} #clear previous object data
 		self.wild_pokemon = {} #clear wild pokemon data too
-		child = objects_dom.firstChild #get first object data element
+		child = map_dom.firstChild #get first object data element
 		while child is not None: #loop through object data
 			if child.localName == "object": #if it's an object element
-				self.object_data[child.getAttribute("id")] = child #store it under its id
+				obj_id = child.getAttribute("id") #get its id
+				obj_type = child.getAttribute("type") #and type
+				#initialize new object
+				obj = objects.obj_types[obj_type](self, child)
+				self.objects[obj_id] = obj #store it
+				self.map.add_object(obj) #add it to map
 			elif child.localName == "wild": #if it's wild pokemon data
 				self.parse_wild(child) #handle it
 			child = child.nextSibling #go to next element
+		self.objects["player"] = self.player #store player object
+		self.map.add_object(self.player) #and add it to map
 	def parse_wild(self, wild): #parse wild pokemon data
 		when = wild.getAttribute("for") #get when the data will be used
 		data = []
@@ -75,17 +81,6 @@ class Game: #class for our game engine
 			for x in xrange(rarity): #add it once for each rarity
 				data.append(t)
 		self.wild_pokemon[when] = data #add generated list to wild data
-	def add_object(self, obj_node): #add an object
-		properties = {} #dictionary of the object's properties
-		for property in obj_node.getElementsByTagName("property"): #get properties
-			properties[property.getAttribute("name")] = property.getAttribute("value") #get a property
-		type = obj_node.getAttribute("type") #get type of object
-		if type == "Player": #if we're trying to load a player object
-			obj = self.player #return it
-		else: #otherwise
-			obj = objects.obj_types[type](self, obj_node, properties) #load the object
-		self.objects[properties["id"]] = obj #store it
-		return obj #and return it
 	def add_warp(self, pos, obj): #add a warp object
 		self.warps[pos] = obj #store the warp
 	def prepare_warp(self, pos): #prepare a warp

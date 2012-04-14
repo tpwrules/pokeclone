@@ -92,9 +92,6 @@ class MapObjectLayer:
 		self.g = g #store globals
 		self.map = map
 		self.objects = [] #list of objects on this layer
-		for object in layer_node.getElementsByTagName("object"): #load all objects
-			obj = self.g.game.add_object(object) #load the object
-			self.objects.append(obj) #save it to the object list
 		self.map.obj_layer = self #store ourselves in the map
 	def add_object(self, obj): #add an object to the render list
 		self.objects.append(obj)

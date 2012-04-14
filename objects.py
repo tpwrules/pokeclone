@@ -197,15 +197,24 @@ class RenderedNPC(RenderedObject):
 
 #warp point object
 class Warp:
-	def __init__(self, game, element, properties):
+	def __init__(self, game, element):
 		self.g = game.g #store parameters
 		self.game = game
-		self.properties = properties
+		properties = {}
 		#get tile we're monitoring
-		t = self.properties["tile_pos"].split(",")
+		t = element.getAttribute("pos").split(",")
 		self.tile_x = int(t[0].strip())
 		self.tile_y = int(t[1].strip())
-		game.add_warp((self.tile_x, self.tile_y), self.properties) #add the warp
+		dest_warp = None
+		for n in element.childNodes: #try to find our properties
+			if n.localName == "dest_warp": #if it's the destination
+				dest_warp = data.get_node_text(n) #store it
+			elif n.localName == "dest_map": #or destination map
+				dest_map = data.get_node_text(n) #store it
+		if dest_warp is not None: #if there is a destination
+			properties["dest_warp"] = dest_warp #store properties
+			properties["dest_map"] = dest_map
+			game.add_warp((self.tile_x, self.tile_y), properties) #add the warp
 		self.visible = False #we're not rendering anything
 	def interact(self, pos):
 		pass #don't interact
@@ -216,11 +225,11 @@ class Warp:
 
 #sign object
 class Sign:
-	def __init__(self, game, element, properties):
+	def __init__(self, game, element):
 		self.game = game #store parameters
-		self.text = properties["text"] #store text to show
+		self.text = data.get_node_text(element.getElementsByTagName("text")[0]) #store text to show
 		#get our tile position
-		t = properties["tile_pos"].split(",")
+		t = element.getAttribute("pos").split(",")
 		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position
 		game.set_obj_pos(self, self.tile_pos) #set our position
 		self.visible = False #we're not rendering anything
@@ -233,32 +242,24 @@ class Sign:
 		
 #generic NPC
 class NPC(RenderedNPC):
-	def __init__(self, game, element, properties):
+	def __init__(self, game, element):
 		RenderedNPC.__init__(self) #init the renderer class
-		self.properties = properties #store parameters
 		self.game = game
-		t = properties["tile_pos"].split(",") #load tile position
+		t = element.getAttribute("pos").split(",") #load tile position
 		self.tile_pos = [int(t[0].strip()), int(t[1].strip())]
 		self.pos = [((self.tile_pos[0]-1)*16), (self.tile_pos[1]-1)*16] #set real position
-		self.image = None #we have no image for now
-		self.inited = False #mark that we haven't been initialized fully yet
 		self.interacting = False #mark that we're not interacting
 		self.visible = True #and we should be showing ourselves
-	def do_init(self): #perform initialization on first update
-		self.inited = True #we've initialized now
-		properties = self.properties #load properties
-		game = self.game #and game object
-		self.obj_data = game.object_data[properties["id"]] #get our associated data
 		#load an animator
-		self.animator = animation.AnimationGroup(game.g, self, self.obj_data.getElementsByTagName("anim")[0].getAttribute("file"))
+		self.animator = animation.AnimationGroup(game.g, self, element.getElementsByTagName("anim")[0].getAttribute("file"))
 		self.animator.set_animation("stand_down") #set animation
 		self.animator.update() #update animation once
 		#and a movement manager
 		self.move_manager = MovementManager(self)
 		#load movement list
-		self.move_manager.load_move_dom(self.obj_data.getElementsByTagName("movement")[0])
+		self.move_manager.load_move_dom(element.getElementsByTagName("movement")[0])
 		self.script_manager = script.Script(self) #initialize script manager
-		self.interaction_script = self.obj_data.getElementsByTagName("script")[0] #load script
+		self.interaction_script = element.getElementsByTagName("script")[0] #load script
 	def interact(self, pos):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][pos]
@@ -267,7 +268,6 @@ class NPC(RenderedNPC):
 		self.interacting = True #we're currently interacting
 		self.script_manager.start_script(self.interaction_script) #start interaction script
 	def update(self):
-		if not self.inited: self.do_init() #intialize if we haven't already
 		if not self.interacting: #if we aren't interacting
 			if self.game.dialog_drawing: return #return if a dialog is being drawn
 			self.move_manager.update() #update our movement

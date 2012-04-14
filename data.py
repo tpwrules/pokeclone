@@ -9,8 +9,8 @@ import settings
 def get_node_text(node, strip_newlines=True): #get all the text from a node
 	texts = []
 	for n in node.childNodes: #loop through children
-		if n.nodeType == node.TEXT_NODE: #if it's text
-			texts.append(node.data) #store its value
+		if n.nodeType == n.TEXT_NODE: #if it's text
+			texts.append(n.data) #store its value
 	texts = "".join(texts) #combine all the text together
 	if strip_newlines: #if we're supposed to remove newlines
 		return texts.replace("\r", "").replace("\n", "") #do so
