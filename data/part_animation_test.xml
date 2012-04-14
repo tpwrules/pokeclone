@@ -1,5 +1,5 @@
 <part_anim>
-	<image from="data/part_test.png" id="main" />
+	<image from="part_test.png" id="main" />
 	<part_image from="main" coord="32,17,114,103" center="58,47" id="body" />
 	<part_image from="main" coord="6,167,18,29" center="12,5" id="leg" />
 	<part_image from="main" coord="33,167,37,31" center="31,16" id="hand_left" />

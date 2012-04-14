@@ -1,4 +1,4 @@
-<font id="battle" height="9" image="data/fonts/battle_font.png">
+<font id="battle" height="9" image="fonts/battle_font.png">
 	<letter name="0" coord="0,0" size="5" />
 	<letter name="1" coord="6,0" size="4" />
 	<letter name="2" coord="11,0" size="5" />

@@ -2,7 +2,7 @@
 <map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="16" tileheight="16">
  <properties>
   <property name="id" value="oasis_inside"/>
-  <property name="object_data" value="data/maps/oasis_inside_objects.xml"/>
+  <property name="object_data" value="maps/oasis_inside_objects.xml"/>
  </properties>
  <tileset firstgid="1" name="maptypetileset" tilewidth="16" tileheight="16">
   <image source="../tilesets/maptypetileset.png" width="32" height="64"/>

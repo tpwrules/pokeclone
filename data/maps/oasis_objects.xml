@@ -4,7 +4,7 @@
 		<pokemon type="geodude" level="4-5|7" rarity="2" />
 	</wild>
 	<object id="test_npc">
-		<anim file="data/objects/player/player_animation.xml" />
+		<anim file="objects/player/player_animation.xml" />
 		<movement speed="2">
 			<move dir="up" dist="4" />
 			<wait dir="up" frames="20" />
