@@ -1,10 +1,10 @@
 import pygame #import all of pygame
 from pygame.locals import *
-from xml.dom.minidom import parse #import XML parser for loading animations
 import math #import math library for part animation calculation
 
 import settings #load settings
 import tileset #and the tileset manager
+import data
 
 #class to hold one animation
 class Animation:
@@ -63,7 +63,7 @@ class AnimationGroup:
 		self.old_animation = None #pointer to the old animation, used for looping
 		
 		#load the animations from the file provided
-		anim_dom = parse(anim_file).documentElement
+		anim_dom = data.load_xml(anim_file).documentElement
 		#load all of the animation sheets
 		for sheet in anim_dom.getElementsByTagName("sheet"):
 			width = int(sheet.getAttribute("tilewidth")) #get size of tiles
@@ -341,12 +341,12 @@ class PartAnimationSet:
 		self.layout = None #the part layout
 
 		#load data from given file
-		anim_dom = parse(anim_file).documentElement
+		anim_dom = data.load_xml(anim_file).documentElement
 		#load all given images
 		for image in anim_dom.getElementsByTagName("image"):
 			f = image.getAttribute("from") #get source file so we can load it
 			id = image.getAttribute("id") #and image id
-			surf = pygame.image.load(f) #load given image
+			surf = data.load_image(f) #load given image
 			surf.convert_alpha() #convert it for faster rendering
 			images[id] = surf #store it
 		#define all the part images

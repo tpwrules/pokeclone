@@ -4,6 +4,7 @@ from pygame.locals import *
 import settings #load settings
 import animation #load animation manager
 import script #load script manager
+import data
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -188,7 +189,7 @@ class RenderedObject:
 class RenderedNPC(RenderedObject):
 	def __init__(self):
 		RenderedObject.__init__(self) #init parent class
-		self.shadow = pygame.image.load("data/objects/npcshadow.png") #load shadow image
+		self.shadow = data.load_image("objects/npcshadow.png") #load shadow image
 		self.shadow.convert_alpha() #convert the image for faster drawing
 	def draw(self, surf): #draw ourselves onto a given surface
 		surf.blit(self.shadow, (self.rect.x+8, self.rect.y+25)) #draw shadow

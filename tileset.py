@@ -1,11 +1,13 @@
 import pygame #import all of pygame
 from pygame.locals import *
 
+import data
+
 #class for managing a tileset
 class Tileset:
 	#initialize the tileset
 	def __init__(self, image, tile_width, tile_height, trans=None):
-		self.image = pygame.image.load(image) #load the image provided
+		self.image = data.load_image(image) #load the image provided
 		if trans is not None: #if there is a transparent pixel color
 			self.image.set_alpha(None) #remove any alpha if it's there
 			self.image.set_colorkey(trans) #set it as the color key

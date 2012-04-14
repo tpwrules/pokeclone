@@ -1,6 +1,5 @@
 import pygame #import all of pygame
 from pygame.locals import *
-from xml.dom.minidom import parse #import xml parser
 import random #import rng for battle
 
 import settings #load settings
@@ -12,6 +11,9 @@ import dialog #class for dialogs
 import transition #import all the transitions
 import menu #import menu manager
 import battle
+import data
+
+import animation
 
 class Game: #class for our game engine
 	def __init__(self, g):
@@ -38,13 +40,15 @@ class Game: #class for our game engine
 		self.menu_showing = False #whether the menu is being shown
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
-		self.load_map(self.g.save.get_game_prop("game", "curr_map", "data/maps/oasis.tmx")) #load map
+		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis.tmx")) #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
+		self.pa = animation.PartAnimationSet(self.g, "part_animation_test.xml")
+		self.pa.set_animation("demo")
 	def load_map(self, map_file): #load a map
 		self.map = map.Map(self.g, map_file) #load the map
 		self.map_file = map_file #save map file
-		objects_dom = parse(self.map.properties["object_data"]).documentElement #parse object data file
+		objects_dom = data.load_xml(self.map.properties["object_data"]).documentElement #parse object data file
 		self.object_data = {} #clear previous object data
 		self.wild_pokemon = {} #clear wild pokemon data too
 		child = objects_dom.firstChild #get first object data element
@@ -104,7 +108,7 @@ class Game: #class for our game engine
 		self.obj2pos = {}
 		self.pos2obj = {}
 		self.dialog_drawing = False #we aren't drawing a dialog
-		map_file = "data/maps/"+warp_obj["dest_map"] #get destination of warp
+		map_file = "maps/"+warp_obj["dest_map"] #get destination of warp
 		self.load_map(map_file) #load the map
 		new_warp = self.objects[warp_obj["dest_warp"]] #get the warp destination
 		player = self.objects["player"] #get the player object
@@ -218,6 +222,7 @@ class Game: #class for our game engine
 				pygame.draw.polygon(self.surf, (161, 161, 161), [[64, 44], [pos[0]+2, pos[1]+2], [82, 44]])
 				pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
 		if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
+		if self.debug: self.pa.update(self.surf, 50, 50)
 		return self.surf #return the rendered surface
 	def save(self, fname=None): #save our data
 		for id in self.objects: #loop through all our objects

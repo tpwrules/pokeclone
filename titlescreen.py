@@ -7,6 +7,7 @@ import dialog #and dialog manager
 import font #and font manager
 import settings #and game settings
 import error #import various exceptions
+import data
 
 class TitleScreen: #class for the title screen
 	def __init__(self, g):
@@ -15,22 +16,22 @@ class TitleScreen: #class for the title screen
 		#initialize new surface to draw stuff on
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y))
 		#load and create surfaces for all the title screen parts
-		self.logo = pygame.image.load("data/titlescreen/bronzelogo.png")
+		self.logo = data.load_image("titlescreen/bronzelogo.png")
 		self.logo.convert_alpha()
-		self.bg = pygame.image.load("data/titlescreen/background.png")
+		self.bg = data.load_image("titlescreen/background.png")
 		self.bg.convert()
-		self.logomask = pygame.image.load("data/titlescreen/logomask.png")
+		self.logomask = data.load_image("titlescreen/logomask.png")
 		self.logomask.convert()
-		self.shine = pygame.image.load("data/titlescreen/shine.png")
+		self.shine = data.load_image("titlescreen/shine.png")
 		self.shine.convert_alpha()
-		self.textbg = pygame.image.load("data/titlescreen/fadetoblack.png")
+		self.textbg = data.load_image("titlescreen/fadetoblack.png")
 		self.textbg.convert_alpha()
 		#create a surface to draw the shine on with the same dimensions as the logo
 		self.shinesurf = pygame.Surface(self.logo.get_size(), SRCALPHA)
 		#create a surface for the text
 		self.textsurf = pygame.Surface(self.textbg.get_size(), SRCALPHA)
 		#now, we need to draw Press X! on screen
-		f = font.Font("data/fonts/selfdialog_font.xml") #load font to draw with
+		f = font.Font("fonts/selfdialog_font.xml") #load font to draw with
 		f.render("Press X!", self.textbg, (15, 2))
 		#calculate dimensions for everything
 		self.shine_y = (self.logo.get_height()-self.shine.get_height())/2

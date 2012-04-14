@@ -1,17 +1,17 @@
 import pygame #import all of pygame
 from pygame.locals import *
-from xml.dom.minidom import parse #import XML parser for loading animations
 
 import settings #load settings
+import data
 
 #class for managing a font
 class Font:
 	def __init__(self, file):
 		self.letters = {} #dictionary of letters
 		
-		font_dom = parse(file).documentElement #load and parse font
+		font_dom = data.load_xml(file).documentElement #load and parse font
 		image_file = font_dom.getAttribute("image") #get font bitmap file name
-		self.image = pygame.image.load(image_file) #load font bitmap
+		self.image = data.load_image(image_file) #load font bitmap
 		self.image.convert_alpha() #convert it to draw faster
 		self.height = int(font_dom.getAttribute("height")) #get height of characters
 		self.id = font_dom.getAttribute("id") #get font ID

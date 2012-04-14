@@ -1,12 +1,13 @@
 import pygame #load all of pygame
 from pygame.locals import *
+import random
 
 import settings #load settings
 import animation #load animation manager
 import dialog #load dialog manager
-import random
 import transition
 import objects #used for the render things
+import data
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -26,7 +27,7 @@ class Player(objects.RenderedNPC):
 		self.g = game.g #store parameters
 		self.game = game
 		#load animations
-		self.animator = animation.AnimationGroup(self.g, self, "data/objects/player/player_animation.xml")
+		self.animator = animation.AnimationGroup(self.g, self, "objects/player/player_animation.xml")
 		self.collidepoint = (16, 23) #set where to check for collisions
 		self.size = (32, 32) #set sprite size
 		self.tile_pos = self.g.save.get_prop("player", "pos", [15, 16]) #load current position

@@ -1,12 +1,12 @@
 import pygame #import all of pygame
 from pygame.locals import *
-from xml.dom.minidom import parse #import XML parser for loading maps
 import base64 #libraries for decoding maps
 import zlib
 import struct
 
 import settings #load settings
 import tileset #and tileset manager
+import data
 
 #class for a map tile layer
 class MapTileLayer:
@@ -117,7 +117,7 @@ class Map:
 	def __init__(self, g, map_file):
 		self.g = g #store globals
 		self.map_file = map_file #and the file we were passed in
-		map_dom = parse(map_file) #load and parse the map XML
+		map_dom = data.load_xml(map_file) #load and parse the map XML
 		map_dom = map_dom.documentElement #get the document element of the map
 		self.map_width = int(map_dom.getAttribute("width")) #load dimensions
 		self.map_height = int(map_dom.getAttribute("height"))
@@ -134,7 +134,7 @@ class Map:
 			if child.localName == "tileset": #if it's a tileset
 				image_tag = child.getElementsByTagName("image")[0] #get image associated with it
 				image_path = image_tag.getAttribute("source") #get path of image
-				image_path = image_path.replace("..", "data") #fix it up
+				image_path = image_path.replace("../", "") #fix it up
 				trans = image_tag.getAttribute("trans") #get transparent color
 				if trans is not "": #if one actually exists
 					trans = (int(trans[:2],16), int(trans[2:4],16), int(trans[4:], 16)) #parse it

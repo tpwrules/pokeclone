@@ -4,10 +4,11 @@ from pygame.locals import *
 import font #import font manager
 import settings #and settings
 import tileset #import tileset manager
+import data
 
 #dialog definitions
-dialogs = {"standard": {"file":"data/dialogboxes/dialog.png", "choice_file":"data/dialogboxes/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"data/fonts/dialog_font.xml"},\
-"notify": {"file":"data/dialogboxes/selfdialog.png", "choice_file":"data/dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"data/fonts/selfdialog_font.xml"}}
+dialogs = {"standard": {"file":"dialogboxes/dialog.png", "choice_file":"dialogboxes/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"fonts/dialog_font.xml"},\
+"notify": {"file":"dialogboxes/selfdialog.png", "choice_file":"dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"fonts/selfdialog_font.xml"}}
 
 #dialog we can use to ask a choice
 class ChoiceDialog:
@@ -117,7 +118,7 @@ class Dialog:
 		self.g = g
 		dlog = dialogs[type] #get attributes of dialog
 		self.dlog = dlog #store it
-		self.image = pygame.image.load(dlog["file"]) #load image file
+		self.image = data.load_image(dlog["file"]) #load image file
 		self.image.convert() #convert it so it will draw faster
 		self.choice_tiles = tileset.Tileset(dlog["choice_file"], 8, 8) #load choice tileset
 		self.dlog_rect = dlog["text_rect"] #get text rect

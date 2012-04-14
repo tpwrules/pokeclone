@@ -1,4 +1,7 @@
 #miscellaneous helper functions
+import pygame #import everything pygame-related
+from pygame.locals import *
+from xml.dom.minidom import parse
 import os
 
 import settings
@@ -19,6 +22,13 @@ def get_path(path, with_data=True): #convert a path to one appropriate for the h
 		ret = get_path(settings.data_path, False) #get it
 	else: #if we aren't
 		ret = "" #start with a blank string
+	if path[:5] == "data/": raise Exception
 	for part in path.split("/"): #loop through path components
 		ret = os.path.join(ret, part) #join them together
 	return ret #return finished product
+
+def load_image(path): #load an image
+	return pygame.image.load(get_path(path))
+
+def load_xml(path): #load xml data
+	return parse(get_path(path))
