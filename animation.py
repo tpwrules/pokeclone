@@ -242,7 +242,7 @@ class PartAnimation: #class for one animation
 						cmds.append([1, curr_cmd.getAttribute("id"), int(curr_cmd.getAttribute("degrees"))])
 					elif curr_cmd.localName == "move": #if it's a move command
 						#get delta
-						delta = [int(x.strip()) for x in curr_cmd.getAttribute("delta").split(",")]
+						delta = [float(x.strip()) for x in curr_cmd.getAttribute("delta").split(",")]
 						cmds.append([2, curr_cmd.getAttribute("id"), delta])
 					elif curr_cmd.localName == "set": #if it's a set command
 						#add to command list
