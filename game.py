@@ -146,9 +146,8 @@ class Game: #class for our game engine
 		self.dialog_callback = callback #store callback
 		self.dialog_result = None #clear result
 	def interact(self, pos, direction): #interact with an object
-		for obj in self.obj2pos: #for every object with a collision
-			r = obj.interact(tuple(pos), direction) #tell it to interact
-			if r is not True: return True #if an interaction happened, say so
+		if pos in self.pos2obj: #if this position has an object
+			self.pos2obj[pos].interact(direction) #tell the object to interact
 	def transition(self, obj, callback=None): #start a transition
 		self.curr_transition = obj #store transition object
 		self.transition_cb = callback #and callback

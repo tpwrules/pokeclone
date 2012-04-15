@@ -45,40 +45,26 @@ class TrainerObject(objects.NPC):
 		self.animator.set_animation("stand_"+objects.get_direction_name(self.move_manager.curr_movement[0]))
 		self.stored_anim = self.animator.curr_animation
 		self.script_manager.start_script(self.pre_script) #start script running
-	def interact(self, pos, dir): #do interaction
-		if tuple(self.tile_pos) != pos and tuple(self.move_manager.old_pos) != pos: return True
+	def interact(self, pos): #do interaction
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
-			dir_ = dir
-			tile_pos = self.tile_pos[:]
-			if tuple(self.move_manager.old_pos) == pos: #if we've been talked to where we were before
-				#move back a bit
-				dir = self.move_manager.curr_movement[0]
-				if dir == 0:
-					tile_pos[1] += 1
-				elif dir == 1:
-					tile_pos[1] -= 1
-				elif dir == 2:
-					tile_pos[0] += 1
-				elif dir == 3:
-					tile_pos[0] -= 1
-			#align position to the current block
-			self.pos = [((tile_pos[0]-1)*16)+8, (tile_pos[1]-1)*16]
-			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
-			self.move_manager.curr_movement[0] = [1, 0, 3, 2][dir_] #set proper direction
+			self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set proper position
+			self.move_manager.curr_movement[0] = [1, 0, 3, 2][pos] #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
-			objects.NPC.interact(self, pos, dir) #interact as normal
+			objects.NPC.interact(self, pos) #interact as normal
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
 	def do_seen(self, dir, dist, tp): #somebody has been seen
+		self.tile_pos = tp[:]
 		self.game.set_obj_pos(self, tp)
+		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
 		self.seen = True #we've seen somebody
 		self.wait_time = 30 #set amount of time to display icon
 		self.move_data[0] = dir #store movement
 		self.move_data[1] = dist
-		self.move_manager.move_to(dir, 0, 0, False) #stop current movement
+		self.move_manager.move_to(dir, 0, 1, False) #stop current movement
 		#set standing animation
 		self.animator.set_animation("stand_"+objects.get_direction_name(dir))
 		self.game.stopped = True #stop player from moving
