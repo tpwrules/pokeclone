@@ -100,6 +100,7 @@ class MovementManager:
 		self.delta = delta #store delta
 		self.check_collide = False
 		if speed > 0: #if we're not doing a wait command
+			self.old_pos = self.obj.tile_pos[:]
 			#calculate new tile position
 			if dir == 0:
 				self.obj.tile_pos[1] -= 1
@@ -151,6 +152,7 @@ class MovementManager:
 			self.curr_movement[1] -= 1 #remove one from distance
 			self.pix_pos -= 16 #remove a tile's worth of pixels
 			#calculate new tile position
+			self.old_pos = self.obj.tile_pos[:]
 			if dir == 0:
 				self.obj.tile_pos[1] -= 1
 			elif dir == 1:
@@ -229,8 +231,8 @@ class Warp:
 			properties["dest_map"] = dest_map
 			game.add_warp((self.tile_x, self.tile_y), properties) #add the warp
 		self.visible = False #we're not rendering anything
-	def interact(self, pos):
-		pass #don't interact
+	def interact(self, pos, dir):
+		return True #don't interact
 	def update(self): #we don't need to do any updates
 		pass
 	def save(self): #we don't need to save anything
@@ -246,7 +248,8 @@ class Sign:
 		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position
 		game.set_obj_pos(self, self.tile_pos) #set our position
 		self.visible = False #we're not rendering anything
-	def interact(self, pos): #handle the player interacting with us
+	def interact(self, pos, dir): #handle the player interacting with us
+		if pos != tuple(self.tile_pos): return True
 		self.game.show_dlog(self.text) #show our text
 	def update(self):
 		pass #we don't need to do any updates
@@ -274,9 +277,10 @@ class NPC(RenderedNPC):
 		self.move_manager.load_move_dom(element.getElementsByTagName("movement")[0])
 		self.script_manager = script.Script(self) #initialize script manager
 		self.interaction_script = element.getElementsByTagName("script")[0] #load script
-	def interact(self, pos):
+	def interact(self, pos, dir):
+		if tuple(self.tile_pos) != pos and tuple(self.move_manager.old_pos) != pos: return True
 		#make ourselves face to who's talking
-		new_pos = [1, 0, 3, 2][pos]
+		new_pos = [1, 0, 3, 2][dir]
 		self.stored_anim = self.animator.curr_animation #store current animation
 		self.move_manager.align()
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one

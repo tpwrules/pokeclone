@@ -87,7 +87,8 @@ class Player(objects.RenderedNPC):
 			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
 		self.was_moving = self.moving
 	#have the player interact with an object
-	def interact(self):
+	def interact(self, pos_=None, dir_=None):
+		if pos_ is not None: return True
 		t = None #tuple of tile position
 		#set direction tuple according to direction
 		if self.direction == 0: #if we're facing up
@@ -99,9 +100,8 @@ class Player(objects.RenderedNPC):
 		elif self.direction == 3:
 			t = (1, 0)
 		dest_pos = (self.tile_pos[0]+t[0], self.tile_pos[1]+t[1]) #calculate the position of what we're interacting with
-		if dest_pos in self.game.pos2obj: #if there's an object at this position
-			self.game.interact(dest_pos, self.direction) #interact with an object
-			return
+		r = self.game.interact(dest_pos, self.direction) #try to interact with an object
+		if r: return #if one was interacted with, return
 		tile_type = self.game.get_tile_type(dest_pos[0], dest_pos[1], True) #get type of tile we're interacting with
 		if tile_type == settings.TILE_WATER and not self.in_water: #if it's a water tile and we're not in water
 			self.game.show_dlog("Would you like to SURF?{choices}YES{endchoice}NO{endchoice}{endchoices}", dlog=self.notify_dlog, callback=self.surf_cb) #ask if the user wants to surf

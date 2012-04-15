@@ -45,14 +45,15 @@ class TrainerObject(objects.NPC):
 		self.animator.set_animation("stand_"+objects.get_direction_name(self.move_manager.curr_movement[0]))
 		self.stored_anim = self.animator.curr_animation
 		self.script_manager.start_script(self.pre_script) #start script running
-	def interact(self, pos): #do interaction
+	def interact(self, pos, dir): #do interaction
+		if self.tile_pos != pos and self.move_manager.old_pos != pos: return True
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
 			self.move_manager.align()
-			self.move_manager.curr_movement[0] = [1, 0, 3, 2][pos] #set proper direction
+			self.move_manager.curr_movement[0] = [1, 0, 3, 2][dir] #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
-			objects.NPC.interact(self, pos) #interact as normal
+			objects.NPC.interact(self, pos, dir) #interact as normal
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
