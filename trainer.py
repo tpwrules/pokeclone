@@ -1,4 +1,4 @@
-#class for trainer management
+#class for trainer object management
 import pygame #import everything pygame-related
 from pygame.locals import *
 
