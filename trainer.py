@@ -48,7 +48,7 @@ class TrainerObject(objects.NPC):
 	def interact(self, pos): #do interaction
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
-			self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set proper position
+			self.move_manager.align()
 			self.move_manager.curr_movement[0] = [1, 0, 3, 2][pos] #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
@@ -57,14 +57,12 @@ class TrainerObject(objects.NPC):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
 	def do_seen(self, dir, dist, tp): #somebody has been seen
-		self.tile_pos = tp[:]
 		self.game.set_obj_pos(self, tp)
-		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
 		self.seen = True #we've seen somebody
 		self.wait_time = 30 #set amount of time to display icon
 		self.move_data[0] = dir #store movement
 		self.move_data[1] = dist
-		self.move_manager.move_to(dir, 0, 1, False) #stop current movement
+		self.move_manager.move_to(dir, 0, 0, False) #stop current movement
 		#set standing animation
 		self.animator.set_animation("stand_"+objects.get_direction_name(dir))
 		self.game.stopped = True #stop player from moving

@@ -123,6 +123,12 @@ class MovementManager:
 		self.running = False #we're not supposed to be automatically moving any more
 		self.moving = True #we're moving
 		self._start_move() #start moving
+	def align(self): #align ourselves to the next tile
+		#snap to tile
+		self.obj.pos = [((self.obj.tile_pos[0]-1)*16)+8, (self.obj.tile_pos[1]-1)*16]
+		if self.pix_pos % 16 != 0: #if we're not on a tile boundary
+			self.pix_pos += (16-(self.pix_pos%16)) #put us there
+		self.obj.rect = pygame.Rect(self.obj.pos, (32, 32)) #set proper position
 	def update(self): #update movement
 		if not self.moving: #if we're not doing anything
 			return True #don't do anything
@@ -140,6 +146,7 @@ class MovementManager:
 			self.obj.pos[0] += self.delta[0] #move object according to speed
 			self.obj.pos[1] += self.delta[1]
 			self.pix_pos += speed #add speed to pixel position
+		self.obj.rect = pygame.Rect(self.obj.pos, (32, 32)) #set proper position
 		if self.pix_pos > 15: #if we've gone a whole tile
 			self.curr_movement[1] -= 1 #remove one from distance
 			self.pix_pos -= 16 #remove a tile's worth of pixels
@@ -271,7 +278,7 @@ class NPC(RenderedNPC):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][pos]
 		self.stored_anim = self.animator.curr_animation #store current animation
-		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #snap to tile
+		self.move_manager.align()
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
 		self.interacting = True #we're currently interacting
 		self.script_manager.start_script(self.interaction_script) #start interaction script
