@@ -17,10 +17,15 @@ class TrainerObject(objects.NPC):
 		self.trainer_name = data.get_xml_prop(element, "name")
 		self.pre_script = data.get_node(element, "pre_script")
 		self.post_script = data.get_node(element, "post_script")
+		#load spotted icon
+		self.spotted_pic = data.load_image("trainers/spotted.png")
+		self.spotted_pic.convert_alpha()
 		#get whether we have been fought or not
 		self.fought = self.g.save.get_prop(self.id, "fought", False)
 		self.moving = True
 		self.seen = False #set if we've seen somebody
+		self.move_data = [0, 0] #store the movement we're going to do
+		self.wait_time = 0 #amount of time to display icon
 		#load party data
 		party = []
 		for node in data.get_node(element, "party").childNodes: #loop through pokemon
@@ -48,8 +53,18 @@ class TrainerObject(objects.NPC):
 		self.game.set_obj_pos(self, tp)
 		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
 		self.seen = True #we've seen somebody
-		self.move_manager.move_to(dir, dist, 2, False) #move to player
+		self.wait_time = 30 #set amount of time to display icon
+		self.move_data[0] = dir #store movement
+		self.move_data[1] = dist
+		self.move_manager.move_to(dir, 0, 1, False) #stop current movement
+		#set standing animation
+		self.animator.set_animation("stand_"+objects.get_direction_name(dir))
 		self.game.stopped = True #stop player from moving
+	def draw(self, surf): #draw ourselves
+		if self.wait_time > 0: #if we're supposed to be drawing the icon
+			#draw it
+			surf.blit(self.spotted_pic, (self.rect.x+8, self.rect.y-12))
+		objects.NPC.draw(self, surf)
 	def update(self): #update ourselves
 		if self.fought and self.seen: #if we've been fought and we saw somebody
 			self.seen = False #we're not seeing people any more
@@ -60,7 +75,7 @@ class TrainerObject(objects.NPC):
 			if self.game.dialog_drawing: return #return if a dialog is being drawn
 			if self.moving:
 				r = self.move_manager.update() #update our movement
-				if r is True: #if movement has finished
+				if r is True and self.wait_time == 0: #if movement has finished
 					self.move_done() #handle it
 			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 		else: #if we are
@@ -70,6 +85,11 @@ class TrainerObject(objects.NPC):
 				self.animator.curr_animation = self.stored_anim #restore stored animation
 				self.interacting_stopped() #do callback
 		self.animator.update() #update our animation
+		if self.wait_time > 0: #if we're waiting to move
+			self.wait_time -= 1 #decrement wait time
+			if self.wait_time == 0: #if we're done waiting
+				#start movement
+				self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
 		if self.seen or self.fought: return #don't try to find people if we've seen somebody already
 		player_pos = self.game.player.tile_pos[:] #get position of player
 		curr_dir = self.move_manager.curr_movement[0] #and the direction we're facing
