@@ -93,7 +93,10 @@ class MovementManager:
 			self.obj.animator.set_animation("stand_"+get_direction_name(dir)) #set stand animation
 		else: #otherwise, 
 			self.obj.animator.set_animation("walk_"+get_direction_name(dir)) #set walk animation
-		self.pix_pos = 0 #number of pixels we've moved within the tile
+		if dir < 2: #if we're moving up or down
+			self.pix_pos = self.obj.pos[1]%16 #number of pixels we've moved within the tile
+		else:
+			self.pix_pos = self.obj.pos[0]%16
 		self.delta = delta #store delta
 		self.check_collide = False
 		if speed > 0: #if we're not doing a wait command
@@ -268,6 +271,7 @@ class NPC(RenderedNPC):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][pos]
 		self.stored_anim = self.animator.curr_animation #store current animation
+		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #snap to tile
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
 		self.interacting = True #we're currently interacting
 		self.script_manager.start_script(self.interaction_script) #start interaction script
