@@ -280,19 +280,22 @@ class NPC(RenderedNPC):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][dir]
 		self.stored_anim = self.animator.curr_animation #store current animation
+		self.stored_pos = self.pos[:] #and position
+		tile_pos = self.tile_pos[:]
 		if tuple(self.move_manager.old_pos) == pos: #if we've been talked to where we were before
-			#fix direction
+			#move back a bit
 			dir = self.move_manager.curr_movement[0]
 			if dir == 0:
-				self.tile_pos[1] += 1
+				tile_pos[1] += 1
 			elif dir == 1:
-				self.tile_pos[1] -= 1
+				tile_pos[1] -= 1
 			elif dir == 2:
-				self.tile_pos[0] += 1
+				tile_pos[0] += 1
 			elif dir == 3:
-				self.tile_pos[0] -= 1
-			self.move_manager.curr_movement[1] += 1
-		self.move_manager.align()
+				tile_pos[0] -= 1
+		#align position to the current block
+		self.pos = [((tile_pos[0]-1)*16)+8, (tile_pos[1]-1)*16]
+		self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
 		self.interacting = True #we're currently interacting
 		self.script_manager.start_script(self.interaction_script) #start interaction script
@@ -306,6 +309,7 @@ class NPC(RenderedNPC):
 			self.interacting = self.script_manager.running #set whether we're interacting
 			if not self.interacting: #if we've stopped needing to
 				self.animator.curr_animation = self.stored_anim #restore stored animation
+				self.pos = self.stored_pos[:] #and position
 		self.animator.update() #and our animation
 		
 #import other files which need to be in this list
