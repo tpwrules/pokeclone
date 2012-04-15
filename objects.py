@@ -126,9 +126,10 @@ class MovementManager:
 		self._start_move() #start moving
 	def align(self): #align ourselves to the next tile
 		#snap to tile
+		self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos)
 		self.obj.pos = [((self.obj.tile_pos[0]-1)*16)+8, (self.obj.tile_pos[1]-1)*16]
-		if self.pix_pos % 16 != 0: #if we're not on a tile boundary
-			self.pix_pos += (16-(self.pix_pos%16)) #put us there
+		if self.pix_pos != 0: #if we're not on a tile boundary
+			self.pix_pos = 16 #put us there
 		self.obj.rect = pygame.Rect(self.obj.pos, (32, 32)) #set proper position
 	def update(self): #update movement
 		if not self.moving: #if we're not doing anything
@@ -282,6 +283,18 @@ class NPC(RenderedNPC):
 		#make ourselves face to who's talking
 		new_pos = [1, 0, 3, 2][dir]
 		self.stored_anim = self.animator.curr_animation #store current animation
+		if tuple(self.move_manager.old_pos) == pos: #if we've been talked to where we were before
+			#fix direction
+			dir = self.move_manager.curr_movement[0]
+			if dir == 0:
+				self.tile_pos[1] += 1
+			elif dir == 1:
+				self.tile_pos[1] -= 1
+			elif dir == 2:
+				self.tile_pos[0] += 1
+			elif dir == 3:
+				self.tile_pos[0] -= 1
+			self.move_manager.curr_movement[1] += 1
 		self.move_manager.align()
 		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
 		self.interacting = True #we're currently interacting

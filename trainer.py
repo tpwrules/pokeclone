@@ -46,11 +46,23 @@ class TrainerObject(objects.NPC):
 		self.stored_anim = self.animator.curr_animation
 		self.script_manager.start_script(self.pre_script) #start script running
 	def interact(self, pos, dir): #do interaction
-		if self.tile_pos != pos and self.move_manager.old_pos != pos: return True
+		if tuple(self.tile_pos) != pos and tuple(self.move_manager.old_pos) != pos: return True
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
+			dir_ = dir
+			if tuple(self.move_manager.old_pos) == pos: #if we've been talked to where we were before
+				#fix direction
+				dir = self.move_manager.curr_movement[0]
+				if dir == 0:
+					self.tile_pos[1] += 1
+				elif dir == 1:
+					self.tile_pos[1] -= 1
+				elif dir == 2:
+					self.tile_pos[0] += 1
+				elif dir == 3:
+					self.tile_pos[0] -= 1
 			self.move_manager.align()
-			self.move_manager.curr_movement[0] = [1, 0, 3, 2][dir] #set proper direction
+			self.move_manager.curr_movement[0] = [1, 0, 3, 2][dir_] #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
 			objects.NPC.interact(self, pos, dir) #interact as normal
