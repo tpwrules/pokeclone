@@ -93,14 +93,11 @@ class MovementManager:
 			self.obj.animator.set_animation("stand_"+get_direction_name(dir)) #set stand animation
 		else: #otherwise, 
 			self.obj.animator.set_animation("walk_"+get_direction_name(dir)) #set walk animation
-		if dir < 2: #if we're moving up or down
-			self.pix_pos = self.obj.pos[1]%16 #number of pixels we've moved within the tile
-		else:
-			self.pix_pos = self.obj.pos[0]%16
+		self.pix_pos = 0
 		self.delta = delta #store delta
 		self.check_collide = False
+		self.old_pos = self.obj.tile_pos[:]
 		if speed > 0: #if we're not doing a wait command
-			self.old_pos = self.obj.tile_pos[:]
 			#calculate new tile position
 			if dir == 0:
 				self.obj.tile_pos[1] -= 1
