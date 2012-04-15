@@ -203,13 +203,14 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		npos = [0,0]
 		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))
 		npos[1] = ((math.sin(math.radians(-rot))*pos[0]) + (math.cos(math.radians(-rot))*pos[1]))
-		npos[0] *= (1.0*xs*self.xscale)
-		npos[1] *= (1.0*ys*self.yscale)
 		npos[0] += center[0]-self.center[0]
 		npos[1] += center[1]-self.center[1]
+		center = self.center[:]
+		center[0] += (npos[0]-pos[0])/2.0
+		center[1] += (npos[1]-pos[1])/2.0
 		pos = npos[:]
 		for child in self.children: #render each child
-			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, self.center)
+			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, center)
 	def reset(self): #reset our state
 		self.pos = self.orig_pos
 		self.rot = self.orig_rot
