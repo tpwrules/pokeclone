@@ -50,18 +50,21 @@ class TrainerObject(objects.NPC):
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
 			dir_ = dir
+			tile_pos = self.tile_pos[:]
 			if tuple(self.move_manager.old_pos) == pos: #if we've been talked to where we were before
-				#fix direction
+				#move back a bit
 				dir = self.move_manager.curr_movement[0]
 				if dir == 0:
-					self.tile_pos[1] += 1
+					tile_pos[1] += 1
 				elif dir == 1:
-					self.tile_pos[1] -= 1
+					tile_pos[1] -= 1
 				elif dir == 2:
-					self.tile_pos[0] += 1
+					tile_pos[0] += 1
 				elif dir == 3:
-					self.tile_pos[0] -= 1
-			self.move_manager.align()
+					tile_pos[0] -= 1
+			#align position to the current block
+			self.pos = [((tile_pos[0]-1)*16)+8, (tile_pos[1]-1)*16]
+			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 			self.move_manager.curr_movement[0] = [1, 0, 3, 2][dir_] #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
