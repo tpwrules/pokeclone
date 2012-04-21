@@ -253,6 +253,8 @@ class NPC(RenderedNPC):
 		self.tile_pos = [int(t[0].strip()), int(t[1].strip())]
 		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set real position
 		self.interacting = False #mark that we're not interacting
+		self.should_interact = False #and that we shouldn't be yet
+		self.interact_pos = 0 #position of current interaction
 		self.visible = True #and we should be showing ourselves
 		#load an animator
 		self.animator = animation.AnimationGroup(game.g, self, element.getElementsByTagName("anim")[0].getAttribute("file"))
@@ -266,21 +268,28 @@ class NPC(RenderedNPC):
 		self.interaction_script = element.getElementsByTagName("script")[0] #load script
 	def interact(self, pos):
 		#make ourselves face to who's talking
-		new_pos = [1, 0, 3, 2][pos]
+		self.interact_pos = [1, 0, 3, 2][pos]
+		self.should_interact = True #set flag to wait for interaction
+		self.game.stopped = True #stop the player
+	def run_interaction(self):
 		self.stored_anim = self.animator.curr_animation #store current animation
-		self.animator.set_animation("stand_"+get_direction_name(new_pos)) #set standing one
+		self.animator.set_animation("stand_"+get_direction_name(self.interact_pos)) #set standing one
 		self.interacting = True #we're currently interacting
+		self.should_interact = False #but we shouldn't be checking for interaction any more
 		self.script_manager.start_script(self.interaction_script) #start interaction script
 	def update(self):
 		if not self.interacting: #if we aren't interacting
 			if self.game.dialog_drawing: return #return if a dialog is being drawn
 			self.move_manager.update() #update our movement
 			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
+			if self.move_manager.pix_pos == 0 and self.should_interact: #if we're currently on a tile boundary
+				self.run_interaction() #start interacting
 		else: #if we are
 			self.script_manager.update() #update script
 			self.interacting = self.script_manager.running #set whether we're interacting
 			if not self.interacting: #if we've stopped needing to
 				self.animator.curr_animation = self.stored_anim #restore stored animation
+				self.player.stopped = False #let the player move
 		self.animator.update() #and our animation
 		
 #import other files which need to be in this list
