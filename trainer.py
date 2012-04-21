@@ -45,17 +45,18 @@ class TrainerObject(objects.NPC):
 		self.animator.set_animation("stand_"+objects.get_direction_name(self.move_manager.curr_movement[0]))
 		self.stored_anim = self.animator.curr_animation
 		self.script_manager.start_script(self.pre_script) #start script running
-	def interact(self, pos): #do interaction
+	def run_interaction(self): #do interaction
+		self.should_interact = False #we're not waiting for interaction any more
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
-			self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set proper position
-			self.move_manager.curr_movement[0] = [1, 0, 3, 2][pos] #set proper direction
+			self.move_manager.curr_movement[0] = self.interact_pos #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
-			objects.NPC.interact(self, pos) #interact as normal
+			objects.NPC.run_interaction() #interact as normal
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
+			self.game.stopped = False #stop player from moving
 	def do_seen(self, dir, dist, tp): #somebody has been seen
 		self.tile_pos = tp[:]
 		self.game.set_obj_pos(self, tp)
@@ -85,6 +86,8 @@ class TrainerObject(objects.NPC):
 				r = self.move_manager.update() #update our movement
 				if r is True and self.wait_time == 0: #if movement has finished
 					self.move_done() #handle it
+				elif self.move_manager.pix_pos == 0 and self.should_interact: #if we're currently on a tile boundary
+					self.run_interaction() #start interacting
 			self.rect = pygame.Rect(self.pos, (32, 32)) #update sprite rect
 		else: #if we are
 			self.script_manager.update() #update script
