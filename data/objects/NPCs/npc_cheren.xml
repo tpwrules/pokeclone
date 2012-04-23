@@ -1,0 +1,44 @@
+<anim_group type="basic">
+	<!-- sprite sheet sources -->
+	<sheet from="objects/NPCs/npc_cheren.png" tilewidth="32" tileheight="32" id="main" originx="16" originy="32"/>
+	
+	<!-- animations for standing still -->
+	<animation loop="true" id="stand_up">
+		<frame sheet="main" pos="0,0" wait="4" />
+	</animation>
+	<animation loop="true" id="stand_down">
+		<frame sheet="main" pos="0,1" wait="4" />
+	</animation>
+	<animation loop="true" id="stand_left">
+		<frame sheet="main" pos="0,2" wait="4" />
+	</animation>
+	<animation loop="true" id="stand_right">
+		<frame sheet="main" pos="0,3" wait="4" />
+	</animation>
+	
+	<!-- animations for walking -->
+	<animation loop="true" id="walk_up">
+		<frame sheet="main" pos="0,0" wait="4" />
+		<frame sheet="main" pos="1,0" wait="4" />
+		<frame sheet="main" pos="0,0" wait="4" />
+		<frame sheet="main" pos="2,0" wait="4" />
+	</animation>
+	<animation loop="true" id="walk_down">
+		<frame sheet="main" pos="0,1" wait="4" />
+		<frame sheet="main" pos="1,1" wait="4" />
+		<frame sheet="main" pos="0,1" wait="4" />
+		<frame sheet="main" pos="2,1" wait="4" />
+	</animation>
+	<animation loop="true" id="walk_left">
+		<frame sheet="main" pos="0,2" wait="4" />
+		<frame sheet="main" pos="1,2" wait="4" />
+		<frame sheet="main" pos="0,2" wait="4" />
+		<frame sheet="main" pos="2,2" wait="4" />
+	</animation>
+	<animation loop="true" id="walk_right">
+		<frame sheet="main" pos="0,3" wait="4" />
+		<frame sheet="main" pos="1,3" wait="4" />
+		<frame sheet="main" pos="0,3" wait="4" />
+		<frame sheet="main" pos="2,3" wait="4" />
+	</animation>
+</anim_group>

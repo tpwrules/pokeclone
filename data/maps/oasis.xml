@@ -34,7 +34,7 @@
 		</script>
 	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">
-		<anim file="objects/player/player_animation.xml" />
+		<anim file="objects/NPCs/npc_cheren.xml" />
 		<movement speed="2">
 			<move dir="down" dist="5" />
 			<move dir="up" dist="5" />
@@ -42,7 +42,7 @@
 		<vision>3</vision>
 		<class>cooltrainer</class>
 		<reward>120</reward>
-		<name>James</name>
+		<name>Cheren</name>
 		<pre_script>
 			<dialog>Oh snap!{br}It's MEEEEE!{wait}</dialog>
 		</pre_script>
