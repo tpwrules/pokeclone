@@ -289,7 +289,7 @@ class NPC(RenderedNPC):
 			self.interacting = self.script_manager.running #set whether we're interacting
 			if not self.interacting: #if we've stopped needing to
 				self.animator.curr_animation = self.stored_anim #restore stored animation
-				self.player.stopped = False #let the player move
+				self.game.stopped = False #let the player move
 		self.animator.update() #and our animation
 		
 #import other files which need to be in this list
