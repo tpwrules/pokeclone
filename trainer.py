@@ -58,6 +58,7 @@ class TrainerObject(objects.NPC):
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
 			self.game.stopped = False #stop player from moving
 	def do_seen(self, dir, dist, tp): #somebody has been seen
+		if dist < 0: return #return if we're too near the player
 		self.tile_pos = tp[:]
 		self.game.set_obj_pos(self, tp)
 		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
@@ -100,7 +101,10 @@ class TrainerObject(objects.NPC):
 			self.wait_time -= 1 #decrement wait time
 			if self.wait_time == 0: #if we're done waiting
 				#start movement
-				self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
+				if self.move_data[1] > 0:
+					self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
+				else:
+					self.move_done()
 		if self.seen or self.fought: return #don't try to find people if we've seen somebody already
 		player_pos = self.game.player.tile_pos[:] #get position of player
 		curr_dir = self.move_manager.curr_movement[0] #and the direction we're facing
