@@ -15,14 +15,18 @@ class Battle: #class to manage a battle
 		self.g.battle = self #store ourselves in globals
 		#create a surface to render on
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y))
+		self.transition = None #currently runnining transition
+	def start_battle(self): #start any type of battle
+		self.dlog = dialog.Dialog(self.g, "standard") #initialize a dialog to draw with
+		self.transition = transition.BattleOpen() #start transitioning to a battle
 	def start_wild(self, type, level): #start a wild battle
 		self.wild = True #this is a wild battle
-		self.dlog = dialog.Dialog(self.g, "standard") #initialize a new dialog to draw with temporarily
+		self.start_battle() #prepare battle
 		#say what the encounter was
 		self.dlog.draw_text("You encountered a {br}"+type+" at level "+str(level)+"!{wait}")
 	def start_trainer(self, trainer): #start a trainer battle
 		self.wild = False #this is not a wild battle
-		self.dlog = dialog.Dialog(self.g, "standard") #initialize a new dialog to draw with temporarily
+		self.start_battle() #prepare battle
 		#generate encounter text
 		s = "You encountered "+trainer.class_name+" "+trainer.trainer_name+"{br}with the following pok{ae}mon:{wait}{br}"
 		for mon in trainer.party:
@@ -38,4 +42,7 @@ class Battle: #class to manage a battle
 		r = self.dlog.update(self.surf, (0, 1)) #update dialog
 		if r is True: #if it finished
 			self.done() #battle is finished
+		if self.transition is not None: #if there is a transition to render
+			if self.transition.update(self.surf): #update and check if transition is done
+				self.transition = None #clear transition if it is done
 		return self.surf #return surface to render

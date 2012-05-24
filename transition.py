@@ -81,3 +81,21 @@ class WavyScreen:
 		if self.frames == -15: #if we've run out of frames
 			self.running = False #we're not running
 			return True #say we're done
+
+#transition to a battle
+class BattleOpen:
+	def __init__(self):
+		self.running = True #transition is currently running
+		self.pos = settings.screen_y/2 #initial position
+	def update(self, surf):
+			if not self.running: return True #return if we're not running
+			#draw two rectangles clearing out the screen
+			surf.fill((0, 0, 0), (0, 0, settings.screen_x, self.pos))
+			surf.fill((0, 0, 0), (0, settings.screen_y-self.pos, settings.screen_x, settings.screen_y))
+			if self.pos > (settings.screen_y/3):
+				self.pos -= 2
+			else:
+				self.pos -= 5
+			if self.pos <= 0:
+				self.running = False
+				return True
