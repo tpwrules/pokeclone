@@ -139,6 +139,9 @@ class Player(objects.RenderedNPC):
 			self.move_frames -= 1 #decrement amount of movement frames
 			if self.move_frames == 0: #if we aren't moving any more
 				self.moving = False #say so
+				if self.game.stopped:
+					self.animator.set_animation("stand_"+get_direction_name(self.direction))
+					self.animator.update()
 				r = self.step() #handle stepping on a new tile
 				if r is True: #if something special happened
 					return #stop doing things
