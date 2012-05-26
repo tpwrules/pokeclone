@@ -55,7 +55,8 @@ class TrainerObject(objects.NPC):
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
-		self.game.stopped = False #let player move
+		else: #if this is a normal interaction
+			self.game.stopped = False #let player move
 	def do_seen(self, dir, dist, tp): #somebody has been seen
 		if dist < 0: return #return if we're too near the player
 		self.tile_pos = tp[:]
