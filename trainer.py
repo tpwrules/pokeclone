@@ -48,7 +48,18 @@ class TrainerObject(objects.NPC):
 		self.should_interact = False #we're not waiting for interaction any more
 		if not self.fought: #if we haven't been fought yet
 			self.seen = True #we have been seen
-			self.move_manager.curr_movement[0] = self.interact_pos #set proper direction
+			#set proper tile position, move back by one
+			cd = self.move_manager.curr_movement[0] #get current direction
+			if cd == 0:
+				self.tile_pos[1] += 1
+			elif cd == 1:
+				self.tile_pos[1] -= 1
+			elif cd == 2:
+				self.tile_pos[0] += 1
+			elif cd == 3:
+				self.tile_pos[0] -= 1
+			self.game.set_obj_pos(self, self.tile_pos) #set new position
+			self.move_manager.move_to(self.interact_pos, 1, 0, False) #stop current movement
 			self.move_done() #begin battle
 		else: #if we have
 			objects.NPC.run_interaction(self) #interact as normal
