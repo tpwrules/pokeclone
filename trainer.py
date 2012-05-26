@@ -24,7 +24,7 @@ class TrainerObject(objects.NPC):
 		self.fought = self.g.save.get_prop(self.id, "fought", False)
 		self.moving = True
 		self.seen = False #set if we've seen somebody
-		self.move_data = [0, 0] #store the movement we're going to do
+		self.move_data = [0, 0, 0] #store the movement we're going to do
 		self.wait_time = 0 #amount of time to display icon
 		#load party data
 		party = []
@@ -39,7 +39,6 @@ class TrainerObject(objects.NPC):
 		t.start_trainer(self)
 		self.fought = True #we've been fought now
 	def move_done(self):
-		self.moving = False #we're not moving any more
 		self.interacting = True #we should be interacting now
 		#set proper animation
 		self.animator.set_animation("stand_"+objects.get_direction_name(self.move_manager.curr_movement[0]))
@@ -52,21 +51,21 @@ class TrainerObject(objects.NPC):
 			self.move_manager.curr_movement[0] = self.interact_pos #set proper direction
 			self.move_done() #begin battle
 		else: #if we have
-			objects.NPC.run_interaction() #interact as normal
+			objects.NPC.run_interaction(self) #interact as normal
 	def interacting_stopped(self):
 		if self.seen: #if we have seen somebody and interaction stopped
 			self.game.transition(transition.WavyScreen(), self.start_battle) #do transition
-			self.game.stopped = False #stop player from moving
+		self.game.stopped = False #let player move
 	def do_seen(self, dir, dist, tp): #somebody has been seen
 		if dist < 0: return #return if we're too near the player
 		self.tile_pos = tp[:]
 		self.game.set_obj_pos(self, tp)
-		self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16]
 		self.seen = True #we've seen somebody
 		self.wait_time = 30 #set amount of time to display icon
 		self.move_data[0] = dir #store movement
 		self.move_data[1] = dist
-		self.move_manager.move_to(dir, 0, 1, False) #stop current movement
+		self.move_data[2] = self.move_manager.pix_pos #store position within tile so we don't jump
+		self.moving = False #stop moving for now
 		#set standing animation
 		self.animator.set_animation("stand_"+objects.get_direction_name(dir))
 		self.game.stopped = True #stop player from moving
@@ -85,7 +84,7 @@ class TrainerObject(objects.NPC):
 			if self.game.dialog_drawing: return #return if a dialog is being drawn
 			if self.moving:
 				r = self.move_manager.update() #update our movement
-				if r is True and self.wait_time == 0: #if movement has finished
+				if r is True and self.wait_time == 0 and not self.fought: #if movement has finished
 					self.move_done() #handle it
 				elif self.move_manager.pix_pos == 0 and self.should_interact: #if we're currently on a tile boundary
 					self.run_interaction() #start interacting
@@ -101,10 +100,9 @@ class TrainerObject(objects.NPC):
 			self.wait_time -= 1 #decrement wait time
 			if self.wait_time == 0: #if we're done waiting
 				#start movement
-				if self.move_data[1] > 0:
-					self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
-				else:
-					self.move_done()
+				self.moving = True
+				self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
+				self.move_manager.pix_pos = self.move_data[2] #restore position
 		if self.seen or self.fought: return #don't try to find people if we've seen somebody already
 		player_pos = self.game.player.tile_pos[:] #get position of player
 		curr_dir = self.move_manager.curr_movement[0] #and the direction we're facing
