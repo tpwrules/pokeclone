@@ -20,12 +20,18 @@ class Tileset:
 		self.tiles_y = self.image.get_height()/tile_height
 	#function to get a specific tile
 	def get_tile(self, x, y=None, dest=None):
-		if y is None: #if a y value was not specified
-			y = x/self.tiles_x #calculate it
-			x = x-(y*self.tiles_x) #and update x properly
 		if dest is None: #if no destination surface was specified
 			dest = pygame.Surface((self.tile_width, self.tile_height), SRCALPHA) #create a new one
 			dest.convert_alpha() #and convert it for faster drawing
-		dest.blit(self.image, (0, 0), pygame.Rect(x*self.tile_width, y*self.tile_height, \
-			self.tile_width, self.tile_height)) #draw the specified tile to the destination
+		dest.blit(self.image, (0, 0), self.get_tile_rect(x, y)) #draw the specified tile to the destination
 		return dest #and return it
+	#function to blit a specific tile
+	def blit_tile(self, dest, dest_pos, x, y=None):
+		#blit the tile
+		dest.blit(self.image, dest_pos, self.get_tile_rect(x, y))
+	#function to get a rect for a specific tile
+	def get_tile_rect(self, x, y=None):
+		if y is None: #if a y value was not specified
+			y = x/self.tiles_x #calculate it
+			x = x-(y*self.tiles_x) #and update x properly
+		return (x*self.tile_width, y*self.tile_height, self.tile_width, self.tile_height) #generate and return rect
