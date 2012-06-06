@@ -46,41 +46,23 @@ class ChoiceDialog:
 		self.dlog_width = dlog_width
 		self.dlog_surf = pygame.Surface((dlog_width, dlog_height), SRCALPHA) #create surface for the textbox
 		#now draw dialog background
-		tile_buf = pygame.Surface((8, 8), SRCALPHA) #create a surface to hold a tile
 		#draw four corners
-		self.choice_tiles.get_tile(0, 0, tile_buf) #get top left corner
-		self.dlog_surf.blit(tile_buf, (0, 0)) #draw it
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(2, 0, tile_buf) #get top right corner
-		self.dlog_surf.blit(tile_buf, (dlog_width-8, 0)) #draw it
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(0, 2, tile_buf) #get bottom left corner
-		self.dlog_surf.blit(tile_buf, (0, dlog_height-8)) #draw it
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(2, 2, tile_buf) #get bottom right corner
-		self.dlog_surf.blit(tile_buf, (dlog_width-8, dlog_height-8)) #draw it
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
+		self.choice_tiles.blit_tile(self.dlog_surf, (0, 0), 0, 0) #top left
+		self.choice_tiles.blit_tile(self.dlog_surf, (dlog_width-8, 0), 2, 0) #top right
+		self.choice_tiles.blit_tile(self.dlog_surf, (0, dlog_height-8), 0, 2) #bottom left
+		self.choice_tiles.blit_tile(self.dlog_surf, (dlog_width-8, dlog_height-8), 2, 2) #bottom right
 		#now, draw top and bottom edges
-		self.choice_tiles.get_tile(1, 0, tile_buf) #get top edge tile
-		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(1, 2, self.cursor_tile) #get bottom edge tile
 		for x in xrange(8, dlog_width-8, 8): #loop through tile positions
-			self.dlog_surf.blit(tile_buf, (x, 0)) #draw top edge tile
-			self.dlog_surf.blit(self.cursor_tile, (x, dlog_height-8)) #draw bottom edge tile
+			self.choice_tiles.blit_tile(self.dlog_surf, (x, 0), 1, 0) #top edge
+			self.choice_tiles.blit_tile(self.dlog_surf, (x, dlog_height-8), 1, 2) #bottom edge
 		#draw left and right edges
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(0, 1, tile_buf) #get left edge tile
-		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(2, 1, self.cursor_tile) #get right edge tile
 		for y in xrange(8, dlog_height-8, 8): #loop through tile positions
-			self.dlog_surf.blit(tile_buf, (0, y)) #draw left edge tile
-			self.dlog_surf.blit(self.cursor_tile, (dlog_width-8, y)) #draw right edge tile
+			self.choice_tiles.blit_tile(self.dlog_surf, (0, y), 0, 1) #left edge
+			self.choice_tiles.blit_tile(self.dlog_surf, (dlog_width-8, y), 2, 1) #right edge
 		#now, fill in dialog middle
-		tile_buf.fill((0, 0, 0, 0)) #clear tile buffer
-		self.choice_tiles.get_tile(1, 1, tile_buf) #get center tile
 		for y in xrange(8, dlog_height-8, 8): #loop through rows
 			for x in xrange(8, dlog_width-8, 8): #and tiles
-				self.dlog_surf.blit(tile_buf, (x, y)) #fill one tile
+				self.choice_tiles.blit_tile(self.dlog_surf, (x, y), 1, 1) #draw one tile
 		#load cursor tile
 		self.cursor_tile.fill((0, 0, 0, 0)) #clear tile buffer
 		self.choice_tiles.get_tile(0, 3, self.cursor_tile) #load it
