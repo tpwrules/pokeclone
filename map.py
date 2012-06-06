@@ -58,8 +58,6 @@ class MapTileLayer:
 			return #we don't have to worry about rendering
 		i = self.image
 		i.fill((0, 0, 0, 0)) #clear the image
-		tile_image = pygame.Surface((16, 16), SRCALPHA) #create a temporary surface for storing the current tile
-		tile_image.convert_alpha() #make it more efficient
 		x, y = 0, 0 #set current position
 		old_tile = None #store the previous tile
 		for row in self.tilemap: #loop through tilemap rows
@@ -76,10 +74,8 @@ class MapTileLayer:
 							break #stop looking
 						#otherwise, store the current tileset
 						prev = tileset
-					tile_image.fill((0, 0, 0, 0)) #clear tile image
-					prev[1].get_tile(tile-prev[0], dest=tile_image) #get the tile 
 					old_tile = tile #update old tile
-				i.blit(tile_image, (x*16, y*16)) #blit tile image
+				prev[1].blit_tile(i, (x*16, y*16), tile-prev[0]) #draw tile
 				x += 1 #go to next tile
 			y += 1 #go to next row
 	#funtion to update the current image
