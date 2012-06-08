@@ -103,7 +103,6 @@ class MapObjectLayer:
 		sprites.sort() #sort the sprite list by y position
 		for sprite in sprites: #loop through sprites in sprite list
 			sprite[1].draw(surf) #tell sprite to draw itself
-			pass
 
 #class to manage a map
 class Map:
@@ -130,7 +129,7 @@ class Map:
 				image_path = image_path.replace("../", "") #fix it up
 				trans = image_tag.getAttribute("trans") #get transparent color
 				if trans is not "": #if one actually exists
-					trans = (int(trans[:2],16), int(trans[2:4],16), int(trans[4:], 16)) #parse it
+					trans = (int(trans[:2], 16), int(trans[2:4], 16), int(trans[4:], 16)) #parse it
 				else: #if it doesn't
 					trans = None #set it to None
 				firstgid = int(child.getAttribute("firstgid")) #get id of tileset start
