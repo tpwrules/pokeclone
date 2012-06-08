@@ -175,7 +175,8 @@ class Game: #class for our game engine
 		pos = self.objects["player"].pos #get position of player
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
 		if self.curr_transition is None and self.menu_showing is False: #if there is no transition going on now
-			self.map_image = self.map.update() #update the map
+			self.map_image = self.map.update(pygame.Rect(self.camera_pos, \
+			(settings.screen_x, settings.screen_y))) #update the map
 			if self.debug: #if we're debugging
 				if self.g.curr_keys[settings.key_dbg_save]: #if save key is pressed
 					self.save() #do a save

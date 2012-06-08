@@ -159,11 +159,13 @@ class Map:
 		for layer in self.layers: #loop through all of our layers
 			layer.render() #tell them to render themselves
 	#function to update the map
-	def update(self):
+	def update(self, camera=None):
+		if camera is None:
+			camera = pygame.Rect(0, 0, self.map_width*16, self.map_height*16)
 		#render all the layers
 		self.image.fill((0, 0, 0)) #clear out the image
 		for layer in self.layers: #loop through all of our layers
 			surf = layer.update(self.image) #tell them to update themselves
 			if surf is not None: #if a surface to draw was returned
-				self.image.blit(surf, (0, 0)) #draw the result
+				self.image.blit(surf, camera.topleft, camera) #draw the result
 		return self.image #return updated image
