@@ -156,7 +156,7 @@ class MovementManager:
 				self.obj.game.set_obj_pos(self.obj, self.obj.tile_pos) #set object position
 		if not self.running and not self.resume and self.curr_movement[1] == 0: #if we're finished moving manually
 			self.moving = False #we're not moving any more
-		if self.curr_movement[1] == 0 and self.check_collide == False: #if we're finished moving
+		if self.curr_movement[1] == 0: #if we're finished moving
 			#un-calculate tile position
 			if dir == 0:
 				self.obj.tile_pos[1] += 1
