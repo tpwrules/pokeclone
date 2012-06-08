@@ -30,6 +30,7 @@ class MapTileLayer:
 			row_data = s.unpack(data[:self.map.map_width*4]) #unpack one row of data
 			data = data[self.map.map_width*4:] #delete it from the data array
 			self.tilemap.append([x for x in row_data]) #add it to the tilemap, converted to a list
+		self.dirty = True #mark ourselves as dirty so we render next frame
 		if not self.collisions: #if we're not a collision map
 			return #we can return now
 		#otherwise, we have to make all the tiles start at 0
@@ -54,6 +55,7 @@ class MapTileLayer:
 			y += 1
 	#function to render the tilemap
 	def render(self):
+		self.dirty = False #we've been rendered
 		if self.collisions: #if this is a collisions surface
 			return #we don't have to worry about rendering
 		i = self.image
@@ -80,6 +82,7 @@ class MapTileLayer:
 			y += 1 #go to next row
 	#funtion to update the current image
 	def update(self, surf):
+		if self.dirty: self.render() #if we're dirty, re-render ourselves
 		if not self.collisions: return self.image #just return the current image
 		
 #class for an object layer
@@ -91,8 +94,6 @@ class MapObjectLayer:
 		self.map.obj_layer = self #store ourselves in the map
 	def add_object(self, obj): #add an object to the render list
 		self.objects.append(obj)
-	def render(self):
-		pass
 	def update(self, surf):
 		sprites = [] #list to hold sprites to draw
 		for sprite in self.objects: #loop through object list
@@ -150,13 +151,8 @@ class Map:
 		
 		self.image = pygame.Surface((self.map_width*16, self.map_height*16)) #create a new surface to render on
 		self.image.convert() #convert it to blit faster
-
-		self.render() #render all our surfaces
 	def add_object(self, obj): #add an object to the object layer
 		self.obj_layer.add_object(obj) #tell our object layer to add the object
-	def render(self): #render all our surfaces
-		for layer in self.layers: #loop through all of our layers
-			layer.render() #tell them to render themselves
 	#function to update the map
 	def update(self, camera=None):
 		if camera is None:
