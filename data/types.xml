@@ -1,0 +1,149 @@
+<!-- data for each pokemon/move type -->
+<types>
+	<type name="normal">
+		<!-- a modifier for when damage is calculated.
+			here, when a normal move is used on a rock pokemon, the damage is halved. -->
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="ghost" amount="0" />
+		<modifier defender="steel" amount="1/2" />
+	</type>
+	<type name="fight">
+		<modifier defender="normal" amount="2" />
+		<modifier defender="flying" amount="1/2" />
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="bug" amount="1/2" />
+		<modifier defender="ghost" amount="0" />
+		<modifier defender="steel" amount="2" />
+		<modifier defender="psychic" amount="1/2" />
+		<modifier defender="ice" amount="2" />
+		<modifier defender="dark" amount="2" />
+	</type>
+	<type name="flying">
+		<modifier defender="fight" amount="2" />
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="bug" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="grass" amount="2" />
+		<modifier defender="electric" amount="1/2" />
+	</type>
+	<type name="poison">
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="ground" amount="1/2" />
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="ghost" amount="1/2" />
+		<modifier defender="steel" amount="0" />
+		<modifier defender="grass" amount="2" />
+	</type>
+	<type name="ground">
+		<modifier defender="flying" amount="0" />
+		<modifier defender="poison" amount="2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="bug" amount="1/2" />
+		<modifier defender="steel" amount="2" />
+		<modifier defender="fire" amount="2" />
+		<modifier defender="grass" amount="1/2" />
+		<modifier defender="electric" amount="2" />
+	</type>
+	<type name="rock">
+		<modifier defender="fight" amount="1/2" />
+		<modifier defender="flying" amount="2" />
+		<modifier defender="ground" amount="1/2" />
+		<modifier defender="bug" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="ice" amount="2" />
+	</type>
+	<type name="bug">
+		<modifier defender="fight" amount="1/2" />
+		<modifier defender="flying" amount="1/2" />
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="ghost" amount="1/2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="grass" amount="2" />
+		<modifier defender="psychic" amount="2" />
+		<modifier defender="dark" amount="2" />
+	</type>
+	<type name="ghost">
+		<modifier defender="normal" amount="0" />
+		<modifier defender="ghost" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="psychic" amount="2" />
+		<modifier defender="dark" amount="1/2" />
+	</type>
+	<type name="steel">
+		<modifier defender="rock" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="water" amount="1/2" />
+		<modifier defender="electric" amount="1/2" />
+		<modifier defender="ice" amount="2" />
+	</type>
+	<type name="fire">
+		<modifier defender="rock" amount="1/2" />
+		<modifier defender="bug" amount="2" />
+		<modifier defender="steel" amount="2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="water" amount="1/2" />
+		<modifier defender="grass" amount="2" />
+		<modifier defender="ice" amount="2" />
+		<modifier defender="dragon" amount="1/2" />
+	</type>
+	<type name="water">
+		<modifier defender="ground" amount="2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="fire" amount="2" />
+		<modifier defender="water" amount="1/2" />
+		<modifier defender="grass" amount="1/2" />
+		<modifier defender="dragon" amount="1/2" />
+	</type>
+	<type name="grass">
+		<modifier defender="flying" amount="1/2" />
+		<modifier defender="poison" amount="1/2" />
+		<modifier defender="ground" amount="2" />
+		<modifier defender="rock" amount="2" />
+		<modifier defender="bug" amount="1/2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="water" amount="2" />
+		<modifier defender="grass" amount="1/2" />
+		<modifier defender="dragon" amount="1/2" />
+	</type>
+	<type name="electric">
+		<modifier defender="flying" amount="2" />
+		<modifier defender="ground" amount="0" />
+		<modifier defender="water" amount="2" />
+		<modifier defender="grass" amount="1/2" />
+		<modifier defender="electric" amount="1/2" />
+		<modifier defender="dragon" amount="1/2" />
+	</type>
+	<type name="psychic">
+		<modifier defender="fight" amount="2" />
+		<modifier defender="poison" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="psychic" amount="1/2" />
+		<modifier defender="dark" amount="0" />
+	</type>
+	<type name="ice">
+		<modifier defender="flying" amount="2" />
+		<modifier defender="ground" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="fire" amount="1/2" />
+		<modifier defender="water" amount="1/2" />
+		<modifier defender="grass" amount="2" />
+		<modifier defender="ice" amount="1/2" />
+		<modifier defender="dragon" amount="2" />
+	</type>
+	<type name="dragon">
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="dragon" amount="2" />
+	</type>
+	<type name="dark">
+		<modifier defender="fight" amount="1/2" />
+		<modifier defender="ghost" amount="2" />
+		<modifier defender="steel" amount="1/2" />
+		<modifier defender="psychic" amount="2" />
+		<modifier defender="dark" amount="1/2" />
+	</type>
+</types>
