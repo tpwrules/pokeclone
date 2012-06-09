@@ -22,6 +22,7 @@ anim.set_animation(sys.argv[2])
 posx, posy = int(sys.argv[3]), int(sys.argv[4])
 
 running = True
+stepping = False
 
 clock = pygame.time.Clock()
 
@@ -36,10 +37,20 @@ while running: #loop while we are still running
 			elif event.key == ord("r"):
 				anim = animation.PartAnimationSet(None, sys.argv[1])
 				anim.set_animation(sys.argv[2])
+				if stepping:
+					anim_dest.fill((255, 255, 255))
+					anim.update(anim_dest, posx, posy)
+			elif event.key == ord("s"): #if it's to toggle stepping
+				stepping = not stepping
+			elif event.key == ord("n"): #if it's to step to the next frame
+				if stepping:
+					anim_dest.fill((255, 255, 255))
+					anim.update(anim_dest, posx, posy)
 	if running == False: #if we aren't supposed to be running any more
 		break #stop running
-	anim_dest.fill((255, 255, 255))
-	anim.update(anim_dest, posx, posy)
+	if not stepping:
+		anim_dest.fill((255, 255, 255))
+		anim.update(anim_dest, posx, posy)
 	pygame.transform.scale(anim_dest, (settings.screen_x*settings.screen_scale, \
 		settings.screen_y*settings.screen_scale), screen) #draw the screen scaled properly
 	pygame.display.flip() #flip double buffers
