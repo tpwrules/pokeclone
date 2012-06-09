@@ -14,7 +14,7 @@
 	<pokedex> <!-- various pokedex metrics -->
 		<height>27</height> <!-- height of pokemon in inches -->
 		<weight>44.3</weight> <!-- weight of pokemon in pounds -->
-		<desc>These remarkably intelligent Pokémon fight by controlling arms that can grip with rock-crushing power.</desc>
+		<desc>These remarkably intelligent Pok{ae}mon fight by controlling arms that can grip with rock-crushing power.</desc>
 		<color>green</color>
 		<num>85</num>
 	</pokedex>
