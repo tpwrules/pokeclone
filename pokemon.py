@@ -5,8 +5,9 @@ class Container:
 	pass
 
 class PokemonData: #class for holding data on a pokemon
-	def __init__(self, dom): #initialize ourselves based on a given dom
-		self.load_data(dom)
+	def __init__(self, dom=None): #initialize ourselves based on a given dom
+		if dom is not None:
+			self.load_data(dom)
 	def load_data(self, dom): #load data from a dom
 		self.dom = dom
 		self.data = Container()
@@ -68,6 +69,8 @@ class PokemonData: #class for holding data on a pokemon
 			d.tm.append(int(tm))
 		for hm in g(t, "hm").split("|"):
 			d.hm.append(int(hm))
+	def clone(self): #return a clone of this data
+		return PokemonData(self.dom)
 
 pokemon_data = {} #dict for holding data on each pokemon
 
