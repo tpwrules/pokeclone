@@ -23,7 +23,7 @@ class PokemonData: #class for holding data on a pokemon
 		#load type data
 		d.type = [x for x in g(dom, "type").split("|")]
 		#load pokedex data
-		t = data.get_node("pokedex")
+		t = data.get_node(dom, "pokedex")
 		d.pokedex = Container()
 		d = d.pokedex
 		d.height = int(g(t, "height"))
@@ -35,10 +35,10 @@ class PokemonData: #class for holding data on a pokemon
 		self.data.ability = Container()
 		self.data.ability.normal = []
 		self.data.ability.hidden = []
-		t = data.get_node("ability").getElementsByTagName("normal")
+		t = data.get_node(dom, "ability").getElementsByTagName("normal")
 		for ability in t:
 			self.data.ability.normal.append(data.get_node_text(ability))
-		t = data.get_node("ability").getElementsByTagName("hidden")
+		t = data.get_node(dom, "ability").getElementsByTagName("hidden")
 		for ability in t:
 			self.data.ability.hidden.append(data.get_node_text(ability))
 		self.data.breeding = Container()
@@ -47,21 +47,21 @@ class PokemonData: #class for holding data on a pokemon
 		d.cycles = int(g(dom, "cycles"))
 		self.data.base = Container() #base yield data load
 		d = self.data.base
-		t = data.get_node[0]
+		t = data.get_node(dom, "base")
 		d.exp = int(g(t, "exp"))
 		d.ev = []
 		d.stats = []
-		for ev in g(t, "ev"):
+		for ev in g(t, "ev").split("|"):
 			d.ev.append(int(ev))
-		for stat in g(t, "stats"):
+		for stat in g(t, "stats").split("|"):
 			d.stats.append(int(stat))
 		#DOES NOT LOAD EVOLUTION DATA!!!
 		self.data.learnset = Container()
 		d = self.data.learnset
-		t = data.get_node("learnset")
+		t = data.get_node(dom, "learnset")
 		d.level = []
-		for level in data.get_node("level").getElementsByTagName("move"):
-			d.level.append(int(level.getAttribute("level")), data.get_node_text(level))
+		for level in data.get_node(dom, "level").getElementsByTagName("move"):
+			d.level.append((int(level.getAttribute("level")), data.get_node_text(level)))
 		d.tm = []
 		d.hm = []
 		for tm in g(t, "tm").split("|"):
@@ -70,3 +70,12 @@ class PokemonData: #class for holding data on a pokemon
 			d.hm.append(int(hm))
 
 pokemon_data = {} #dict for holding data on each pokemon
+
+def load_data(): #load all pokemon data
+	global pokemon_data
+	pokemon_data = {} #ensure data list is cleared
+	pokemen = data.load_xml("pokemon_data.xml").documentElement # get list of pokemon
+	for pokemon in pokemen.getElementsByTagName("pokemon"): #loop through all pokemon
+		name = pokemon.getAttribute("name") #get name of pokemon
+		poke_data = data.load_xml(data.get_node_text(pokemon)).documentElement #load data file
+		pokemon_data[name] = PokemonData(poke_data) #load and parse data
