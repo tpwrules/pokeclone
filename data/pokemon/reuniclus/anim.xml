@@ -1,5 +1,5 @@
 <part_anim>
-	<image from="pokemon/reuniclus/reuniculus.png" id="main" />
+	<image from="pokemon/reuniclus/reuniclus.png" id="main" />
 	<part_image from="main" coord="27,0,42,52" center="21,26" id="gelbody" />
 	<part_image from="main" coord="159,18,14,9" center="7,0" id="gelbody_bump" />
 	<part_image from="main" coord="225,0,24,14" center="12,0" id="inner_body" />
