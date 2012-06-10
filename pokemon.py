@@ -1,8 +1,13 @@
+import random
+
 import data #load data handling functions
 import poke_types #load type information
 
 class Container:
 	pass
+
+#note on stat ordering:
+#ordered HP, attack, defense, speed, sp. attack, sp. defense always
 
 class PokemonData: #class for holding data on a pokemon
 	def __init__(self, dom=None): #initialize ourselves based on a given dom
@@ -69,8 +74,78 @@ class PokemonData: #class for holding data on a pokemon
 			d.tm.append(int(tm))
 		for hm in g(t, "hm").split("|"):
 			d.hm.append(int(hm))
-	def clone(self): #return a clone of this data
-		return PokemonData(self.dom)
+	def generate(self, level): #generate a wild pokemon from this data at a specific level
+		return Pokemon(self.data, level)
+	def calc_exp(self, level): #calculate the needed experience for a given level
+		#formulas taken from bulbapedia
+		if level <= 1: #if it's the first level
+			return 0 #always have 0 exp
+		level = float(level) #convert level to float for accurate calculations
+		cubed = level*level*level #common to all formulas
+		growth = self.data.exp_growth #get growth type
+		r = 0 #return value for experience
+		if growth == "erratic":
+			#erratic has four different formulas based on level
+			if level <= 50:
+				r = (cubed*(100-level))/50
+			elif level <= 68:
+				r = (cubed*(150-level))/100
+			elif level <= 98:
+				r = (cubed*((1911-(10*level))/3))/500
+			elif level <= 100:
+				r = (cubed*(160-level))/100
+		elif growth == "fast":
+			r = (4*cubed)/5
+		elif growth == "medfast":
+			r = cubed
+		elif growth == "medslow":
+			r = ((6*cubed)/5) - (15*level*level) + (100*level) - 140
+		elif growth == "slow":
+			r = (5*cubed)/4
+		elif growth == "fluctuating":
+			if level <= 15:
+				r = cubed*((((level+1)/3)+24)/50)
+			elif level <= 36:
+				r = cubed*((level+14)/50)
+			elif level <= 100:
+				r = cubed*(((level/2)+32)/50)
+		return int(r) #return experience required
+
+class Pokemon(PokemonData): #class to hold one pokemon
+	def __init__(self, data=None, level=None): #initialize ourselves
+		if data is not None: #if data was given
+			self.data = data #store it
+			self.generate(level) #and generate a new wild pokemon
+	def generate(self, level): #generate a new wild pokemon
+		self.name = self.data.name #store the name of ourselves
+		self.level = level #store given level
+		self.curr_exp = self.calc_exp(level) #store the experience we start with
+		self.moves = [] #clear move data
+		#wild pokemon always know the four most recent moves they learn by level
+		possible_moves = sorted(self.data.learnset.level)[::-1] #sort moves reversed by level
+		for move in possible_moves: #for each move this pokemon could know
+			if move[0] <= level: #if it's able to be learned at this level
+				if move[1] in self.moves: continue #don't add it if we already have
+				self.moves.append(move[1]) #add it to moves
+			if len(self.moves) == 4: #if we found four moves
+				break #stop looking
+		self.iv = [random.randrange(0, 32) for x in xrange(6)] #generate individual values
+		self.ev = [0]*6 #and clear evolution values
+		self.stats = [self.calc_stat(x) for x in xrange(6)] #generate pokemon stats
+		#generate abilities
+		self.ability = self.data.ability.normal[random.randrange(0, len(self.data.ability.normal))]
+		self.hidden_ability = self.data.ability.hidden[random.randrange(0, len(self.data.ability.hidden))]
+		#generate gender
+		#gender is -1 for ungendered, 0 for male, and 1 for female
+		if self.data.gender_ratio == -1: #if it's ungendered
+			self.gender = -1 #say so
+		else:
+			if random.randrange(0, 100) < self.data.gender_ratio: #if it's going to be a male
+				self.gender = 0 #mark it
+			else:
+				self.gender = 1 #mark female
+	def calc_stat(self, stat):
+		return 0 #do nothing for now
 
 pokemon_data = {} #dict for holding data on each pokemon
 
