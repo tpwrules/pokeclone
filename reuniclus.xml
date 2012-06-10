@@ -1,0 +1,68 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim>pokemon/reuniclus/anim.xml</anim> <!-- path to animation data -->
+	<!-- internal name of pokemon -->
+	<name>reuniclus</name>
+	<!-- proper name -->
+	<show_name>Reuniclus</show_name>
+	<!-- number of the pokemon -->
+	<num>579</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Multiplying</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>27</height> <!-- height of pokemon in inches -->
+		<weight>44.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>These remarkably intelligent Pokémon fight by controlling arms that can grip with rock-crushing power.</desc>
+		<color>green</color>
+		<num>85</num>
+	</pokedex>
+	<ability>
+		<normal>overcoat</normal> <!-- various abilities -->
+		<normal>magic_guard</normal> <!-- are chosen from at random when generated -->
+		<hidden>regenerator</hidden>
+	</ability>
+	<catch>50</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>amorphous</group> <!-- breeding group of pokemon -->
+		<cycles>21</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>221</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|3|0|0</ev> <!-- ev yield data -->
+		<stats>110|65|75|125|85|30</stats>
+	</base>
+	<evolve> <!-- ways to evolve this pokemon -->
+	</evolve>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">psywave</move>
+			<move level="0">reflect</move>
+			<move level="0">rollout</move>
+			<move level="0">snatch</move>
+			<move level="3">reflect</move>
+			<move level="7">rollout</move>
+			<move level="10">snatch</move>
+			<move level="14">hidden_power</move>
+			<move level="16">light_screen</move>
+			<move level="19">charm</move>
+			<move level="24">recover</move>
+			<move level="25">psyshock</move>
+			<move level="28">endeavor</move>
+			<move level="31">future_sight</move>
+			<move level="34">pain_split</move>
+			<move level="39">psychic</move>
+			<move level="41">dizzy_punch</move>
+			<move level="45">skill_swap</move>
+			<move level="54">heal_block</move>
+			<move level="59">wonder_room</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm>3|4|6|10|15|16|17|18|19|20|21|25|27|29|30|32|33|39|42|44|45|48|52|53|56|63|64|68|70|73|74|77|80|85|86|87|90|91|92|94</tm>
+		<hm>4</hm>
+	</learnset>
+</pokemon_data>

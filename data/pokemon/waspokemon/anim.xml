@@ -1,0 +1,47 @@
+<part_anim>
+	<image from="pokemon/waspokemon/wasptis.png" id="main" />
+	<part_image from="main" coord="3,3,38,30" center="28,30" id="head" />
+	<part_image from="main" coord="22,36,24,21" center="7,0" id="body" />
+	<part_image from="main" coord="73,14,7,14" center="5,0" id="leftleg" />
+	<part_image from="main" coord="86,14,7,13" center="2,0" id="rightleg" />
+	<part_image from="main" coord="82,30,15,21" center="15,0" id="leftarm" />
+	<part_image from="main" coord="66,30,16,21" center="0,0" id="rightarm" />
+	<layout id="whole" pos="30,30">
+		<part id="leftleg" pos="19,31" from="leftleg" />
+		<part id="leftarm" pos="9,19" from="leftarm" />
+		<part id="body" pos="14,14" from="body" />
+		<part id="head" pos="0,0" from="head" />
+		<part id="rightleg" pos="32,33" from="rightleg" />
+		<part id="rightarm" pos="23,17" from="rightarm" />
+	</layout>
+
+	<anim id="demo" loopreset="true">
+		<frame time="15">
+		<move id="body" delta="0,1"/>
+		<move id="head" delta="0,2"/>
+		<rotate id="head" degrees="5"/>		
+		<rotate id="leftarm" degrees="-9"/>
+		<rotate id="rightarm" degrees="9"/>
+		</frame>
+		<frame time="15">
+		<move id="head" delta="0,-1"/>
+		<rotate id="head" degrees="-5"/>		
+		<rotate id="leftarm" degrees="9"/>
+		<rotate id="rightarm" degrees="-9"/>
+		</frame>
+		<frame time="15">
+		<move id="body" delta="0,-1"/>
+		<move id="head" delta="0,-1"/>
+		<rotate id="head" degrees="-5"/>		
+		<rotate id="leftarm" degrees="9"/>
+		<rotate id="rightarm" degrees="-9"/>
+		</frame>
+		<frame time="15">
+		<move id="body" delta="0,1"/>
+		<move id="head" delta="0,2"/>
+		<rotate id="head" degrees="5"/>		
+		<rotate id="leftarm" degrees="-9"/>
+		<rotate id="rightarm" degrees="9"/>
+		</frame>
+	</anim>
+</part_anim>
