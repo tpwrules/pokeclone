@@ -157,3 +157,7 @@ def load_data(): #load all pokemon data
 		name = pokemon.getAttribute("name") #get name of pokemon
 		poke_data = data.load_xml(data.get_node_text(pokemon)).documentElement #load data file
 		pokemon_data[name] = PokemonData(poke_data) #load and parse data
+
+def get_data(pokemon): #get data for a specific pokemon
+	global pokemon_data
+	return pokemon_data[pokemon] #return the data
