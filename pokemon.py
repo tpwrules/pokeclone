@@ -129,6 +129,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 				self.moves.append(move[1]) #add it to moves
 			if len(self.moves) == 4: #if we found four moves
 				break #stop looking
+		self.nature = nature_data[random.randrange(0, 25)] #generate random nature
 		self.iv = [random.randrange(0, 32) for x in xrange(6)] #generate individual values
 		self.ev = [0]*6 #and clear evolution values
 		self.stats = [self.calc_stat(x) for x in xrange(6)] #generate pokemon stats
@@ -151,7 +152,14 @@ class Pokemon(PokemonData): #class to hold one pokemon
 			r = ((t*self.level)/100.0)+10
 		else: #other stats use a different formula
 			t = self.iv[stat]+(2*self.data.base.stats[stat])+(self.ev[stat]/4.0)
-			r = (((t*self.level)/100.0)+5)*1.0
+			#factor in nature modifier
+			if self.nature.help == stat: #if this nature helps this stat
+				n = 1.1 #set nature modifier to give a boost
+			elif self.nature.hinder == stat: #if this nature hinders this stat
+				n = 0.9 #set nature modifier to give a nerf
+			else:
+				n = 1.0 #default if not affected
+			r = (((t*self.level)/100.0)+5)*n
 		return int(r) #return calculated stat
 
 pokemon_data = {} #dict for holding data on each pokemon
