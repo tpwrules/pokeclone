@@ -155,15 +155,26 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		return int(r) #return calculated stat
 
 pokemon_data = {} #dict for holding data on each pokemon
+nature_data = {} #dict for holding data on each nature
 
 def load_data(): #load all pokemon data
-	global pokemon_data
+	global pokemon_data, nature_data
 	pokemon_data = {} #ensure data list is cleared
 	pokemen = data.load_xml("pokemon_data.xml").documentElement # get list of pokemon
 	for pokemon in pokemen.getElementsByTagName("pokemon"): #loop through all pokemon
 		name = pokemon.getAttribute("name") #get name of pokemon
 		poke_data = data.load_xml(data.get_node_text(pokemon)).documentElement #load data file
 		pokemon_data[name] = PokemonData(poke_data) #load and parse data
+	nature_data = {} #clear out nature data
+	natures = data.load_xml("nature.xml").documentElement #get nature data
+	for nature in natures.getElementsByTagName("nature"): #loop through nature data
+		t = Container()
+		t.name = nature.getAttribute("name") #set name of nature
+		num = int(nature.getAttribute("num")) #get number of nature
+		t.help = int(nature.getAttribute("help")) #get which stat this nature helps
+		t.hinder = int(nature.getAttribute("hinder")) #get which stat this nature hinders
+		t.num = num
+		nature_data[num] = t #store nature data
 
 def get_data(pokemon): #get data for a specific pokemon
 	global pokemon_data
