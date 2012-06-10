@@ -145,7 +145,14 @@ class Pokemon(PokemonData): #class to hold one pokemon
 			else:
 				self.gender = 1 #mark female
 	def calc_stat(self, stat):
-		return 0 #do nothing for now
+		#formulas taken from bulbapedia
+		if stat == 0: #if stat is HP, that uses its own calculation
+			t = self.iv[0]+(2*self.data.base.stats[0])+(self.ev[0]/4.0)+100
+			r = ((t*self.level)/100.0)+10
+		else: #other stats use a different formula
+			t = self.iv[stat]+(2*self.data.base.stats[stat])+(self.ev[stat]/4.0)
+			r = (((t*self.level)/100.0)+5)*1.0
+		return int(r) #return calculated stat
 
 pokemon_data = {} #dict for holding data on each pokemon
 
