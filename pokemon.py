@@ -118,6 +118,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 			self.generate(level) #and generate a new wild pokemon
 	def generate(self, level): #generate a new wild pokemon
 		self.name = self.data.name #store the name of ourselves
+		self.show_name = self.name
 		self.level = level #store given level
 		self.curr_exp = self.calc_exp(level) #store the experience we start with
 		self.moves = [] #clear move data
@@ -161,6 +162,36 @@ class Pokemon(PokemonData): #class to hold one pokemon
 				n = 1.0 #default if not affected
 			r = (((t*self.level)/100.0)+5)*n
 		return int(r) #return calculated stat
+	def save(self): #save our data
+		s = {} #generate dict of data to save
+		s["name"] = self.name #store our name
+		s["sname"] = self.show_name #and name that is shown
+		s["lev"] = self.level #store other properties
+		s["exp"] = self.curr_exp
+		s["m"] = self.moves
+		s["nat"] = self.nature
+		s["iv"] = self.iv
+		s["ev"] = self.ev
+		s["abil"] = self.ability
+		s["habil"] = self.hidden_ability
+		s["g"] = self.gender
+		return s #return saved data
+	def load(self, s): #load saved data
+		self.data = pokemon_data[s["name"]] #load data structure
+		#load other properties
+		self.name = s["name"]
+		self.show_name = s["sname"]
+		self.level = s["lev"]
+		self.curr_exp = s["exp"]
+		self.moves = s["m"]
+		self.nature = s["nat"]
+		self.iv = s["iv"]
+		self.ev = s["ev"]
+		self.ability = s["abil"]
+		self.hidden_ability = s["habil"]
+		self.gender = s["g"]
+		#regenerate stats
+		self.stats = [self.calc_stat(x) for x in xrange(6)]
 
 pokemon_data = {} #dict for holding data on each pokemon
 nature_data = {} #dict for holding data on each nature
