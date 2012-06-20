@@ -1,3 +1,4 @@
 <pokemon_data> <!-- data for all pokemon in the game -->
 	<pokemon name="reuniclus">pokemon/reuniclus/reuniclus.xml</pokemon> <!-- path to pokemon information -->
+    <pokemon name="waspokemon">pokemon/waspokemon/wasptis.xml</pokemon>
 </pokemon_data>
