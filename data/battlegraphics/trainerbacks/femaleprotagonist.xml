@@ -1,0 +1,49 @@
+<part_anim>
+	<image from="battlegraphics/trainerbacks/femaleprotagonist.png" id="main" />
+	<part_image from="main" coord="1,10,54,118" center="0,0" id="body1" />
+	<part_image from="main" coord="56,16,63,112" center="0,0" id="body2" />
+	<part_image from="main" coord="120,30,72,98" center="0,0" id="body3" />
+	<part_image from="main" coord="199,42,14,30" center="14,0" id="arm1part1" />
+	<part_image from="main" coord="218,40,16,32" center="0,0" id="arm1part2" />
+	<part_image from="main" coord="193,84,24,40" center="14,27" id="arm2" />
+	<part_image from="main" coord="226,83,30,40" center="30,28" id="arm3" />
+	<part_image from="main" coord="194,2,46,26" center="46,4" id="leftarm" />
+	<layout id="whole" pos="0,0">
+		<part id="leftarm" pos="36,40" from="leftarm" />
+		<part id="body" pos="0,0" from="body1" />
+		<part id="arm" pos="28,50" from="arm1part1" />
+		<part id="arm1part2" pos="14,80" from="arm1part2" />
+	</layout>
+
+	<anim id="battle" loopreset="true">
+		<frame time="22">
+		</frame>
+		<frame time="1">
+			<set id="arm" to="arm2" />
+		</frame>
+		<frame time="1">
+			<set id="arm" to="arm3" />
+		</frame>
+		<frame time="5">
+			<move id="whole" delta="-12,0" />
+		</frame>
+		<frame time="5">
+			<rotate id="arm" degrees="-6" />
+		</frame>
+		<frame time="4">
+			<move id="whole" delta="1,2" />
+			<set id="body" to="body2" />
+		</frame>
+		<frame time="4">
+			<set id="body" to="body3" />
+			<rotate id="body" degrees="-4" />
+		</frame>
+		<frame time="3">
+			<move id="whole" delta="4,0" />
+		</frame>
+		<frame time="9">
+		</frame>
+		<frame time="10">
+		</frame>
+	</anim>
+</part_anim>
