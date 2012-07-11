@@ -100,6 +100,8 @@ class MapTileLayer:
 			self.tile_anims[i][2] = self.tile_anims[i][3][self.tile_anims[i][1]][1] #set time
 			t = self.tile_anims[i]
 			if camera.colliderect((t[0], (17, 17))): #if the camera can see this tile
+				#clear the old tile
+				self.image.fill((0, 0, 0, 0), (t[0], (16, 16)))
 				t[4].blit_tile(self.image, t[0], t[3][t[1]][0][0], t[3][t[1]][0][1]) #draw the new tile
 		return self.image #just return the current image
 		
