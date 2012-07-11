@@ -110,6 +110,10 @@ class PartAnimationPart: #class for one part in the layout
 			self.yscale = float(dom.getAttribute("yscale"))
 		except:
 			pass
+		try:
+			self.show = int(dom.getAttribute("show")) != 0
+		except:
+			self.show = True
 		#back up loaded data
 		self.orig_pos = self.pos[:]
 		self.orig_rot = self.rot
@@ -121,7 +125,9 @@ class PartAnimationPart: #class for one part in the layout
 		self.orig_center = self.center
 		self.offset = set_.part_images[dom.getAttribute("from")][2] #and move offset
 		self.orig_offset = self.offset[:]
+		self.orig_show = self.show
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
+		if not self.show: return #return if we're not being shown
 		img = self.image #get starting surface
 		#we need to rotate our coordinates to be in the correct position
 		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
@@ -151,6 +157,7 @@ class PartAnimationPart: #class for one part in the layout
 		self.image = self.orig_image
 		self.center = self.orig_center
 		self.offset = self.orig_offset[:]
+		self.show = self.orig_show
 
 class PartAnimationGroup: #class for a layout group in a part animation
 	def __init__(self, set_, g, dom): #create a group based on a dom
@@ -177,11 +184,16 @@ class PartAnimationGroup: #class for a layout group in a part animation
 			self.yscale = float(dom.getAttribute("yscale"))
 		except:
 			pass
+		try:
+			self.show = int(dom.getAttribute("show")) != 0
+		except:
+			self.show = True
 		#back up loaded data
-		self.orig_pos = self.pos
+		self.orig_pos = self.pos[:]
 		self.orig_rot = self.rot
 		self.orig_xscale = self.xscale
 		self.orig_yscale = self.yscale
+		self.orig_show = self.show
 		#load children
 		node = dom.firstChild
 		self.children = []
@@ -202,6 +214,7 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		center[1] /= numcenters
 		self.center = center
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
+		if not self.show: return #return if we're not being shown
 		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
 		npos = [0,0]
 		npos[0] = ((math.cos(math.radians(-rot))*pos[0]) - (math.sin(math.radians(-rot))*pos[1]))
@@ -215,10 +228,11 @@ class PartAnimationGroup: #class for a layout group in a part animation
 		for child in self.children: #render each child
 			child.render(surf, x+pos[0], y+pos[1], xs*self.xscale, ys*self.yscale, rot+self.rot, center)
 	def reset(self): #reset our state
-		self.pos = self.orig_pos
+		self.pos = self.orig_pos[:]
 		self.rot = self.orig_rot
 		self.xscale = self.orig_xscale
 		self.yscale = self.orig_yscale
+		self.show = self.orig_show
 		#reset state of all our children
 		for child in self.children:
 			child.reset()
@@ -272,6 +286,12 @@ class PartAnimation: #class for one animation
 						if y != None: #if there was a yscale
 							#add it to list
 							cmds.append([5, curr_cmd.getAttribute("id"), x])
+					elif curr_cmd.localName == "show": #if it's a show command
+						try:
+							show = int(curr_cmd.getAttribute("show")) != 0 #attempt to mark false
+						except:
+							show = True #default is true
+						cmds.append([6, show]) #add command to list
 					curr_cmd = curr_cmd.nextSibling #go to next command
 				self.frame_list.append([delay, cmds]) #add loaded data
 			curr_frame = curr_frame.nextSibling #go to next frame
@@ -379,9 +399,14 @@ class PartAnimationSet:
 				#calculate new size of surface
 				size = (coord[2]+abs(center_diff[0]), coord[3]+abs(center_diff[1]))
 				#calculate blitting position
-				pos = (max(0, center_diff[0]), max(0, center_diff[1]))
+				pos = [max(0, center_diff[0]), max(0, center_diff[1])]
 				surf = pygame.Surface(size, SRCALPHA) #create new surface
 				surf.blit(image, pos, coord) #blit proper section of image
+			if part_image.getAttribute("origin") != "": #if an origin was defined
+				#get origin coord
+				origin = [int(x.strip()) for x in part_image.getAttribute("origin").split(",")]
+				pos[0] -= origin[0] #combine origin into offset
+				pos[1] -= origin[1]
 			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
 			self.part_images[part_image.getAttribute("id")] = (surf, center, pos) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
