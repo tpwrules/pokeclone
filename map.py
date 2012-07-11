@@ -79,8 +79,9 @@ class MapTileLayer:
 						#otherwise, store the current tileset
 						prev = tileset
 					old_tile = tile #update old tile
-				if tile-prev[0] in prev[2]: #if this tile is animated
-					self.tile_anims.append([(x*16, y*16), -1, 1, prev[2][tile-prev[0]], prev[1]]) #append anim list
+				t = ((tile-prev[0])%prev[1].tiles_x, (tile-prev[0])/prev[1].tiles_x)
+				if t in prev[2]: #if this tile is animated
+					self.tile_anims.append([(x*16, y*16), -1, 1, prev[2][t], prev[1]]) #append anim list
 				prev[1].blit_tile(i, (x*16, y*16), tile-prev[0]) #draw tile
 				x += 1 #go to next tile
 			y += 1 #go to next row
@@ -99,7 +100,7 @@ class MapTileLayer:
 			self.tile_anims[i][2] = self.tile_anims[i][3][self.tile_anims[i][1]][1] #set time
 			t = self.tile_anims[i]
 			if camera.colliderect((t[0], (17, 17))): #if the camera can see this tile
-				t[4].blit_tile(self.image, t[0], t[3][t[1]][0]) #draw the new tile
+				t[4].blit_tile(self.image, t[0], t[3][t[1]][0][0], t[3][t[1]][0][1]) #draw the new tile
 		return self.image #just return the current image
 		
 #class for an object layer
@@ -170,7 +171,6 @@ class Map:
 							curr_prop.getAttribute("value") #load a property
 					curr_prop = curr_prop.nextSibling #go to next property
 			child = child.nextSibling #get the next child to process it
-		
 		self.image = pygame.Surface((self.map_width*16, self.map_height*16)) #create a new surface to render on
 		self.image.convert() #convert it to blit faster
 	def add_object(self, obj): #add an object to the object layer
@@ -198,8 +198,10 @@ def load_data(): #load tileset animation data
 			node = cycle.firstChild #loop through nodes of the cycle to get tiles
 			while node != None:
 				if node.localName == "tile":
-					#add to animation list
-					anim_list.append([int(node.getAttribute("pos")), int(node.getAttribute("time"))])
+					#get position
+					pos = tuple(int(x.strip()) for x in node.getAttribute("pos").split(","))
+					anim_list.append([pos, int(node.getAttribute("time"))])
 				node = node.nextSibling #go to next sibling
 			anims[anim_list[0][0]] = anim_list #set animation
 		tileset_anims[tileset.getAttribute("file")] = anims #set animations
+	print tileset_anims
