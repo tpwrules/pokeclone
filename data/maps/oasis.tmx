@@ -19,6 +19,10 @@
   <tileoffset x="1" y="1"/>
   <image source="../tilesets/animatedwatertile.png" width="128" height="16"/>
  </tileset>
+ <tileset firstgid="2363" name="Underwatertiles" tilewidth="16" tileheight="16">
+  <tileoffset x="1" y="1"/>
+  <image source="../tilesets/underwatertiles.png" width="48" height="48"/>
+ </tileset>
  <layer name="Grass" width="36" height="21">
   <data encoding="base64" compression="zlib">
    eJzt0SECgDAMwMBaVAeWbXbA/x9IfrGKiIjoyyOi0UkX5ea/qdOgWeAXPfTSV+B3++ill1566aWXXnrpVcvrB62zbr8=
@@ -29,14 +33,19 @@
    eJztlMsKwjAQRbPt2ld1owbbjY/6/1/ndTEQpJkk8ygUHLhwCVkccpKEsJ7ZdyEcBOk7H5YR2SEbZNvQB2M2YrkgV+Ss6IOSiVjuyAN5GnQpk8ZRqUuYopEjzl3LnYqGjrheyxWNHZV6ieuF9ZOjr1y/MedETJ6+fnuOh/7jcSFf1Od4LP/A2n5EJuQ9wxMXdMRxpDzeXmo40nv83evxvlo4clxTwqd1xL1nLZ8kknP5zzrmA5SWRy4=
   </data>
  </layer>
- <layer name="Water" width="36" height="21">
+ <layer name="Underwater" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztkssKwkAMRdOF+v/fVq0rH121Xaq4Eh8ZmAshZkQkURdz4UCbwvRwM0Q1NXFpmaVi9UOfDbNVrMl2a42ZV3B2lx0OzDFzKrh1YubtpHu5iOez4VXq0MtrYEZmn8+fNUQ39U94SbTjzskHkT3Jjkpcg31kT5/4RNyllNRT2tnc2Bu4M4vmee7dEXxwPrw0lkvPTAE+2Ju84+8Q0Y3llpz6F474FtFNyWlS76PgWx41Nf+cB3i7j4k=
+   eJztlDsOgDAMQ7tyJn4F7n8nOhTJMjRT0zDYkqVO6ZMdJSVJ8tM+fTuSZy5eqleDzZMXZ2/wzo28vDPswdOby+LBDq0uPXI6is/qCxh5r1rZeYj/eHgwN6vLETzcYzQP9ziyL2ZDFt6tiNtp3cI/3HFJkt66AXanK94=
   </data>
  </layer>
- <layer name="WaterAnimation" width="36" height="21">
+ <layer name="Water" width="36" height="21" visible="0">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2BkAWNOVDzQAN09+NxGS/ficwchTEsw2Nw12NxDibsGm3sGW/qmFxhs7iHkxlEwCkbB4AMABmEZyQ==
+   eJxjYBgFo4B2wJgTOx5s7sHmNlq6lxh3EOvOweKewequ4ewearlr1D30jS9K3EdP9+Bz3ygYBaNgcAEAvFUj3Q==
+  </data>
+ </layer>
+ <layer name="Coast" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztkksOgCAMRLn/9VBc+WEl3MKS2IRMCrig6oKXzMJq5GWKMYOBHpYyQeYPfVbKBlmM7GaFWS/43+52QCQ3l816O2EvJbA79OzldVIC5Sg41Mi99k4+DPdUOg+j7YM9tVzwG427lFiF2RMfjY7Yp3W3JRdPiQo+vDfeXW1v2t1IbsnJVxz5nUY3JacIzyHLWx6DwZ+5ANiYczc=
   </data>
  </layer>
  <layer name="Buildings" width="36" height="21">
