@@ -31,6 +31,7 @@ class MapTileLayer:
 			data = data[self.map.map_width*4:] #delete it from the data array
 			self.tilemap.append([x for x in row_data]) #add it to the tilemap, converted to a list
 		self.dirty = True #mark ourselves as dirty so we render next frame
+		self.anims = [] #list of tile anims
 		if not self.collisions: #if we're not a collision map
 			return #we can return now
 		#otherwise, we have to make all the tiles start at 0
@@ -62,6 +63,7 @@ class MapTileLayer:
 		i.fill((0, 0, 0, 0)) #clear the image
 		x, y = 0, 0 #set current position
 		old_tile = None #store the previous tile
+		self.tile_anims = [] #clear list of tile anims
 		for row in self.tilemap: #loop through tilemap rows
 			x = 0 #clear X
 			for tile in row: #loop through tiles in the current row
@@ -77,13 +79,27 @@ class MapTileLayer:
 						#otherwise, store the current tileset
 						prev = tileset
 					old_tile = tile #update old tile
+				if tile-prev[0] in prev[2]: #if this tile is animated
+					self.tile_anims.append([(x*16, y*16), -1, 1, prev[2][tile-prev[0]], prev[1]]) #append anim list
 				prev[1].blit_tile(i, (x*16, y*16), tile-prev[0]) #draw tile
 				x += 1 #go to next tile
 			y += 1 #go to next row
 	#funtion to update the current image
 	def update(self, surf):
+		if self.collisions: return
 		if self.dirty: self.render() #if we're dirty, re-render ourselves
-		if not self.collisions: return self.image #just return the current image
+		#render tileset animations
+		for i in xrange(len(self.tile_anims)):
+			self.tile_anims[i][2] -= 1 #decrement frame count
+			if self.tile_anims[i][2] != 0: #if it hasn't gone to zero
+				continue #go to next tile
+			self.tile_anims[i][1] += 1 #if it has, update tile number
+			if len(self.tile_anims[i][3]) == self.tile_anims[i][1]: #if we're at the end of the tiles
+				self.tile_anims[i][1] = 0 #reset tile number
+			self.tile_anims[i][2] = self.tile_anims[i][3][self.tile_anims[i][1]][1] #set time
+			t = self.tile_anims[i]
+			t[4].blit_tile(self.image, t[0], t[3][t[1]][0]) #draw the new tile
+		return self.image #just return the current image
 		
 #class for an object layer
 class MapObjectLayer:
