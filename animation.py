@@ -291,7 +291,7 @@ class PartAnimation: #class for one animation
 							show = int(curr_cmd.getAttribute("show")) != 0 #attempt to mark false
 						except:
 							show = True #default is true
-						cmds.append([6, show]) #add command to list
+						cmds.append([6, curr_cmd.getAttribute("id"), show]) #add command to list
 					curr_cmd = curr_cmd.nextSibling #go to next command
 				self.frame_list.append([delay, cmds]) #add loaded data
 			curr_frame = curr_frame.nextSibling #go to next frame
@@ -328,6 +328,8 @@ class PartAnimation: #class for one animation
 				#calculate step
 				step = (cmd[2]-self.set.parts[cmd[1]].yscale)/self.wait
 				self.tweens.append([5, cmd[1], step, cmd[2]]) #add to list
+			elif cmd[0] == 6: #if it's a show command
+				self.set.parts[cmd[1]].show = cmd[2] #set show
 	def _update_tween(self, tween): #update a tween
 		if tween[0] == 1: #if it's a rotation tween
 			self.set.parts[tween[1]].rot += tween[2] #update rotation
