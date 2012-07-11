@@ -407,8 +407,8 @@ class PartAnimationSet:
 			if part_image.getAttribute("origin") != "": #if an origin was defined
 				#get origin coord
 				origin = [int(x.strip()) for x in part_image.getAttribute("origin").split(",")]
-				pos[0] -= origin[0] #combine origin into offset
-				pos[1] -= origin[1]
+				pos[0] += origin[0] #combine origin into offset
+				pos[1] += origin[1]
 			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
 			self.part_images[part_image.getAttribute("id")] = (surf, center, pos) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
