@@ -108,6 +108,7 @@ class MapObjectLayer:
 #class to manage a map
 class Map:
 	def __init__(self, g, map_file):
+		global tileset_anims
 		self.g = g #store globals
 		self.map_file = map_file #and the file we were passed in
 		map_dom = data.load_xml(map_file) #load and parse the map XML
@@ -135,7 +136,11 @@ class Map:
 					trans = None #set it to None
 				firstgid = int(child.getAttribute("firstgid")) #get id of tileset start
 				t = tileset.Tileset(image_path, 16, 16, trans) #load the tileset
-				self.tilesets.append([firstgid, t]) #and save it to the list
+				try:
+					anim = tileset_anims[image_path] #attempt to get tileset animations for this image
+				except:
+					anim = {}
+				self.tilesets.append([firstgid, t, anim]) #and save it to the list
 			elif child.localName == "layer": #if it's a layer
 				self.layers.append(MapTileLayer(self.g, self, child)) #process it
 			elif child.localName == "objectgroup": #if it's an object layer
@@ -164,3 +169,20 @@ class Map:
 			if surf is not None: #if a surface to draw was returned
 				self.image.blit(surf, camera.topleft, camera) #draw the result
 		return self.image #return updated image
+
+def load_data(): #load tileset animation data
+	global tileset_anims
+	tileset_anims = {}
+	dom = data.load_xml("tilesets/tileset_anim.xml").documentElement #load dom data
+	for tileset in dom.getElementsByTagName("tileset"): #loop through tilesets
+		anims = {}
+		for cycle in tileset.getElementsByTagName("cycle"):
+			anim_list = []
+			node = cycle.firstChild #loop through nodes of the cycle to get tiles
+			while node != None:
+				if node.localName == "tile":
+					#add to animation list
+					anim_list.append([int(node.getAttribute("pos")), int(node.getAttribute("time"))])
+				node = node.nextSibling #go to next sibling
+			anims[anim_list[0][0]] = anim_list #set animation
+		tileset_anims[tileset.getAttribute("file")] = anims #set animations

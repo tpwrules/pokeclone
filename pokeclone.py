@@ -10,6 +10,7 @@ import error #load various errors
 #import parts of game that need loading
 import poke_types
 import pokemon
+import map
 
 class Container: #blank class to store global variables
 	pass
@@ -89,6 +90,7 @@ g.reset = reset #store reset handler
 try:
 	poke_types.load_data() #load pokemon type data
 	pokemon.load_data()
+	map.load_data()
 	g.save = savegame.SaveGame(g) #initialize a new savegame manager
 	reset() #reset the game
 	mainloop() #start the main loop
