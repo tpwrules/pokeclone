@@ -204,4 +204,3 @@ def load_data(): #load tileset animation data
 				node = node.nextSibling #go to next sibling
 			anims[anim_list[0][0]] = anim_list #set animation
 		tileset_anims[tileset.getAttribute("file")] = anims #set animations
-	print tileset_anims
