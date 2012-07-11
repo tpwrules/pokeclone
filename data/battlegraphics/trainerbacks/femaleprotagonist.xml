@@ -9,17 +9,16 @@
 	<part_image from="main" coord="226,83,30,40" origin="30,28" center="30,40" id="arm3" />
 	<part_image from="main" coord="194,2,46,26" origin="46,4" center="46,4" id="leftarm" />
 	<layout id="whole" pos="0,0">
-		<part id="leftarm" pos="36,40" from="leftarm" />
+		<part id="leftarm" pos="20,61" from="leftarm" show="0" />
 		<part id="body" pos="54,118" from="body1" />
 		<part id="arm" pos="28,50" from="arm1part1" />
 		<part id="arm1part2" pos="9,80" from="arm1part2" />
 	</layout>
 	<anim id="battle" loopreset="true">
 		<frame time="22">
-			<show id="leftarm" show="0" />
 		</frame>
 		<frame time="1">
-			<set id="arm" to="arm2" />
+			<set id="arm" to="arm2" />r
 			<show id="arm1part2" show="0" />
 		</frame>
 		<frame time="1">
