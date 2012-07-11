@@ -20,6 +20,7 @@
 		</frame>
 		<frame time="1">
 			<set id="arm" to="arm2" />
+			<show id="arm1part2" show="0" />
 		</frame>
 		<frame time="1">
 			<set id="arm" to="arm3" />
