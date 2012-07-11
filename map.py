@@ -85,7 +85,7 @@ class MapTileLayer:
 				x += 1 #go to next tile
 			y += 1 #go to next row
 	#funtion to update the current image
-	def update(self, surf):
+	def update(self, camera, surf):
 		if self.collisions: return
 		if self.dirty: self.render() #if we're dirty, re-render ourselves
 		#render tileset animations
@@ -98,7 +98,8 @@ class MapTileLayer:
 				self.tile_anims[i][1] = 0 #reset tile number
 			self.tile_anims[i][2] = self.tile_anims[i][3][self.tile_anims[i][1]][1] #set time
 			t = self.tile_anims[i]
-			t[4].blit_tile(self.image, t[0], t[3][t[1]][0]) #draw the new tile
+			if camera.colliderect((t[0], (17, 17))): #if the camera can see this tile
+				t[4].blit_tile(self.image, t[0], t[3][t[1]][0]) #draw the new tile
 		return self.image #just return the current image
 		
 #class for an object layer
@@ -110,7 +111,7 @@ class MapObjectLayer:
 		self.map.obj_layer = self #store ourselves in the map
 	def add_object(self, obj): #add an object to the render list
 		self.objects.append(obj)
-	def update(self, surf):
+	def update(self, camera, surf):
 		sprites = [] #list to hold sprites to draw
 		for sprite in self.objects: #loop through object list
 			sprite.update() #update this sprite
@@ -181,7 +182,7 @@ class Map:
 		#render all the layers
 		self.image.fill((0, 0, 0)) #clear out the image
 		for layer in self.layers: #loop through all of our layers
-			surf = layer.update(self.image) #tell them to update themselves
+			surf = layer.update(camera, self.image) #tell them to update themselves
 			if surf is not None: #if a surface to draw was returned
 				self.image.blit(surf, camera.topleft, camera) #draw the result
 		return self.image #return updated image
