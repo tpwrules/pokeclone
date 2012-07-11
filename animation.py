@@ -111,7 +111,7 @@ class PartAnimationPart: #class for one part in the layout
 		except:
 			pass
 		#back up loaded data
-		self.orig_pos = self.pos
+		self.orig_pos = self.pos[:]
 		self.orig_rot = self.rot
 		self.orig_xscale = self.xscale
 		self.orig_yscale = self.yscale
@@ -119,6 +119,8 @@ class PartAnimationPart: #class for one part in the layout
 		self.orig_image = self.image
 		self.center = set_.part_images[dom.getAttribute("from")][1] #and store center
 		self.orig_center = self.center
+		self.offset = set_.part_images[dom.getAttribute("from")][2] #and move offset
+		self.orig_offset = self.offset[:]
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		img = self.image #get starting surface
 		#we need to rotate our coordinates to be in the correct position
@@ -140,14 +142,15 @@ class PartAnimationPart: #class for one part in the layout
 			old = (img.get_width(), img.get_height())
 			img = pygame.transform.rotate(img, rot+self.rot) #do so
 			pos = (pos[0]-((img.get_width()-old[0])/2), pos[1]-((img.get_height()-old[1])/2))
-		surf.blit(img, (x+pos[0], y+pos[1])) #draw transformed image
+		surf.blit(img, (x+pos[0]-self.offset[0], y+pos[1]-self.offset[1])) #draw transformed image
 	def reset(self): #reset our state
-		self.pos = self.orig_pos
+		self.pos = self.orig_pos[:]
 		self.rot = self.orig_rot
 		self.xscale = self.orig_xscale
 		self.yscale = self.orig_yscale
 		self.image = self.orig_image
 		self.center = self.orig_center
+		self.offset = self.orig_offset[:]
 
 class PartAnimationGroup: #class for a layout group in a part animation
 	def __init__(self, set_, g, dom): #create a group based on a dom
@@ -296,6 +299,7 @@ class PartAnimation: #class for one animation
 				img = self.set.part_images[cmd[2]] #load new image
 				self.set.parts[cmd[1]].image = img[0] #set data
 				self.set.parts[cmd[1]].center = img[1]
+				self.set.parts[cmd[1]].offset = img[2]
 			elif cmd[0] == 4: #if this is an xscale command
 				#calculate step
 				step = (cmd[2]-self.set.parts[cmd[1]].xscale)/self.wait
@@ -366,6 +370,7 @@ class PartAnimationSet:
 			if part_image.getAttribute("center") == "": #if no center was defined
 				surf = pygame.Surface((coord[2], coord[3]), SRCALPHA) #create a surface for the image
 				surf.blit(image, (0, 0), coord) #draw image onto new surface normally
+				pos = [0, 0]
 			else: #if one was defined, we need to shift the image around
 				#get center coordinate
 				center = [int(x.strip()) for x in part_image.getAttribute("center").split(",")]
@@ -378,7 +383,7 @@ class PartAnimationSet:
 				surf = pygame.Surface(size, SRCALPHA) #create new surface
 				surf.blit(image, pos, coord) #blit proper section of image
 			center = (surf.get_width()/2, surf.get_height()/2) #calculate new center
-			self.part_images[part_image.getAttribute("id")] = (surf, center) #store created image
+			self.part_images[part_image.getAttribute("id")] = (surf, center, pos) #store created image
 		self.layout = PartAnimationGroup(self, g, anim_dom.getElementsByTagName("layout")[0]) #create layout
 		self.curr_animation = None #clear list of animations
 		self.animations = {}
