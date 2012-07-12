@@ -26,6 +26,7 @@ sign: A sign! Displays text.
 warp: A warp! Used to connect maps together.
 npc: A character in the game.
 trainer: A special variety of npc that can be fought.
+scriptarea: Executes a script when the area is stepped on
 
 CREATING A MAP
 This is information on settings for creating a map tile file with Tiled.

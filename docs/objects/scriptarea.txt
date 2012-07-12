@@ -1,0 +1,6 @@
+THE scriptarea OBJECT
+This object executes a script when the player walks over it.
+It has one child element, <script>, which is the script to execute.
+The script is called each time the player steps on it, but is not called again until the player steps off then back on.
+
+The <object> tag can have an optional size attribute which defines the area it covers in width,height form. If not present, it defaults to 1,1.
