@@ -16,7 +16,7 @@ screen = pygame.display.set_mode((settings.screen_x*settings.screen_scale, \
 
 anim_dest = pygame.Surface((settings.screen_x, settings.screen_y))
 
-anim = animation.PartAnimationSet(None, sys.argv[1])
+anim = animation.PartAnimationSet(None, sys.argv[1].replace("data/", "").replace("data\\", ""))
 anim.set_animation(sys.argv[2])
 
 posx, posy = int(sys.argv[3]), int(sys.argv[4])
