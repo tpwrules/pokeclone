@@ -1,0 +1,8 @@
+THE trainer OBJECT
+The trainer object is a special type of npc that can be fought. Because it is an npc as well, look at npc.txt for all of the relevant attributes.
+
+Do not expect documentation to be complete because battles have not been implemented yet.
+
+Child elements:
+<pre_script>: the script that is called when the player has been seen and before the battle is started. Note that if the trainer is interacted with and hasn't been fought, this script will be called instead. For more information on scripting, see scrips.txt.
+<post_script>: called after the trainer's defeat.

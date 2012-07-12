@@ -1,0 +1,3 @@
+THE sign OBJECT
+This object displays a dialog when interacted with.
+The text for the dialog is specified with a <text> tag in the object.

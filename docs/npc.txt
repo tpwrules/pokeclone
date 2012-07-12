@@ -1,0 +1,7 @@
+THE npc OBJECT
+An NPC is a character that can walk around the map and be interacted with.
+Child elements:
+<anim file= />: the file attribute specifies the path to the sheet animation for this NPC.
+<movement>: this element contains the movement script. For information, see scripts.txt.
+<script>: this element contains the interaction script. It is called when the player is facing the NPC and presses confirm. For information about the script format, see scripts.txt.
+<invisible />: if present, the NPC will be invisible when the map loads. This means that it cannot be seen, collided with, or interacted with

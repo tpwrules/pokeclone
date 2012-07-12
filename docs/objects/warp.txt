@@ -1,0 +1,6 @@
+THE warp OBJECT
+Transports the player from one map to another when the player steps on it
+It has two child elements:
+<dest_map>map</dest_map>: the map that the destination warp is on. Map is specified by its xml file path.
+<dest_warp>warp</dest_warp>: the ID of the warp to warp to.
+If these elements aren't present, the warp will not take the player anywhere, but can still be used as a destination. 
