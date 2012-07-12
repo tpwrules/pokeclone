@@ -116,7 +116,8 @@ class Game: #class for our game engine
 		try: #test if there's an object in the given position
 			t = self.pos2obj[(tile_x, tile_y)] #get object
 			if t != self.player or not player_req: #if it's not a player or not a player is requesting it
-				return -1 #say so
+				if t.visible: #and it's visible
+					return -1 #say so
 		except: #if there wasn't an object
 			pass #don't do anything
 		try: #try to get the tile
