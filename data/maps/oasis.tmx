@@ -3,65 +3,70 @@
  <tileset firstgid="1" name="Grass" tilewidth="16" tileheight="16">
   <image source="../tilesets/hgss_tileset_terrain_and_paths_by_thunderdove-d3bnn5w.png" trans="c0c0c0" width="336" height="160"/>
  </tileset>
- <tileset firstgid="211" name="Water" tilewidth="16" tileheight="16">
-  <image source="../tilesets/transparent_water_by_serebii08-d3ajc8k.png" trans="ff00d2" width="160" height="96"/>
+ <tileset firstgid="211" name="WaterBorders" tilewidth="16" tileheight="16">
+  <image source="../tilesets/transparent_water_by_serebii08-d3ajc8k.png" trans="ff00d2" width="80" height="96"/>
  </tileset>
- <tileset firstgid="271" name="Buildings and other stuff" tilewidth="16" tileheight="16">
+ <tileset firstgid="241" name="Buildings and other stuff" tilewidth="16" tileheight="16">
   <image source="../tilesets/hoenn_tiles_by_pokemon_diamond-d2qmbn3.png" trans="ea00ff" width="1088" height="480"/>
  </tileset>
- <tileset firstgid="2311" name="Collisions and Stuff" tilewidth="16" tileheight="16">
+ <tileset firstgid="2281" name="Collisions and Stuff" tilewidth="16" tileheight="16">
   <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
  </tileset>
- <tileset firstgid="2319" name="grasssandtiles" tilewidth="16" tileheight="16">
+ <tileset firstgid="2289" name="grasssandtiles" tilewidth="16" tileheight="16">
   <image source="../tilesets/grasssandtiles.png" width="192" height="48"/>
  </tileset>
- <tileset firstgid="2355" name="animatedwatertile" tilewidth="16" tileheight="16">
+ <tileset firstgid="2325" name="animatedwatertile" tilewidth="16" tileheight="16">
   <tileoffset x="1" y="1"/>
   <image source="../tilesets/animatedwatertile.png" width="128" height="16"/>
  </tileset>
- <tileset firstgid="2363" name="Underwatertiles" tilewidth="16" tileheight="16">
+ <tileset firstgid="2333" name="Underwatertiles" tilewidth="16" tileheight="16">
   <tileoffset x="1" y="1"/>
   <image source="../tilesets/underwatertiles.png" width="48" height="48"/>
  </tileset>
  <layer name="Grass" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJzt0SECgDAMwMBaVAeWbXbA/x9IfrGKiIjoyyOi0UkX5ea/qdOgWeAXPfTSV+B3++ill1566aWXXnrpVcvrB62zbr8=
+   eJzt0aEBwCAQwMCXUNh/TyiWlmzxiIiI6BslYtJLi0byb/rop6j5X+mhRv2Cz/bRSy+99NJLL7300usurwPTD819
   </data>
  </layer>
  <layer name="Paths" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlMsKwjAQRbPt2nc3arDdqK2/qv6w18VAKM3kMTMFwYEDl5DFITeJc78z28a5XQX7xsalBxuwAuuC3Cm7kcsJnMFRkDuhE7lcwQ3cFXKtk6SjVK5x8kodcd2V3Cmv2BGXc728ckepnPIasN4a9hXLF+acyMmyr2mO+dB/3C/UF+U5H80/MDcfwAgeMz5+wY44j9DHupccj/Aef/davK8Sj5jXGPhJO+Les9SvBu5cnuAF3nrKovn78DP1+QCtME4G
+   eJztlMsKAyEMRdNW2rjow/5522/tu4vGRUCGMTomDhQauHhhFnPwqAC/Mw8EeDbkhX1Y0APcab1SbljfN96WjVmWlBVloeiRTcPELFvKjrI36K1MGkel3sLkjBxJ7qacKWfoSOq1XJHH0lGpl7gO9P2D/Xzl+trn94iZevoa9hwPv8fxjs3hi/sYj+UbWNvf9M9A63GEx83ghbvEkfL09lLDkZ7j0Ol+TeHIcYWET+tIus9avpZI+3KinCkXO2TV/HnkGfJ8ASsJtBg=
+  </data>
+ </layer>
+ <layer name="Misc. Paths" width="36" height="21">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNLBRDT+5AFxBQIsA+LlSHjFwDpnFIyCUTAKBjUAAHX9BGg=
   </data>
  </layer>
  <layer name="Underwater" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlDsOgDAMQ7tyJn4F7n8nOhTJMjRT0zDYkqVO6ZMdJSVJ8tM+fTuSZy5eqleDzZMXZ2/wzo28vDPswdOby+LBDq0uPXI6is/qCxh5r1rZeYj/eHgwN6vLETzcYzQP9ziyL2ZDFt6tiNtp3cI/3HFJkt66AXanK94=
+   eJztlDsOgDAMQ7tyCH4F7n9FOhTJMjRT0zDYkqVO6ZMdJSVJ8tM+fTuSZy5eqleDzZMXZ2/wzo28vDPswdOby+LBDq0uPXI6is/qCxh5r1rZeYj/eHgwN6vLETzcYzQP9ziSh9mQhXcr4nZat/APd1ySpLduG3wZwA==
   </data>
  </layer>
- <layer name="Water" width="36" height="21" visible="0">
+ <layer name="Water" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4B2wJgTOx5s7sHmNlq6lxh3EOvOweKewequ4ewearlr1D30jS9K3EdP9+Bz3ygYBaNgcAEAvFUj3Q==
+   eJxjYBgFo4B2QJQTOx5s7sHmNlq6lxh3EOvOweKewequ4ewearlr1D30jzNy3feA9s5BseshDveNglEwCgYXAAD6wxSu
   </data>
  </layer>
  <layer name="Coast" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztkksOgCAMRLn/9VBc+WEl3MKS2IRMCrig6oKXzMJq5GWKMYOBHpYyQeYPfVbKBlmM7GaFWS/43+52QCQ3l816O2EvJbA79OzldVIC5Sg41Mi99k4+DPdUOg+j7YM9tVzwG427lFiF2RMfjY7Yp3W3JRdPiQo+vDfeXW1v2t1IbsnJVxz5nUY3JacIzyHLWx6DwZ+5ANiYczc=
+   eJztklsKwkAMRbP/7alVah+K2OJH92AuEgxDpLW9Ktg5cD/mwcwhiUjmn7i8yC/oNRvNNslOcw3cPumLNzvNITjbB26dc7c9Fr4uxchd71a4PaYTfGrNccEb5gmvG8HpTHACpXB8gDk1Mt8LPsxZGuThFc31FGyWWDUCmKe5PoDZM2Dz3cj7vas0LdkHDPLsXe3+GnNsyR4R5uT/8vWz4Pz0BR9g9UrXaTKZNXMHP55cSg==
   </data>
  </layer>
  <layer name="Buildings" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlEkKwkAQRSuEDGuP4RWcV3oDPYWgoi4doqfQvSdQUVcKTidx5QnE4S+EBEmTdLVolHx4m5DuenQVRRQnCkkY/kTBaWK6yCSp4N/UiFqgrbnfvB4cn6qCzwIeS7B6+pwEtc+STtxc4XEDdy3432+mZhHVQcOSPyuanzXeeMN85yk8ZmDO8BHNj4G7TMZ93lyY58vof+UNM5CyidIgA7IgB/KgYMvdM4LLWMJH1MsO6nZBD/SBAwZgKOkjm6BeblF/B/bgAI6KPn57LihFnaikq9UV5XXPicLx5iTsngvr/an8yn6O8195ABw9MSw=
+   eJztlE0OwUAYhr+maBeu4H/FDTiFBMHS/ynYOwGCFYm/k1g5gWDFARzAK5FUpJN2vhFK+iTPpmn7PZmZDJGPF7gG7PVCUz9kKUM4yJ9d1ogqsKpZz547OD15hZ4xOiZw+ujZCmbvJJu4HNBxhCfN+d1vUjCIirBkyH8rOj8zrPGcuc4DdAzhiNEjOj9ntFwU933P6LmTxf7n3nAGIiZRFMZgHCZgEqZMuf900dKT6BHtZQ1z67ABm7AF27Aj2SOL014uMH8JV3ANN4o9dvecE2mdKKOrzRXxes+J4HRzcHvPue3+FL9yP/v8FzdLBTKy
   </data>
  </layer>
  <objectgroup name="NPC" width="36" height="21"/>
  <layer name="house top" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlEkKwkAUBV9o7RzGMXowXejJdKE3MlHXDihYC0FICKKQfMRfUKQbAq9WLTmOlCXSBKeJdclnHOPrfIj1/zXBjr0cC9zHak+b9FKpjwMc4gjHmKU2PTN256XtBfelUc+K3XVpe8N9a9RzYveMF7w+G25870Y9/8I371wIUge7obmud/zq++w4Tns8AKdlFMc=
+   eJztlDsKwlAUBU9SvFR+owvTQlemhdmR31oNWqnbcIpAICISIbmId2DIexA4Uz3JcaQ0kkY4jqxL6nEI5Xkf3v/XBGv2NrjFXXjtaZNOInWxh30c4BDTxKZnwu60sj3jPjfqWbC7rGyvuGdGPUd2T3jGvGi48L0a9fwL37xzt1i64yNurusTv/o+O47THk+IExMU
   </data>
  </layer>
  <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJzt1cEKgCAMBmBvawS+/+N2GphO3W+1dnDwX0LXh9IiTomCJUp5ek7W85enNOUiqOdgPZaqe2du85ZHs9XP0LMfeSwOqzOKp3bNvu3V+5J924O/e2Qivvf08PTWWwqZh0881lqdz+j9yR4Pj1TvrNC+X/6/onnQiuCZzYDtaT2RcgEJCRSa
+   eJzt1UEKwCAMBECP+f8vLRR8Qk+CjVGzUu0eDOylaDooapQQIllYaqfnFjt/eUpTKoJ6LrHjKd07SZ2vPJZNf0PXvufxOLxOFo92jc727H7leceD/7tnivLuucPTGu8p5D5k8+h5s3u12pOrtVZo35XvF5sHLQbP6A44ntrDlAdULip2
   </data>
  </layer>
 </map>
