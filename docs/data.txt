@@ -60,7 +60,6 @@ Contains miscellaneous battle graphics.
 
 Folder: dialogboxes/
 Contains dialog box images and layout data.
-More information in dialogboxes.txt
 
 Folder: fonts/
 Contains font graphics and layout data.
