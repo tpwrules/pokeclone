@@ -26,3 +26,25 @@ sign: A sign! Displays text.
 warp: A warp! Used to connect maps together.
 npc: A character in the game.
 trainer: A special variety of npc that can be fought.
+
+CREATING A MAP
+This is information on settings for creating a map tile file with Tiled.
+1. Open up tiled
+2. First, ensure that the correct output mode is set. Go to Preferences -> General and ensure that "Store tile layer data as:" is set to "Base64 (zlib compressed".
+3. To create your map, select File -> New... . In the map creation dialog, set the orientation to Orthogonal, the tile size to 16x16 pixels, and the map size to whatever you want then press ok.
+
+Your map must have two specific layers, as follows:
+1. It must have an object layer. This can be anything, but it is the plane objects will be drawn on.
+2. It must have a collisions layer. This is a tile layer named "Collisions" (without quotes, spelling and caps matter!) and is where collision information is stored. You must draw on it using tilesets/maptypetileset.png
+
+Other than those, any number of layers can be used and they will be drawn in the order specified.
+
+Note that for the engine to work correctly, the map can only exist in the maps/ folder and can only reference tileset images in the tilesets/ folder.
+
+COLLISION DATA
+The collisions layer contains tiles from the map type tileset. Each has a code on it to represent the type of tile and its effect.
+No tile: the tile has no special properties
+C: tile is solid and cannot be walked through
+W: tile is water, interacting with it will cause surf message and movement into water.
+G: tile is grass, pokemon can be encountered
+DG: tile is double grass, pokemon can be encountered
