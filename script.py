@@ -101,6 +101,9 @@ class Script:
 			self.cmd_set_move(self.curr_command)
 		elif self.curr_command.localName == "wait_move": #handle movement wait
 			self.cmd_wait_move(self.curr_command)
+		elif self.curr_command.localName == "stop": #handle stopping the script
+			self.running = False #we're not running any more
+			return True
 		self.curr_command = self.curr_command.nextSibling #go to next command
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running
