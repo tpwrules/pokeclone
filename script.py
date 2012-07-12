@@ -66,7 +66,11 @@ class Script:
 			to = True
 		else:
 			to = False
-		self.get_object(cmd.getAttribute("what")).visible = to #set visibility
+		obj = self.get_object(cmd.getAttribute("what"))
+		obj.visible = to #set visibility
+		obj.game.set_obj_pos(obj, None) #remove object from collisions
+		if to: #if it's being made visible
+			obj.game.set_obj_pos(obj, obj.tile_pos) #set its position
 	def cmd_set_camera(self, cmd): #handle set camera command
 		#set what the camera follows
 		self.obj.game.camera_follow = self.get_object(cmd.getAttribute("follow"))
