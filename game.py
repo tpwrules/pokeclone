@@ -38,6 +38,7 @@ class Game: #class for our game engine
 		self.menu_showing = False #whether the menu is being shown
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
+		self.camera_follow = self.player #set who the camera follows
 		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis.xml")) #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
@@ -93,6 +94,7 @@ class Game: #class for our game engine
 		#save object data
 		for id in self.objects: #loop through all our objects
 			self.objects[id].save() #tell them to save
+		self.camera_follow = self.player #set who the camera follows
 		self.objects = {} #destroy map objects
 		self.warps = {}
 		self.map = None
@@ -173,7 +175,7 @@ class Game: #class for our game engine
 				self.menu.show() #show menu
 				self.menu_showing = True #and mark it as being shown
 		#center camera on player
-		pos = self.objects["player"].pos #get position of player
+		pos = self.camera_follow.pos #get position of what the camera is following
 		self.camera_pos = (pos[0]-(settings.screen_x/2)+16, pos[1]-(settings.screen_y/2)+16)
 		if self.curr_transition is None and self.menu_showing is False: #if there is no transition going on now
 			self.map_image = self.map.update(pygame.Rect(self.camera_pos, \

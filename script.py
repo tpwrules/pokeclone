@@ -67,6 +67,9 @@ class Script:
 		else:
 			to = False
 		self.get_object(cmd.getAttribute("what")).visible = to #set visibility
+	def cmd_set_camera(self, cmd): #handle set camera command
+		#set what the camera follows
+		self.obj.game.camera_follow = self.get_object(cmd.getAttribute("follow"))
 	def next_cmd(self): #process the next command
 		if not self.running: return True #return if we aren't running
 		#return if we're waiting for a dialog and one is being shown
@@ -84,6 +87,8 @@ class Script:
 			return #skip going to next command
 		elif self.curr_command.localName == "set_visible": #change an object's visibility
 			self.cmd_set_visible(self.curr_command)
+		elif self.curr_command.localName == "set_camera": #change what the camera follows
+			self.cmd_set_camera(self.curr_command)
 		self.curr_command = self.curr_command.nextSibling #go to next command
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running
