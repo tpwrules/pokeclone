@@ -247,6 +247,7 @@ class Sign:
 #object to run a script when the player is in a specific area
 class ScriptArea:
 	def __init__(self, game, element):
+		self.id = element.getAttribute("id")
 		self.game = game
 		#get our position
 		t = element.getAttribute("pos").split(",")
