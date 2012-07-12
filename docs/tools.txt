@@ -1,0 +1,10 @@
+THE TOOLS DIRECTORY
+Within here are a couple handy programs and experiments.
+If a file is not covered in here, assume it's useless. Try and run it if you want, but don't trust it to do anything useful.
+
+Program: animation_view.py
+This program displays a part animation. It takes four arguments:
+1: the path to the animation file. Note that it must be in the data directory and be relative to the game's directory
+2: the name of the animation to show
+3: x offset to put the animation at
+4: y offset to put the animation at
