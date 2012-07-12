@@ -39,7 +39,7 @@ class MovementManager:
 		self.move_index = 0 #current movement index
 		self.resume = False #whether we're going to resume the movement list
 		self.moving = False #whether we're moving at all
-	def load_move_dom(self, dom): #load a movement list from xml
+	def load_move_dom(self, dom, repeat=True): #load a movement list from xml
 		move_list = [] #list of movements
 		child = dom.firstChild #get first movement
 		default_speed = int(dom.getAttribute("speed")) #get default speed
@@ -55,7 +55,7 @@ class MovementManager:
 				dir = get_direction_num(child.getAttribute("dir")) #get direction
 				move_list.append([dir, frames, -1]) #add it to movement list
 			child = child.nextSibling #go to next movement command
-		self.load_move_list(move_list) #set movement list we generated
+		self.load_move_list(move_list, repeat) #set movement list we generated
 	def load_move_list(self, move_list, repeat=True): #load a movement list
 		self.running = True #we're running now
 		self.repeat = repeat #set repeat
