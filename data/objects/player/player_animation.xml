@@ -1,4 +1,4 @@
-<anim_group type="basic">
+<anim_group>
 	<!-- sprite sheet sources -->
 	<sheet from="objects/player/maleprotagonist.png" tilewidth="32" tileheight="32" id="main"/>
 	
