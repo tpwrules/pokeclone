@@ -19,18 +19,29 @@ class Script:
 		#load persistent vars
 		self.persistent_vars = self.obj.game.g.save.get_prop(self.obj.id, "script_vars", {})
 	def get_var(self, var): #parse a variable string and return its value
-		try: #try to parse it as a variable
-			type = var[0] #get parts
-			name = var[1:]
-			if type == ".": #if it's a local variable
-				return self.vars[name] #return its value
-		except:
-			pass
 		try: #try to parse it as a number
 			return int(var)
 		except:
 			pass
-		return None #we couldn't parse it
+		try: #try to parse it as a variable
+			var_type = var[0] #get parts
+			name = var[1:]
+			if var_type == ".": #if it's a script local variable
+				return self.vars[name] #return its value
+			elif var_type == "#" #if it's script persistent
+				return self.persistent_vars[name]
+		except:
+			return 0 #return variable default
+	def set_var(self, var, val): #parse a variable string then set it
+		try:
+			var_type = var[0] #get type
+			name = var[1:] #and name
+			if var_type == ".": #if it's script local
+				self.vars[name] = val
+			elif var_type == "#": #if it's script persistent
+				self.persistent_vars[name] = val
+		except:
+			pass
 	def get_object(self, name): #get a certain object
 		if name == "" or name == "self": #if it's a blank name or refers to self
 			return self.obj #return the object we're bound to
@@ -95,6 +106,10 @@ class Script:
 		obj.game.set_obj_pos(obj, None) #remove object from collisions
 		if obj.visible: #if it's visible
 			obj.game.set_obj_pos(obj, obj.tile_pos) #set new position
+	def cmd_set_var(self, cmd): #handle set variable command
+		what = cmd.getAttribute("what") #get what variable to set
+		to = cmd.getAttribute("to") #get what to set it to
+		self.set_var(what, self.get_var(to)) #perform set
 	def next_cmd(self): #process the next command
 		if not self.running: return True #return if we aren't running
 		#return if we're waiting for a dialog and one is being shown
@@ -126,6 +141,8 @@ class Script:
 			return True
 		elif self.curr_command.localName == "set_pos": #handle setting an object's position
 			self.cmd_set_pos(self.curr_command)
+		elif self.curr_command.localName == "set_var": #handle setting a variable
+			self.cmd_set_var(self.curr_command)
 		self.curr_command = self.curr_command.nextSibling #go to next command
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running
