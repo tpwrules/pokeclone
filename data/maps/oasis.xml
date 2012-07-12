@@ -57,13 +57,43 @@
 		</script>
 		<invisible />
 	</object>
-	<object id="explainer" type="npc" pos="24,15">
+	<object id="explainer" type="npc" pos="24,14">
 		<anim file="objects/player/player_animation.xml" />
 		<movement speed="0">
 			<wait dir="down" frames="30" />
 		</movement>
 		<script />
 		<invisible />
+	</object>
+	<object id="explain_script" type="scriptarea" pos="33,17">
+		<script>
+			<set_visible what="explainer" to="true" />
+			<set_move speed="4" what="explainer">
+				<move dir="right" dist="9" />
+				<wait dir="down" frames="1" />
+			</set_move>
+			<wait_move for="explainer" />
+			<dialog talker="explainer">Hello there!{br}Welcome to the Testing Oasis!{wait}{br}
+				Here, you'll be helping us test the{wait}{br}
+				game engine. Doesn't that sound fun?{wait}{br}
+				Right now, this is a test of Script Areas{wait}{br}
+				and cutscenes!{wait}{br}
+				If you want, I can show you around{wait}{br}
+				the place.{wait}
+				{clear}You cool with that?{choices}Let's go!{endchoice}Ehh, I'm fine...{endchoice}{endchoices}</dialog>
+			<if left=".dlog_result" op="=" right="1">
+				<then>
+					<dialog>Oh well, see you around!</dialog>
+					<set_move speed="8" what="explainer">
+						<move dir="left" dist="9" />
+					</set_move>
+					<wait_move for="explainer" />
+					<set_visible what="explainer" to="false" />
+					<stop />
+				</then>
+			</if>
+			<set_visible what="explainer" to="false" />
+		</script>
 	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">
 		<anim file="objects/NPCs/npc_cheren.xml" />
