@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="10" height="10" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="maptypetileset" tilewidth="16" tileheight="16">
+  <image source="../tilesets/maptypetileset.png" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="hgss_tileset_terrain_and_paths_by_thunderdove-d3bnn5w" tilewidth="16" tileheight="16">
+  <image source="../tilesets/hgss_tileset_terrain_and_paths_by_thunderdove-d3bnn5w.png" trans="c0c0c0" width="336" height="160"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAFM4F4NgNhgEtdCxC3IuGbQHwDTawNqn8WATx7GKlbB8TrCeANQAwAvPszMA==
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1" width="10" height="10"/>
+ <layer name="Collisions" width="10" height="10">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAARhxsGB8Z4xInRR0hMNzUEYMBISAAKQ==
+  </data>
+ </layer>
+</map>
