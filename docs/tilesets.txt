@@ -1,0 +1,17 @@
+TILESETS
+The game uses 16x16 pixel tilesets. The images for these are contained in the tilesets directory. Also present is a file detailing tileset animations.
+
+TILESET ANIMATIONS
+Tileset animations are specified in the file tileset_anim.xml.
+Each tileset has its own <tileset> element which has <cycle> and <tile> elements for animation.
+
+THE <tileset file=> ELEMENT
+Contains animations for a specific tileset. It is referenced by its image path.
+Contains children <cycle> elements for cycle information.
+
+THE <cycle> ELEMENT
+Contains an animation cycle. The first tile frame within the cycle is the tile that will be animated first.
+
+THE <tile pos= time=> ELEMENT
+Each tile element has a position attribute, which is the position of the tile in the tilemap in x,y form as well as the time to show in frames.
+When a tile is placed in a map which has the same number in the tilemap as the first element in a cycle, it will be cycled with all of the other tiles in the cycle.
