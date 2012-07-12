@@ -82,8 +82,8 @@
 			<dialog talker="explainer">Hello there!{br}Welcome to the Testing Oasis!{wait}{br}
 				Here, you'll be helping test the game engine.{wait}{br}
 				Doesn't that sound fun?{wait}{br}
-				Right now, we are testing Script Areas{br}
-				and cutscenes!{wait}{br}
+				Our conversation is for testing Script Areas{br}
+				and cutscene commands! Neat, huh?{wait}{br}
 				If you want, I can show you around the place.{wait}
 				{clear}You cool with that?{choices}Let's go!{endchoice}Ehh, I'm fine...{endchoice}{endchoices}</dialog>
 			<if left=".dlog_result" op="=" right="1">
@@ -102,17 +102,17 @@
 					<stop />
 				</then>
 			</if>
-			<dialog talker="explainer">Well, let's go!{wait}</dialog>
+			<dialog talker="explainer">Well, come on then!{wait}</dialog>
 			<set_move speed="2" what="player">
 				<move dir="up" dist="2" />
 				<move dir="right" dist="1" />
-				<move dir="up" dist="6" />
+				<move dir="up" dist="8" />
 				<wait dir="left" frames="1" />
 			</set_move>
 			<set_move speed="2" what="explainer">
 				<wait dir="up" frames="8" />
 				<move dir="right" dist="1" />
-				<move dir="up" dist="7" />
+				<move dir="up" dist="9" />
 				<wait dir="left" frames="1" />
 			</set_move>
 			<wait_move for="player" />
@@ -121,12 +121,12 @@
 				He's not very good though.{wait}
 			</dialog>
 			<set_move speed="2" what="explainer">
-				<move dir="up" dist="7" />
+				<move dir="up" dist="5" />
 				<move dir="left" dist="5" />
 				<wait dir="down" frames="1" />
 			</set_move>
 			<set_move speed="2" what="player">
-				<move dir="up" dist="8" />
+				<move dir="up" dist="6" />
 				<move dir="left" dist="4" />
 				<wait dir="down" frames="1" />
 			</set_move>
@@ -134,6 +134,44 @@
 			<dialog talker="explainer">This area is where we keep tall grass,{br}
 				perfect for testing wild Pok{ae}mon battles.{wait}
 			</dialog>
+			<set_move speed="2" what="explainer">
+				<move dir="left" dist="4" />
+				<move dir="down" dist="8" />
+				<wait dir="left" frames="1" />
+			</set_move>
+			<set_move speed="2" what="player">
+				<move dir="left" dist="5" />
+				<move dir="down" dist="7" />
+				<wait dir="left" frames="1" />
+			</set_move>
+			<wait_move for="player" />
+			<dialog talker="explainer">Over here, we have a pond, perfect for{br}
+				a leisurely swim!{wait}
+			</dialog>
+			<set_move speed="2" what="explainer">
+				<wait dir="right" frames="1" />
+			</set_move>
+			<set_move speed="2" what="player">
+				<wait dir="right" frames="1" />
+			</set_move>
+			<dialog talker="explainer">And here we have a little cottage with more{br}
+				inside. There's even a secret, try and find it!{wait}
+				{clear}Well that's all for now. I have places to go{br}
+				and people to see. Catch you later!{wait}
+			</dialog>
+			<set_move speed="8" what="player">
+				<move dir="right" dist="1" />
+				<wait dir="left" frames="1" />
+			</set_move>
+			<set_move speed="8" what="explainer">
+				<move dir="up" dist="8" />
+			</set_move>
+			<wait_move for="explainer" />
+			<set_move speed="1" what="player">
+				<move dir="left" dist="1" />
+				<wait dir="up" frames="1" />
+			</set_move>
+			<wait_move for="player" />
 			<set_visible what="explainer" to="false" />
 			<set_pos what="explainer" to="24,14" />
 		</script>
