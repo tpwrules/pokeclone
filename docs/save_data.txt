@@ -1,0 +1,5 @@
+SAVE DATA
+Save data is stored in files with the extension .pokesav.
+They are pickled python objects, compressed with the zlib library and written to disk.
+The file named error.pokesav is created when the engine crashes and contains a save from that point.
+The file named save.pokesav is where the main game save is stored.

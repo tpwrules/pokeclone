@@ -1,1 +1,3 @@
-placeholder
+POKECLONE DOCUMENTATION
+This directory contains documentation on parts of the engine and file structure.
+Files names are pretty self-explanatory.
