@@ -18,6 +18,10 @@
  <tileset firstgid="45" name="spotthing" tilewidth="16" tileheight="16">
   <image source="../tilesets/spotthing.png" width="32" height="32"/>
  </tileset>
+ <tileset firstgid="49" name="cavewater" tilewidth="16" tileheight="16">
+  <tileoffset x="1" y="1"/>
+  <image source="../tilesets/cavewater.png" width="64" height="128"/>
+ </tileset>
  <layer name="Tile Layer 2" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjZGBgYAJiRirRzEDMQkWaWu4a6u4j1/2E7Bkp4TfqvlH3jbqP+u4DAAJ0A+k=
@@ -35,7 +39,7 @@
  </layer>
  <layer name="Tile Layer 4" width="20" height="20">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIKhAViBmI2KNCcQc1GRlgdiBSrSyECOAB8fIEUtKfoBkhUEGw==
+   eJxjYBgFo2AUjIKhAViBmI2KNCcQc1GRdhxhGAC2ABBp
   </data>
  </layer>
  <layer name="Tile Layer 5" width="20" height="20">
@@ -43,8 +47,12 @@
    eJzjZGBg4AJizhFCcwMxDxVpENAEYi0G6gFtINahonmUguHuP3LBaLiMgpEOAEPnBR8=
   </data>
  </layer>
- <objectgroup name="Objects" width="20" height="20">
- </objectgroup>
+ <layer name="Border" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQA0gD8QKVKQHOwAA91cCdw==
+  </data>
+ </layer>
+ <objectgroup name="Objects" width="20" height="20"/>
  <layer name="Tile Layer 7" width="20" height="20">
   <data encoding="base64" compression="zlib">
    eJxjYBgFlAJNINYaaEfQEAx3/5ELRsNlFIx0AADxiQD6
