@@ -132,12 +132,14 @@ class Game: #class for our game engine
 			return True #this is a collison
 		return False #otherwise, we're fine
 	def set_obj_pos(self, obj, pos): #set an object's position
-		pos = tuple(pos[:]) #convert position to tuple
+		if pos is not None:
+			pos = tuple(pos[:]) #convert position to tuple
 		if obj in self.obj2pos: #if the object has a postion associated with it
 			del self.pos2obj[self.obj2pos[obj]] #remove it from the position dict
 			del self.obj2pos[obj] #and the object dict
-		self.obj2pos[obj] = pos #set object -> position mapping
-		self.pos2obj[pos] = obj #set position -> object mapping
+		if pos is not None:
+			self.obj2pos[obj] = pos #set object -> position mapping
+			self.pos2obj[pos] = obj #set position -> object mapping
 	def show_dlog(self, str, talker=None, dlog=None, callback=None): #draw a dialog
 		self.dialog_drawing = True #set that we're drawing one
 		if dlog is not None: #if a specific dialog has been specified
