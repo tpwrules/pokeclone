@@ -18,7 +18,7 @@ class Game: #class for our game engine
 		self.g = g #store global variables
 		self.surf = pygame.Surface((settings.screen_x, settings.screen_y)) #create a new surface to display on
 		self.surf.convert() #convert it to the display format for faster blitting
-		self.camera_pos = [368, 336] #set default camera position
+		self.camera_pos = [80, 128] #set default camera position
 		self.objects = {} #list of objects on the map
 		self.warps = {} #list of warps on the map
 		self.warp_obj = None #warp object
@@ -39,7 +39,7 @@ class Game: #class for our game engine
 	def start(self):
 		self.player = player.Player(self) #initialize a player object
 		self.camera_follow = self.player #set who the camera follows
-		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis.xml")) #load map
+		self.load_map(self.g.save.get_game_prop("game", "curr_map", "maps/oasis_intro.xml")) #load map
 		self.map_image = self.map.update() #update it once
 		self.transition(transition.FadeIn(32)) #start fade in
 	def load_map(self, map_file): #load a map

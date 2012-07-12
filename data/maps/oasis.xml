@@ -10,6 +10,7 @@
 		<dest_map>oasis_inside.xml</dest_map>
 		<dest_warp>in_house_warp</dest_warp>
 	</object>
+	<object id="intro_warp" type="warp" pos="33,19" />
 	<object id="test_npc" type="npc" pos="5,9">
 		<anim file="objects/player/player_animation.xml" />
 		<movement speed="2">
