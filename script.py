@@ -28,7 +28,7 @@ class Script:
 			name = var[1:]
 			if var_type == ".": #if it's a script local variable
 				return self.vars[name] #return its value
-			elif var_type == "#" #if it's script persistent
+			elif var_type == "#": #if it's script persistent
 				return self.persistent_vars[name]
 		except:
 			return 0 #return variable default
