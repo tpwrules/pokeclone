@@ -115,7 +115,7 @@ class TrainerObject(objects.NPC):
 				self.moving = True
 				self.move_manager.move_to(self.move_data[0], self.move_data[1], 1, False)
 				self.move_manager.pix_pos = self.move_data[2] #restore position
-		if self.seen or self.fought: return #don't try to find people if we've seen somebody already
+		if self.seen or self.fought or self.game.stopped: return #don't try to find people if we've seen somebody already
 		player_pos = self.game.player.tile_pos[:] #get position of player
 		curr_dir = self.move_manager.curr_movement[0] #and the direction we're facing
 		tile_pos = self.tile_pos[:] #adjust our position
