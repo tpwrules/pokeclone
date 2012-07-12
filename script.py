@@ -16,6 +16,8 @@ class Script:
 		self.wait = 0 #mark whether we're waiting, 0=none, 1=dlog, 2=move
 		self.callstack = [] #callstack for command execution
 		self.vars = {} #dictionary of variables for the current script
+		#load persistent vars
+		self.persistent_vars = self.obj.game.g.save.get_prop(self.obj.id, "script_vars", {})
 	def get_var(self, var): #parse a variable string and return its value
 		try: #try to parse it as a variable
 			type = var[0] #get parts
@@ -38,6 +40,10 @@ class Script:
 			return self.obj.game.objects[name] #return the 
 	def dialog_cb(self, result): #callback for dialog completion
 		self.vars["dlog_result"] = result #store result in variables
+	def script_stop(self): #called to stop the script
+		#save persistent variables
+		self.obj.game.g.save.set_prop(self.obj.id, "script_vars", self.persistent_vars)
+		self.running = False #we're not running any more
 	def cmd_dialog(self, cmd): #handle command
 		self.wait = 1 #we're waiting for a dialog
 		self.obj.game.show_dlog(data.get_node_text(cmd), self.get_object(cmd.getAttribute("talker")), callback=self.dialog_cb) #show the dialog
@@ -99,7 +105,7 @@ class Script:
 		if self.curr_command == None: #if we're at the end of this part of the script
 			while self.curr_command == None: #loop until we have a command
 				if len(self.callstack) == 0: #if there is nothing in the callstack
-					self.running = False #we're not running any more
+					self.script_stop() #stop the script
 					return True
 				self.curr_command = self.callstack.pop() #get another command from the callstack
 		if self.curr_command.localName == "dialog": #if it's a dialog command
@@ -116,7 +122,7 @@ class Script:
 		elif self.curr_command.localName == "wait_move": #handle movement wait
 			self.cmd_wait_move(self.curr_command)
 		elif self.curr_command.localName == "stop": #handle stopping the script
-			self.running = False #we're not running any more
+			self.script_stop() #stop the script
 			return True
 		elif self.curr_command.localName == "set_pos": #handle setting an object's position
 			self.cmd_set_pos(self.curr_command)
