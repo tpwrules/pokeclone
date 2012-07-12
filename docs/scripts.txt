@@ -1,0 +1,13 @@
+THE SCRIPTING ENGINE
+The game includes a scripting engine for events.
+Scripts are generally enclosed in script tags and can change the state of objects.
+
+VARIABLES
+Scripts can make use of variables, of which there are four types identified by different prefixes:
+Period (.): script instance variables, can only be accessed by the script and are destroyed when the script finishes
+Colon (:): map instance variables (NOT IMPLEMENTED!), can be accessed by any script in the map, but are destroyed when the player leaves the map
+Pound (#): script persistent variables, can only be accessed by the script but are saved with the game and retain the same value between runs of the script
+Cash ($): map persistent variables (NOT IMPLEMENTED!), can be accessed by any script on the map and are saved with the game
+
+Note that .foo, :foo, #foo, and $foo refer to four different variables and can have four different values.
+
