@@ -24,6 +24,17 @@ none: refers to no object
 self: refers to the object executing the script
 player: refers to the player character
 
+MOVEMENT SCRIPTS
+Movement scripts are scripts that drive the movement of objects. A movement script tag can take a couple forms, but it will always have a speed attribute which specifies the movement speed in pixels/frame.
+Note that speeds which 16 is not divisible by or which are greater than 16 will not work correctly.
+A movement tag will contain two commands that will move the object.
+Both commands have a dir attribute, which is one of up, down, left, or right that sets the direction of the object.
+The first type is <move>, which has an additional dist attribute that specifies the distance of the movement in tiles.
+The second is <wait>, which turns the character towards the direction of the dir attribute and has a frames attribute that specifies the number of frames to wait.
+
+
+SCRIPT COMMANDS
+
 THE <dialog talker=>text</dialog> COMMAND
 This command shows a dialog. It is drawn as coming from the object specified by talker. Look at dialog.txt for information on how text is formatted.
 If the dialog has a choice box, the result is placed in the variable .dlog_result. If the user presses cancel, the index of the last choice is returned.
