@@ -4,6 +4,7 @@ Scripts are triggered by the engine for different events.
 Whenever a script is running, the player cannot move.
 Scripts are generally enclosed in script tags and can change the state of objects.
 
+
 VARIABLES
 Scripts can make use of variables, of which there are four types identified by different prefixes:
 Period (.): script instance variables, can only be accessed by the script and are destroyed when the script finishes
@@ -16,6 +17,7 @@ Note that .foo, :foo, #foo, and $foo refer to four different variables and can h
 
 Whereever a variable is needed, a number can almost always be substituted, but the reverse is not true.
 
+
 OBJECTS
 Various script commands can modify objects. Objects are referred to by their ID in the map, but there are some special cases and special objects.
 Generally, if an attribute that refers to an object is not specified, it will default to the object executing the script/
@@ -23,6 +25,7 @@ Special Objects:
 none: refers to no object
 self: refers to the object executing the script
 player: refers to the player character
+
 
 MOVEMENT SCRIPTS
 Movement scripts are scripts that drive the movement of objects. A movement script tag can take a couple forms, but it will always have a speed attribute which specifies the movement speed in pixels/frame.
@@ -69,4 +72,4 @@ THE <stop /> COMMAND
 This command immediately stops the script running.
 
 THE <set_var what= to= /> COMMAND
-Sets the variable specified by what to the value specified by to.
+Sets the variable specified by what to the variable specified by to.
