@@ -57,6 +57,14 @@
 		</script>
 		<invisible />
 	</object>
+	<object id="explainer" type="npc" pos="24,15">
+		<anim file="objects/player/player_animation.xml" />
+		<movement speed="0">
+			<wait dir="down" frames="30" />
+		</movement>
+		<script />
+		<invisible />
+	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">
 		<anim file="objects/NPCs/npc_cheren.xml" />
 		<movement speed="2">
