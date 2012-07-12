@@ -243,6 +243,35 @@ class Sign:
 		pass #we don't need to do any updates
 	def save(self): #we don't need to save anything
 		pass
+
+#object to run a script when the player is in a specific area
+class ScriptArea:
+	def __init__(self, game, element):
+		self.game = game
+		#get our position
+		t = element.getAttribute("pos").split(",")
+		self.tile_pos = (int(t[0].strip()), int(t[1].strip())) #store position
+		#get our size
+		t = element.getAttribute("size").split(",")
+		try:
+			self.size = (int(t[0].strip()), int(t[1].strip()))
+		except:
+			self.size = (1, 1) #default to a size of one
+		self.script = element.getElementsByTagName("script")[0] #load our script
+		self.script_manager = script.Script(self) #and create a script manager
+		self.visible = False #we're not rendering anything
+	def interact(self, pos): #handle interaction
+		pass #don't do anything
+	def update(self):
+		if self.game.stopped: return #return if the player is stopped
+		#check if the player is within our area
+		offset_pos = [self.game.player.tile_pos[0]-self.tile_pos[1], self.game.player.tile_pos[1]-self.tile_pos[1]]
+		if offset_pos[0] < 0 or offset_pos[1] < 0: return #return if they're not
+		if offset_pos[0] < self.size[0] and offset_pos[1] < self.size[1]: #if they're in our area
+			self.game.stopped = True #stop player
+			self.script_manager.start_script(self.script) #run our script
+	def save(self): #we don't need to save anything
+		pass
 		
 #generic NPC
 class NPC(RenderedNPC):
@@ -301,5 +330,6 @@ import trainer
 obj_types = {"warp": Warp, #warp object
 "sign":Sign, #a sign object
 "npc":NPC, #an NPC
-"trainer":trainer.TrainerObject #a trainer
+"trainer":trainer.TrainerObject, #a trainer
+"scriptarea":ScriptArea
 }
