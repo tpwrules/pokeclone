@@ -30,7 +30,29 @@
 					<dialog>I suggest you check him out.{wait}</dialog>
 				</else>
 			</if>
+			<set_visible what="test_intruder" to="true" />
+			<set_move speed="8" what="test_intruder">
+				<move dir="down" dist="8" />
+				<move dir="right" dist="2" />
+			</set_move>
+			<wait_move for="test_intruder" />
+			<dialog talker="test_intruder">HI!!{wait}</dialog>
+			<dialog>THERE HE IS :O{wait}</dialog>
+			<set_move speed="8" what="test_intruder">
+				<move dir="left" dist="2" />
+				<move dir="up" dist="8" />
+			</set_move>
+			<wait_move for="test_intruder" />
+			<set_visible what="test_intruder" to="false" />
 			<dialog>Heh, see ya.{wait}</dialog>
+		</script>
+	</object>
+	<object id="test_intruder" type="npc" pos="1,1">
+		<anim file="objects/player/player_animation.xml" />
+		<movement speed="0">
+			<wait dir="down" frames="30" />
+		</movement>
+		<script>
 		</script>
 	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">

@@ -13,7 +13,7 @@ class Script:
 		self.running = True #we're running
 		self.curr_script = s #store script
 		self.curr_command = s.firstChild #and first command
-		self.dlog_wait = False #mark whether we're waiting for a dialog
+		self.wait = 0 #mark whether we're waiting, 0=none, 1=dlog, 2=move
 		self.callstack = [] #callstack for command execution
 		self.vars = {} #dictionary of variables for the current script
 	def get_var(self, var): #parse a variable string and return its value
@@ -39,7 +39,7 @@ class Script:
 	def dialog_cb(self, result): #callback for dialog completion
 		self.vars["dlog_result"] = result #store result in variables
 	def cmd_dialog(self, cmd): #handle command
-		self.dlog_wait = True #we're waiting for a dialog
+		self.wait = 1 #we're waiting for a dialog
 		self.obj.game.show_dlog(data.get_node_text(cmd), self.get_object(cmd.getAttribute("talker")), callback=self.dialog_cb) #show the dialog
 	def cmd_if(self, cmd): #handle if command
 		#get parameters
@@ -70,10 +70,18 @@ class Script:
 	def cmd_set_camera(self, cmd): #handle set camera command
 		#set what the camera follows
 		self.obj.game.camera_follow = self.get_object(cmd.getAttribute("follow"))
+	def cmd_set_move(self, cmd): #handle set movement command
+		self.get_object(cmd.getAttribute("what")).move_manager.load_move_dom(cmd, False) #set the movement
+	def cmd_wait_move(self, cmd): #handle movement wait command
+		self.move_obj = self.get_object(cmd.getAttribute("for")).move_manager #set movement wait object
+		self.wait = 2 #set movement wait
 	def next_cmd(self): #process the next command
 		if not self.running: return True #return if we aren't running
 		#return if we're waiting for a dialog and one is being shown
-		if self.dlog_wait and self.obj.game.dialog_drawing: return True
+		if self.wait == 1 and self.obj.game.dialog_drawing: return True
+		#wait if we're waiting for movement
+		if self.wait == 2 and self.move_obj.moving: return True
+		self.wait = 0 #clear wait
 		if self.curr_command == None: #if we're at the end of this part of the script
 			while self.curr_command == None: #loop until we have a command
 				if len(self.callstack) == 0: #if there is nothing in the callstack
@@ -89,6 +97,10 @@ class Script:
 			self.cmd_set_visible(self.curr_command)
 		elif self.curr_command.localName == "set_camera": #change what the camera follows
 			self.cmd_set_camera(self.curr_command)
+		elif self.curr_command.localName == "set_move": #handle movement set
+			self.cmd_set_move(self.curr_command)
+		elif self.curr_command.localName == "wait_move": #handle movement wait
+			self.cmd_wait_move(self.curr_command)
 		self.curr_command = self.curr_command.nextSibling #go to next command
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running
