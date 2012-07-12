@@ -70,7 +70,7 @@
 			<set_visible what="explainer" to="true" />
 			<set_move speed="4" what="explainer">
 				<move dir="right" dist="9" />
-				<wait dir="down" frames="1" />
+				<move dir="down" dist="1" />
 			</set_move>
 			<wait_move for="explainer" />
 			<dialog talker="explainer">Hello there!{br}Welcome to the Testing Oasis!{wait}{br}
@@ -85,6 +85,7 @@
 					<dialog talker="explainer">Oh well, see you around!</dialog>
 					<set_move speed="8" what="explainer">
 						<move dir="left" dist="9" />
+						<move dir="up" dist="1" />
 					</set_move>
 					<wait_move for="explainer" />
 					<set_visible what="explainer" to="false" />
@@ -95,6 +96,38 @@
 					<stop />
 				</then>
 			</if>
+			<dialog talker="explainer">Well, let's go!{wait}</dialog>
+			<set_move speed="2" what="player">
+				<move dir="up" dist="2" />
+				<move dir="right" dist="1" />
+				<move dir="up" dist="6" />
+				<wait dir="left" frames="1" />
+			</set_move>
+			<set_move speed="2" what="explainer">
+				<wait dir="up" frames="8" />
+				<move dir="right" dist="1" />
+				<move dir="up" dist="7" />
+				<wait dir="left" frames="1" />
+			</set_move>
+			<wait_move for="player" />
+			<dialog talker="explainer">Here we have a Pok{ae}mon trainer,{br}
+				in case you have the urge to battle.{wait}{br}
+				He's not very good though.{wait}
+			</dialog>
+			<set_move speed="2" what="explainer">
+				<move dir="up" dist="7" />
+				<move dir="left" dist="5" />
+				<wait dir="down" frames="1" />
+			</set_move>
+			<set_move speed="2" what="player">
+				<move dir="up" dist="8" />
+				<move dir="left" dist="4" />
+				<wait dir="down" frames="1" />
+			</set_move>
+			<wait_move for="player" />
+			<dialog talker="explainer">This area is where we keep tall grass,{br}
+				perfect for testing wild Pok{ae}mon battles.{wait}
+			</dialog>
 			<set_visible what="explainer" to="false" />
 		</script>
 	</object>
