@@ -185,9 +185,10 @@ class MovementManager:
 #the same as a pygame sprite
 class RenderedObject:
 	def __init__(self): #have init defined for consistency
-		pass #but it doesn't need to do anything
+		self.visible = True #set that we're visible
 	def draw(self, surf): #draw ourselves onto a surface
-		surf.blit(self.image, self.rect.topleft) #perform the blit
+		if self.visible: #if we're visible
+			surf.blit(self.image, self.rect.topleft) #perform the blit
 	def save(self):
 		pass #we don't need to save anything
 		
@@ -255,7 +256,6 @@ class NPC(RenderedNPC):
 		self.interacting = False #mark that we're not interacting
 		self.should_interact = False #and that we shouldn't be yet
 		self.interact_pos = 0 #position of current interaction
-		self.visible = True #and we should be showing ourselves
 		#load an animator
 		self.animator = animation.AnimationGroup(game.g, self, element.getElementsByTagName("anim")[0].getAttribute("file"))
 		self.animator.set_animation("stand_down") #set animation

@@ -42,7 +42,6 @@ class Player(objects.RenderedNPC):
 		self.move_frames = 0 #amount of movement frames left
 		self.in_water = False #whether we're currently walking in water
 		self.notify_dlog = dialog.Dialog(self.g, "notify") #initialize a notify dialog
-		self.visible = True #and we should be showing ourselves
 	#move the player
 	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
