@@ -7,8 +7,9 @@ The data folder contains all the non-code bits of the game.
 Information on animations is present in animations.txt
 Information on scripting is present in scripts.txt
 Information about dialog scripting and text encoding is present in dialog.txt
+Information about creating maps is present in make_a_map.txt
 
-Information about tools is present in tools.txt
+Information about the tools directory is present in tools.txt
 
 FOLDER CONTENTS
 
