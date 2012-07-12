@@ -154,6 +154,7 @@ class Player(objects.RenderedNPC):
 				self.move_manager.update() #update our movement
 				self.animator.update() #and animation
 				self.rect = pygame.Rect(self.pos, self.size)
+				self.direction = self.move_manager.curr_movement[0] #get direction from move manager
 			return #don't do anything
 		if self.g.keys[settings.key_up]: #if up is pressed
 			self.move(0) #move up
