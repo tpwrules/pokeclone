@@ -1,0 +1,48 @@
+DATA FOLDER
+Contains information on files present in data folder.
+Note that all paths in the engine are assumed to start at the data folder.
+
+The data folder contains all the non-code bits of the game.
+
+FOLDER CONTENTS
+
+File: nature.xml
+Contains pokemon nature data.
+
+Tag: <nature name= num= help= hinder= />
+Found in: root
+The nature tag stores data about what stat each nature helps or hinders.
+
+The help and hinder attributes are each a stat number to help or hinder.
+Stat numbers are, in order, hp, attack, defense, special attack, special defense, and speed from 0-5.
+If a stat number is -1, no stat is modified.
+The name attribute is the name that is displayed for this nature.
+The number attribute stores the nature's internal number.
+
+
+File: pokemon_data.xml
+Contains references to each pokemon's info file.
+
+Tag: <pokemon name=>path</pokemon>
+Found in: root
+Stores one file reference.
+
+Name attribute is internal pokemon id.
+Path is the path to the pokemon's info file.
+
+
+File: types.xml
+Contains pokemon type data and damage modifiers
+
+Tag: <type name=>[modifier]</type>
+Found in: root
+Stores data for one type
+
+name attribute is internal type id
+Contains modifier tags that change damage for one type.
+
+Tag: <modifier defender= amount= />
+Contains damage modification data.
+
+defender attribute is the type of the defending pokemon
+amount attribute is multiplier for resulting damage
