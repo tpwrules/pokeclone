@@ -1,6 +1,7 @@
 THE SCRIPTING ENGINE
 The game includes a scripting engine for events.
 Scripts are triggered by the engine for different events.
+Whenever a script is running, the player cannot move.
 Scripts are generally enclosed in script tags and can change the state of objects.
 
 VARIABLES
@@ -13,8 +14,48 @@ Cash ($): map persistent variables (NOT IMPLEMENTED!), can be accessed by any sc
 
 Note that .foo, :foo, #foo, and $foo refer to four different variables and can have four different values.
 
+Whereever a variable is needed, a number can almost always be substituted, but the reverse is not true.
+
 OBJECTS
 Various script commands can modify objects. Objects are referred to by their ID in the map, but there are some special cases and special objects.
+Generally, if an attribute that refers to an object is not specified, it will default to the object executing the script/
 Special Objects:
 none: refers to no object
 self: refers to the object executing the script
+player: refers to the player character
+
+THE <dialog talker=>text</dialog> COMMAND
+This command shows a dialog. It is drawn as coming from the object specified by talker. Look at dialog.txt for information on how text is formatted.
+If the dialog has a choice box, the result is placed in the variable .dlog_result. If the user presses cancel, the index of the last choice is returned.
+
+THE <if left= op= right=> COMMAND
+This command runs different code based on the condition.
+The left and right attributes are variables to compare based on the op attribute.
+If the condition evaluates to true, the code in the <then> tag is executed.
+If it is false, the code in the <else> tag is executed, or nothing happens if <else> is not present.
+Supported ops:
+Equals (=): true if left and right are equal
+
+THE <set_visible what= to= /> COMMAND
+Sets an object's visibility. If an object is invisible, it cannot be interacted with or collided with.
+The what attribute is the object to change the visibility for, and to is what to set it to. If 'true', the object is visible, if 'false', it is not.
+
+THE <set_camera follow= /> COMMAND
+Sets which object the camera follows.
+The follow attribute is the object the camera will follow.
+
+THE <set_move speed= what= > COMMAND
+Sets an object's movement script. Note that the movement will not loop.
+The what attribute is the object whose movement should be set.
+See the movement scripts section for information about the speed attribute and tag contents.
+
+THE <wait_move for= /> COMMAND
+Pauses script execution until an object's movement is completed.
+The for attribute is the object whose movement is monitored.
+Note that if the object's movement script loops, this command will never un-pause the script!
+
+THE <stop /> COMMAND
+This command immediately stops the script running.
+
+THE <set_var what= to= /> COMMAND
+Sets the variable specified by what to the value specified by to.
