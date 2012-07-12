@@ -1,0 +1,30 @@
+DIALOG SCRIPTING INFORMATION
+Contains information on scripting dialogs and text.
+
+Display strings are ASCII and contain certain control characters, enclosed with {}.
+Any characters in a font that have multiple letters for names are referenced by {}.
+For example, displaying pokemon with an accent can be shown with the string Pok{ae}mon.
+Certain dialog control commands are also present in {}, which take effect in the <dialog> script command.
+Dialogs automatically disappear when they run out of text.
+
+THE {br} COMMAND
+Simple enough, creates a line break.
+
+THE {wait} COMMAND
+Stops displaying text and waits for the user to press confirm.
+
+THE {tr_wait} COMMAND
+Stops displaying text and waits for a transition to complete.
+
+THE {clear} COMMAND
+Clears the dialog.
+
+THE {choices} COMMAND
+Starts defining a choice dialog.
+Option text follows.
+
+THE {endchoice} COMMAND
+When after a {choices} command, uses the text before it as a choice for the choice dialog.
+
+THE {endchoices} COMMAND
+After an {endchoice} command, stops reading for choices and displays the choice dialog.
