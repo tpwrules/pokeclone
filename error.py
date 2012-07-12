@@ -62,12 +62,10 @@ def exception_handler(g, e): #handles exception
 		exception_write(g, "Game was saved to error.pokesav.")
 	except:
 		exception_write(g, "Game could not be saved.")
-	if hasattr(e, "specific"): #if the exception has specific error data
-		exception_write(g, "Specific error data is:") #write it out
-		for line in e.specific.split("\n"):
-			exception_write(g, line)
+	lines = tb.split("\n") #lines of exception
+	exception_write(g, lines[-2]) #show last line of exception
 	#now write out traceback
-	for line in tb.split("\n"):
+	for line in lines:
 		exception_write(g, line)
 	exception_write(g, "Error handler finished.")
 
