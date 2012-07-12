@@ -74,16 +74,15 @@
 			</set_move>
 			<wait_move for="explainer" />
 			<dialog talker="explainer">Hello there!{br}Welcome to the Testing Oasis!{wait}{br}
-				Here, you'll be helping us test the{wait}{br}
-				game engine. Doesn't that sound fun?{wait}{br}
-				Right now, this is a test of Script Areas{wait}{br}
+				Here, you'll be helping test the game engine.{br}
+				Doesn't that sound fun?{wait}{br}
+				Right now, this is a test of Script Areas{br}
 				and cutscenes!{wait}{br}
-				If you want, I can show you around{wait}{br}
-				the place.{wait}
+				If you want, I can show you around the place.{wait}
 				{clear}You cool with that?{choices}Let's go!{endchoice}Ehh, I'm fine...{endchoice}{endchoices}</dialog>
 			<if left=".dlog_result" op="=" right="1">
 				<then>
-					<dialog>Oh well, see you around!</dialog>
+					<dialog talker="explainer">Oh well, see you around!</dialog>
 					<set_move speed="8" what="explainer">
 						<move dir="left" dist="9" />
 					</set_move>

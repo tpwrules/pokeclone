@@ -265,7 +265,9 @@ class ScriptArea:
 	def update(self):
 		if not self.script_manager.running: #if the script manager is done
 			self.game.stopped = False #player can move
-		if self.game.stopped: return #return if the player is stopped
+		else: #if it is
+			self.script_manager.update() #update it
+			return
 		#check if the player is within our area
 		offset_pos = [self.game.player.tile_pos[0]-self.tile_pos[0], self.game.player.tile_pos[1]-self.tile_pos[1]]
 		if offset_pos[0] < 0 or offset_pos[1] < 0: return #return if they're not
