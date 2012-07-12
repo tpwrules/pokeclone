@@ -1,0 +1,13 @@
+FONT DATA
+Game fonts are pretty self-explanatory.
+
+At the root is a <font> tag, which contains three attributes:
+id: internal ID of the font
+height: height of each character
+image: image for the font
+
+Within are are a bunch of <letter> tags, which specify a letter.
+Each has these attributes:
+name: the letter's name. If it is a single character, it can be used as that character in a dialog. If it is multiple, the name is enclosed in {} in order to draw it. Doing this is recommended for non-ASCII characters.
+coord: top left coordinate of the letter's image in x,y form.
+size: width of the letter in pixels
