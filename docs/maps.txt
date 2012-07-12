@@ -1,0 +1,28 @@
+GAME MAPS
+Overworld maps contain the main game. Actual tiles can be created by a freeware, cross-platform tool called Tiled.
+Maps must also contain an information XML, which is what they are referenced by in the engine.
+
+MAP INFORMATION
+The map information file contains everything about the map that isn't tiles.
+The root tag, <map>, contains these attributes:
+id: internal map id
+tiles: path to the tiles file
+
+The map file also contains other varieties of tags.
+
+THE <wild> TAG
+Contains information about wild pokemon data. Since this feature isn't really done, no documentation is available yet.
+
+THE <object> TAG
+Represents an object on the map. All objects have three mandatory attributes:
+id: the object's internal ID. Note that this MUST(!!!) be unique across all maps. If it is not, objects with the same ID will share saved data.
+type: the object's type as detailed below
+pos: the object's position, in tiles, in x,y form
+
+OBJECT TYPES
+There are many object types. A brief summary is available here. Please look in the objects/ directory for more detail.
+
+sign: A sign! Displays text.
+warp: A warp! Used to connect maps together.
+npc: A character in the game.
+trainer: A special variety of npc that can be fought.
