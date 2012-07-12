@@ -30,7 +30,7 @@
  </layer>
  <layer name="Paths" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlMsKwjAQRbPt2ld1owbbjY/6/1/ndTEQpJkk8ygUHLhwCVkccpKEsJ7ZdyEcBOk7H5YR2SEbZNvQB2M2YrkgV+Ss6IOSiVjuyAN5GnQpk8ZRqUuYopEjzl3LnYqGjrheyxWNHZV6ieuF9ZOjr1y/MedETJ6+fnuOh/7jcSFf1Od4LP/A2n5EJuQ9wxMXdMRxpDzeXmo40nv83evxvlo4clxTwqd1xL1nLZ8kknP5zzrmA5SWRy4=
+   eJztlMsKwjAQRbPt2nc3arDdqK2/qv6w18VAKM3kMTMFwYEDl5DFITeJc78z28a5XQX7xsalBxuwAuuC3Cm7kcsJnMFRkDuhE7lcwQ3cFXKtk6SjVK5x8kodcd2V3Cmv2BGXc728ckepnPIasN4a9hXLF+acyMmyr2mO+dB/3C/UF+U5H80/MDcfwAgeMz5+wY44j9DHupccj/Aef/davK8Sj5jXGPhJO+Les9SvBu5cnuAF3nrKovn78DP1+QCtME4G
   </data>
  </layer>
  <layer name="Underwater" width="36" height="21">
@@ -59,9 +59,9 @@
    eJztlEkKwkAUBV9o7RzGMXowXejJdKE3MlHXDihYC0FICKKQfMRfUKQbAq9WLTmOlCXSBKeJdclnHOPrfIj1/zXBjr0cC9zHak+b9FKpjwMc4gjHmKU2PTN256XtBfelUc+K3XVpe8N9a9RzYveMF7w+G25870Y9/8I371wIUge7obmud/zq++w4Tns8AKdlFMc=
   </data>
  </layer>
- <layer name="Collisions" width="36" height="21" visible="0">
+ <layer name="Collisions" width="36" height="21">
   <data encoding="base64" compression="zlib">
-   eJzt1bEOgCAMBFC22pjw/5/r1AQr1B5q7cAltxjAF4hIXAola5ZEenbu9y9Pa6pNUc/G/Xqi16587Vuenk0/Q/fe8ngcXmcWj3bdfduz5yXzlgd/t2UiPq8Z4RmN9wS5D594vJm9n9HzkzkRHslor9B1v/x/ZfOgWR47WT2ZegCYsBQ6
+   eJzt1cEKgCAMBmBvawS+/+N2GphO3W+1dnDwX0LXh9IiTomCJUp5ek7W85enNOUiqOdgPZaqe2du85ZHs9XP0LMfeSwOqzOKp3bNvu3V+5J924O/e2Qivvf08PTWWwqZh0881lqdz+j9yR4Pj1TvrNC+X/6/onnQiuCZzYDtaT2RcgEJCRSa
   </data>
  </layer>
 </map>
