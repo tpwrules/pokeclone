@@ -54,6 +54,7 @@
 		</movement>
 		<script>
 		</script>
+		<invisible />
 	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">
 		<anim file="objects/NPCs/npc_cheren.xml" />

@@ -266,6 +266,8 @@ class NPC(RenderedNPC):
 		self.move_manager.load_move_dom(element.getElementsByTagName("movement")[0])
 		self.script_manager = script.Script(self) #initialize script manager
 		self.interaction_script = element.getElementsByTagName("script")[0] #load script
+		if len(element.getElementsByTagName("invisible")) == 1: #if there's an invisibility tag
+			self.visible = False #mark ourselves as invisible
 	def interact(self, pos):
 		#make ourselves face to who's talking
 		self.interact_pos = [1, 0, 3, 2][pos]
