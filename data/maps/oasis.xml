@@ -74,9 +74,9 @@
 			</set_move>
 			<wait_move for="explainer" />
 			<dialog talker="explainer">Hello there!{br}Welcome to the Testing Oasis!{wait}{br}
-				Here, you'll be helping test the game engine.{br}
+				Here, you'll be helping test the game engine.{wait}{br}
 				Doesn't that sound fun?{wait}{br}
-				Right now, this is a test of Script Areas{br}
+				Right now, we are testing Script Areas{br}
 				and cutscenes!{wait}{br}
 				If you want, I can show you around the place.{wait}
 				{clear}You cool with that?{choices}Let's go!{endchoice}Ehh, I'm fine...{endchoice}{endchoices}</dialog>
@@ -88,6 +88,10 @@
 					</set_move>
 					<wait_move for="explainer" />
 					<set_visible what="explainer" to="false" />
+					<set_move speed="2" what="player">
+						<move dir="up" dist="1" />
+					</set_move>
+					<wait_move for="player" />
 					<stop />
 				</then>
 			</if>

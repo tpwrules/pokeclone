@@ -42,6 +42,7 @@ class Player(objects.RenderedNPC):
 		self.move_frames = 0 #amount of movement frames left
 		self.in_water = False #whether we're currently walking in water
 		self.notify_dlog = dialog.Dialog(self.g, "notify") #initialize a notify dialog
+		self.move_manager = objects.MovementManager(self) #make a movement manager so we can be controlled in cutscenes
 	#move the player
 	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
@@ -84,6 +85,7 @@ class Player(objects.RenderedNPC):
 		self.game.set_obj_pos(self, self.tile_pos) #set our position
 		if not same or not self.was_moving: #if we need to update our animation
 			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
+		self.tile_pos = list(self.tile_pos) #convert our position into a list to avoid crashes
 		self.was_moving = self.moving
 	#have the player interact with an object
 	def interact(self):
@@ -123,8 +125,8 @@ class Player(objects.RenderedNPC):
 		else: #if we're on land
 			return tile_type not in [settings.TILE_NORMAL, settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]
 	def step(self): #handle stepping on a tile
-		if self.tile_pos in self.game.warps: #if we're standing on a warp
-			self.game.prepare_warp(self.tile_pos) #do the warp
+		if tuple(self.tile_pos) in self.game.warps: #if we're standing on a warp
+			self.game.prepare_warp(tuple(self.tile_pos)) #do the warp
 			return True #something happened
 		tile_type = self.game.get_tile_type(self.tile_pos[0], self.tile_pos[1], True) #get the tile we're standing on
 		if tile_type in [settings.TILE_GRASS, settings.TILE_DOUBLEGRASS]: #if there's the potential for a battle
@@ -148,6 +150,10 @@ class Player(objects.RenderedNPC):
 				self.animator.update() #update animation
 				return #don't do anything else
 		if self.game.dialog_drawing or self.game.stopped: #if a dialog is currently being shown
+			if self.move_manager.running: #if we're moving in a cutscene
+				self.move_manager.update() #update our movement
+				self.animator.update() #and animation
+				self.rect = pygame.Rect(self.pos, self.size)
 			return #don't do anything
 		if self.g.keys[settings.key_up]: #if up is pressed
 			self.move(0) #move up
