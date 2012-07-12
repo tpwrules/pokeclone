@@ -4,6 +4,9 @@ Note that all paths in the engine are assumed to start at the data folder.
 
 The data folder contains all the non-code bits of the game.
 
+Information on animations is present in animations.txt
+Information on scripting is present in scripts.txt
+
 FOLDER CONTENTS
 
 File: nature.xml
@@ -46,3 +49,36 @@ Contains damage modification data.
 
 defender attribute is the type of the defending pokemon
 amount attribute is multiplier for resulting damage
+
+
+Folder: battlegraphics/
+Contains miscellaneous battle graphics.
+
+Folder: dialogboxes/
+Contains dialog box images and layout data.
+More information in dialogboxes.txt
+
+Folder: fonts/
+Contains font graphics and layout data.
+More information in fonts.txt
+
+Folder: maps/
+Contains map layout data.
+More information in maps.txt
+
+Folder: objects/
+Contains miscellaneous object data.
+
+Folder: pokemon/
+Contains pokemon images and data.
+More information in pokemon.txt
+
+Folder: tilesets/
+Contains tileset graphics and animation data.
+More information in tilesets.txt
+
+Folder: titlescreen/
+Contains titlescreen data.
+
+Folder: trainers/
+Contains miscellaneous trainer resources.
