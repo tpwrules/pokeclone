@@ -261,6 +261,7 @@ class ScriptArea:
 		self.script_manager = script.Script(self) #and create a script manager
 		self.visible = False #we're not rendering anything
 		self.running = False #whether we're currently interacting
+		self.touched = False #whether the player is touching us
 	def interact(self, pos): #handle interaction
 		pass #don't do anything
 	def update(self):
@@ -272,11 +273,17 @@ class ScriptArea:
 			return
 		#check if the player is within our area
 		offset_pos = [self.game.player.tile_pos[0]-self.tile_pos[0], self.game.player.tile_pos[1]-self.tile_pos[1]]
-		if offset_pos[0] < 0 or offset_pos[1] < 0: return #return if they're not
+		if offset_pos[0] < 0 or offset_pos[1] < 0: 
+			self.touched = False #we're not being touched any more
+			return #return if they're not
 		if offset_pos[0] < self.size[0] and offset_pos[1] < self.size[1]: #if they're in our area
+			if self.touched: return #return if we're being touched
 			self.game.stopped = True #stop player
 			self.running = True #we're currently running
 			self.script_manager.start_script(self.script) #run our script
+			self.touched = True #we're being touched
+		else:
+			self.touched = False #we're not being touched any more
 	def save(self): #we don't need to save anything
 		pass
 		
