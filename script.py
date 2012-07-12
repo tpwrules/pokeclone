@@ -79,6 +79,16 @@ class Script:
 	def cmd_wait_move(self, cmd): #handle movement wait command
 		self.move_obj = self.get_object(cmd.getAttribute("for")).move_manager #set movement wait object
 		self.wait = 2 #set movement wait
+	def cmd_set_pos(self, cmd): #handle set position command
+		obj = self.get_object(cmd.getAttribute("what")) #get the object to set
+		t = cmd.getAttribute("to").split(",") #get new position
+		obj.tile_pos = [int(t[0].strip()), int(t[1].strip())] #set it
+		#update pixel position
+		obj.pos = [((obj.tile_pos[0]-1)*16)+8, (obj.tile_pos[1]-1)*16]
+		obj.rect = pygame.Rect(obj.pos, (32, 32))
+		obj.game.set_obj_pos(obj, None) #remove object from collisions
+		if obj.visible: #if it's visible
+			obj.game.set_obj_pos(obj, obj.tile_pos) #set new position
 	def next_cmd(self): #process the next command
 		if not self.running: return True #return if we aren't running
 		#return if we're waiting for a dialog and one is being shown
@@ -108,6 +118,8 @@ class Script:
 		elif self.curr_command.localName == "stop": #handle stopping the script
 			self.running = False #we're not running any more
 			return True
+		elif self.curr_command.localName == "set_pos": #handle setting an object's position
+			self.cmd_set_pos(self.curr_command)
 		self.curr_command = self.curr_command.nextSibling #go to next command
 	def update(self): #update script state
 		if not self.running: return #return if we aren't running

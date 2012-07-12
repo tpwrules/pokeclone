@@ -129,6 +129,7 @@
 				perfect for testing wild Pok{ae}mon battles.{wait}
 			</dialog>
 			<set_visible what="explainer" to="false" />
+			<set_pos what="explainer" to="24,14" />
 		</script>
 	</object>
 	<object id="test_trainer" type="trainer" pos="33,4">
