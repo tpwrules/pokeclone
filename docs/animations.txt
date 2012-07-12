@@ -1,0 +1,129 @@
+ANIMATION INFORMATION
+
+Two types of animations are present in the game.
+The first type is called a sheet animation and are used for overworld character animations.
+The second type, which is more featureful and complicated, is a part animation. They are used for most other things.
+
+SHEET ANIMATIONS
+A sheet animation is encompassed in an <anim_group> tag.
+Within the sheet animation are <sheet> tags for defining source images and <animation> tags for defining an animation.
+
+THE <sheet> TAG
+A sheet is where the images for an animation come from.
+Each sheet has four attributes:
+from: image of sheet
+tilewidth: width of sheet tiles in pixels
+tileheight: height of sheet tiles in pixels
+id: id used for referencing the sheet
+
+THE <animation> TAG
+An animation contains frame tags that change the graphics of the object being animated.
+An animation tag has two attributes:
+loop: whether the animation should loop at the end. If omitted, loop="false" is assumed
+If false, the animation will revert to the previous looped animation when it ends.
+
+THE <frame> TAG
+Each frame defines one state of graphics for an animation.
+A frame tag has three attributes:
+sheet: the ID of she sheet this frame is coming from
+pos: the tile within the sheet, in x,y form
+wait: the amount of game frames to show the animation frame for.
+
+
+PART ANIMATIONS
+A part animation is encompassed in a <part_anim> tag.
+They are significantly more complicated and featureful than sheet animations.
+Within the animation are <image> tags for defining source images,
+<part_image> tags for defining sub-images,
+the <layout> tag for putting together sub-images,
+and <anim> tags for each animation.
+
+THE <image> TAG
+Each image tag defines an image for the animation.
+They must have two attributes:
+from: the source file
+id: the id used to reference it
+
+THE <part_image> TAG
+The part image tags define parts for the animation.
+They must have three attributes and have two optional attributes.
+from: which image this part image is comfing from
+coord: the rectangle that defines this part in x,y,w,h form
+id: the id of the part
+Optional tags:
+origin: offset to place the part at. For example, if the part is placed at 15,15 and the origin is 10,10, the part will be drawn at 5,5. Defaults to 0,0.
+center: the center of the image for rotation and scaling. Defaults to the center of the source rectangle.
+
+THE <layout> TAG
+The layout tag contains a tree of <part> tags and <group> tags describing the object to animate.
+Note: during animation, the <layout> tag functions as the root <group> tag, see its documentation.
+
+THE <group> TAG
+The group tag describes a group of parts and other groups to animate with.
+The children of a group inherit the group's position and other information
+(so if a group has a rotation of 20 and a child has a rotation of 40, it will be rotated 60 degrees)
+A group's center is the average of the center of its initial children.
+Its origin is always 0,0.
+Each has two mandatory attributes:
+id: the id used to reference the group
+pos: position of the group in x,y form
+Other optional attributes can set initial state:
+show: if 0, will hide the group and its children
+rotation: rotation of the object in degrees
+scale: object's scale factor (1 is default, 0.5 is half, 2 is double, etc)
+xscale: object's scale factor horizontally
+yscale: object's scale factor vertically
+Note that scale, xscale, and yscale can be combined but it doesn't make much sense.
+The scale value will be evaulated first and x and y can be changed individually by the other tags.
+
+THE <part> TAG
+The part tag defines an object's part.
+Has the same attributes as <group> except it does not have children and has one other mandatory one:
+from: id of the part_image to use for this tag
+
+THE <anim> TAG
+The anim tag defines animations.
+It contains a series of <frame> tags that define keyframes for the animation.
+It has one mandatory and one optional attribute:
+id: the id used to reference this animation
+Optional attributes:
+loopreset: if this tag is present, the state of the layout will be reset each time the animation loops
+
+THE <frame> TAG
+Each frame tag defines a keyframe in the animation.
+They contain a series of animation commands which happen over the duration of the frame.
+There is one mandatory attribute:
+time: number of game frames this keyframe lasts
+Animation commands: rotate, scale, move, set, show
+Each animation command has a mandatory attribute:
+id: the id of the part or group to affect
+Each animation command can also apply to a group.
+
+THE <rotate> TAG
+Rotates a part a certain amount.
+Attributes:
+degrees: relative rotation amount in degrees
+
+THE <scale> TAG
+Scales a part a certain amount.
+Attributes:
+scale: absolute scale of the object
+xscale,yscale (optional): same as in <group>
+
+THE <move> TAG
+Moves a part a certain amount.
+Attributes:
+delta: relative movement in x,y form.
+
+THE <set> TAG
+Sets the image of a certain part.
+Note that behavior is undefined for groups.
+Also note that this tag takes effect immediately at the start of a keyframe.
+Attributes:
+to: the part image to set the part to
+
+THE <show> TAG
+Sets visibility for a certain part.
+Note that this tag takes effect immediately at the start of a keyframe.
+Attributes:
+show (optional): if present and set to 0, hides the part
