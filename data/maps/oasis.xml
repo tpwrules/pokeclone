@@ -67,6 +67,12 @@
 	</object>
 	<object id="explain_script" type="scriptarea" pos="33,17">
 		<script>
+			<if left="#explained" op="=" right="1">
+				<then>
+					<stop />
+				</then>
+			</if>
+			<set_var what="#explained" to="1" />
 			<set_visible what="explainer" to="true" />
 			<set_move speed="4" what="explainer">
 				<move dir="right" dist="9" />
