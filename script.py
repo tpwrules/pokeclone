@@ -33,7 +33,11 @@ class Script:
 		self.vars["dlog_result"] = result #store result in variables
 	def cmd_dialog(self, cmd): #handle command
 		self.dlog_wait = True #we're waiting for a dialog
-		self.obj.game.show_dlog(data.get_node_text(cmd), self.obj, callback=self.dialog_cb) #show the dialog
+		if cmd.getAttribute("talker") != "": #if somebody else is supposed to be talking
+			obj = self.obj.game.objects[cmd.getAttribute("talker")] #get their object
+		else:
+			obj = self.obj #if not, use the one we're attached to
+		self.obj.game.show_dlog(data.get_node_text(cmd), obj, callback=self.dialog_cb) #show the dialog
 	def cmd_if(self, cmd): #handle if command
 		#get parameters
 		left = self.get_var(cmd.getAttribute("left"))
