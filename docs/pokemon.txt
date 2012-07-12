@@ -1,0 +1,4 @@
+POKEMON INFORMATION
+Note that since pokemon are not completed, this documentation is sparse.
+In each directory, there is an xml file that details the pokemon's attributes.
+pokemon/reuniclus/reuniclus.xml is well-commented, please look at it.
