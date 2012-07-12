@@ -260,11 +260,13 @@ class ScriptArea:
 		self.script = element.getElementsByTagName("script")[0] #load our script
 		self.script_manager = script.Script(self) #and create a script manager
 		self.visible = False #we're not rendering anything
+		self.running = False #whether we're currently interacting
 	def interact(self, pos): #handle interaction
 		pass #don't do anything
 	def update(self):
-		if not self.script_manager.running: #if the script manager is done
+		if not self.script_manager.running and self.running: #if the script manager is done
 			self.game.stopped = False #player can move
+			self.running = False #and we're not running
 		else: #if it is
 			self.script_manager.update() #update it
 			return
@@ -273,6 +275,7 @@ class ScriptArea:
 		if offset_pos[0] < 0 or offset_pos[1] < 0: return #return if they're not
 		if offset_pos[0] < self.size[0] and offset_pos[1] < self.size[1]: #if they're in our area
 			self.game.stopped = True #stop player
+			self.running = True #we're currently running
 			self.script_manager.start_script(self.script) #run our script
 	def save(self): #we don't need to save anything
 		pass
