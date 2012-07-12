@@ -267,7 +267,7 @@ class ScriptArea:
 		if not self.script_manager.running and self.running: #if the script manager is done
 			self.game.stopped = False #player can move
 			self.running = False #and we're not running
-		else: #if it is
+		elif self.running: #if it is
 			self.script_manager.update() #update it
 			return
 		#check if the player is within our area
