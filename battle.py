@@ -29,6 +29,7 @@ class Battle: #class to manage a battle
 		self.start_battle() #prepare battle
 		self.enemy_mon = pokemon.get_data(type).generate(level) #create a new wild pokemon
 		self.enemy_mon_anim = animation.PartAnimationSet(self.g, self.enemy_mon.data.anim_front) #load its animation
+		self.enemy_mon_anim.set_animation("demo")
 		#initialize task list
 		self.task_list = [self.wait_transition, #wait for transition to complete
 			self.show_wild_mon, #show the wild pokemon appearing
@@ -69,6 +70,7 @@ class Battle: #class to manage a battle
 	def update(self): #update ourselves
 		self.surf.fill((255, 255, 255)) #clear our surface
 		self.curr_task() #call current task
+		self.enemy_mon_anim.update(self.surf, 30, 30)
 		self.dlog.update(self.surf, (0, 144), True) #update dialog
 		if self.transition is not None: #if there is a transition to render
 			if self.transition.update(self.surf): #update and check if transition is done
