@@ -113,6 +113,9 @@ class PokemonData: #class for holding data on a pokemon
 		return int(r) #return experience required
 
 class Pokemon(PokemonData): #class to hold one pokemon
+	#stage multipliers
+	stat_stages = [1./4, 2./7, 1./3, 2./5, 1./2, 2./3, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+	accuracy_stages = [1./3, 3./8, 3./7, 1./2, 3./5, 3./4, 1, 4./3, 5./3, 2, 7./3, 8./3, 3]
 	def __init__(self, data=None, level=None): #initialize ourselves
 		if data is not None: #if data was given
 			self.data = data #store it
@@ -135,6 +138,8 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		self.iv = [random.randrange(0, 32) for x in xrange(6)] #generate individual values
 		self.ev = [0]*6 #and clear evolution values
 		self.stats = [self.calc_stat(x) for x in xrange(6)] #generate pokemon stats
+		self.stages = [0]*5 #move stages
+		self.hp = self.stats[0]
 		#generate abilities
 		self.ability = self.data.ability.normal[random.randrange(0, len(self.data.ability.normal))]
 		self.hidden_ability = self.data.ability.hidden[random.randrange(0, len(self.data.ability.hidden))]
@@ -163,6 +168,24 @@ class Pokemon(PokemonData): #class to hold one pokemon
 				n = 1.0 #default if not affected
 			r = (((t*self.level)/100.0)+5)*n
 		return int(r) #return calculated stat
+	#properties to get stats + stages
+	@property
+	def attack(self):
+		return self.get_stat(1)
+	@property
+	def defense(self):
+		return self.get_stat(2)
+	@property
+	def sp_attack(self):
+		return self.get_stat(3)
+	@property
+	def sp_defense(self):
+		return self.get_stat(4)
+	@property
+	def speed(self):
+		return self.get_stat(5)
+	def get_stat(self, num): #calculate a stat with stages
+		return int(self.stats[num]*Pokemon.stat_stages[self.stages[num-1]+6])
 	def save(self): #save our data
 		s = {} #generate dict of data to save
 		s["name"] = self.name #store our name
@@ -176,6 +199,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		s["abil"] = self.ability
 		s["habil"] = self.hidden_ability
 		s["g"] = self.gender
+		s["hp"] = self.hp
 		return s #return saved data
 	def load(self, s): #load saved data
 		self.data = pokemon_data[s["name"]] #load data structure
@@ -191,6 +215,8 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		self.ability = s["abil"]
 		self.hidden_ability = s["habil"]
 		self.gender = s["g"]
+		self.stages = [0]*5
+		self.hp = s["hp"]
 		#regenerate stats
 		self.stats = [self.calc_stat(x) for x in xrange(6)]
 
