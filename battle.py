@@ -44,7 +44,9 @@ class Battle: #class to manage a battle
 		for mon in trainer.party:
 			s += "A level "+str(mon[1])+" "+mon[0]+"{wait}{br}"
 		s += "That's it!{wait}"
-		self.dlog.draw_text(s)
+		#self.dlog.draw_text(s)
+		self.task_list = [self.done, self.dummy]
+		self.next_task()
 	def show_wild_mon(self): #show wild pokemon info
 		self.dlog.draw_text("{clear}A wild "+self.enemy_mon.show_name+" appeared!{wait}{clear}")
 		self.next_task()
