@@ -8,6 +8,7 @@ import dialog #load dialog manager
 import transition
 import objects #used for the render things
 import data
+import pokemon
 
 #utility functions
 def get_direction_name(direction): #return a name for each direction
@@ -43,6 +44,16 @@ class Player(objects.RenderedNPC):
 		self.in_water = False #whether we're currently walking in water
 		self.notify_dlog = dialog.Dialog(self.g, "notify") #initialize a notify dialog
 		self.move_manager = objects.MovementManager(self) #make a movement manager so we can be controlled in cutscenes
+		self.pokemon = self.g.save.get_prop("player", "pokemon", None) #load pokemon
+		if self.pokemon is None: #if none were loaded
+			self.pokemon = [pokemon.get_data("reuniclus").generate(5)] #make a new one
+		else: #if they were
+			t = self.pokemon
+			self.pokemon = []
+			for data in t: #load pokemon data
+				p = pokemon.Pokemon() #make a new pokemon
+				p.load(data) #load its saved data
+				self.pokemon.append(p) #add it to list of pokemon
 	#move the player
 	def move(self, direction, force=False):
 		same = (direction == self.direction) #true if we aren't changing direction
@@ -173,3 +184,8 @@ class Player(objects.RenderedNPC):
 	def save(self): #save our data
 		self.g.save.set_prop("player", "pos", self.tile_pos[:]) #store our position
 		self.g.save.set_prop("player", "direction", self.direction) #and direction
+		#save pokemon
+		data = []
+		for mon in self.pokemon:
+			data.append(mon.save())
+		self.g.save.set_prop("player", "pokemon", data)
