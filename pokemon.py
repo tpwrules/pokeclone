@@ -20,7 +20,8 @@ class PokemonData: #class for holding data on a pokemon
 		g = data.get_xml_prop
 		d.name = g(dom, "name") #load various root properties
 		d.show_name = g(dom, "show_name")
-		d.anim = g(dom, "anim")
+		d.anim_front = g(dom, "anim_front")
+		d.anim_back = g(dom, "anim_back")
 		d.species = g(dom, "species")
 		d.exp_growth = g(dom, "exp")
 		d.number = int(g(dom, "num"))
