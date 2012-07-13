@@ -8,7 +8,8 @@ import data
 
 #dialog definitions
 dialogs = {"standard": {"file":"dialogboxes/dialog.png", "choice_file":"dialogboxes/dialog_choice_tiles.png", "text_rect":pygame.Rect(11,8,232,32), "font":"fonts/dialog_font.xml"},\
-"notify": {"file":"dialogboxes/selfdialog.png", "choice_file":"dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"fonts/selfdialog_font.xml"}}
+"notify": {"file":"dialogboxes/selfdialog.png", "choice_file":"dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8,8,240,32), "font":"fonts/selfdialog_font.xml"},
+"battle": {"file":"dialogboxes/battledialog.png", "choice_file":"dialogboxes/self_dialog_choice_tiles.png", "text_rect":pygame.Rect(8, 8, 240, 32), "font":"fonts/selfdialog_font.xml"}}
 
 #dialog we can use to ask a choice
 class ChoiceDialog:
