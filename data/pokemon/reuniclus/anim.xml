@@ -26,10 +26,10 @@
 					<part id="thumb_left" from="gelthumb_left" pos="12,7" />
 				</group>
 
-				<group id="hand_right" pos="38,0">
+				<group id="hand_right" pos="54,0">
 					<part id="gelhand_right" from="gelhand_right" pos="0,0" />
 					<part id="innerhand_right" from="innerhand_right" pos="4,11" />
-					<part id="thumb_right" from="gelthumb_right" pos="28,8" />
+					<part id="thumb_right" from="gelthumb_right" pos="16,6" />
 				</group>
 
 			</group>
@@ -41,7 +41,7 @@
 
 			<group id="head" pos="6,12">
 
-				<part id="body" from="inner_body" pos="0,12" />
+				<part id="body" from="inner_body" pos="0,20" />
 				<part id="face" from="face" pos="0,0" />
 				<part id="eyes" from="eye_open" pos="1,9" />
 
