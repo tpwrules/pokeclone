@@ -1,5 +1,6 @@
 <pokemon_data> <!-- data for one pokemon -->
-    <anim>pokemon/reuniclus/anim.xml</anim> <!-- path to animation data -->
+    <anim_front>pokemon/reuniclus/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/reuniclus/anim_back.xml</anim_back> <!-- path to animation data for back -->
 	<!-- internal name of pokemon -->
 	<name>reuniclus</name>
 	<!-- proper name -->
