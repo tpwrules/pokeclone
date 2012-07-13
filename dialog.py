@@ -220,6 +220,9 @@ class Dialog:
 				if self.choice_dialog is not None or self.drawing is True: #if we drew a choice dialog
 					self.drawing = True #we're still drawing
 				else: #otherwise
+					if force: #If we're forcing the dialog box to be drawn
+						surf.blit(self.image, surf_pos) #draw dialog box image
+						surf.blit(self.text_surf, (surf_pos[0]+self.dlog_rect.left, surf_pos[1]+self.dlog_rect.top))
 					return True #say so
 		else: #if we are drawing a choice dialog
 			choice_ret = self.choice_dialog.update(surf, (2, self.image.get_height()+25)) #draw it
