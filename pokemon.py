@@ -202,7 +202,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		s["hp"] = self.hp
 		return s #return saved data
 	def load(self, s): #load saved data
-		self.data = pokemon_data[s["name"]] #load data structure
+		self.data = pokemon_data[s["name"]].data #load data structure
 		#load other properties
 		self.name = s["name"]
 		self.show_name = s["sname"]
