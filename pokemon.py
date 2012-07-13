@@ -119,7 +119,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 			self.generate(level) #and generate a new wild pokemon
 	def generate(self, level): #generate a new wild pokemon
 		self.name = self.data.name #store the name of ourselves
-		self.show_name = self.name
+		self.show_name = self.data.show_name
 		self.level = level #store given level
 		self.curr_exp = self.calc_exp(level) #store the experience we start with
 		self.moves = [] #clear move data
