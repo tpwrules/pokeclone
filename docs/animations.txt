@@ -62,7 +62,7 @@ THE <group> TAG
 The group tag describes a group of parts and other groups to animate with.
 The children of a group inherit the group's position and other information
 (so if a group has a rotation of 20 and a child has a rotation of 40, it will be rotated 60 degrees)
-A group's center is the average of the center of its initial children.
+A group's center is the average of the center of its initial children by default, but can be changed.
 Its origin is always 0,0.
 Each has two mandatory attributes:
 id: the id used to reference the group
@@ -73,6 +73,7 @@ rotation: rotation of the object in degrees
 scale: object's scale factor (1 is default, 0.5 is half, 2 is double, etc)
 xscale: object's scale factor horizontally
 yscale: object's scale factor vertically
+center: center of the group for rotation (this cannot be applied to a part)
 Note that scale, xscale, and yscale can be combined but it doesn't make much sense.
 The scale value will be evaulated first and x and y can be changed individually by the other tags.
 

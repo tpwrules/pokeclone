@@ -203,16 +203,20 @@ class PartAnimationGroup: #class for a layout group in a part animation
 			elif node.localName == "part": #or part
 				self.children.append(PartAnimationPart(set_, g, node))
 			node = node.nextSibling
-		#calculate average center
-		center = [0, 0]
-		numcenters = 0
-		for child in self.children:
-			center[0] += child.center[0]+child.pos[0]
-			center[1] += child.center[1]+child.pos[1]
-			numcenters += 1
-		center[0] /= numcenters
-		center[1] /= numcenters
-		self.center = center
+		if dom.getAttribute("center") == "": #if no center is defined
+			#calculate average center
+			center = [0, 0]
+			numcenters = 0
+			for child in self.children:
+				center[0] += child.center[0]+child.pos[0]
+				center[1] += child.center[1]+child.pos[1]
+				numcenters += 1
+			center[0] /= numcenters
+			center[1] /= numcenters
+			self.center = center
+		else:
+			#load the center
+			self.center = [int(x.strip()) for x in dom.getAttribute("center").split(",")]
 	def render(self, surf, x, y, xs, ys, rot, center): #render ourselves
 		if not self.show: return #return if we're not being shown
 		pos = [(self.pos[0]-center[0]+self.center[0]), (self.pos[1]-center[1]+self.center[1])]
