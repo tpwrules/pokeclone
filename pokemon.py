@@ -193,7 +193,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		s["lev"] = self.level #store other properties
 		s["exp"] = self.curr_exp
 		s["m"] = self.moves
-		s["nat"] = self.nature
+		s["nat"] = self.nature.num
 		s["iv"] = self.iv
 		s["ev"] = self.ev
 		s["abil"] = self.ability
@@ -202,6 +202,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		s["hp"] = self.hp
 		return s #return saved data
 	def load(self, s): #load saved data
+		global pokemon_data, nature_data
 		self.data = pokemon_data[s["name"]].data #load data structure
 		#load other properties
 		self.name = s["name"]
@@ -209,7 +210,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		self.level = s["lev"]
 		self.curr_exp = s["exp"]
 		self.moves = s["m"]
-		self.nature = s["nat"]
+		self.nature = nature_data[s["nat"]]
 		self.iv = s["iv"]
 		self.ev = s["ev"]
 		self.ability = s["abil"]
