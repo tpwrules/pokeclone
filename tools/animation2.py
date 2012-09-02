@@ -241,6 +241,7 @@ class PartAnimation: #class for one animation
 				self.set.parts[cmd[1]].image = img[0] #set data
 				self.set.parts[cmd[1]].center = img[1]
 				self.set.parts[cmd[1]].offset = img[2]
+				self.set.parts[cmd[1]].size = img[3]
 			elif cmd[0] == 4: #if this is an xscale command
 				#calculate step
 				step = (cmd[2]-self.set.parts[cmd[1]].xscale)/self.wait
