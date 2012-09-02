@@ -54,7 +54,7 @@ class PartAnimationPart: #class for one part in the layout
 		if not self.show: return #return if we're not being shown
 		glBindTexture(GL_TEXTURE_2D, self.image)
 
-		glTranslatef(self.pos[0]+self.center[0], self.pos[1]+self.center[1], 0)
+		glTranslatef(self.pos[0]+self.center[0]-self.offset[0], self.pos[1]+self.center[1]-self.offset[1], 0)
 		glScalef(self.xscale, self.yscale, 1)
 		glRotatef(self.rot, 0, 0, 1)
 		glTranslatef(-self.center[0], -self.center[1], 0)
