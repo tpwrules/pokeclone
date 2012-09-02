@@ -7,15 +7,14 @@
 	<part_image from="main" coord="163,3,7,8" center="7,8" id="gelthumb_left" />
 	<part_image from="main" coord="179,3,7,8" center="0,8" id="gelthumb_right" />
 	<part_image from="main" coord="113,18,34,25" center="0,25" id="gelhand_right" />
-	<part_image from="main" coord="104,0,20,14" center="20,14" id="innerhand_left" />
+	<part_image from="main" coord="104,0,20,14" center="24,15" id="innerhand_left" />
 	<part_image from="main" coord="131,0,23,14" center="0,14" id="innerhand_right" />
 	<part_image from="main" coord="73,3,9,9" center="4,9" id="innerear_left" />
 	<part_image from="main" coord="90,3,9,9" center="4,9" id="innerear_right" />
 	<part_image from="main" coord="0,27,20,8" id="eye_closed" />
 	<part_image from="main" coord="0,11,20,8" id="eye_open" />
 	<part_image from="main" coord="194,0,25,25" id="face" />
-	<layout id="whole" pos="30,30">
-
+	<layout id="whole" pos="0,0" center="17,30">
 			<part id="gelbody" pos="0,0" from="gelbody" />
 
 			<group id="hands" pos="-24,6">
@@ -48,9 +47,8 @@
 			</group>
 
 				<part id="gelbody_bump" pos="10,34" from="gelbody_bump" />
-		
 	</layout>
-	<anim id="demo" loopreset="false">
+	<anim id="demo">
 
 		<frame time="15">
 			<rotate id="hand_left" degrees="-30" />
