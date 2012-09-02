@@ -214,8 +214,11 @@ class Dialog:
 					r = self._next_char() #render another character
 			else:
 				self.fill_allowed = True #we can fill the dialog now
-				r = self._next_char() #draw one character
-				r = r or self._next_char() #and another
+				r = False
+				for x in xrange(2):
+					if self._next_char() == True:
+						r = True
+						break
 			if r == True: #if we've finished drawing
 				if self.choice_dialog is not None or self.drawing is True: #if we drew a choice dialog
 					self.drawing = True #we're still drawing
