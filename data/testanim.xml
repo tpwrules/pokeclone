@@ -1,0 +1,25 @@
+<part_anim>
+	<image from="item086.png" id="main" />
+	<image from="item0832.png" id="sub" />
+	<part_image from="main" coord="0,0,48,48" id="icenter" />
+	<part_image from="main" coord="0,0,48,48"  id="itop" />
+	<part_image from="main" coord="0,0,48,48" id="ileft" />
+	<part_image from="main" coord="0,0,48,48"  id="iright" />
+	<part_image from="sub" coord="0,0,24,24"  id="isleft" />
+	<part_image from="sub" coord="0,0,24,24"  id="isright" />
+	<layout id="whole" pos="0,0">
+		<!--<group id="pgtop" pos="0,-50" center="0,0">
+			<part id="psleft" pos="-20,0" from="isleft" />
+			<part id="psright" pos="20,0" from="isright" />
+		</group>
+		<part id="ptop" pos="0,-50" from="itop" />-->
+		<part id="pcenter" pos="0,0" from="icenter" />
+		<!--<part id="pleft" pos="-50,50" from="ileft" />
+		<part id="pright" pos="50,50" from="iright" />-->
+	</layout>
+	<anim id="test">
+		<frame time="30">
+			<rotate id="pcenter" degrees="10" />
+		</frame>
+	</anim>
+</part_anim>
