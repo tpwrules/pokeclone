@@ -154,7 +154,14 @@ class Player(objects.RenderedNPC):
 				if self.game.stopped:
 					self.animator.set_animation(self.move_manager.anim_group+"stand_"+get_direction_name(self.direction))
 					self.animator.update()
+				old = self.move_manager.anim_group #get old animation
 				r = self.step() #handle stepping on a new tile
+				if old != self.move_manager.anim_group: #if animation changed
+					if self.game.stopped: #if game is currently stopped
+						self.animator.set_animation(self.move_manager.anim_group+"stand_"+get_direction_name(self.direction)) #set stand
+					else: #otherwise
+						self.animator.set_animation(self.move_manager.anim_group+"walk_"+get_direction_name(self.direction)) #set walk
+					self.animator.update()
 				if r is True: #if something special happened
 					return #stop doing things
 			else: #if we are
