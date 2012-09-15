@@ -95,7 +95,7 @@ class Player(objects.RenderedNPC):
 				self.tile_pos = (self.tile_pos[0]+1, self.tile_pos[1]) #update tile position
 		self.game.set_obj_pos(self, self.tile_pos) #set our position
 		if not same or not self.was_moving: #if we need to update our animation
-			self.animator.set_animation("walk_"+get_direction_name(direction)) #update our animation
+			self.animator.set_animation(self.move_manager.anim_group+"walk_"+get_direction_name(direction)) #update our animation
 		self.tile_pos = list(self.tile_pos) #convert our position into a list to avoid crashes
 		self.was_moving = self.moving
 	#have the player interact with an object
