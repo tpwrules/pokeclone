@@ -152,7 +152,7 @@ class Player(objects.RenderedNPC):
 			if self.move_frames == 0: #if we aren't moving any more
 				self.moving = False #say so
 				if self.game.stopped:
-					self.animator.set_animation("stand_"+get_direction_name(self.direction))
+					self.animator.set_animation(self.move_manager.anim_group+"stand_"+get_direction_name(self.direction))
 					self.animator.update()
 				r = self.step() #handle stepping on a new tile
 				if r is True: #if something special happened
@@ -177,7 +177,7 @@ class Player(objects.RenderedNPC):
 			self.move(3)
 		if self.moving == False: #if we're not moving
 			self.was_moving = False #clear was moving flag
-			self.animator.set_animation("stand_"+get_direction_name(self.direction)) #set our animation accordingly
+			self.animator.set_animation(self.move_manager.anim_group+"stand_"+get_direction_name(self.direction)) #set our animation accordingly
 			if self.g.curr_keys[settings.key_accept]: #if the accept key is pressed
 				self.interact() #try to interact with something
 		self.animator.update() #update our animation

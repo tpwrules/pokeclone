@@ -39,6 +39,7 @@ class MovementManager:
 		self.move_index = 0 #current movement index
 		self.resume = False #whether we're going to resume the movement list
 		self.moving = False #whether we're moving at all
+		self.anim_group = "" #used animation group, prepended to anim name
 	def load_move_dom(self, dom, repeat=True): #load a movement list from xml
 		move_list = [] #list of movements
 		child = dom.firstChild #get first movement
@@ -72,7 +73,7 @@ class MovementManager:
 			else: #if we're not supposed to repeat
 				self.moving = False #stop doing things
 				self.running = False
-				self.obj.animator.set_animation("stand_"+get_direction_name(self.move_list[-1][0])) #set stand animation
+				self.obj.animator.set_animation(self.anim_group+"stand_"+get_direction_name(self.move_list[-1][0])) #set stand animation
 				return
 		self.curr_movement = self.move_list[self.move_index][:] #load move list
 		self._start_move() #start moving
@@ -90,9 +91,9 @@ class MovementManager:
 			delta = (speed, 0)
 		#set movement animation
 		if speed < 0: #if it's just a wait command
-			self.obj.animator.set_animation("stand_"+get_direction_name(dir)) #set stand animation
+			self.obj.animator.set_animation(self.anim_group+"stand_"+get_direction_name(dir)) #set stand animation
 		else: #otherwise, 
-			self.obj.animator.set_animation("walk_"+get_direction_name(dir)) #set walk animation
+			self.obj.animator.set_animation(self.anim_group+"walk_"+get_direction_name(dir)) #set walk animation
 		self.pix_pos = 0 #number of pixels we've moved within the tile
 		self.delta = delta #store delta
 		self.check_collide = False
