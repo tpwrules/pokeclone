@@ -31,7 +31,7 @@ TILE_GRASS = 5
 TILE_DOUBLEGRASS = 8
 
 def load(s): #load our data
-	pass
+    pass
 
 def save(s): #save our data
-	pass
+    pass

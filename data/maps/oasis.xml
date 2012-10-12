@@ -193,8 +193,8 @@
 			<dialog>Darn. You won, fair then square.{wait}</dialog>
 		</post_script>
 		<party>
-			<pokemon type="zubat" level="5" />
-			<pokemon type="magpole" level="7" />
+			<pokemon type="reuniclus" level="5" />
+			<pokemon type="reuniclus" level="7" />
 		</party>
 		<script>
 			<dialog>What a bore I am...{wait}</dialog>
