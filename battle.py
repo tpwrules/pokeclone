@@ -21,6 +21,7 @@ class Battle: #class to manage a battle
 		self.transition = None #currently runnining transition
 		self.task_list = [] #list of things to do
 		self.curr_task = None #current task function
+		self.anim_ready = False
 	def start_battle(self): #start any type of battle
 		self.dlog = dialog.Dialog(self.g, "battle") #initialize a dialog to draw with
 		self.choice_dlog = dialog.ChoiceDialog(self.g, "battle") #create a choice dialog
@@ -31,22 +32,37 @@ class Battle: #class to manage a battle
 		self.enemy_mon = pokemon.get_data(type).generate(level) #create a new wild pokemon
 		self.enemy_mon_anim = animation.PartAnimationSet(self.g, self.enemy_mon.data.anim_front) #load its animation
 		self.enemy_mon_anim.set_animation("demo")
+		self.anim_ready = True
 		#initialize task list
-		self.task_list = [self.wait_transition, #wait for transition to complete
-			self.show_wild_mon, #show the wild pokemon appearing
-			self.wait_dialog, #wait for the dialog text to finish
-			self.command_loop] #start command loop
+		self.task_list = [[self.wait_transition, None],#wait for transition to complete
+			[self.show_wild_mon, None], #show the wild pokemon appearing
+			[self.wait_dialog, None], #wait for the dialog text to finish
+			[self.command_loop, None]] #start command loop
 		self.next_task() #kick off task list
+        def set_enemy_mon(self, mon, level) :
+               	self.enemy_mon = pokemon.get_data(mon).generate(level) #create a trainers pokemon
+		self.enemy_mon_anim = animation.PartAnimationSet(self.g, self.enemy_mon.data.anim_front) #load its animation
+		self.enemy_mon_anim.set_animation("demo")
+		self.anim_ready = True
+		self.next_task()
+	def draw_text(self, text) :
+                self.dlog.draw_text(text)
+                self.next_task()
 	def start_trainer(self, trainer): #start a trainer battle
 		self.wild = False #this is not a wild battle
 		self.start_battle() #prepare battle
+		self.task_list = []
 		#generate encounter text
-		s = "You encountered "+trainer.class_name+" "+trainer.trainer_name+"{br}with the following pok{ae}mon:{wait}{br}"
+		self.dlog.draw_text(trainer.class_name+" "+trainer.trainer_name+"wants to fight!{wait}{br}")#"{br}with the following pok{ae}mon:{wait}{br}"
+                #self.task_list.append([self.wait_dialog, None])
 		for mon in trainer.party:
-			s += "A level "+str(mon[1])+" "+mon[0]+"{wait}{br}"
-		s += "That's it!{wait}"
+			self.task_list.append([self.draw_text, ("A level "+str(mon[1])+" "+mon[0]+"{wait}{br}",)])
+			self.task_list.append([self.wait_dialog, None])
+                        self.task_list.append([self.set_enemy_mon, (mon[0], mon[1])])
 		#self.dlog.draw_text(s)
-		self.task_list = [self.done, self.dummy]
+		#self.task_list.append([self.wait_dialog, None])
+		self.task_list.append([self.done, None])
+		self.task_list.append([self.dummy, None])
 		self.next_task()
 	def show_wild_mon(self): #show wild pokemon info
 		self.dlog.draw_text("{clear}A wild "+self.enemy_mon.show_name+" appeared!{wait}{clear}")
@@ -58,9 +74,9 @@ class Battle: #class to manage a battle
 		if self.dlog.drawing == False and self.choice_dlog.drawing == False: #if the dialog is not drawing
 			self.next_task() #go to next task
 	def command_loop(self): #command loop start task
-		self.task_list = [self.show_options,
-			self.select_option, #select whether to fight, run, etc
-			self.command_loop] #call ourselves again
+		self.task_list = [[self.show_options, None],
+			[self.select_option, None], #select whether to fight, run, etc
+			[self.command_loop, None]] #call ourselves again
 		self.next_task() #start the next task
 	def show_options(self):
 		self.choice_dlog.show_choices(["Um...", "Er...", "Uh...", "RUN!!"]) #show choices
@@ -71,15 +87,16 @@ class Battle: #class to manage a battle
 		if self.choice_result is None: return #don't do anything if the result is still none
 		if self.choice_result < 3: #if the option is not run
 			self.dlog.draw_text("Nothing happens!{wait}") #show message
-			self.task_list = [self.wait_dialog, self.command_loop]
+			self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
 			self.next_task()
 		else:
 			self.dlog.draw_text("Got away safely!{wait}")
-			self.task_list = [self.wait_dialog, self.done, self.dummy]
+			self.task_list = [[self.wait_dialog, None], [self.done, None], [self.dummy, None]]
 			self.next_task()
 		self.choice_result = None
 	def next_task(self): #go to the next task
-		self.curr_task = self.task_list[0] #set current task
+		self.curr_task = self.task_list[0][0] #set current task
+		self.curr_task_args = self.task_list[0][1]
 		self.task_list = self.task_list[1:] #remove it from task list
 	def done(self): #called when battle is done
 		self.g.battle = None #remove ourselves from globals
@@ -90,8 +107,10 @@ class Battle: #class to manage a battle
 		pass
 	def update(self): #update ourselves
 		self.surf.fill((255, 255, 255)) #clear our surface
-		self.curr_task() #call current task
-		self.enemy_mon_anim.update(self.surf, 30, 30)
+		if self.curr_task_args == None : self.curr_task() #call current task
+                else : self.curr_task(*self.curr_task_args) #call current task
+                #self.wait_dialog()
+		if self.anim_ready : self.enemy_mon_anim.update(self.surf, 30, 30)
 		self.dlog.update(self.surf, (0, 144), True) #update dialog
 		if self.choice_dlog.drawing == True: #if the choice dialog needs to be updated
 			self.choice_result = self.choice_dlog.update(self.surf, (settings.screen_x-self.choice_dlog.dlog_width-4, settings.screen_y-self.choice_dlog.dlog_height-4))
