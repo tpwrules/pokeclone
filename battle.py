@@ -82,7 +82,7 @@ class Battle: #class to manage a battle
     def show_options(self):
         self.choice_dlog.show_choices(["Attack", "Switch", "Bag", "Run"]) #show choices
         self.choice_result = None #clear choice result
-        self.dlog.draw_text("What will " +self.player.activepokemon.name+ " do?")
+        self.dlog.draw_text("What will " +self.player.activepokemon.show_name+ " do?")
         self.next_task()
     def select_option(self): #select a battle option
         if self.choice_result is None: return #don't do anything if the result is still none
