@@ -156,7 +156,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 		#formulas taken from bulbapedia
 		if stat == 0: #if stat is HP, that uses its own calculation
 			t = self.iv[0]+(2*self.data.base.stats[0])+(self.ev[0]/4.0)+100
-			r = ((t*float(self.level))/100.0)+10
+			r = ((t*self.level)/100.0)+10
 		else: #other stats use a different formula
 			t = self.iv[stat]+(2*self.data.base.stats[stat])+(self.ev[stat]/4.0)
 			#factor in nature modifier
@@ -166,7 +166,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
 				n = 0.9 #set nature modifier to give a nerf
 			else:
 				n = 1.0 #default if not affected
-			r = (((t*float(self.level))/100.0)+5)*n
+			r = (((t*self.level)/100.0)+5)*n
 		return int(r) #return calculated stat
 	#properties to get stats + stages
 	@property
