@@ -53,8 +53,8 @@ class Player(objects.RenderedNPC):
             for data in t: #load pokemon data
                 p = pokemon.Pokemon() #make a new pokemon
                 p.load(data) #load its saved data
-                self.pokemon.append(p) #add it to list of pokemon
-                self.party = self.pokemon
+                self.party.append(p) #add it to list of pokemon
+                #self.party = self.pokemon
     #move the player
     def move(self, direction, force=False):
         same = (direction == self.direction) #true if we aren't changing direction
