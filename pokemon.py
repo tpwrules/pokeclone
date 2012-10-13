@@ -38,6 +38,7 @@ class PokemonData: #class for holding data on a pokemon
         d.description = g(t, "desc")
         d.color = g(t, "color")
         d.number = int(g(t, "num"))
+        d.type = g(dom, "type").split("|")
         #load ability data
         self.data.ability = Container()
         self.data.ability.normal = []
@@ -140,6 +141,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
         self.stats = [self.calc_stat(x) for x in xrange(6)] #generate pokemon stats
         self.stages = [0]*5 #move stages
         self.hp = self.stats[0]
+        self.type = self.data.type
         #generate abilities
         self.ability = self.data.ability.normal[random.randrange(0, len(self.data.ability.normal))]
         self.hidden_ability = self.data.ability.hidden[random.randrange(0, len(self.data.ability.hidden))]
@@ -200,6 +202,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
         s["habil"] = self.hidden_ability
         s["g"] = self.gender
         s["hp"] = self.hp
+        s["type"] = self.type
         return s #return saved data
     def load(self, s): #load saved data
         global pokemon_data, nature_data
@@ -218,6 +221,7 @@ class Pokemon(PokemonData): #class to hold one pokemon
         self.gender = s["g"]
         self.stages = [0]*5
         self.hp = s["hp"]
+        self.type = s["type"]
         #regenerate stats
         self.stats = [self.calc_stat(x) for x in xrange(6)]
 
