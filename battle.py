@@ -21,7 +21,8 @@ class Battle: #class to manage a battle
         self.transition = None #currently runnining transition
         self.task_list = [] #list of things to do
         self.curr_task = None #current task function
-        self.anim_ready = False
+        self.front_anim_ready = False
+        self.back_anim_ready = False
         self.player.activepokemon = game.player.party[0]
     def start_battle(self): #start any type of battle
         self.dlog = dialog.Dialog(self.g, "battle") #initialize a dialog to draw with
@@ -33,18 +34,26 @@ class Battle: #class to manage a battle
         self.enemy_mon = pokemon.get_data(type).generate(level) #create a new wild pokemon
         self.enemy_mon_anim = animation.PartAnimationSet(self.g, self.enemy_mon.data.anim_front) #load its animation
         self.enemy_mon_anim.set_animation("demo")
-        self.anim_ready = True
+        self.front_anim_ready = True
         #initialize task list
-        self.task_list = [[self.wait_transition, None],#wait for transition to complete
+        self.task_list = [[self.wait_transition, None], #wait for transition to complete
             [self.show_wild_mon, None], #show the wild pokemon appearing
             [self.wait_dialog, None], #wait for the dialog text to finish
+            [self.draw_text, ("Go, " + self.player.activepokemon.show_name + "!{wait}{br}",)],
+            [self.wait_dialog, None],
+            [self.set_player_mon, None],
             [self.command_loop, None]] #start command loop
         self.next_task() #kick off task list
     def set_enemy_mon(self, mon, level):
         self.enemy_mon = pokemon.get_data(mon).generate(level) #create a trainers pokemon
         self.enemy_mon_anim = animation.PartAnimationSet(self.g, self.enemy_mon.data.anim_front) #load its animation
         self.enemy_mon_anim.set_animation("demo")
-        self.anim_ready = True
+        self.front_anim_ready = True
+        self.next_task()
+    def set_player_mon(self):
+        self.player_mon_anim = animation.PartAnimationSet(self.g, self.player.activepokemon.data.anim_back)
+        self.player_mon_anim.set_animation("demo")
+        self.back_anim_ready = True
         self.next_task()
     def draw_text(self, text):
                 self.dlog.draw_text(text)
@@ -54,12 +63,15 @@ class Battle: #class to manage a battle
         self.start_battle() #prepare battle
         self.task_list = []
         #generate encounter text
-        self.dlog.draw_text(trainer.class_name+" "+trainer.trainer_name+"wants to fight!{wait}{br}")#"{br}with the following pok{ae}mon:{wait}{br}"
-                #self.task_list.append([self.wait_dialog, None])
+        self.dlog.draw_text(trainer.class_name+" "+trainer.trainer_name+" wants to fight!{wait}{br}")
+        self.task_list.append([self.wait_dialog, None])
+        self.task_list.append([self.draw_text, ("Go, " + self.player.activepokemon.show_name + "!{wait}{br}",)])
+        self.task_list.append([self.wait_dialog, None])
+        self.task_list.append([self.set_player_mon, None])
         for mon in trainer.party:
-            self.task_list.append([self.draw_text, ("A level "+str(mon[1])+" "+mon[0]+"{wait}{br}",)])
-            self.task_list.append([self.wait_dialog, None])
             self.task_list.append([self.set_enemy_mon, (mon[0], mon[1])])
+            self.task_list.append([self.draw_text, ("Trainer %(classname)s %(trainername)s sent out a level %(level)s {br}%(monstername)s!{wait}{br}{br}" % dict(classname=trainer.class_name, trainername=trainer.trainer_name, level=str(mon[1]), monstername=mon[0]),)])
+            self.task_list.append([self.wait_dialog, None])
         #self.dlog.draw_text(s)
         #self.task_list.append([self.wait_dialog, None])
         self.task_list.append([self.done, None])
@@ -119,7 +131,11 @@ class Battle: #class to manage a battle
         if self.curr_task_args == None: self.curr_task() #call current task
         else: self.curr_task(*self.curr_task_args) #call current task
         #self.wait_dialog()
-        if self.anim_ready: self.enemy_mon_anim.update(self.surf, 30, 30)
+        if self.front_anim_ready:
+            self.enemy_mon_anim.update(self.surf, 170, 20)
+            #self.enemy_mon_anim.update(self.surf, 30, 30)
+        if self.back_anim_ready:
+            self.player_mon_anim.update(self.surf, 30, 70)
         self.dlog.update(self.surf, (0, 144), True) #update dialog
         if self.choice_dlog.drawing == True: #if the choice dialog needs to be updated
             self.choice_result = self.choice_dlog.update(self.surf, (settings.screen_x-self.choice_dlog.dlog_width-4, settings.screen_y-self.choice_dlog.dlog_height-4))

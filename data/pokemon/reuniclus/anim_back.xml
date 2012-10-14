@@ -7,77 +7,51 @@
 	<part_image from="main" coord="163,3,7,8" center="7,8" id="gelthumb_left" />
 	<part_image from="main" coord="179,3,7,8" center="0,8" id="gelthumb_right" />
 	<part_image from="main" coord="113,18,34,25" center="0,25" id="gelhand_right" />
-	<part_image from="main" coord="104,0,20,14" center="20,14" id="innerhand_left" />
+	<part_image from="main" coord="104,0,20,14" center="24,15" id="innerhand_left" />
 	<part_image from="main" coord="131,0,23,14" center="0,14" id="innerhand_right" />
 	<part_image from="main" coord="73,3,9,9" center="4,9" id="innerear_left" />
 	<part_image from="main" coord="90,3,9,9" center="4,9" id="innerear_right" />
 	<part_image from="main" coord="0,27,20,8" id="eye_closed" />
 	<part_image from="main" coord="0,11,20,8" id="eye_open" />
 	<part_image from="main" coord="194,0,25,25" id="face" />
-	<layout id="whole" pos="30,30">
-
+	<layout id="whole" pos="0,0" center="17,30">
 			<part id="gelbody" pos="0,0" from="gelbody" />
 
 			<group id="hands" pos="-24,6">
 
 				<group id="hand_left" pos="0,0">
 					<part id="gelhand_left" from="gelhand_left" pos="0,0" />
-					<part id="innerhand_left" from="innerhand_left" pos="10,10" />
-					<part id="thumb_left" from="gelthumb_left" pos="12,7" />
 				</group>
 
-				<group id="hand_right" pos="38,0">
+				<group id="hand_right" pos="54,0">
 					<part id="gelhand_right" from="gelhand_right" pos="0,0" />
-					<part id="innerhand_right" from="innerhand_right" pos="4,11" />
-					<part id="thumb_right" from="gelthumb_right" pos="28,8" />
 				</group>
 
 			</group>
-				
-			<group id="ears" pos="2,4">
-				<part id="ear_left" pos="1,0" from="innerear_left" />
-				<part id="ear_right" pos="26,2" from="innerear_right" />
-			</group>
-
-			<group id="head" pos="6,12">
-
-				<part id="body" from="inner_body" pos="0,12" />
-				<part id="face" from="face" pos="0,0" />
-				<part id="eyes" from="eye_open" pos="1,9" />
-
-			</group>
-
-				<part id="gelbody_bump" pos="10,34" from="gelbody_bump" />
-		
 	</layout>
-	<anim id="demo" loopreset="false">
+	<anim id="demo">
 
 		<frame time="15">
 			<rotate id="hand_left" degrees="-30" />
 			<rotate id="hand_right" degrees="30" />
-			<rotate id="head" degrees="-5" />
 		</frame>
 		<frame time="15">			
 			<scale id="gelbody" scale="1.1" />
-			<move id="gelbody_bump" delta="0,2" />
 			<rotate id="hand_left" degrees="30" />
 			<rotate id="hand_right" degrees="-30" />
-			<rotate id="head" degrees="10" />
 			<move id="whole" delta="0,2" />
 		</frame>
 		<frame time="15">
 			<scale id="gelbody" scale="1" />
 			<rotate id="hand_left" degrees="-30" />
 			<rotate id="hand_right" degrees="30" />
-			<rotate id="head" degrees="-15" />
-			<move id="gelbody_bump" delta="0,-2" />
 			<move id="whole" delta="0,-2" />
 		</frame>
 
 		<frame time="15">
 			<rotate id="hand_left" degrees="30" />
 			<rotate id="hand_right" degrees="-30" />
-			<rotate id="head" degrees="10" />
+
 		</frame>
 	</anim>
 </part_anim>
