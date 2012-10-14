@@ -228,8 +228,9 @@ class Game: #class for our game engine
                 #draw an arrow to them
                 pos = self.dialog_talking.pos
                 pos = (pos[0]-self.camera_pos[0]+2, pos[1]-self.camera_pos[1]+10)
-                pygame.draw.polygon(self.surf, (161, 161, 161), [[64, 44], [pos[0]+2, pos[1]+2], [82, 44]])
-                pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 43], pos, [80, 43]])
+                pygame.draw.polygon(self.surf, (161, 161, 161), [[63, 42], [pos[0]-1, pos[1]+1],[pos[0]+1, pos[1]+1],[81, 42]])
+                self.dialog.update(self.surf, (0, 1))
+                pygame.draw.polygon(self.surf, (255, 255, 255), [[64, 42], pos, [80, 42]])
         if self.debug: self.font.render(str(self.g.fps), self.surf, (0, 180)) #draw framerate
         return self.surf #return the rendered surface
     def save(self, fname=None): #save our data
