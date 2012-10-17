@@ -28,6 +28,7 @@ class Battle: #class to manage a battle
         self.dlog = dialog.Dialog(self.g, "battle") #initialize a dialog to draw with
         self.choice_dlog = dialog.ChoiceDialog(self.g, "battle") #create a choice dialog
         self.transition = transition.BattleOpen() #start transitioning to a battle
+        self.options_group = "Actions"
     def start_wild(self, type, level): #start a wild battle
         self.wild = True #this is a wild battle
         self.start_battle() #prepare battle
@@ -56,8 +57,8 @@ class Battle: #class to manage a battle
         self.back_anim_ready = True
         self.next_task()
     def draw_text(self, text):
-                self.dlog.draw_text(text)
-                self.next_task()
+        self.dlog.draw_text(text)
+        self.next_task()
     def start_trainer(self, trainer): #start a trainer battle
         self.wild = False #this is not a wild battle
         self.start_battle() #prepare battle
@@ -92,27 +93,41 @@ class Battle: #class to manage a battle
             [self.command_loop, None]] #call ourselves again
         self.next_task() #start the next task
     def show_options(self):
-        self.choice_dlog.show_choices(["Attack", "Switch", "Bag", "Run"]) #show choices
-        self.choice_result = None #clear choice result
-        self.dlog.draw_text("What will " +self.player.activepokemon.show_name+ " do?")
+        if self.options_group == "Actions":
+            self.choice_dlog.show_choices(["Attack", "Switch", "Bag", "Run"]) #show choices
+            self.choice_result = None #clear choice result
+            self.dlog.draw_text("What will " +self.player.activepokemon.show_name+ " do?")
+        elif self.options_group == "Moves":
+            self.choice_dlog.show_choices([str(movename) for movename in self.player.activepokemon.moves])
+            self.choice_result = None
+        self.next_task()
+    def set_options_group(self, group) :
+        self.options_group = group
         self.next_task()
     def select_option(self): #select a battle option
         if self.choice_result is None: return #don't do anything if the result is still none
-        if self.choice_result == 0: #if the option is not run
-            self.dlog.draw_text(self.player.activepokemon.name+" uses TACKLE!{wait}") #show message
-            self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
-            self.next_task()
-        elif self.choice_result == 1:
-            self.dlog.draw_text("No more pokemon{wait}")
-            self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
-            self.next_task()
-        elif self.choice_result == 2:
-            self.dlog.draw_text("Bags don't exist yet{wait}")
-            self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
-            self.next_task()
-        else:
-            self.dlog.draw_text("Got away safely!{wait}")
-            self.task_list = [[self.wait_dialog, None], [self.done, None], [self.dummy, None]]
+        if self.options_group == "Actions":
+            if self.choice_result == 0: #if the option is not run
+                #self.dlog.draw_text(self.player.activepokemon.name+" uses TACKLE!{wait}") #show message
+                #self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
+                #self.next_task()
+                self.options_group = "Moves"
+                self.next_task()
+            elif self.choice_result == 1:
+                self.dlog.draw_text("No more pokemon{wait}")
+                self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
+                self.next_task()
+            elif self.choice_result == 2:
+                self.dlog.draw_text("Bags don't exist yet{wait}")
+                self.task_list = [[self.wait_dialog, None], [self.command_loop, None]]
+                self.next_task()
+            else:
+                self.dlog.draw_text("Got away safely!{wait}")
+                self.task_list = [[self.wait_dialog, None], [self.done, None], [self.dummy, None]]
+                self.next_task()
+        elif self.options_group == "Moves":
+            self.dlog.draw_text(self.player.activepokemon.name+" uses " + str(self.player.activepokemon.moves[self.choice_result]) + "!{wait}")
+            self.task_list = [[self.wait_dialog, None], [self.set_options_group, ("Actions",)], [self.command_loop, None]]
             self.next_task()
         self.choice_result = None
     def next_task(self): #go to the next task
