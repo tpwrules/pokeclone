@@ -1,0 +1,13 @@
+<move>
+	<name>Softboiled</name>
+	<desc>Heals the user by up to half its full HP. It can be used to heal an ally.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>157</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Softboiled.xml</anim>
+</move>

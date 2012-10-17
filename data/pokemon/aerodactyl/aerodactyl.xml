@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/aerodactyl/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/aerodactyl/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>aerodactyl</name>
+	<!-- proper name -->
+	<show_name>Aerodactyl</show_name>
+	<!-- number of the pokemon -->
+	<num>142</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Fossil</species>
+	<type>rock|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>71</height> <!-- height of pokemon in inches -->
+		<weight>130.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It was regenerated from a dinosaur's genetic matter that was found in amber. It flies with high-pitched cries.</desc>
+		<color>purple</color>
+		<num>142</num>
+	</pokedex>
+	<ability>
+		<normal>rock_head</normal> <!-- various abilities -->
+		<normal>pressure</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>35</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>202</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|2</ev> <!-- ev yield data -->
+		<stats>80|105|65|60|75|130</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">wing_attack</move>
+			<move level="8">agility</move>
+			<move level="15">bite</move>
+			<move level="22">supersonic</move>
+			<move level="29">ancientpower</move>
+			<move level="36">scary_face</move>
+			<move level="43">take_down</move>
+			<move level="50">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

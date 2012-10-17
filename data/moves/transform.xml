@@ -1,0 +1,13 @@
+<move>
+	<name>Transform</name>
+	<desc>The user transforms into a copy of the foe with even the same move set.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>57</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Transform.xml</anim>
+</move>

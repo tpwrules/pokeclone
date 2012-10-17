@@ -1,0 +1,13 @@
+<move>
+	<name>Baton Pass</name>
+	<desc>The user switches out, passing along any stat changes to the new battler.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>127</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Baton_Pass.xml</anim>
+</move>

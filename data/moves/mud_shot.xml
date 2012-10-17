@@ -1,0 +1,13 @@
+<move>
+	<name>Mud Shot</name>
+	<desc>The user attacks by hurling mud. It also reduces the foe's SPEED.</desc>
+	<power>55</power>
+	<acc>95</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>70</effect>
+	<effectacc>100</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Mud_Shot.xml</anim>
+</move>

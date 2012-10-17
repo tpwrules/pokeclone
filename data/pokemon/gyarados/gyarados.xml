@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/gyarados/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/gyarados/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>gyarados</name>
+	<!-- proper name -->
+	<show_name>Gyarados</show_name>
+	<!-- number of the pokemon -->
+	<num>130</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Atrocious</species>
+	<type>water|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>256</height> <!-- height of pokemon in inches -->
+		<weight>518.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It has an extremely aggressive nature. The HYPER BEAM it shoots from its mouth totally incinerates all targets.</desc>
+		<color>blue</color>
+		<num>130</num>
+	</pokedex>
+	<ability>
+		<normal>intimidate</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_2|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>5</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>214</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>95|125|79|60|100|81</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">thrash</move>
+			<move level="20">bite</move>
+			<move level="25">dragon_rage</move>
+			<move level="30">leer</move>
+			<move level="35">twister</move>
+			<move level="40">hydro_pump</move>
+			<move level="45">rain_dance</move>
+			<move level="50">confusion</move>
+			<move level="55">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

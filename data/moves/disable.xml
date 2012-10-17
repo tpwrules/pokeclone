@@ -1,0 +1,13 @@
+<move>
+	<name>Disable</name>
+	<desc>For a few turns, it prevents the foe from using the move it last used.</desc>
+	<power>0</power>
+	<acc>55</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>86</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Disable.xml</anim>
+</move>

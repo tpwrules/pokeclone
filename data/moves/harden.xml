@@ -1,0 +1,13 @@
+<move>
+	<name>Harden</name>
+	<desc>The user stiffens all the muscles in its body to raise its DEFENSE stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>11</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Harden.xml</anim>
+</move>

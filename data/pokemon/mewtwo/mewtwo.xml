@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/mewtwo/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/mewtwo/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>mewtwo</name>
+	<!-- proper name -->
+	<show_name>Mewtwo</show_name>
+	<!-- number of the pokemon -->
+	<num>150</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Genetic</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>79</height> <!-- height of pokemon in inches -->
+		<weight>269.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>A Pok{ae}mon whose genetic code was repeatedly recombined for research. It turned vicious as a result.</desc>
+		<color>purple</color>
+		<num>150</num>
+	</pokedex>
+	<ability>
+		<normal>pressure</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>3</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>120</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>220</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|3|0|0</ev> <!-- ev yield data -->
+		<stats>106|110|90|154|90|130</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">confusion</move>
+			<move level="0">disable</move>
+			<move level="11">barrier</move>
+			<move level="22">mist</move>
+			<move level="33">swift</move>
+			<move level="44">recover</move>
+			<move level="55">safeguard</move>
+			<move level="66">psychic</move>
+			<move level="77">psych_up</move>
+			<move level="88">future_sight</move>
+			<move level="99">amnesia</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/farfetch'd/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/farfetch'd/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>farfetch'd</name>
+	<!-- proper name -->
+	<show_name>Farfetch'd</show_name>
+	<!-- number of the pokemon -->
+	<num>83</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Wild Duck</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>33.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It always walks about with a plant stalk clamped in its beak. The stalk is used for building its nest.</desc>
+		<color>brown</color>
+		<num>83</num>
+	</pokedex>
+	<ability>
+		<normal>keen_eye</normal> <!-- various abilities -->
+		<normal>inner_focus</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>94</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>52|65|55|58|62|60</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">peck</move>
+			<move level="6">sand-attack</move>
+			<move level="11">leer</move>
+			<move level="16">fury_attack</move>
+			<move level="21">jump_kick</move>
+			<move level="26">fury_cutter</move>
+			<move level="31">swords_dance</move>
+			<move level="36">agility</move>
+			<move level="41">slash</move>
+			<move level="46">false_swipe</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

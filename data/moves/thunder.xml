@@ -1,0 +1,13 @@
+<move>
+	<name>Thunder</name>
+	<desc>A brutal lightning attack that may also leave the foe paralyzed.</desc>
+	<power>120</power>
+	<acc>70</acc>
+	<cat>Special</cat>
+	<type>Electric</type>
+	<effect>152</effect>
+	<effectacc>30</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Thunder.xml</anim>
+</move>

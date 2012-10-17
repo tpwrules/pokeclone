@@ -1,0 +1,13 @@
+<move>
+	<name>Yawn</name>
+	<desc>A huge yawn lulls the foe into falling asleep on the next turn.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>187</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Yawn.xml</anim>
+</move>

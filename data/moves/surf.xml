@@ -1,0 +1,13 @@
+<move>
+	<name>Surf</name>
+	<desc>A big wave crashes down on the foe. Can also be used for crossing water.</desc>
+	<power>95</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Surf.xml</anim>
+</move>

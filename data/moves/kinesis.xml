@@ -1,0 +1,13 @@
+<move>
+	<name>Kinesis</name>
+	<desc>The user distracts the foe by bending a spoon. It may lower accuracy.</desc>
+	<power>0</power>
+	<acc>80</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>23</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Kinesis.xml</anim>
+</move>

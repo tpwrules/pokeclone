@@ -1,0 +1,13 @@
+<move>
+	<name>Giga Drain</name>
+	<desc>A harsh attack that absorbs half the damage it inflicted to restore HP.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>3</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Giga_Drain.xml</anim>
+</move>

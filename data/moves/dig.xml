@@ -1,0 +1,13 @@
+<move>
+	<name>Dig</name>
+	<desc>An attack that hits on the 2nd turn. Can also be used to exit dungeons.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Ground</type>
+	<effect>155</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Dig.xml</anim>
+</move>

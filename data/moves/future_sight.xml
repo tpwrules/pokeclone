@@ -1,0 +1,13 @@
+<move>
+	<name>Future Sight</name>
+	<desc>Two turns after this move is used, the foe is attacked psychically.</desc>
+	<power>80</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>148</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Future_Sight.xml</anim>
+</move>

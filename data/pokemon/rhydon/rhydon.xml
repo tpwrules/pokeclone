@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/rhydon/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/rhydon/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>rhydon</name>
+	<!-- proper name -->
+	<show_name>Rhydon</show_name>
+	<!-- number of the pokemon -->
+	<num>112</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Drill</species>
+	<type>ground|rock</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>75</height> <!-- height of pokemon in inches -->
+		<weight>264.6</weight> <!-- weight of pokemon in pounds -->
+		<desc>It begins walking on its hind legs after evolution. It can punch holes through boulders with its horn.</desc>
+		<color>gray</color>
+		<num>112</num>
+	</pokedex>
+	<ability>
+		<normal>lightningrod</normal> <!-- various abilities -->
+		<normal>rock_head</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>204</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>105|130|120|45|45|40</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">horn_attack</move>
+			<move level="0">tail_whip</move>
+			<move level="0">stomp</move>
+			<move level="0">fury_attack</move>
+			<move level="10">stomp</move>
+			<move level="15">fury_attack</move>
+			<move level="24">scary_face</move>
+			<move level="29">psychic</move>
+			<move level="38">horn_drill</move>
+			<move level="46">take_down</move>
+			<move level="58">earthquake</move>
+			<move level="66">megahorn</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

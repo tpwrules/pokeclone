@@ -1,0 +1,13 @@
+<move>
+	<name>Bone Rush</name>
+	<desc>The user strikes the foe with a bone in hand two to five times.</desc>
+	<power>25</power>
+	<acc>80</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Bone_Rush.xml</anim>
+</move>

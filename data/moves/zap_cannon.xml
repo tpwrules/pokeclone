@@ -1,0 +1,13 @@
+<move>
+	<name>Zap Cannon</name>
+	<desc>An electric blast is fired like a cannon to inflict damage and paralyze.</desc>
+	<power>100</power>
+	<acc>50</acc>
+	<cat>Special</cat>
+	<type>Electric</type>
+	<effect>6</effect>
+	<effectacc>100</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Zap_Cannon.xml</anim>
+</move>

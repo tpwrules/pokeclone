@@ -1,0 +1,13 @@
+<move>
+	<name>Megahorn</name>
+	<desc>A brutal ramming attack delivered with a tough and impressive horn.</desc>
+	<power>120</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Bug</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Megahorn.xml</anim>
+</move>

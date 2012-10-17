@@ -1,0 +1,13 @@
+<move>
+	<name>Sunny Day</name>
+	<desc>The sun blazes for five turns, powering up FIRE-type moves.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Fire</type>
+	<effect>137</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Sunny_Day.xml</anim>
+</move>

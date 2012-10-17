@@ -1,0 +1,48 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/kakuna/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/kakuna/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>kakuna</name>
+	<!-- proper name -->
+	<show_name>Kakuna</show_name>
+	<!-- number of the pokemon -->
+	<num>14</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Cocoon</species>
+	<type>bug|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>22.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>This Pok{ae}mon is in a temporary stage while making its body. It is almost completely unable to move on its own.</desc>
+		<color>yellow</color>
+		<num>14</num>
+	</pokedex>
+	<ability>
+		<normal>shed_skin</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>120</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>71</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>45|25|50|25|25|35</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">harden</move>
+			<move level="7">harden</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

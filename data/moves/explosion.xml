@@ -1,0 +1,13 @@
+<move>
+	<name>Explosion</name>
+	<desc>The user explodes to inflict terrible damage even while fainting itself.</desc>
+	<power>250</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>7</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Explosion.xml</anim>
+</move>

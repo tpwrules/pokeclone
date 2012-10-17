@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/zubat/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/zubat/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>zubat</name>
+	<!-- proper name -->
+	<show_name>Zubat</show_name>
+	<!-- number of the pokemon -->
+	<num>41</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Bat</species>
+	<type>poison|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>16.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>It has no eyes. Instead, it relies on its ultrasonic cries for echo location to flit about in darkness.</desc>
+		<color>purple</color>
+		<num>41</num>
+	</pokedex>
+	<ability>
+		<normal>inner_focus</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>54</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>40|45|35|30|40|55</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">leech_life</move>
+			<move level="6">mist</move>
+			<move level="11">supersonic</move>
+			<move level="16">bite</move>
+			<move level="21">wing_attack</move>
+			<move level="26">confuse_ray</move>
+			<move level="31">ice_beam</move>
+			<move level="36">mean_look</move>
+			<move level="41">sonicboom</move>
+			<move level="46">haze</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

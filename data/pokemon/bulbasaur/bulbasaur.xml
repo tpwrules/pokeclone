@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/bulbasaur/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/bulbasaur/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>bulbasaur</name>
+	<!-- proper name -->
+	<show_name>Bulbasaur</show_name>
+	<!-- number of the pokemon -->
+	<num>1</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Seed</species>
+	<type>grass|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>28</height> <!-- height of pokemon in inches -->
+		<weight>15.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>There is a plant seed on its back right from the day this Pok{ae}mon is born. The seed slowly grows larger.</desc>
+		<color>green</color>
+		<num>1</num>
+	</pokedex>
+	<ability>
+		<normal>overgrow</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>64</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>45|49|49|65|65|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="4">growl</move>
+			<move level="7">leech_seed</move>
+			<move level="10">vine_whip</move>
+			<move level="15">poisonpowder</move>
+			<move level="15">sleep_powder</move>
+			<move level="20">razor_leaf</move>
+			<move level="25">sweet_scent</move>
+			<move level="32">growth</move>
+			<move level="39">synthesis</move>
+			<move level="46">solarbeam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

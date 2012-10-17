@@ -1,0 +1,13 @@
+<move>
+	<name>Will-o-wisp</name>
+	<desc>A sinister, bluish white flame is shot at the foe to inflict a burn.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Fire</type>
+	<effect>167</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Will-o-wisp.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Jump Kick</name>
+	<desc>The user jumps up high, then kicks. If it misses, the user hurts itself.</desc>
+	<power>70</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>45</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Jump_Kick.xml</anim>
+</move>

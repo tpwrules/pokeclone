@@ -1,0 +1,13 @@
+<move>
+	<name>Rollout</name>
+	<desc>A 5-turn rolling attack that becomes stronger each time it hits.</desc>
+	<power>30</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Rock</type>
+	<effect>117</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Rollout.xml</anim>
+</move>

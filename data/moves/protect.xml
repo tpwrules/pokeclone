@@ -1,0 +1,13 @@
+<move>
+	<name>Protect</name>
+	<desc>Enables the user to evade all attacks. It may fail if used in succession.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>111</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Protect.xml</anim>
+</move>

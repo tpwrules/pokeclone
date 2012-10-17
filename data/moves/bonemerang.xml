@@ -1,0 +1,13 @@
+<move>
+	<name>Bonemerang</name>
+	<desc>The user throws a bone that hits the foe once, then once again on return.</desc>
+	<power>50</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>44</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Bonemerang.xml</anim>
+</move>

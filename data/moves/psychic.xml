@@ -1,0 +1,13 @@
+<move>
+	<name>Psychic</name>
+	<desc>A strong telekinetic attack. It may also lower the foe's SP. DEF stat.</desc>
+	<power>90</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>72</effect>
+	<effectacc>10</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Psychic.xml</anim>
+</move>

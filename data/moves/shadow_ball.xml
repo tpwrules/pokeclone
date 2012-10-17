@@ -1,0 +1,13 @@
+<move>
+	<name>Shadow Ball</name>
+	<desc>A shadowy blob is hurled at the foe. May also lower the foe's SP. DEF.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ghost</type>
+	<effect>72</effect>
+	<effectacc>20</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Shadow_Ball.xml</anim>
+</move>

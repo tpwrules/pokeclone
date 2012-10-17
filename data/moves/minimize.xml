@@ -1,0 +1,13 @@
+<move>
+	<name>Minimize</name>
+	<desc>The user compresses all the cells in its body to raise its evasiveness.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>108</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Minimize.xml</anim>
+</move>

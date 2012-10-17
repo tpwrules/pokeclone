@@ -1,0 +1,13 @@
+<move>
+	<name>Octazooka</name>
+	<desc>Ink is blasted in the foe's face or eyes to damage and lower accuracy.</desc>
+	<power>65</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>73</effect>
+	<effectacc>50</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Octazooka.xml</anim>
+</move>

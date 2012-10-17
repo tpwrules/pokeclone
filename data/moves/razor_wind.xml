@@ -1,0 +1,13 @@
+<move>
+	<name>Razor Wind</name>
+	<desc>Blades of wind hit the foe on the 2nd turn. It has a high critical-hit ratio.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>39</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Razor_Wind.xml</anim>
+</move>

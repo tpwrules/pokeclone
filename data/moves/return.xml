@@ -1,0 +1,13 @@
+<move>
+	<name>Return</name>
+	<desc>This attack move grows more powerful the more the user likes its TRAINER.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>121</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Return.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Clamp</name>
+	<desc>The foe is clamped and squeezed by the user's shell for two to five turns.</desc>
+	<power>35</power>
+	<acc>75</acc>
+	<cat>Physical</cat>
+	<type>Water</type>
+	<effect>42</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Clamp.xml</anim>
+</move>

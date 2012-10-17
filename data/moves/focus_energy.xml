@@ -1,0 +1,13 @@
+<move>
+	<name>Focus Energy</name>
+	<desc>The user takes a deep breath and focuses to raise its critical-hit ratio.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>47</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Focus_Energy.xml</anim>
+</move>

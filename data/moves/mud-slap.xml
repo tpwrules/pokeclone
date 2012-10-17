@@ -1,0 +1,13 @@
+<move>
+	<name>Mud-slap</name>
+	<desc>Mud is hurled in the foe's face to inflict damage and lower its accuracy.</desc>
+	<power>20</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>73</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Mud-slap.xml</anim>
+</move>

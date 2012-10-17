@@ -1,0 +1,13 @@
+<move>
+	<name>Spore</name>
+	<desc>The user scatters bursts of fine spores that induce sleep.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Spore.xml</anim>
+</move>

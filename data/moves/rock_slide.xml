@@ -1,0 +1,13 @@
+<move>
+	<name>Rock Slide</name>
+	<desc>Large boulders are hurled at the foe. It may make the foe flinch.</desc>
+	<power>75</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Rock</type>
+	<effect>31</effect>
+	<effectacc>30</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Rock_Slide.xml</anim>
+</move>

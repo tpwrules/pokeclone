@@ -1,0 +1,13 @@
+<move>
+	<name>Psybeam</name>
+	<desc>A peculiar ray is shot at the foe. It may leave the foe confused.</desc>
+	<power>65</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>76</effect>
+	<effectacc>10</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Psybeam.xml</anim>
+</move>

@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/crobat/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/crobat/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>crobat</name>
+	<!-- proper name -->
+	<show_name>Crobat</show_name>
+	<!-- number of the pokemon -->
+	<num>169</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Bat</species>
+	<type>poison|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>71</height> <!-- height of pokemon in inches -->
+		<weight>165.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>The development of wings on its legs enables it to fly fast but also makes it tough to stop and rest.</desc>
+		<color>purple</color>
+		<num>169</num>
+	</pokedex>
+	<ability>
+		<normal>inner_focus</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>90</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>204</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|3</ev> <!-- ev yield data -->
+		<stats>85|90|80|70|80|130</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">screech</move>
+			<move level="0">leech_life</move>
+			<move level="0">mist</move>
+			<move level="0">supersonic</move>
+			<move level="6">mist</move>
+			<move level="11">supersonic</move>
+			<move level="16">bite</move>
+			<move level="21">wing_attack</move>
+			<move level="28">confuse_ray</move>
+			<move level="35">ice_beam</move>
+			<move level="42">mean_look</move>
+			<move level="49">sonicboom</move>
+			<move level="56">haze</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

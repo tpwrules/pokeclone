@@ -1,0 +1,13 @@
+<move>
+	<name>Perish Song</name>
+	<desc>Any battler that hears this faints in three turns unless it switches.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>114</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Perish_Song.xml</anim>
+</move>

@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/marill/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/marill/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>marill</name>
+	<!-- proper name -->
+	<show_name>Marill</show_name>
+	<!-- number of the pokemon -->
+	<num>183</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Aqua Mouse</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>18.7</weight> <!-- weight of pokemon in pounds -->
+		<desc>The end of its tail serves as a buoy that keeps it from drowning, even in a vicious current.</desc>
+		<color>blue</color>
+		<num>183</num>
+	</pokedex>
+	<ability>
+		<normal>thick_fat</normal> <!-- various abilities -->
+		<normal>huge_power</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|fairy</group> <!-- breeding group of pokemon -->
+		<cycles>10</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>58</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>2|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>70|20|50|20|50|40</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="3">defense_curl</move>
+			<move level="6">tail_whip</move>
+			<move level="10">water_gun</move>
+			<move level="15">rollout</move>
+			<move level="21">bubblebeam</move>
+			<move level="28">double-edge</move>
+			<move level="36">rain_dance</move>
+			<move level="45">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

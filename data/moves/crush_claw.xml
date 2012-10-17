@@ -1,0 +1,13 @@
+<move>
+	<name>Crush Claw</name>
+	<desc>The foe is attacked with sharp claws. It may also lower the foe's DEFENSE.</desc>
+	<power>75</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>69</effect>
+	<effectacc>50</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Crush_Claw.xml</anim>
+</move>

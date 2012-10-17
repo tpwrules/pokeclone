@@ -1,0 +1,13 @@
+<move>
+	<name>Crunch</name>
+	<desc>The foe is crunched with sharp fangs. It may lower the foe's SP. DEF.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Dark</type>
+	<effect>72</effect>
+	<effectacc>20</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Crunch.xml</anim>
+</move>

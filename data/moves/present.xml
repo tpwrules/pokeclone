@@ -1,0 +1,13 @@
+<move>
+	<name>Present</name>
+	<desc>The foe is given a booby-trapped gift. It restores HP sometimes, however.</desc>
+	<power>1</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>122</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Present.xml</anim>
+</move>

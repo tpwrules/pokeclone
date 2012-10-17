@@ -1,0 +1,13 @@
+<move>
+	<name>Smellingsalt</name>
+	<desc>Doubly effective on a paralyzed foe, but it also cures the foe's paralysis.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>171</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Smellingsalt.xml</anim>
+</move>

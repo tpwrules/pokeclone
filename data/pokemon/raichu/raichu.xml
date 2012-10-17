@@ -1,0 +1,50 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/raichu/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/raichu/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>raichu</name>
+	<!-- proper name -->
+	<show_name>Raichu</show_name>
+	<!-- number of the pokemon -->
+	<num>26</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Mouse</species>
+	<type>electric</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>66.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its electric charges can reach even 100,000 volts. Careless contact can cause even an Indian elephant to faint.</desc>
+		<color>yellow</color>
+		<num>26</num>
+	</pokedex>
+	<ability>
+		<normal>static</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground|fairy</group> <!-- breeding group of pokemon -->
+		<cycles>10</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>122</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|3</ev> <!-- ev yield data -->
+		<stats>60|90|55|90|80|100</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">thundershock</move>
+			<move level="0">tail_whip</move>
+			<move level="0">quick_attack</move>
+			<move level="0">thunderbolt</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

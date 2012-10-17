@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/dewgong/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/dewgong/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>dewgong</name>
+	<!-- proper name -->
+	<show_name>Dewgong</show_name>
+	<!-- number of the pokemon -->
+	<num>87</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Sea Lion</species>
+	<type>water|ice</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>67</height> <!-- height of pokemon in inches -->
+		<weight>264.6</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its body is covered with a pure white fur. The colder the weather, the more active it becomes.</desc>
+		<color>white</color>
+		<num>87</num>
+	</pokedex>
+	<ability>
+		<normal>thick_fat</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>176</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|2|0</ev> <!-- ev yield data -->
+		<stats>90|70|80|70|95|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">counter</move>
+			<move level="0">headbutt</move>
+			<move level="0">growl</move>
+			<move level="0">icy_wind</move>
+			<move level="0">aurora_beam</move>
+			<move level="9">growl</move>
+			<move level="17">icy_wind</move>
+			<move level="21">aurora_beam</move>
+			<move level="29">rest</move>
+			<move level="34">leech_seed</move>
+			<move level="42">take_down</move>
+			<move level="51">ice_beam</move>
+			<move level="64">safeguard</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

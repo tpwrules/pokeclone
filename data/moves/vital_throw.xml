@@ -1,0 +1,13 @@
+<move>
+	<name>Vital Throw</name>
+	<desc>Makes the user attack after the foe. In return, it will not miss.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>78</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Vital_Throw.xml</anim>
+</move>

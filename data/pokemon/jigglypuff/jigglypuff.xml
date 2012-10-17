@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/jigglypuff/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/jigglypuff/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>jigglypuff</name>
+	<!-- proper name -->
+	<show_name>Jigglypuff</show_name>
+	<!-- number of the pokemon -->
+	<num>39</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Balloon</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>12.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It captivates foes with its huge, round eyes, then lulls them to sleep by singing a soothing melody.</desc>
+		<color>pink</color>
+		<num>39</num>
+	</pokedex>
+	<ability>
+		<normal>cute_charm</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>170</catch>
+	<gender>25.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>fairy</group> <!-- breeding group of pokemon -->
+		<cycles>10</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>76</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>2|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>115|45|20|45|25|20</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">sing</move>
+			<move level="4">defense_curl</move>
+			<move level="9">pound</move>
+			<move level="14">disable</move>
+			<move level="19">rollout</move>
+			<move level="24">doubleslap</move>
+			<move level="29">rest</move>
+			<move level="34">body_slam</move>
+			<move level="39">mimic</move>
+			<move level="44">supersonic</move>
+			<move level="49">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

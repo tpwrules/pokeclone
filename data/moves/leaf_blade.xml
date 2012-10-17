@@ -1,0 +1,13 @@
+<move>
+	<name>Leaf Blade</name>
+	<desc>The foe is slashed with a sharp leaf. It has a high critical-hit ratio.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Grass</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Leaf_Blade.xml</anim>
+</move>

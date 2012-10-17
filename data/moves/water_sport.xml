@@ -1,0 +1,13 @@
+<move>
+	<name>Water Sport</name>
+	<desc>Weakens FIRE-type attacks while the user is in the battle.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Water</type>
+	<effect>210</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Water_Sport.xml</anim>
+</move>

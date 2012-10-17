@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/miltank/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/miltank/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>miltank</name>
+	<!-- proper name -->
+	<show_name>Miltank</show_name>
+	<!-- number of the pokemon -->
+	<num>241</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Milk Cow</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>166.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>If it has just had a baby, the milk it produces contains much more nutrition than usual.</desc>
+		<color>pink</color>
+		<num>241</num>
+	</pokedex>
+	<ability>
+		<normal>thick_fat</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>0.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>200</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>95|80|105|40|70|100</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="4">growl</move>
+			<move level="8">defense_curl</move>
+			<move level="13">stomp</move>
+			<move level="19">milk_drink</move>
+			<move level="26">bide</move>
+			<move level="34">rollout</move>
+			<move level="43">body_slam</move>
+			<move level="53">heal_bell</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Hyper Beam</name>
+	<desc>A severely damaging attack that makes the user rest on the next turn.</desc>
+	<power>150</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>80</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Hyper_Beam.xml</anim>
+</move>

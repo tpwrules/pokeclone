@@ -1,0 +1,13 @@
+<move>
+	<name>Constrict</name>
+	<desc>The foe is attacked with long tentacles or vines. It may lower SPEED.</desc>
+	<power>10</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>70</effect>
+	<effectacc>10</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Constrict.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Wrap</name>
+	<desc>A long body or vines are used to wrap the foe for two to five turns.</desc>
+	<power>15</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>42</effect>
+	<effectacc>100</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Wrap.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Sheer Cold</name>
+	<desc>The foe is attacked with ultimate cold that causes fainting if it hits.</desc>
+	<power>1</power>
+	<acc>30</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>38</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Sheer_Cold.xml</anim>
+</move>

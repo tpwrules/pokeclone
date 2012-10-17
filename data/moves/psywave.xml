@@ -1,0 +1,13 @@
+<move>
+	<name>Psywave</name>
+	<desc>The foe is attacked with an odd, hot energy wave that varies in intensity.</desc>
+	<power>1</power>
+	<acc>80</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>88</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Psywave.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Thunderbolt</name>
+	<desc>A strong electrical attack that may also leave the foe paralyzed.</desc>
+	<power>95</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Electric</type>
+	<effect>6</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Thunderbolt.xml</anim>
+</move>

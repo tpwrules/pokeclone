@@ -1,0 +1,13 @@
+<move>
+	<name>Metal Sound</name>
+	<desc>A horrible metallic screech is used to sharply lower the foe's SP. DEF.</desc>
+	<power>0</power>
+	<acc>85</acc>
+	<cat>Status</cat>
+	<type>Steel</type>
+	<effect>62</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Metal_Sound.xml</anim>
+</move>

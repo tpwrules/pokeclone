@@ -1,0 +1,13 @@
+<move>
+	<name>Charm</name>
+	<desc>The foe is charmed by the user's cute appeals, sharply cutting its ATTACK.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>58</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Charm.xml</anim>
+</move>

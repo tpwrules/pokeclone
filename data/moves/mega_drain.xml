@@ -1,0 +1,13 @@
+<move>
+	<name>Mega Drain</name>
+	<desc>A tough attack that drains half the damage it inflicted to restore HP.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>3</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Mega_Drain.xml</anim>
+</move>

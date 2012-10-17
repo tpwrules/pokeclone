@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/poliwag/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/poliwag/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>poliwag</name>
+	<!-- proper name -->
+	<show_name>Poliwag</show_name>
+	<!-- number of the pokemon -->
+	<num>60</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Tadpole</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>27.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its slick black skin is thin and damp. A part of its internal organs can be seen through the skin as a spiral pattern.</desc>
+		<color>blue</color>
+		<num>60</num>
+	</pokedex>
+	<ability>
+		<normal>water_absorb</normal> <!-- various abilities -->
+		<normal>damp</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>77</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>40|50|40|40|40|90</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">bubble</move>
+			<move level="7">hypnosis</move>
+			<move level="13">water_gun</move>
+			<move level="19">doubleslap</move>
+			<move level="25">rain_dance</move>
+			<move level="31">body_slam</move>
+			<move level="37">belly_drum</move>
+			<move level="43">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

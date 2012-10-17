@@ -1,0 +1,13 @@
+<move>
+	<name>Acid Armor</name>
+	<desc>The user alters its cells to liquefy itself and sharply raise DEFENSE.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Poison</type>
+	<effect>51</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Acid_Armor.xml</anim>
+</move>

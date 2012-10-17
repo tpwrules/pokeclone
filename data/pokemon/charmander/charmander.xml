@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/charmander/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/charmander/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>charmander</name>
+	<!-- proper name -->
+	<show_name>Charmander</show_name>
+	<!-- number of the pokemon -->
+	<num>4</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Lizard</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>18.7</weight> <!-- weight of pokemon in pounds -->
+		<desc>From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.</desc>
+		<color>red</color>
+		<num>4</num>
+	</pokedex>
+	<ability>
+		<normal>blaze</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>65</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>39|52|43|60|50|65</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">scratch</move>
+			<move level="0">growl</move>
+			<move level="7">ember</move>
+			<move level="13">metal_claw</move>
+			<move level="19">smokescreen</move>
+			<move level="25">scary_face</move>
+			<move level="31">flamethrower</move>
+			<move level="37">slash</move>
+			<move level="43">dragon_rage</move>
+			<move level="49">fire_spin</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

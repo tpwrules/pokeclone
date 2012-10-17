@@ -1,0 +1,13 @@
+<move>
+	<name>Heat Wave</name>
+	<desc>The user exhales a heated breath to attack. It may also inflict a burn.</desc>
+	<power>100</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>4</effect>
+	<effectacc>10</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Heat_Wave.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Flatter</name>
+	<desc>Flattery is used to confuse the foe, but its SP. ATK also rises.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Dark</type>
+	<effect>166</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Flatter.xml</anim>
+</move>

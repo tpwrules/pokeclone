@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/chinchou/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/chinchou/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>chinchou</name>
+	<!-- proper name -->
+	<show_name>Chinchou</show_name>
+	<!-- number of the pokemon -->
+	<num>170</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Angler</species>
+	<type>water|electric</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>26.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>On the dark ocean floor, its only means of communication is its constantly flashing lights.</desc>
+		<color>blue</color>
+		<num>170</num>
+	</pokedex>
+	<ability>
+		<normal>volt_absorb</normal> <!-- various abilities -->
+		<normal>illuminate</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_2</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>90</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>75|38|38|56|56|67</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">bubble</move>
+			<move level="0">thunder_wave</move>
+			<move level="5">supersonic</move>
+			<move level="13">flail</move>
+			<move level="17">water_gun</move>
+			<move level="25">spark</move>
+			<move level="29">confuse_ray</move>
+			<move level="37">take_down</move>
+			<move level="41">hydro_pump</move>
+			<move level="49">guillotine</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

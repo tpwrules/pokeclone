@@ -1,0 +1,13 @@
+<move>
+	<name>Ember</name>
+	<desc>The foe is attacked with small flames. The foe may suffer a burn.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>4</effect>
+	<effectacc>10</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Ember.xml</anim>
+</move>

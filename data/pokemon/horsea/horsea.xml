@@ -1,0 +1,54 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/horsea/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/horsea/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>horsea</name>
+	<!-- proper name -->
+	<show_name>Horsea</show_name>
+	<!-- number of the pokemon -->
+	<num>116</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Dragon</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>17.6</weight> <!-- weight of pokemon in pounds -->
+		<desc>It maintains balance using its tail, which is wound up like a coil. It may spray ink from its mouth.</desc>
+		<color>blue</color>
+		<num>116</num>
+	</pokedex>
+	<ability>
+		<normal>swift_swim</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>225</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>83</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>30|40|70|70|25|60</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">bubble</move>
+			<move level="8">smokescreen</move>
+			<move level="15">leer</move>
+			<move level="22">water_gun</move>
+			<move level="29">twister</move>
+			<move level="36">agility</move>
+			<move level="43">hydro_pump</move>
+			<move level="50">confusion</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

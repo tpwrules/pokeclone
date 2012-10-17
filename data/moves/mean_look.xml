@@ -1,0 +1,13 @@
+<move>
+	<name>Mean Look</name>
+	<desc>The foe is fixed with a mean look that prevents it from escaping.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>106</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Mean_Look.xml</anim>
+</move>

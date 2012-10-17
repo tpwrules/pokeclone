@@ -1,0 +1,13 @@
+<move>
+	<name>Block</name>
+	<desc>The user blocks the foe's way with arms spread wide to prevent escape.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>106</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Block.xml</anim>
+</move>

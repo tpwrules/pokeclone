@@ -1,0 +1,13 @@
+<move>
+	<name>Sandstorm</name>
+	<desc>A 5-turn sandstorm that damages all types except ROCK, GROUND, and STEEL.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Rock</type>
+	<effect>115</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Sandstorm.xml</anim>
+</move>

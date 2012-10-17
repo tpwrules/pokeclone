@@ -1,0 +1,13 @@
+<move>
+	<name>Sand-attack</name>
+	<desc>A lot of sand is hurled in the foe's face, reducing its accuracy.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Ground</type>
+	<effect>23</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Sand-attack.xml</anim>
+</move>

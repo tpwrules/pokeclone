@@ -1,0 +1,13 @@
+<move>
+	<name>Steel Wing</name>
+	<desc>The foe is hit with wings of steel. It may also raise the user's DEFENSE.</desc>
+	<power>70</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Steel</type>
+	<effect>138</effect>
+	<effectacc>10</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Steel_Wing.xml</anim>
+</move>

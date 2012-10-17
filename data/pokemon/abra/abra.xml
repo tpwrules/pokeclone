@@ -1,0 +1,48 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/abra/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/abra/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>abra</name>
+	<!-- proper name -->
+	<show_name>Abra</show_name>
+	<!-- number of the pokemon -->
+	<num>63</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Psi</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>35</height> <!-- height of pokemon in inches -->
+		<weight>43.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>It sleeps for 18 hours a day. It uses a variety of extrasensory powers even while asleep.</desc>
+		<color>brown</color>
+		<num>63</num>
+	</pokedex>
+	<ability>
+		<normal>synchronize</normal> <!-- various abilities -->
+		<normal>inner_focus</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>200</catch>
+	<gender>75.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>humanshape</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>73</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>25|20|15|105|55|90</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">teleport</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

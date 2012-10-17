@@ -1,0 +1,13 @@
+<move>
+	<name>Conversion 2</name>
+	<desc>The user changes type to make itself resistant to the last attack it took.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>93</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Conversion_2.xml</anim>
+</move>

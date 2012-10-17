@@ -1,0 +1,13 @@
+<move>
+	<name>Nature Power</name>
+	<desc>An attack that changes type depending on the user's location.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>173</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Nature_Power.xml</anim>
+</move>

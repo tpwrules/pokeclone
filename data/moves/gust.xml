@@ -1,0 +1,13 @@
+<move>
+	<name>Gust</name>
+	<desc>Strikes the foe with a gust of wind whipped up by wings.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Flying</type>
+	<effect>149</effect>
+	<effectacc>0</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Gust.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Mirror Move</name>
+	<desc>The user counters the move last used by the foe with the same move.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Flying</type>
+	<effect>9</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Mirror_Move.xml</anim>
+</move>

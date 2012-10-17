@@ -1,0 +1,61 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/kingler/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/kingler/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>kingler</name>
+	<!-- proper name -->
+	<show_name>Kingler</show_name>
+	<!-- number of the pokemon -->
+	<num>99</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Pincer</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>51</height> <!-- height of pokemon in inches -->
+		<weight>132.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its large and hard pincer has 10,000- horsepower strength. However, being so big, it is unwieldy to move.</desc>
+		<color>red</color>
+		<num>99</num>
+	</pokedex>
+	<ability>
+		<normal>hyper_cutter</normal> <!-- various abilities -->
+		<normal>shell_armor</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>206</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>55|130|115|50|50|75</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">metal_claw</move>
+			<move level="0">bubble</move>
+			<move level="0">leer</move>
+			<move level="0">vicegrip</move>
+			<move level="0">harden</move>
+			<move level="5">leer</move>
+			<move level="12">vicegrip</move>
+			<move level="16">harden</move>
+			<move level="23">thunderbolt</move>
+			<move level="27">stomp</move>
+			<move level="38">guillotine</move>
+			<move level="42">protect</move>
+			<move level="57">crabhammer</move>
+			<move level="65">flail</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

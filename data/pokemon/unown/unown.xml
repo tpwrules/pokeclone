@@ -1,0 +1,47 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/unown/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/unown/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>unown</name>
+	<!-- proper name -->
+	<show_name>Unown</show_name>
+	<!-- number of the pokemon -->
+	<num>201</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Symbol</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>11.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its flat, thin body is always stuck on walls. Its shape appears to have some meaning.</desc>
+		<color>black</color>
+		<num>201</num>
+	</pokedex>
+	<ability>
+		<normal>levitate</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>225</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>40</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>61</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>48|72|48|72|48|48</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">hidden_power</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

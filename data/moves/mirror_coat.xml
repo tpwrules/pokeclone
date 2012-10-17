@@ -1,0 +1,13 @@
+<move>
+	<name>Mirror Coat</name>
+	<desc>A retaliation move that pays back the foe's special attack double.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>144</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Mirror_Coat.xml</anim>
+</move>

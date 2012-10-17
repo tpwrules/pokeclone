@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/sentret/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/sentret/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>sentret</name>
+	<!-- proper name -->
+	<show_name>Sentret</show_name>
+	<!-- number of the pokemon -->
+	<num>161</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Scout</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>13.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>It stands on its tail so it can see a long way. If it spots an enemy, it cries loudly to warn its kind.</desc>
+		<color>brown</color>
+		<num>161</num>
+	</pokedex>
+	<ability>
+		<normal>run_away</normal> <!-- various abilities -->
+		<normal>keen_eye</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>57</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>35|46|34|35|45|20</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">scratch</move>
+			<move level="4">defense_curl</move>
+			<move level="7">quick_attack</move>
+			<move level="12">fury_swipes</move>
+			<move level="17">swords_dance</move>
+			<move level="24">slam</move>
+			<move level="31">scratch</move>
+			<move level="40">rest</move>
+			<move level="49">amnesia</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

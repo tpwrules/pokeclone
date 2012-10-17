@@ -1,0 +1,13 @@
+<move>
+	<name>Ice Beam</name>
+	<desc>The foe is struck with an icy beam. It may freeze the foe solid.</desc>
+	<power>95</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>5</effect>
+	<effectacc>10</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Ice_Beam.xml</anim>
+</move>

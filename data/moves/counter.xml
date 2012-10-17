@@ -1,0 +1,13 @@
+<move>
+	<name>Counter</name>
+	<desc>A retaliation move that counters any physical hit with double the damage.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>89</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Counter.xml</anim>
+</move>

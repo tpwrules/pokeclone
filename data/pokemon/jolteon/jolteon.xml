@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/jolteon/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/jolteon/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>jolteon</name>
+	<!-- proper name -->
+	<show_name>Jolteon</show_name>
+	<!-- number of the pokemon -->
+	<num>135</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Lightning</species>
+	<type>electric</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>54.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>If it is angered or startled, the fur all over its body bristles like sharp needles that pierce foes.</desc>
+		<color>yellow</color>
+		<num>135</num>
+	</pokedex>
+	<ability>
+		<normal>volt_absorb</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>35</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>197</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|2</ev> <!-- ev yield data -->
+		<stats>65|65|60|110|95|130</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">tail_whip</move>
+			<move level="0">swords_dance</move>
+			<move level="8">sand-attack</move>
+			<move level="16">thundershock</move>
+			<move level="23">quick_attack</move>
+			<move level="30">double_kick</move>
+			<move level="36">pin_missile</move>
+			<move level="42">thunder_wave</move>
+			<move level="47">agility</move>
+			<move level="52">thunder</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

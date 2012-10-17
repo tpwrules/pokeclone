@@ -1,0 +1,13 @@
+<move>
+	<name>Waterfall</name>
+	<desc>A powerful charge attack. It can also be used to climb a waterfall.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Water</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Waterfall.xml</anim>
+</move>

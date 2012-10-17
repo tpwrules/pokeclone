@@ -1,0 +1,13 @@
+<move>
+	<name>Growl</name>
+	<desc>The user growls in a cute way, making the foe lower its ATTACK stat.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>18</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Growl.xml</anim>
+</move>

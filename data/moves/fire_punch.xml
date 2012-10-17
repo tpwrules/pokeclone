@@ -1,0 +1,13 @@
+<move>
+	<name>Fire Punch</name>
+	<desc>The foe is punched with a fiery fist. It may leave the foe with a burn.</desc>
+	<power>75</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fire</type>
+	<effect>4</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Fire_Punch.xml</anim>
+</move>

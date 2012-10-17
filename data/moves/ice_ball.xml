@@ -1,0 +1,13 @@
+<move>
+	<name>Ice Ball</name>
+	<desc>A 5-turn rolling attack that becomes stronger each time it rolls.</desc>
+	<power>30</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Ice</type>
+	<effect>117</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Ice_Ball.xml</anim>
+</move>

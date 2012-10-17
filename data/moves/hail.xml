@@ -1,0 +1,13 @@
+<move>
+	<name>Hail</name>
+	<desc>A hailstorm lasting five turns damages all Pok{ae}mon except the ICE-type.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Ice</type>
+	<effect>164</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Hail.xml</anim>
+</move>

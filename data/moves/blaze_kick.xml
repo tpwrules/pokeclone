@@ -1,0 +1,13 @@
+<move>
+	<name>Blaze Kick</name>
+	<desc>A fiery kick with a high critical-hit ratio. It may also burn the foe.</desc>
+	<power>85</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Fire</type>
+	<effect>200</effect>
+	<effectacc>10</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Blaze_Kick.xml</anim>
+</move>

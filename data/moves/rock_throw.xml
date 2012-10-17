@@ -1,0 +1,13 @@
+<move>
+	<name>Rock Throw</name>
+	<desc>The foe is attacked with a shower of small, easily thrown rocks.</desc>
+	<power>50</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Rock</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Rock_Throw.xml</anim>
+</move>

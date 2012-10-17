@@ -1,0 +1,13 @@
+<move>
+	<name>Pain Split</name>
+	<desc>The user adds its HP to the foe's HP, then equally shares the total HP.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>91</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Pain_Split.xml</anim>
+</move>

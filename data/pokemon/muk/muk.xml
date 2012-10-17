@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/muk/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/muk/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>muk</name>
+	<!-- proper name -->
+	<show_name>Muk</show_name>
+	<!-- number of the pokemon -->
+	<num>89</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Sludge</species>
+	<type>poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>66.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is usually undetectable because it blends in with the ground. Touching it can cause terrible poisoning.</desc>
+		<color>purple</color>
+		<num>89</num>
+	</pokedex>
+	<ability>
+		<normal>stench</normal> <!-- various abilities -->
+		<normal>sticky_hold</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>indeterminate</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>157</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>105|105|75|65|100|50</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">poison_gas</move>
+			<move level="0">pound</move>
+			<move level="0">harden</move>
+			<move level="4">harden</move>
+			<move level="8">disable</move>
+			<move level="13">sludge</move>
+			<move level="19">minimize</move>
+			<move level="26">screech</move>
+			<move level="34">acid_armor</move>
+			<move level="47">sludge_bomb</move>
+			<move level="61">pay_day</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

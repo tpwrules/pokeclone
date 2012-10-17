@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/jynx/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/jynx/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>jynx</name>
+	<!-- proper name -->
+	<show_name>Jynx</show_name>
+	<!-- number of the pokemon -->
+	<num>124</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Human Shape</species>
+	<type>ice|psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>55</height> <!-- height of pokemon in inches -->
+		<weight>89.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>It speaks using a language that sounds human. Research is under way to determine what is being said.</desc>
+		<color>red</color>
+		<num>124</num>
+	</pokedex>
+	<ability>
+		<normal>oblivious</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>0.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>humanshape</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>137</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|2|0|0</ev> <!-- ev yield data -->
+		<stats>65|50|35|115|95|95</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">pound</move>
+			<move level="0">lick</move>
+			<move level="0">lovely_kiss</move>
+			<move level="0">powder_snow</move>
+			<move level="9">lovely_kiss</move>
+			<move level="13">powder_snow</move>
+			<move level="21">doubleslap</move>
+			<move level="25">ice_punch</move>
+			<move level="35">mean_look</move>
+			<move level="41">surf</move>
+			<move level="51">body_slam</move>
+			<move level="57">perish_song</move>
+			<move level="67">blizzard</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

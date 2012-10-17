@@ -1,0 +1,13 @@
+<move>
+	<name>Drill Peck</name>
+	<desc>A corkscrewing attack with the sharp beak acting as a drill.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Flying</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Drill_Peck.xml</anim>
+</move>

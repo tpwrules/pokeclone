@@ -1,0 +1,13 @@
+<move>
+	<name>Extremespeed</name>
+	<desc>A blindingly speedy charge attack that always goes before any other.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>103</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Extremespeed.xml</anim>
+</move>

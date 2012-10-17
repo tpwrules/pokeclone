@@ -1,0 +1,13 @@
+<move>
+	<name>Brick Break</name>
+	<desc>An attack that also breaks any barrier like LIGHT SCREEN and REFLECT.</desc>
+	<power>75</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>186</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Brick_Break.xml</anim>
+</move>

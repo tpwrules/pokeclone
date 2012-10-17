@@ -1,0 +1,52 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/starmie/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/starmie/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>starmie</name>
+	<!-- proper name -->
+	<show_name>Starmie</show_name>
+	<!-- number of the pokemon -->
+	<num>121</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Mysterious</species>
+	<type>water|psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>176.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>This Pok{ae}mon has a geometric body. Because of its body, the locals suspect that it is an alien creature.</desc>
+		<color>purple</color>
+		<num>121</num>
+	</pokedex>
+	<ability>
+		<normal>illuminate</normal> <!-- various abilities -->
+		<normal>natural_cure</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>207</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|2</ev> <!-- ev yield data -->
+		<stats>60|75|85|100|85|115</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">water_gun</move>
+			<move level="0">rapid_spin</move>
+			<move level="0">recover</move>
+			<move level="0">swift</move>
+			<move level="33">confuse_ray</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

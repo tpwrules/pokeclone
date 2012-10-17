@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/lugia/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/lugia/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>lugia</name>
+	<!-- proper name -->
+	<show_name>Lugia</show_name>
+	<!-- number of the pokemon -->
+	<num>249</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Diving</species>
+	<type>psychic|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>205</height> <!-- height of pokemon in inches -->
+		<weight>476.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is said to be the guardian of the seas. It is rumored to have been seen on the night of a storm.</desc>
+		<color>white</color>
+		<num>249</num>
+	</pokedex>
+	<ability>
+		<normal>pressure</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>3</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>120</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>220</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|3|0</ev> <!-- ev yield data -->
+		<stats>106|90|130|90|154|110</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">whirlwind</move>
+			<move level="11">safeguard</move>
+			<move level="22">gust</move>
+			<move level="33">recover</move>
+			<move level="44">hydro_pump</move>
+			<move level="55">rain_dance</move>
+			<move level="66">swift</move>
+			<move level="77">aeroblast</move>
+			<move level="88">ancientpower</move>
+			<move level="99">future_sight</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

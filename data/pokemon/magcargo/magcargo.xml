@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/magcargo/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/magcargo/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>magcargo</name>
+	<!-- proper name -->
+	<show_name>Magcargo</show_name>
+	<!-- number of the pokemon -->
+	<num>219</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Lava</species>
+	<type>fire|rock</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>121.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its brittle shell occasionally spouts intense flames that circulate throughout its body.</desc>
+		<color>red</color>
+		<num>219</num>
+	</pokedex>
+	<ability>
+		<normal>magma_armor</normal> <!-- various abilities -->
+		<normal>flame_body</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>indeterminate</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>154</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>50|50|120|80|80|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">mega_kick</move>
+			<move level="0">smog</move>
+			<move level="0">ember</move>
+			<move level="0">rock_throw</move>
+			<move level="8">ember</move>
+			<move level="15">rock_throw</move>
+			<move level="22">harden</move>
+			<move level="29">amnesia</move>
+			<move level="36">flamethrower</move>
+			<move level="48">rock_slide</move>
+			<move level="60">body_slam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

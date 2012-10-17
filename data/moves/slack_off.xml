@@ -1,0 +1,13 @@
+<move>
+	<name>Slack Off</name>
+	<desc>The user slacks off and restores its HP by half its full HP.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>32</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Slack_Off.xml</anim>
+</move>

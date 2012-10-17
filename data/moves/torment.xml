@@ -1,0 +1,13 @@
+<move>
+	<name>Torment</name>
+	<desc>It enrages the foe, making it incapable of using the same move successively.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Dark</type>
+	<effect>165</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Torment.xml</anim>
+</move>

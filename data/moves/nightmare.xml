@@ -1,0 +1,13 @@
+<move>
+	<name>Nightmare</name>
+	<desc>A sleeping foe is shown a nightmare that inflicts some damage every turn.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Ghost</type>
+	<effect>107</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Nightmare.xml</anim>
+</move>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/lickitung/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/lickitung/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>lickitung</name>
+	<!-- proper name -->
+	<show_name>Lickitung</show_name>
+	<!-- number of the pokemon -->
+	<num>108</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Licking</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>144.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its tongue is twice the length of its body. It can be moved like an arm for grabbing food and attacking.</desc>
+		<color>pink</color>
+		<num>108</num>
+	</pokedex>
+	<ability>
+		<normal>own_tempo</normal> <!-- various abilities -->
+		<normal>oblivious</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>127</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>2|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>90|55|75|60|75|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">lick</move>
+			<move level="7">supersonic</move>
+			<move level="12">defense_curl</move>
+			<move level="18">jump_kick</move>
+			<move level="23">stomp</move>
+			<move level="29">wrap</move>
+			<move level="34">disable</move>
+			<move level="40">slam</move>
+			<move level="45">screech</move>
+			<move level="51">fury_attack</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

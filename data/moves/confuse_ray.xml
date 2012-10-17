@@ -1,0 +1,13 @@
+<move>
+	<name>Confuse Ray</name>
+	<desc>The foe is exposed to a sinister ray that triggers confusion.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Ghost</type>
+	<effect>49</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Confuse_Ray.xml</anim>
+</move>

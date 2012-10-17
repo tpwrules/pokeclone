@@ -1,0 +1,13 @@
+<move>
+	<name>Volt Tackle</name>
+	<desc>The user throws an electrified tackle. It hurts the user a little.</desc>
+	<power>120</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Electric</type>
+	<effect>198</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Volt_Tackle.xml</anim>
+</move>

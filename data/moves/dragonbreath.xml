@@ -1,0 +1,13 @@
+<move>
+	<name>Dragonbreath</name>
+	<desc>The foe is hit with an incredible blast of breath that may also paralyze.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Dragon</type>
+	<effect>6</effect>
+	<effectacc>30</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Dragonbreath.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Grudge</name>
+	<desc>If the user faints, this move deletes the PP of the move that finished it.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Ghost</type>
+	<effect>194</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Grudge.xml</anim>
+</move>

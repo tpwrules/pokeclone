@@ -1,0 +1,13 @@
+<move>
+	<name>Agility</name>
+	<desc>The user relaxes and lightens its body to sharply boost its SPEED.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>52</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Agility.xml</anim>
+</move>

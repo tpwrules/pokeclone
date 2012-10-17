@@ -1,0 +1,13 @@
+<move>
+	<name>Strength</name>
+	<desc>The foe is slugged at maximum power. Can also be used to move boulders.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Strength.xml</anim>
+</move>

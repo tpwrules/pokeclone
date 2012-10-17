@@ -1,0 +1,13 @@
+<move>
+	<name>Featherdance</name>
+	<desc>The foe is covered with a mass of down that sharply cuts the ATTACK stat.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Flying</type>
+	<effect>58</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Featherdance.xml</anim>
+</move>

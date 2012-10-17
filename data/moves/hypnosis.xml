@@ -1,0 +1,13 @@
+<move>
+	<name>Hypnosis</name>
+	<desc>Hypnotic suggestion is used to make the foe fall into a deep sleep.</desc>
+	<power>0</power>
+	<acc>60</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Hypnosis.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Karate Chop</name>
+	<desc>The foe is attacked with a sharp chop. It has a high critical-hit ratio.</desc>
+	<power>50</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Karate_Chop.xml</anim>
+</move>

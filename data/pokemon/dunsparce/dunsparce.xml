@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/dunsparce/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/dunsparce/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>dunsparce</name>
+	<!-- proper name -->
+	<show_name>Dunsparce</show_name>
+	<!-- number of the pokemon -->
+	<num>206</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Land Snake</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>59</height> <!-- height of pokemon in inches -->
+		<weight>30.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>If spotted, it escapes by burrowing with its tail. It can hover just slightly using its wings.</desc>
+		<color>yellow</color>
+		<num>206</num>
+	</pokedex>
+	<ability>
+		<normal>serene_grace</normal> <!-- various abilities -->
+		<normal>run_away</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>75</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>100|70|70|65|65|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">rage</move>
+			<move level="4">defense_curl</move>
+			<move level="11">mega_kick</move>
+			<move level="14">glare</move>
+			<move level="21">rollout</move>
+			<move level="24">spite</move>
+			<move level="31">pursuit</move>
+			<move level="34">screech</move>
+			<move level="41">take_down</move>
+			<move level="44">flail</move>
+			<move level="51">rolling_kick</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

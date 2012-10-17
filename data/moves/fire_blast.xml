@@ -1,0 +1,13 @@
+<move>
+	<name>Fire Blast</name>
+	<desc>The foe is hit with an intense flame. It may leave the target with a burn.</desc>
+	<power>120</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>4</effect>
+	<effectacc>10</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Fire_Blast.xml</anim>
+</move>

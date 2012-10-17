@@ -1,0 +1,13 @@
+<move>
+	<name>Curse</name>
+	<desc>A move that works differently for the GHOST-type and all the other types.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>???</type>
+	<effect>109</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Curse.xml</anim>
+</move>

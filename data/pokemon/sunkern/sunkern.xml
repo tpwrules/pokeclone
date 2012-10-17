@@ -1,0 +1,54 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/sunkern/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/sunkern/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>sunkern</name>
+	<!-- proper name -->
+	<show_name>Sunkern</show_name>
+	<!-- number of the pokemon -->
+	<num>191</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Seed</species>
+	<type>grass</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>12</height> <!-- height of pokemon in inches -->
+		<weight>4.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>It lives by drinking only dewdrops from under the leaves of plants. It is said that it eats nothing else.</desc>
+		<color>yellow</color>
+		<num>191</num>
+	</pokedex>
+	<ability>
+		<normal>chlorophyll</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>235</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>52</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>30|30|30|30|30|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">absorb</move>
+			<move level="6">growth</move>
+			<move level="13">mega_drain</move>
+			<move level="18">fly</move>
+			<move level="25">rolling_kick</move>
+			<move level="30">sunny_day</move>
+			<move level="37">synthesis</move>
+			<move level="42">giga_drain</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

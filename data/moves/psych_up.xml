@@ -1,0 +1,13 @@
+<move>
+	<name>Psych Up</name>
+	<desc>The user hypnotizes itself into copying any stat change made by the foe.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>143</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Psych_Up.xml</anim>
+</move>

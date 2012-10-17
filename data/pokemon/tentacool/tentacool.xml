@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/tentacool/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/tentacool/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>tentacool</name>
+	<!-- proper name -->
+	<show_name>Tentacool</show_name>
+	<!-- number of the pokemon -->
+	<num>72</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Jellyfish</species>
+	<type>water|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>35</height> <!-- height of pokemon in inches -->
+		<weight>100.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its eyes are as transparent as crystals. From them, it shoots mysterious beams of light.</desc>
+		<color>blue</color>
+		<num>72</num>
+	</pokedex>
+	<ability>
+		<normal>clear_body</normal> <!-- various abilities -->
+		<normal>liquid_ooze</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>105</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|1|0</ev> <!-- ev yield data -->
+		<stats>40|40|35|50|100|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">poison_sting</move>
+			<move level="6">supersonic</move>
+			<move level="12">constrict</move>
+			<move level="19">acid</move>
+			<move level="25">bubblebeam</move>
+			<move level="30">wrap</move>
+			<move level="36">barrier</move>
+			<move level="43">screech</move>
+			<move level="49">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

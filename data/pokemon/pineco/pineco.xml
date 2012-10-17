@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/pineco/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/pineco/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>pineco</name>
+	<!-- proper name -->
+	<show_name>Pineco</show_name>
+	<!-- number of the pokemon -->
+	<num>204</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Bagworm</species>
+	<type>bug</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>15.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>It hangs and waits for flying-insect prey to come near. It does not move about much on its own.</desc>
+		<color>gray</color>
+		<num>204</num>
+	</pokedex>
+	<ability>
+		<normal>sturdy</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>60</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>50|65|90|35|35|15</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">protect</move>
+			<move level="8">selfdestruct</move>
+			<move level="15">take_down</move>
+			<move level="22">rapid_spin</move>
+			<move level="29">bide</move>
+			<move level="36">explosion</move>
+			<move level="43">spikes</move>
+			<move level="50">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

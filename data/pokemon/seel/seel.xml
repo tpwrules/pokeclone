@@ -1,0 +1,54 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/seel/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/seel/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>seel</name>
+	<!-- proper name -->
+	<show_name>Seel</show_name>
+	<!-- number of the pokemon -->
+	<num>86</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Sea Lion</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>198.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>Covered with light blue fur, its hide is thick and tough. It is active in bitter cold of minus 40 degrees Fahrenheit.</desc>
+		<color>white</color>
+		<num>86</num>
+	</pokedex>
+	<ability>
+		<normal>thick_fat</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>100</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|1|0</ev> <!-- ev yield data -->
+		<stats>65|45|55|45|70|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">headbutt</move>
+			<move level="9">growl</move>
+			<move level="17">icy_wind</move>
+			<move level="21">aurora_beam</move>
+			<move level="29">rest</move>
+			<move level="37">take_down</move>
+			<move level="41">ice_beam</move>
+			<move level="49">safeguard</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

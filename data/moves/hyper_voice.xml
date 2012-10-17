@@ -1,0 +1,13 @@
+<move>
+	<name>Hyper Voice</name>
+	<desc>The user lets loose a horribly loud shout with the power to damage.</desc>
+	<power>90</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Hyper_Voice.xml</anim>
+</move>

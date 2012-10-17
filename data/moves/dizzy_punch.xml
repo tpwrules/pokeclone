@@ -1,0 +1,13 @@
+<move>
+	<name>Dizzy Punch</name>
+	<desc>The foe is hit with a rhythmic punch that may leave it confused.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>76</effect>
+	<effectacc>20</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Dizzy_Punch.xml</anim>
+</move>

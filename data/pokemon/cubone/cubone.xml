@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/cubone/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/cubone/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>cubone</name>
+	<!-- proper name -->
+	<show_name>Cubone</show_name>
+	<!-- number of the pokemon -->
+	<num>104</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Lonely</species>
+	<type>ground</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>14.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>It wears the skull of its dead mother on its head. When it becomes lonesome, it is said to cry loudly.</desc>
+		<color>brown</color>
+		<num>104</num>
+	</pokedex>
+	<ability>
+		<normal>rock_head</normal> <!-- various abilities -->
+		<normal>lightningrod</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>87</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>50|50|95|40|50|35</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">growl</move>
+			<move level="5">tail_whip</move>
+			<move level="9">bone_club</move>
+			<move level="13">headbutt</move>
+			<move level="17">leer</move>
+			<move level="21">focus_energy</move>
+			<move level="25">bonemerang</move>
+			<move level="29">rage</move>
+			<move level="33">false_swipe</move>
+			<move level="37">thrash</move>
+			<move level="41">bone_rush</move>
+			<move level="45">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Spider Web</name>
+	<desc>Ensnares the foe  with sticky string so it doesn't flee or switch out.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Bug</type>
+	<effect>106</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Spider_Web.xml</anim>
+</move>

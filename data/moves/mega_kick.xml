@@ -1,0 +1,13 @@
+<move>
+	<name>Mega Kick</name>
+	<desc>The foe is attacked by a kick fired with muscle-packed power.</desc>
+	<power>120</power>
+	<acc>75</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Mega_Kick.xml</anim>
+</move>

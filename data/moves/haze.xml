@@ -1,0 +1,13 @@
+<move>
+	<name>Haze</name>
+	<desc>Eliminates all stat changes among all Pok{ae}mon engaged in battle.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Ice</type>
+	<effect>25</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Haze.xml</anim>
+</move>

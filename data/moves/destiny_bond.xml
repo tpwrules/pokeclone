@@ -1,0 +1,13 @@
+<move>
+	<name>Destiny Bond</name>
+	<desc>If the user faints, the foe delivering the final hit also faints.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Ghost</type>
+	<effect>98</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Destiny_Bond.xml</anim>
+</move>

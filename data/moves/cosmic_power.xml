@@ -1,0 +1,13 @@
+<move>
+	<name>Cosmic Power</name>
+	<desc>The user absorbs a mystic power to raise its DEFENSE and SP. DEF.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>206</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Cosmic_Power.xml</anim>
+</move>

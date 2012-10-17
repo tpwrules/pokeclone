@@ -1,0 +1,13 @@
+<move>
+	<name>Imprison</name>
+	<desc>Prevents foes from using any move that is also known by the user.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>192</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Imprison.xml</anim>
+</move>

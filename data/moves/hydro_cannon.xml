@@ -1,0 +1,13 @@
+<move>
+	<name>Hydro Cannon</name>
+	<desc>The foe is hit with a watery cannon. The user can't move on the next turn.</desc>
+	<power>150</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>80</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Hydro_Cannon.xml</anim>
+</move>

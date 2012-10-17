@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/ponyta/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/ponyta/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>ponyta</name>
+	<!-- proper name -->
+	<show_name>Ponyta</show_name>
+	<!-- number of the pokemon -->
+	<num>77</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Fire Horse</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>66.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its body is light, and its legs are incredibly powerful. It can clear Ayers Rock in one leap.</desc>
+		<color>yellow</color>
+		<num>77</num>
+	</pokedex>
+	<ability>
+		<normal>run_away</normal> <!-- various abilities -->
+		<normal>flash_fire</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>152</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>50|85|55|65|65|90</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">quick_attack</move>
+			<move level="5">growl</move>
+			<move level="9">tail_whip</move>
+			<move level="14">ember</move>
+			<move level="19">stomp</move>
+			<move level="25">fire_spin</move>
+			<move level="31">take_down</move>
+			<move level="38">agility</move>
+			<move level="45">thundershock</move>
+			<move level="53">fire_blast</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

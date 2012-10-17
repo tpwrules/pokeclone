@@ -1,0 +1,13 @@
+<move>
+	<name>Beat Up</name>
+	<desc>All party Pok{ae}mon join in the attack. The more allies, the more damage.</desc>
+	<power>10</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Dark</type>
+	<effect>154</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Beat_Up.xml</anim>
+</move>

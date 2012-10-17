@@ -1,0 +1,13 @@
+<move>
+	<name>Pound</name>
+	<desc>A physical attack delivered with a long tail or a foreleg, etc.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Pound.xml</anim>
+</move>

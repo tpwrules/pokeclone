@@ -1,0 +1,54 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/murkrow/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/murkrow/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>murkrow</name>
+	<!-- proper name -->
+	<show_name>Murkrow</show_name>
+	<!-- number of the pokemon -->
+	<num>198</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Darkness</species>
+	<type>dark|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>4.6</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is said that when chased, it lures its attacker onto dark mountain trails where the foe will get lost.</desc>
+		<color>black</color>
+		<num>198</num>
+	</pokedex>
+	<ability>
+		<normal>insomnia</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>30</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>107</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>60|85|42|85|42|91</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">peck</move>
+			<move level="9">mist</move>
+			<move level="14">pursuit</move>
+			<move level="22">haze</move>
+			<move level="27">night_shade</move>
+			<move level="35">faint_attack</move>
+			<move level="40">razor_wind</move>
+			<move level="48">mean_look</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

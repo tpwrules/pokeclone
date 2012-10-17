@@ -1,0 +1,13 @@
+<move>
+	<name>Aeroblast</name>
+	<desc>A vortex of air is shot at the foe. It has a high critical-hit ratio.</desc>
+	<power>100</power>
+	<acc>95</acc>
+	<cat>Special</cat>
+	<type>Flying</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Aeroblast.xml</anim>
+</move>

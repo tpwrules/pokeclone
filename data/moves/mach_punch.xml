@@ -1,0 +1,13 @@
+<move>
+	<name>Mach Punch</name>
+	<desc>A punch thrown at blinding speed. It is certain to strike first.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>103</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Mach_Punch.xml</anim>
+</move>

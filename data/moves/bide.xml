@@ -1,0 +1,13 @@
+<move>
+	<name>Bide</name>
+	<desc>The user endures attacks for two turns, then strikes back double.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>26</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Bide.xml</anim>
+</move>

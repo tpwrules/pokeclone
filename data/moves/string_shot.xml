@@ -1,0 +1,13 @@
+<move>
+	<name>String Shot</name>
+	<desc>The foe is bound with strings shot from the mouth to reduce its SPEED.</desc>
+	<power>0</power>
+	<acc>95</acc>
+	<cat>Status</cat>
+	<type>Bug</type>
+	<effect>20</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_String_Shot.xml</anim>
+</move>

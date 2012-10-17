@@ -1,0 +1,13 @@
+<move>
+	<name>Faint Attack</name>
+	<desc>The user draws up close to the foe disarmingly, then hits without fail.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Special</cat>
+	<type>Dark</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Faint_Attack.xml</anim>
+</move>

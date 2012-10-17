@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/espeon/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/espeon/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>espeon</name>
+	<!-- proper name -->
+	<show_name>Espeon</show_name>
+	<!-- number of the pokemon -->
+	<num>196</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Sun</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>35</height> <!-- height of pokemon in inches -->
+		<weight>58.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>By reading air currents, it can predict things such as the weather or its foe's next move.</desc>
+		<color>purple</color>
+		<num>196</num>
+	</pokedex>
+	<ability>
+		<normal>synchronize</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>35</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>197</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|2|0|0</ev> <!-- ev yield data -->
+		<stats>65|65|60|130|95|110</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">tail_whip</move>
+			<move level="0">swords_dance</move>
+			<move level="8">sand-attack</move>
+			<move level="16">confusion</move>
+			<move level="23">quick_attack</move>
+			<move level="30">swift</move>
+			<move level="36">psybeam</move>
+			<move level="42">psych_up</move>
+			<move level="47">psychic</move>
+			<move level="52">morning_sun</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

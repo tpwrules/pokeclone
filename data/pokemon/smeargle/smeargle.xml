@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/smeargle/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/smeargle/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>smeargle</name>
+	<!-- proper name -->
+	<show_name>Smeargle</show_name>
+	<!-- number of the pokemon -->
+	<num>235</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Painter</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>127.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>Once it becomes an adult, it has a tendency to let its comrades plant footprints on its back.</desc>
+		<color>white</color>
+		<num>235</num>
+	</pokedex>
+	<ability>
+		<normal>own_tempo</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>106</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>55|20|35|20|45|75</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">sketch</move>
+			<move level="11">sketch</move>
+			<move level="21">sketch</move>
+			<move level="31">sketch</move>
+			<move level="41">sketch</move>
+			<move level="51">sketch</move>
+			<move level="61">sketch</move>
+			<move level="71">sketch</move>
+			<move level="81">sketch</move>
+			<move level="91">sketch</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

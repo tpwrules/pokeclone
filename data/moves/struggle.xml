@@ -1,0 +1,13 @@
+<move>
+	<name>Struggle</name>
+	<desc>An attack that is used only if there is no PP. It also hurts the user.</desc>
+	<power>50</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>48</effect>
+	<effectacc>0</effectacc>
+	<pp>1</pp>
+	<maxpp>1</maxpp>
+	<anim>anim_Struggle.xml</anim>
+</move>

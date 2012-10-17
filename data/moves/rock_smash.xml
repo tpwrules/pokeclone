@@ -1,0 +1,13 @@
+<move>
+	<name>Rock Smash</name>
+	<desc>An attack that may also cut DEFENSE. It can also smash cracked boulders.</desc>
+	<power>20</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>69</effect>
+	<effectacc>50</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Rock_Smash.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Triple Kick</name>
+	<desc>A 3-kick attack that becomes more powerful with each successive hit.</desc>
+	<power>10</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>104</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Triple_Kick.xml</anim>
+</move>

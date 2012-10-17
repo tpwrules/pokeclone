@@ -1,0 +1,13 @@
+<move>
+	<name>Hi Jump Kick</name>
+	<desc>A strong jumping knee kick. If it misses, the user is hurt.</desc>
+	<power>85</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>45</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Hi_Jump_Kick.xml</anim>
+</move>

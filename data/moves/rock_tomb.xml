@@ -1,0 +1,13 @@
+<move>
+	<name>Rock Tomb</name>
+	<desc>Boulders are hurled at the foe. It also lowers the foe's SPEED if it hits.</desc>
+	<power>50</power>
+	<acc>80</acc>
+	<cat>Special</cat>
+	<type>Rock</type>
+	<effect>70</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Rock_Tomb.xml</anim>
+</move>

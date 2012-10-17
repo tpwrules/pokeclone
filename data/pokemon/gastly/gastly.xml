@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/gastly/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/gastly/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>gastly</name>
+	<!-- proper name -->
+	<show_name>Gastly</show_name>
+	<!-- number of the pokemon -->
+	<num>92</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Gas</species>
+	<type>ghost|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>51</height> <!-- height of pokemon in inches -->
+		<weight>0.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>A being that exists as a thin gas. It can topple an Indian elephant by enveloping the prey in two seconds.</desc>
+		<color>purple</color>
+		<num>92</num>
+	</pokedex>
+	<ability>
+		<normal>levitate</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>indeterminate</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>95</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>30|35|30|100|35|80</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">hypnosis</move>
+			<move level="0">lick</move>
+			<move level="8">spite</move>
+			<move level="13">curse</move>
+			<move level="16">night_shade</move>
+			<move level="21">confuse_ray</move>
+			<move level="28">dream_eater</move>
+			<move level="33">destiny_bond</move>
+			<move level="36">shadow_ball</move>
+			<move level="41">nightmare</move>
+			<move level="48">mean_look</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

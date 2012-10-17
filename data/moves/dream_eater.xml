@@ -1,0 +1,13 @@
+<move>
+	<name>Dream Eater</name>
+	<desc>Absorbs half the damage it inflicted on a sleeping foe to restore HP.</desc>
+	<power>100</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>8</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Dream_Eater.xml</anim>
+</move>

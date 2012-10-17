@@ -1,0 +1,13 @@
+<move>
+	<name>Pin Missile</name>
+	<desc>Sharp pins are shot at the foe and hit two to five times at once.</desc>
+	<power>14</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Bug</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Pin_Missile.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Shock Wave</name>
+	<desc>A rapid jolt of electricity strikes the foe. It can't be evaded.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Special</cat>
+	<type>Electric</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Shock_Wave.xml</anim>
+</move>

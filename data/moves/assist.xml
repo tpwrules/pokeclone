@@ -1,0 +1,13 @@
+<move>
+	<name>Assist</name>
+	<desc>The user randomly picks and uses a move of an allied Pok{ae}mon.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>180</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Assist.xml</anim>
+</move>

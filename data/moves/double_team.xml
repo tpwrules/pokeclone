@@ -1,0 +1,13 @@
+<move>
+	<name>Double Team</name>
+	<desc>The user creates illusory copies of itself to raise its evasiveness.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>16</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Double_Team.xml</anim>
+</move>

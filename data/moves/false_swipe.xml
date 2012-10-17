@@ -1,0 +1,13 @@
+<move>
+	<name>False Swipe</name>
+	<desc>A restrained attack that always leaves the foe with at least 1 HP.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>101</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_False_Swipe.xml</anim>
+</move>

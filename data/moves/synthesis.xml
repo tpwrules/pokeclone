@@ -1,0 +1,13 @@
+<move>
+	<name>Synthesis</name>
+	<desc>Restores the user's HP. The amount of HP regained varies with the weather.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>133</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Synthesis.xml</anim>
+</move>

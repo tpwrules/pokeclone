@@ -1,0 +1,13 @@
+<move>
+	<name>Sleep Powder</name>
+	<desc>A sleep-inducing dust is scattered in high volume around a foe.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Sleep_Powder.xml</anim>
+</move>

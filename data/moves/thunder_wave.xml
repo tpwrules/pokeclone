@@ -1,0 +1,13 @@
+<move>
+	<name>Thunder Wave</name>
+	<desc>A weak electric shock that is sure to cause paralysis if it hits.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Electric</type>
+	<effect>67</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Thunder_Wave.xml</anim>
+</move>

@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/doduo/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/doduo/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>doduo</name>
+	<!-- proper name -->
+	<show_name>Doduo</show_name>
+	<!-- number of the pokemon -->
+	<num>84</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Twin Bird</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>55</height> <!-- height of pokemon in inches -->
+		<weight>86.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>A two-headed Pok{ae}mon that was discovered as a sudden mutation. It runs at a pace of over 60 miles per hour.</desc>
+		<color>brown</color>
+		<num>84</num>
+	</pokedex>
+	<ability>
+		<normal>run_away</normal> <!-- various abilities -->
+		<normal>early_bird</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>96</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>35|85|45|35|35|75</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">peck</move>
+			<move level="0">growl</move>
+			<move level="9">pursuit</move>
+			<move level="13">fury_attack</move>
+			<move level="21">tri_attack</move>
+			<move level="25">rage</move>
+			<move level="33">uproar</move>
+			<move level="37">drill_peck</move>
+			<move level="45">agility</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

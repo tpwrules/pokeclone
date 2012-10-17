@@ -1,0 +1,13 @@
+<move>
+	<name>Razor Leaf</name>
+	<desc>The foe is hit with a cutting leaf. It has a high critical-hit ratio.</desc>
+	<power>55</power>
+	<acc>95</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Razor_Leaf.xml</anim>
+</move>

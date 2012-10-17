@@ -1,0 +1,60 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/magneton/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/magneton/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>magneton</name>
+	<!-- proper name -->
+	<show_name>Magneton</show_name>
+	<!-- number of the pokemon -->
+	<num>82</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Magnet</species>
+	<type>electric|steel</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>132.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>A linked cluster formed of several MAGNEMITE. It discharges powerful magnetic waves at high voltage.</desc>
+		<color>gray</color>
+		<num>82</num>
+	</pokedex>
+	<ability>
+		<normal>magnet_pull</normal> <!-- various abilities -->
+		<normal>sturdy</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>mineral</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>161</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|2|0|0</ev> <!-- ev yield data -->
+		<stats>50|60|95|120|70|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">hyper_beam</move>
+			<move level="0">tackle</move>
+			<move level="0">thundershock</move>
+			<move level="0">supersonic</move>
+			<move level="6">thundershock</move>
+			<move level="11">supersonic</move>
+			<move level="16">sonicboom</move>
+			<move level="21">thunder_wave</move>
+			<move level="26">spark</move>
+			<move level="35">lock-on</move>
+			<move level="44">tri_attack</move>
+			<move level="53">screech</move>
+			<move level="62">zap_cannon</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

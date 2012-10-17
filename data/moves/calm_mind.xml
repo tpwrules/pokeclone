@@ -1,0 +1,13 @@
+<move>
+	<name>Calm Mind</name>
+	<desc>The user focuses its mind to raise the SP. ATK and SP. DEF stats.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>211</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Calm_Mind.xml</anim>
+</move>

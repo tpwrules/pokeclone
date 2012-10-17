@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/bellsprout/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/bellsprout/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>bellsprout</name>
+	<!-- proper name -->
+	<show_name>Bellsprout</show_name>
+	<!-- number of the pokemon -->
+	<num>69</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Flower</species>
+	<type>grass|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>28</height> <!-- height of pokemon in inches -->
+		<weight>8.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its bud looks like a human face. Because of the bud, it is rumored to be a type of legendary mandrake plant.</desc>
+		<color>green</color>
+		<num>69</num>
+	</pokedex>
+	<ability>
+		<normal>chlorophyll</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>84</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>50|75|35|70|30|40</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">vine_whip</move>
+			<move level="6">growth</move>
+			<move level="11">wrap</move>
+			<move level="15">sleep_powder</move>
+			<move level="17">poisonpowder</move>
+			<move level="19">stun_spore</move>
+			<move level="23">acid</move>
+			<move level="30">sweet_scent</move>
+			<move level="37">razor_leaf</move>
+			<move level="45">slam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

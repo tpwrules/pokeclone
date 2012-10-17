@@ -1,0 +1,13 @@
+<move>
+	<name>Flash</name>
+	<desc>A blast of light that cuts the foe's accuracy. It also illuminates caves.</desc>
+	<power>0</power>
+	<acc>70</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>23</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Flash.xml</anim>
+</move>

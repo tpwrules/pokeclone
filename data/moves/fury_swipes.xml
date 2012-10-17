@@ -1,0 +1,13 @@
+<move>
+	<name>Fury Swipes</name>
+	<desc>The foe is raked with sharp claws or scythes two to five times.</desc>
+	<power>18</power>
+	<acc>80</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Fury_Swipes.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Poisonpowder</name>
+	<desc>A cloud of toxic dust is scattered. It may poison the foe.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Poison</type>
+	<effect>66</effect>
+	<effectacc>0</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Poisonpowder.xml</anim>
+</move>

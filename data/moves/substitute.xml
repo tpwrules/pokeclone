@@ -1,0 +1,13 @@
+<move>
+	<name>Substitute</name>
+	<desc>The user creates a decoy using one- quarter of its full HP.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>79</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Substitute.xml</anim>
+</move>

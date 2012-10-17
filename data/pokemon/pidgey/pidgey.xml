@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/pidgey/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/pidgey/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>pidgey</name>
+	<!-- proper name -->
+	<show_name>Pidgey</show_name>
+	<!-- number of the pokemon -->
+	<num>16</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Tiny Bird</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>12</height> <!-- height of pokemon in inches -->
+		<weight>4.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>Does not like to fight. It hides in tall grass and so on, foraging for food such as small bugs.</desc>
+		<color>brown</color>
+		<num>16</num>
+	</pokedex>
+	<ability>
+		<normal>keen_eye</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>55</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>40|45|40|35|35|56</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="5">sand-attack</move>
+			<move level="9">gust</move>
+			<move level="13">quick_attack</move>
+			<move level="19">whirlwind</move>
+			<move level="25">wing_attack</move>
+			<move level="31">twineedle</move>
+			<move level="39">agility</move>
+			<move level="47">mirror_move</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

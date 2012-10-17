@@ -1,0 +1,13 @@
+<move>
+	<name>Ingrain</name>
+	<desc>The user lays roots that restore HP on every turn. It can't switch out.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>181</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Ingrain.xml</anim>
+</move>

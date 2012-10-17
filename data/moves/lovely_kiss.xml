@@ -1,0 +1,13 @@
+<move>
+	<name>Lovely Kiss</name>
+	<desc>The user forces a kiss on the foe with a scary face that induces sleep.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Lovely_Kiss.xml</anim>
+</move>

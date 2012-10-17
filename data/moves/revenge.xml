@@ -1,0 +1,13 @@
+<move>
+	<name>Revenge</name>
+	<desc>An attack move that gains in intensity if the target has hurt the user.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>185</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Revenge.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Tickle</name>
+	<desc>The foe is made to laugh, reducing its ATTACK and DEFENSE stats.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>205</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Tickle.xml</anim>
+</move>

@@ -1,0 +1,50 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/wigglytuff/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/wigglytuff/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>wigglytuff</name>
+	<!-- proper name -->
+	<show_name>Wigglytuff</show_name>
+	<!-- number of the pokemon -->
+	<num>40</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Balloon</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>26.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its fur is extremely fine, dense, and supple. The exquisitely pleasant fur conveys an image of luxury.</desc>
+		<color>pink</color>
+		<num>40</num>
+	</pokedex>
+	<ability>
+		<normal>cute_charm</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>50</catch>
+	<gender>25.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>fairy</group> <!-- breeding group of pokemon -->
+		<cycles>10</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>109</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>3|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>140|70|45|75|50|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">sing</move>
+			<move level="0">disable</move>
+			<move level="0">defense_curl</move>
+			<move level="0">doubleslap</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

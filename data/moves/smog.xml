@@ -1,0 +1,13 @@
+<move>
+	<name>Smog</name>
+	<desc>The foe is attacked with exhaust gases. It may also poison the foe.</desc>
+	<power>20</power>
+	<acc>70</acc>
+	<cat>Special</cat>
+	<type>Poison</type>
+	<effect>2</effect>
+	<effectacc>40</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Smog.xml</anim>
+</move>

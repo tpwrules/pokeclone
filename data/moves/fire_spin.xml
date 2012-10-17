@@ -1,0 +1,13 @@
+<move>
+	<name>Fire Spin</name>
+	<desc>The foe is trapped in an intense spiral of fire that rages two to five turns.</desc>
+	<power>15</power>
+	<acc>70</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>42</effect>
+	<effectacc>100</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Fire_Spin.xml</anim>
+</move>

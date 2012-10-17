@@ -1,0 +1,13 @@
+<move>
+	<name>Teeter Dance</name>
+	<desc>A wobbly dance that confuses all the Pok{ae}mon in battle.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>199</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Teeter_Dance.xml</anim>
+</move>

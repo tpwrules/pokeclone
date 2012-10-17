@@ -1,0 +1,13 @@
+<move>
+	<name>Helping Hand</name>
+	<desc>A move that boosts the power of the ally's attack in a battle.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>176</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Helping_Hand.xml</anim>
+</move>

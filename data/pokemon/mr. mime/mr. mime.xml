@@ -1,0 +1,62 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/mr. mime/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/mr. mime/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>mr. mime</name>
+	<!-- proper name -->
+	<show_name>Mr. Mime</show_name>
+	<!-- number of the pokemon -->
+	<num>122</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Barrier</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>51</height> <!-- height of pokemon in inches -->
+		<weight>120.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is adept at conning people. It is said to be able to create walls out of thin air by miming.</desc>
+		<color>pink</color>
+		<num>122</num>
+	</pokedex>
+	<ability>
+		<normal>soundproof</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>humanshape</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>136</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|2|0</ev> <!-- ev yield data -->
+		<stats>40|45|65|100|120|90</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">barrier</move>
+			<move level="5">confusion</move>
+			<move level="8">substitute</move>
+			<move level="12">meditate</move>
+			<move level="15">doubleslap</move>
+			<move level="19">light_screen</move>
+			<move level="19">reflect</move>
+			<move level="22">earthquake</move>
+			<move level="26">encore</move>
+			<move level="29">psybeam</move>
+			<move level="33">vine_whip</move>
+			<move level="36">cut</move>
+			<move level="40">gust</move>
+			<move level="43">psychic</move>
+			<move level="47">baton_pass</move>
+			<move level="50">safeguard</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

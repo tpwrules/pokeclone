@@ -1,0 +1,13 @@
+<move>
+	<name>Shadow Punch</name>
+	<desc>The user throws a punch from the shadows. It cannot be evaded.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Physical</cat>
+	<type>Ghost</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Shadow_Punch.xml</anim>
+</move>

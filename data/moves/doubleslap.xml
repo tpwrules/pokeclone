@@ -1,0 +1,13 @@
+<move>
+	<name>Doubleslap</name>
+	<desc>The foe is slapped repeatedly, back and forth, two to five times.</desc>
+	<power>15</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Doubleslap.xml</anim>
+</move>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/skarmory/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/skarmory/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>skarmory</name>
+	<!-- proper name -->
+	<show_name>Skarmory</show_name>
+	<!-- number of the pokemon -->
+	<num>227</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Armor Bird</species>
+	<type>steel|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>67</height> <!-- height of pokemon in inches -->
+		<weight>111.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>After nesting in bramble bushes, the wings of its chicks grow hard from scratches by thorns.</desc>
+		<color>gray</color>
+		<num>227</num>
+	</pokedex>
+	<ability>
+		<normal>keen_eye</normal> <!-- various abilities -->
+		<normal>sturdy</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>25</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>168</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>65|80|140|40|70|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">leer</move>
+			<move level="0">peck</move>
+			<move level="10">sand-attack</move>
+			<move level="13">swift</move>
+			<move level="16">agility</move>
+			<move level="26">fury_attack</move>
+			<move level="29">ice_beam</move>
+			<move level="32">steel_wing</move>
+			<move level="42">spikes</move>
+			<move level="45">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

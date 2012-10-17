@@ -1,0 +1,13 @@
+<move>
+	<name>Flail</name>
+	<desc>A desperate attack that becomes more powerful the less HP the user has.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>99</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Flail.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Selfdestruct</name>
+	<desc>The user blows up to inflict severe damage, even making itself faint.</desc>
+	<power>200</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>7</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Selfdestruct.xml</anim>
+</move>

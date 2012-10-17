@@ -1,0 +1,13 @@
+<move>
+	<name>Magical Leaf</name>
+	<desc>The foe is attacked with a strange leaf that cannot be evaded.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Magical_Leaf.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Swift</name>
+	<desc>Star-shaped rays that never miss are fired at all foes in battle.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Swift.xml</anim>
+</move>

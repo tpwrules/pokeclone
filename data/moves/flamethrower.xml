@@ -1,0 +1,13 @@
+<move>
+	<name>Flamethrower</name>
+	<desc>The foe is scorched with intense flames. The foe may suffer a burn.</desc>
+	<power>95</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>4</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Flamethrower.xml</anim>
+</move>

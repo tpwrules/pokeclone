@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/eevee/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/eevee/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>eevee</name>
+	<!-- proper name -->
+	<show_name>Eevee</show_name>
+	<!-- number of the pokemon -->
+	<num>133</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Evolution</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>12</height> <!-- height of pokemon in inches -->
+		<weight>14.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>An extremely rare Pok{ae}mon that may evolve in a number of different ways depending on stimuli.</desc>
+		<color>brown</color>
+		<num>133</num>
+	</pokedex>
+	<ability>
+		<normal>run_away</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>35</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>92</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|1|0</ev> <!-- ev yield data -->
+		<stats>55|55|50|45|65|55</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">tail_whip</move>
+			<move level="0">swords_dance</move>
+			<move level="8">sand-attack</move>
+			<move level="16">growl</move>
+			<move level="23">quick_attack</move>
+			<move level="30">bite</move>
+			<move level="36">baton_pass</move>
+			<move level="42">take_down</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

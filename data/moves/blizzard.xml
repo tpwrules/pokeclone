@@ -1,0 +1,13 @@
+<move>
+	<name>Blizzard</name>
+	<desc>The foe is blasted with a blizzard. It may freeze the foe solid.</desc>
+	<power>120</power>
+	<acc>70</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>5</effect>
+	<effectacc>10</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Blizzard.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Splash</name>
+	<desc>The user just flops and splashes around without having any effect.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>85</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Splash.xml</anim>
+</move>

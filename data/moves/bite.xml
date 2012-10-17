@@ -1,0 +1,13 @@
+<move>
+	<name>Bite</name>
+	<desc>The user bites with vicious fangs. It may make the foe flinch.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Dark</type>
+	<effect>31</effect>
+	<effectacc>30</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Bite.xml</anim>
+</move>

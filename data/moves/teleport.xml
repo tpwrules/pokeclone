@@ -1,0 +1,13 @@
+<move>
+	<name>Teleport</name>
+	<desc>Use it to flee from any wild Pok{ae}mon. Also warps to the last POK CENTER.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>153</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Teleport.xml</anim>
+</move>

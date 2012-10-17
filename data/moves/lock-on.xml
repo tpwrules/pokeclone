@@ -1,0 +1,13 @@
+<move>
+	<name>Lock-on</name>
+	<desc>The user locks on to the foe, making the next move sure to hit.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>94</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Lock-on.xml</anim>
+</move>

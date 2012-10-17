@@ -1,0 +1,13 @@
+<move>
+	<name>Fury Cutter</name>
+	<desc>An attack that grows stronger on each successive hit.</desc>
+	<power>10</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Bug</type>
+	<effect>119</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Fury_Cutter.xml</anim>
+</move>

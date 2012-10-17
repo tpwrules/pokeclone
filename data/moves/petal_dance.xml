@@ -1,0 +1,13 @@
+<move>
+	<name>Petal Dance</name>
+	<desc>The user attacks with petals for two to three turns, then gets confused.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Grass</type>
+	<effect>27</effect>
+	<effectacc>100</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Petal_Dance.xml</anim>
+</move>

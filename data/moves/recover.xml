@@ -1,0 +1,13 @@
+<move>
+	<name>Recover</name>
+	<desc>A self-healing move that restores HP by up to half of the user's maximum HP.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>32</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Recover.xml</anim>
+</move>

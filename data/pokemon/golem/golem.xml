@@ -1,0 +1,60 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/golem/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/golem/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>golem</name>
+	<!-- proper name -->
+	<show_name>Golem</show_name>
+	<!-- number of the pokemon -->
+	<num>76</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Megaton</species>
+	<type>rock|ground</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>55</height> <!-- height of pokemon in inches -->
+		<weight>661.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is enclosed in a hard shell that is as rugged as slabs of rock. It sheds skin once a year to grow larger.</desc>
+		<color>brown</color>
+		<num>76</num>
+	</pokedex>
+	<ability>
+		<normal>rock_head</normal> <!-- various abilities -->
+		<normal>sturdy</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>mineral</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>177</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|3|0|0|0</ev> <!-- ev yield data -->
+		<stats>80|110|130|55|65|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">defense_curl</move>
+			<move level="0">bite</move>
+			<move level="0">rock_throw</move>
+			<move level="6">bite</move>
+			<move level="11">rock_throw</move>
+			<move level="16">magnitude</move>
+			<move level="21">selfdestruct</move>
+			<move level="29">rollout</move>
+			<move level="37">psychic</move>
+			<move level="45">earthquake</move>
+			<move level="53">explosion</move>
+			<move level="62">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

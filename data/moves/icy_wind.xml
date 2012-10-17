@@ -1,0 +1,13 @@
+<move>
+	<name>Icy Wind</name>
+	<desc>A chilling wind is used to attack. It also lowers the SPEED stat.</desc>
+	<power>55</power>
+	<acc>95</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>70</effect>
+	<effectacc>100</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Icy_Wind.xml</anim>
+</move>

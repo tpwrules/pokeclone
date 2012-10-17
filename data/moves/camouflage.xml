@@ -1,0 +1,13 @@
+<move>
+	<name>Camouflage</name>
+	<desc>Alters the user's type depending on the location's terrain.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>213</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Camouflage.xml</anim>
+</move>

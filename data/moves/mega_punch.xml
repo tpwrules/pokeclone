@@ -1,0 +1,13 @@
+<move>
+	<name>Mega Punch</name>
+	<desc>The foe is slugged by a punch thrown with muscle-packed power.</desc>
+	<power>80</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Mega_Punch.xml</anim>
+</move>

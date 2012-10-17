@@ -1,0 +1,13 @@
+<move>
+	<name>Roar</name>
+	<desc>The foe is made to switch out with an ally. In the wild, the battle ends.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>28</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Roar.xml</anim>
+</move>

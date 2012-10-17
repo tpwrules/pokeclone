@@ -1,0 +1,13 @@
+<move>
+	<name>Tri Attack</name>
+	<desc>A simultaneous 3-beam attack that may paralyze, burn, or freeze the foe.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>36</effect>
+	<effectacc>20</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Tri_Attack.xml</anim>
+</move>

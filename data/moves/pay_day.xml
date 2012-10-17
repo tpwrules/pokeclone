@@ -1,0 +1,13 @@
+<move>
+	<name>Pay Day</name>
+	<desc>Numerous coins are hurled at the foe. Money is earned after battle.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>34</effect>
+	<effectacc>100</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Pay_Day.xml</anim>
+</move>

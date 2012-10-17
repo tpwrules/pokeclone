@@ -1,0 +1,61 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/snorlax/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/snorlax/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>snorlax</name>
+	<!-- proper name -->
+	<show_name>Snorlax</show_name>
+	<!-- number of the pokemon -->
+	<num>143</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Sleeping</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>83</height> <!-- height of pokemon in inches -->
+		<weight>1014.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.</desc>
+		<color>black</color>
+		<num>143</num>
+	</pokedex>
+	<ability>
+		<normal>immunity</normal> <!-- various abilities -->
+		<normal>thick_fat</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>25</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster</group> <!-- breeding group of pokemon -->
+		<cycles>40</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>154</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>2|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>160|110|65|65|110|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="5">amnesia</move>
+			<move level="9">defense_curl</move>
+			<move level="13">belly_drum</move>
+			<move level="17">headbutt</move>
+			<move level="21">mega_kick</move>
+			<move level="25">rest</move>
+			<move level="29">snore</move>
+			<move level="33">body_slam</move>
+			<move level="37">sleep_talk</move>
+			<move level="41">sleep_powder</move>
+			<move level="45">thunder</move>
+			<move level="49">rollout</move>
+			<move level="53">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

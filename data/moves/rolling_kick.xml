@@ -1,0 +1,13 @@
+<move>
+	<name>Rolling Kick</name>
+	<desc>A quick kick from a rolling spin. It may make the foe flinch.</desc>
+	<power>60</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>31</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Rolling_Kick.xml</anim>
+</move>

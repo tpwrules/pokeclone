@@ -1,0 +1,13 @@
+<move>
+	<name>Eruption</name>
+	<desc>The higher the user's HP, the more powerful this attack becomes.</desc>
+	<power>150</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>190</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Eruption.xml</anim>
+</move>

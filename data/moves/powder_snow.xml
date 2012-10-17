@@ -1,0 +1,13 @@
+<move>
+	<name>Powder Snow</name>
+	<desc>Blasts the foe with a snowy gust. It may cause freezing.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>5</effect>
+	<effectacc>10</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Powder_Snow.xml</anim>
+</move>

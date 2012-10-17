@@ -1,0 +1,53 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/victreebel/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/victreebel/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>victreebel</name>
+	<!-- proper name -->
+	<show_name>Victreebel</show_name>
+	<!-- number of the pokemon -->
+	<num>71</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Flycatcher</species>
+	<type>grass|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>67</height> <!-- height of pokemon in inches -->
+		<weight>34.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>Lures prey into its mouth with a honeylike aroma. The helpless prey is melted with a dissolving fluid.</desc>
+		<color>green</color>
+		<num>71</num>
+	</pokedex>
+	<ability>
+		<normal>chlorophyll</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>191</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|3|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>80|105|65|100|60|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">stockpile</move>
+			<move level="0">spit_up</move>
+			<move level="0">psycho_boost</move>
+			<move level="0">vine_whip</move>
+			<move level="0">sleep_powder</move>
+			<move level="0">sweet_scent</move>
+			<move level="0">razor_leaf</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

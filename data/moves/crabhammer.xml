@@ -1,0 +1,13 @@
+<move>
+	<name>Crabhammer</name>
+	<desc>A large pincer is used to hammer the foe. It has a high critical-hit ratio.</desc>
+	<power>90</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Water</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Crabhammer.xml</anim>
+</move>

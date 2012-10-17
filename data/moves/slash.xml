@@ -1,0 +1,13 @@
+<move>
+	<name>Slash</name>
+	<desc>The foe is slashed with claws, etc. It has a high critical-hit ratio.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>43</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Slash.xml</anim>
+</move>

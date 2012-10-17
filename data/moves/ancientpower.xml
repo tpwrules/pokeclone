@@ -1,0 +1,13 @@
+<move>
+	<name>Ancientpower</name>
+	<desc>An ancient power is used to attack. It may also raise all the user's stats.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Rock</type>
+	<effect>140</effect>
+	<effectacc>10</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Ancientpower.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Mist Ball</name>
+	<desc>A flurry of down hits the foe. It may also lower the foe's SP. ATK.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>71</effect>
+	<effectacc>50</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Mist_Ball.xml</anim>
+</move>

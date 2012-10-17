@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/houndour/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/houndour/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>houndour</name>
+	<!-- proper name -->
+	<show_name>Houndour</show_name>
+	<!-- number of the pokemon -->
+	<num>228</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Dark</species>
+	<type>dark|fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>23.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>To corner prey, they check each other's location using barks that only they can understand.</desc>
+		<color>black</color>
+		<num>228</num>
+	</pokedex>
+	<ability>
+		<normal>early_bird</normal> <!-- various abilities -->
+		<normal>flash_fire</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>120</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>114</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>45|60|30|80|50|65</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">leer</move>
+			<move level="0">ember</move>
+			<move level="7">petal_dance</move>
+			<move level="13">smog</move>
+			<move level="19">roar</move>
+			<move level="25">bite</move>
+			<move level="31">psybeam</move>
+			<move level="37">faint_attack</move>
+			<move level="43">flamethrower</move>
+			<move level="49">crunch</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

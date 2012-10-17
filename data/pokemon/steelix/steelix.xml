@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/steelix/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/steelix/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>steelix</name>
+	<!-- proper name -->
+	<show_name>Steelix</show_name>
+	<!-- number of the pokemon -->
+	<num>208</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Iron Snake</species>
+	<type>steel|ground</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>362</height> <!-- height of pokemon in inches -->
+		<weight>881.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is said that if an ONIX lives for over 100 years, its composition changes to become diamond-like.</desc>
+		<color>gray</color>
+		<num>208</num>
+	</pokedex>
+	<ability>
+		<normal>rock_head</normal> <!-- various abilities -->
+		<normal>sturdy</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>25</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>mineral</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>196</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>75|85|200|55|65|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">screech</move>
+			<move level="8">bind</move>
+			<move level="12">rock_throw</move>
+			<move level="19">harden</move>
+			<move level="23">rage</move>
+			<move level="30">dragonbreath</move>
+			<move level="34">sandstorm</move>
+			<move level="41">slam</move>
+			<move level="45">iron_tail</move>
+			<move level="52">crunch</move>
+			<move level="56">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

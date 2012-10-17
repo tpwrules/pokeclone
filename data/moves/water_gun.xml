@@ -1,0 +1,13 @@
+<move>
+	<name>Water Gun</name>
+	<desc>The foe is struck with a lot of water expelled forcibly from the mouth.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Water_Gun.xml</anim>
+</move>

@@ -1,0 +1,52 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/cloyster/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/cloyster/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>cloyster</name>
+	<!-- proper name -->
+	<show_name>Cloyster</show_name>
+	<!-- number of the pokemon -->
+	<num>91</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Bivalve</species>
+	<type>water|ice</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>59</height> <!-- height of pokemon in inches -->
+		<weight>292.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its shell is extremely hard. It cannot be shattered, even with a bomb. The shell opens only when it is attacking.</desc>
+		<color>purple</color>
+		<num>91</num>
+	</pokedex>
+	<ability>
+		<normal>shell_armor</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>203</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>50|95|180|85|45|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">withdraw</move>
+			<move level="0">supersonic</move>
+			<move level="0">aurora_beam</move>
+			<move level="0">protect</move>
+			<move level="36">spikes</move>
+			<move level="43">spike_cannon</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

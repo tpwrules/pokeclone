@@ -1,0 +1,13 @@
+<move>
+	<name>Role Play</name>
+	<desc>The user mimics the foe completely and copies the foe's ability.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>178</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Role_Play.xml</anim>
+</move>

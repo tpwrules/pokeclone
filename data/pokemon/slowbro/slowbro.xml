@@ -1,0 +1,60 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/slowbro/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/slowbro/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>slowbro</name>
+	<!-- proper name -->
+	<show_name>Slowbro</show_name>
+	<!-- number of the pokemon -->
+	<num>80</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Hermit Crab</species>
+	<type>water|psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>63</height> <!-- height of pokemon in inches -->
+		<weight>173.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>When a SLOWPOKE went hunting in the sea, its tail was bitten by a SHELLDER. That made it evolve into SLOWBRO.</desc>
+		<color>pink</color>
+		<num>80</num>
+	</pokedex>
+	<ability>
+		<normal>oblivious</normal> <!-- various abilities -->
+		<normal>own_tempo</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|water_1</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>164</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|2|0|0|0</ev> <!-- ev yield data -->
+		<stats>95|75|110|100|80|30</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">curse</move>
+			<move level="0">mega_kick</move>
+			<move level="0">tackle</move>
+			<move level="0">growl</move>
+			<move level="6">growl</move>
+			<move level="13">water_gun</move>
+			<move level="17">confusion</move>
+			<move level="24">disable</move>
+			<move level="29">headbutt</move>
+			<move level="36">amnesia</move>
+			<move level="37">withdraw</move>
+			<move level="44">psychic</move>
+			<move level="55">psych_up</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

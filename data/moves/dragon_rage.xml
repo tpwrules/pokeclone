@@ -1,0 +1,13 @@
+<move>
+	<name>Dragon Rage</name>
+	<desc>The foe is hit with a shock wave that always inflicts 40- HP damage.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Dragon</type>
+	<effect>41</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Dragon_Rage.xml</anim>
+</move>

@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/mantine/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/mantine/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>mantine</name>
+	<!-- proper name -->
+	<show_name>Mantine</show_name>
+	<!-- number of the pokemon -->
+	<num>226</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Kite</species>
+	<type>water|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>83</height> <!-- height of pokemon in inches -->
+		<weight>485.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>Swimming freely in open seas, it may fly out of the water and over the waves if it builds up enough speed.</desc>
+		<color>purple</color>
+		<num>226</num>
+	</pokedex>
+	<ability>
+		<normal>swift_swim</normal> <!-- various abilities -->
+		<normal>water_absorb</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>25</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>168</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|2|0</ev> <!-- ev yield data -->
+		<stats>65|40|70|80|140|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">bubble</move>
+			<move level="8">supersonic</move>
+			<move level="15">bubblebeam</move>
+			<move level="22">take_down</move>
+			<move level="29">agility</move>
+			<move level="36">wing_attack</move>
+			<move level="43">meditate</move>
+			<move level="50">confuse_ray</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Aromatherapy</name>
+	<desc>A soothing scent is released to heal all status problems in the user's party.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>102</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Aromatherapy.xml</anim>
+</move>

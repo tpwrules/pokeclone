@@ -1,0 +1,13 @@
+<move>
+	<name>Snore</name>
+	<desc>An attack that can be used only while asleep. It may cause flinching.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>92</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Snore.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Skull Bash</name>
+	<desc>The user raises its DEFENSE in the 1st turn, then attacks in the 2nd turn.</desc>
+	<power>100</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>145</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Skull_Bash.xml</anim>
+</move>

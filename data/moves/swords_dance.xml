@@ -1,0 +1,13 @@
+<move>
+	<name>Swords Dance</name>
+	<desc>A frenetic dance of fighting. It sharply raises the ATTACK stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>50</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Swords_Dance.xml</anim>
+</move>

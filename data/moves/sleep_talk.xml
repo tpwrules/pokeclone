@@ -1,0 +1,13 @@
+<move>
+	<name>Sleep Talk</name>
+	<desc>While asleep, the user randomly uses one of the moves it knows.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>97</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Sleep_Talk.xml</anim>
+</move>

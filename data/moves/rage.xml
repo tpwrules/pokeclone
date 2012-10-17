@@ -1,0 +1,13 @@
+<move>
+	<name>Rage</name>
+	<desc>An attack that becomes stronger each time the user is hit in battle.</desc>
+	<power>20</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>81</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Rage.xml</anim>
+</move>

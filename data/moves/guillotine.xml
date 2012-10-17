@@ -1,0 +1,13 @@
+<move>
+	<name>Guillotine</name>
+	<desc>A vicious tearing attack with pincers. The foe will faint if it hits.</desc>
+	<power>1</power>
+	<acc>30</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>38</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Guillotine.xml</anim>
+</move>

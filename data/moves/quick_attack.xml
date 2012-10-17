@@ -1,0 +1,13 @@
+<move>
+	<name>Quick Attack</name>
+	<desc>An almost invisibly fast attack that is certain to strike first.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>103</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Quick_Attack.xml</anim>
+</move>

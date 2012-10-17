@@ -1,0 +1,13 @@
+<move>
+	<name>Taunt</name>
+	<desc>The foe is taunted into a rage that allows it to use only attack moves.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Dark</type>
+	<effect>175</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Taunt.xml</anim>
+</move>

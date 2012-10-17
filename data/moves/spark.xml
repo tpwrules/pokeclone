@@ -1,0 +1,13 @@
+<move>
+	<name>Spark</name>
+	<desc>An electrically charged tackle that may also paralyze the foe.</desc>
+	<power>65</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Electric</type>
+	<effect>6</effect>
+	<effectacc>30</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Spark.xml</anim>
+</move>

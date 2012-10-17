@@ -1,0 +1,13 @@
+<move>
+	<name>Bullet Seed</name>
+	<desc>The user shoots seeds at the foe. Two to five seeds are shot at once.</desc>
+	<power>10</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Bullet_Seed.xml</anim>
+</move>

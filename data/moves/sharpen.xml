@@ -1,0 +1,13 @@
+<move>
+	<name>Sharpen</name>
+	<desc>The user reduces its polygon count to sharpen edges and raise ATTACK.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>10</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Sharpen.xml</anim>
+</move>

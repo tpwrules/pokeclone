@@ -1,0 +1,13 @@
+<move>
+	<name>Bind</name>
+	<desc>A long body or tentacles are used to bind the foe for two to five turns.</desc>
+	<power>15</power>
+	<acc>75</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>42</effect>
+	<effectacc>100</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Bind.xml</anim>
+</move>

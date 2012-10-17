@@ -1,0 +1,13 @@
+<move>
+	<name>Ice Punch</name>
+	<desc>The foe is punched with an icy fist. It may leave the foe frozen.</desc>
+	<power>75</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Ice</type>
+	<effect>5</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Ice_Punch.xml</anim>
+</move>

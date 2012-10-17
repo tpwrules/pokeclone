@@ -1,0 +1,13 @@
+<move>
+	<name>Doom Desire</name>
+	<desc>A move that attacks the foe with a blast of light two turns after use.</desc>
+	<power>120</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Steel</type>
+	<effect>148</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Doom_Desire.xml</anim>
+</move>

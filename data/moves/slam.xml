@@ -1,0 +1,13 @@
+<move>
+	<name>Slam</name>
+	<desc>The foe is struck with a long tail, vines, etc.</desc>
+	<power>80</power>
+	<acc>75</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Slam.xml</anim>
+</move>

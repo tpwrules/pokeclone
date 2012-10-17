@@ -1,0 +1,13 @@
+<move>
+	<name>Safeguard</name>
+	<desc>It protects the user's party from all status problems for five turns.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>124</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Safeguard.xml</anim>
+</move>

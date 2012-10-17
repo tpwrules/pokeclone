@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/nidoranfemale/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/nidoranfemale/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>nidoranfemale</name>
+	<!-- proper name -->
+	<show_name>Nidoranfemale</show_name>
+	<!-- number of the pokemon -->
+	<num>32</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Poison Pin</species>
+	<type>poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>19.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its large ears are flapped like wings when it is listening to distant sounds. It extends toxic barbs when angered.</desc>
+		<color>purple</color>
+		<num>32</num>
+	</pokedex>
+	<ability>
+		<normal>poison_point</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>235</catch>
+	<gender>100</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>60</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>46|57|40|40|40|50</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">leer</move>
+			<move level="0">peck</move>
+			<move level="8">focus_energy</move>
+			<move level="12">double_kick</move>
+			<move level="17">poison_sting</move>
+			<move level="20">horn_attack</move>
+			<move level="23">swords_dance</move>
+			<move level="30">fury_attack</move>
+			<move level="38">comet_punch</move>
+			<move level="47">horn_drill</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

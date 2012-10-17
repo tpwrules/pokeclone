@@ -1,0 +1,13 @@
+<move>
+	<name>Snatch</name>
+	<desc>Steals the effects of the foe's healing or status- changing move.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Dark</type>
+	<effect>195</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Snatch.xml</anim>
+</move>

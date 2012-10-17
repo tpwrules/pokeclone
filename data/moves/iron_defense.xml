@@ -1,0 +1,13 @@
+<move>
+	<name>Iron Defense</name>
+	<desc>The user hardens its body's surface to sharply raise its DEFENSE stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Steel</type>
+	<effect>51</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Iron_Defense.xml</anim>
+</move>

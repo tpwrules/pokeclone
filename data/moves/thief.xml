@@ -1,0 +1,13 @@
+<move>
+	<name>Thief</name>
+	<desc>An attack that may take the foe's held item if the user isn't holding one.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Dark</type>
+	<effect>105</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Thief.xml</anim>
+</move>

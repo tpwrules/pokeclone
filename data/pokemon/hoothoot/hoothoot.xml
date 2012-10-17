@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/hoothoot/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/hoothoot/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>hoothoot</name>
+	<!-- proper name -->
+	<show_name>Hoothoot</show_name>
+	<!-- number of the pokemon -->
+	<num>163</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Owl</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>28</height> <!-- height of pokemon in inches -->
+		<weight>46.7</weight> <!-- weight of pokemon in pounds -->
+		<desc>It has a perfect sense of time. Whatever happens, it keeps rhythm by precisely tilting its head in time.</desc>
+		<color>brown</color>
+		<num>163</num>
+	</pokedex>
+	<ability>
+		<normal>insomnia</normal> <!-- various abilities -->
+		<normal>keen_eye</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>58</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>60|30|30|36|56|50</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">growl</move>
+			<move level="6">foresight</move>
+			<move level="11">peck</move>
+			<move level="16">hypnosis</move>
+			<move level="22">reflect</move>
+			<move level="28">take_down</move>
+			<move level="34">confusion</move>
+			<move level="48">dream_eater</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Odor Sleuth</name>
+	<desc>Completely negates the foe's efforts to heighten its ability to evade.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>113</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Odor_Sleuth.xml</anim>
+</move>

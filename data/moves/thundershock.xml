@@ -1,0 +1,13 @@
+<move>
+	<name>Thundershock</name>
+	<desc>An electric shock attack that may also leave the foe paralyzed.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Electric</type>
+	<effect>6</effect>
+	<effectacc>10</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Thundershock.xml</anim>
+</move>

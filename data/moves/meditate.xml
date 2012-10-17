@@ -1,0 +1,13 @@
+<move>
+	<name>Meditate</name>
+	<desc>The user meditates to awaken its power and raise its ATTACK stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>10</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Meditate.xml</anim>
+</move>

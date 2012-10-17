@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/vulpix/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/vulpix/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>vulpix</name>
+	<!-- proper name -->
+	<show_name>Vulpix</show_name>
+	<!-- number of the pokemon -->
+	<num>37</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Fox</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>21.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>While young, it has six gorgeous tails. When it grows, several new tails are sprouted.</desc>
+		<color>brown</color>
+		<num>37</num>
+	</pokedex>
+	<ability>
+		<normal>flash_fire</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>25.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>63</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>38|41|40|50|65|65</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">ember</move>
+			<move level="5">tail_whip</move>
+			<move level="9">roar</move>
+			<move level="13">quick_attack</move>
+			<move level="17">mega_punch</move>
+			<move level="21">confuse_ray</move>
+			<move level="25">horn_attack</move>
+			<move level="29">flamethrower</move>
+			<move level="33">safeguard</move>
+			<move level="37">horn_drill</move>
+			<move level="41">fire_spin</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

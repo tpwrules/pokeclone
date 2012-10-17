@@ -1,0 +1,13 @@
+<move>
+	<name>Night Shade</name>
+	<desc>An attack with a mirage that inflicts damage matching the user's level.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ghost</type>
+	<effect>87</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Night_Shade.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Poison Fang</name>
+	<desc>The foe is bitten with toxic fangs. It may also badly poison the foe.</desc>
+	<power>50</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Poison</type>
+	<effect>202</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Poison_Fang.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Stun Spore</name>
+	<desc>Paralyzing dust is scattered wildly. It may paralyze the foe.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>67</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Stun_Spore.xml</anim>
+</move>

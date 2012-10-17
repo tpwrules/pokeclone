@@ -1,0 +1,13 @@
+<move>
+	<name>Dragon Dance</name>
+	<desc>A mystic, powerful dance that boosts the user's ATTACK and SPEED stats.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Dragon</type>
+	<effect>212</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Dragon_Dance.xml</anim>
+</move>

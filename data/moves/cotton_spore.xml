@@ -1,0 +1,13 @@
+<move>
+	<name>Cotton Spore</name>
+	<desc>Cotton-like spores cling to the foe, sharply reducing its SPEED stat.</desc>
+	<power>0</power>
+	<acc>85</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>60</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Cotton_Spore.xml</anim>
+</move>

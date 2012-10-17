@@ -1,0 +1,13 @@
+<move>
+	<name>Glare</name>
+	<desc>The user intimidates the foe with the design on its belly to cause paralysis.</desc>
+	<power>0</power>
+	<acc>75</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>67</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Glare.xml</anim>
+</move>

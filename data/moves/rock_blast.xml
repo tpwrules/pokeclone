@@ -1,0 +1,13 @@
+<move>
+	<name>Rock Blast</name>
+	<desc>The user hurls two to five hard rocks at the foe to attack.</desc>
+	<power>25</power>
+	<acc>80</acc>
+	<cat>Special</cat>
+	<type>Rock</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Rock_Blast.xml</anim>
+</move>

@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/geodude/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/geodude/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>geodude</name>
+	<!-- proper name -->
+	<show_name>Geodude</show_name>
+	<!-- number of the pokemon -->
+	<num>74</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Rock</species>
+	<type>rock|ground</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>44.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its round form makes it easy to pick up. Some people have used them to hurl at each other in a snowball fight.</desc>
+		<color>brown</color>
+		<num>74</num>
+	</pokedex>
+	<ability>
+		<normal>rock_head</normal> <!-- various abilities -->
+		<normal>sturdy</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>mineral</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>86</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>40|80|100|30|30|20</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">defense_curl</move>
+			<move level="6">bite</move>
+			<move level="11">rock_throw</move>
+			<move level="16">magnitude</move>
+			<move level="21">selfdestruct</move>
+			<move level="26">rollout</move>
+			<move level="31">psychic</move>
+			<move level="36">earthquake</move>
+			<move level="41">explosion</move>
+			<move level="46">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

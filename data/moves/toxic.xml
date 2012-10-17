@@ -1,0 +1,13 @@
+<move>
+	<name>Toxic</name>
+	<desc>A move that badly poisons the foe. Its poison damage worsens every turn.</desc>
+	<power>0</power>
+	<acc>85</acc>
+	<cat>Status</cat>
+	<type>Poison</type>
+	<effect>33</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Toxic.xml</anim>
+</move>

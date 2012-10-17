@@ -1,0 +1,13 @@
+<move>
+	<name>Heal Bell</name>
+	<desc>A soothing bell chimes to heal the status problems of all allies.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>102</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Heal_Bell.xml</anim>
+</move>

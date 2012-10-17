@@ -1,0 +1,13 @@
+<move>
+	<name>Earthquake</name>
+	<desc>An earthquake that strikes all Pok{ae}mon in battle excluding the user.</desc>
+	<power>100</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>147</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Earthquake.xml</anim>
+</move>

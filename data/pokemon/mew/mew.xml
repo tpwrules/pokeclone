@@ -1,0 +1,52 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/mew/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/mew/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>mew</name>
+	<!-- proper name -->
+	<show_name>Mew</show_name>
+	<!-- number of the pokemon -->
+	<num>151</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>New Species</species>
+	<type>psychic</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>8.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>A Pok{ae}mon of South America that was thought to have been extinct. It is very intelligent and learns any move.</desc>
+		<color>pink</color>
+		<num>151</num>
+	</pokedex>
+	<ability>
+		<normal>synchronize</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>120</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>64</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>3|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>100|100|100|100|100|100</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">pound</move>
+			<move level="10">transform</move>
+			<move level="20">mega_punch</move>
+			<move level="30">metronome</move>
+			<move level="40">psychic</move>
+			<move level="50">ancientpower</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

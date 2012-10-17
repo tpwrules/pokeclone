@@ -1,0 +1,13 @@
+<move>
+	<name>Dive</name>
+	<desc>The user dives underwater on the first turn and strikes next turn.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Water</type>
+	<effect>155</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Dive.xml</anim>
+</move>

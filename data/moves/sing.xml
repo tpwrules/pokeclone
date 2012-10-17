@@ -1,0 +1,13 @@
+<move>
+	<name>Sing</name>
+	<desc>A soothing song in a calming voice lulls the foe into a deep slumber.</desc>
+	<power>0</power>
+	<acc>55</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Sing.xml</anim>
+</move>

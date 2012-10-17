@@ -1,0 +1,13 @@
+<move>
+	<name>Thunderpunch</name>
+	<desc>The foe is punched with an electrified fist. It may leave the foe paralyzed.</desc>
+	<power>75</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Electric</type>
+	<effect>6</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Thunderpunch.xml</anim>
+</move>

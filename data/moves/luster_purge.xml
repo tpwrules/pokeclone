@@ -1,0 +1,13 @@
+<move>
+	<name>Luster Purge</name>
+	<desc>A burst of light injures the foe. It may also lower the foe's SP. DEF.</desc>
+	<power>70</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>72</effect>
+	<effectacc>50</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Luster_Purge.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Attract</name>
+	<desc>If it is the other gender, the foe is made infatuated and unlikely to attack.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>120</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Attract.xml</anim>
+</move>

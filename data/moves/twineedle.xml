@@ -1,0 +1,13 @@
+<move>
+	<name>Twineedle</name>
+	<desc>The foe is stabbed twice with foreleg stingers. It may poison the foe.</desc>
+	<power>25</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Bug</type>
+	<effect>77</effect>
+	<effectacc>20</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Twineedle.xml</anim>
+</move>

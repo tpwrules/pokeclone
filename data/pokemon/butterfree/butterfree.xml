@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/butterfree/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/butterfree/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>butterfree</name>
+	<!-- proper name -->
+	<show_name>Butterfree</show_name>
+	<!-- number of the pokemon -->
+	<num>12</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Butterfly</species>
+	<type>bug|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>70.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>The wings are protected by rain-repellent dust. As a result, this Pok{ae}mon can fly about even in rain.</desc>
+		<color>white</color>
+		<num>12</num>
+	</pokedex>
+	<ability>
+		<normal>compoundeyes</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>160</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|2|1|0</ev> <!-- ev yield data -->
+		<stats>60|45|50|80|80|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">confusion</move>
+			<move level="10">confusion</move>
+			<move level="13">poisonpowder</move>
+			<move level="14">stun_spore</move>
+			<move level="15">sleep_powder</move>
+			<move level="18">supersonic</move>
+			<move level="23">whirlwind</move>
+			<move level="28">gust</move>
+			<move level="34">psybeam</move>
+			<move level="40">safeguard</move>
+			<move level="47">aurora_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

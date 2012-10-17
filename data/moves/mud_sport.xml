@@ -1,0 +1,13 @@
+<move>
+	<name>Mud Sport</name>
+	<desc>Weakens ELECTRIC- type attacks while the user is in the battle.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Ground</type>
+	<effect>201</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Mud_Sport.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Twister</name>
+	<desc>A vicious twister attacks the foe. It may make the foe flinch.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Dragon</type>
+	<effect>146</effect>
+	<effectacc>20</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Twister.xml</anim>
+</move>

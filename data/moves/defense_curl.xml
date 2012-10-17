@@ -1,0 +1,13 @@
+<move>
+	<name>Defense Curl</name>
+	<desc>The user curls up to conceal weak spots and raise its DEFENSE stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>156</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Defense_Curl.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Mist</name>
+	<desc>The ally party is protected by a mist that prevents stat reductions.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Ice</type>
+	<effect>46</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Mist.xml</anim>
+</move>

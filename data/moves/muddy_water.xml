@@ -1,0 +1,13 @@
+<move>
+	<name>Muddy Water</name>
+	<desc>The user attacks with muddy water. It may also lower the foe's accuracy.</desc>
+	<power>95</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>73</effect>
+	<effectacc>30</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Muddy_Water.xml</anim>
+</move>

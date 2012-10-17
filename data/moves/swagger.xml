@@ -1,0 +1,13 @@
+<move>
+	<name>Swagger</name>
+	<desc>A move that makes the foe confused, but also sharply raises its ATTACK.</desc>
+	<power>0</power>
+	<acc>90</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>118</effect>
+	<effectacc>100</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Swagger.xml</anim>
+</move>

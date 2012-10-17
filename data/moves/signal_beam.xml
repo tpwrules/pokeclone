@@ -1,0 +1,13 @@
+<move>
+	<name>Signal Beam</name>
+	<desc>The foe is hit with a flashing beam that may also cause confusion.</desc>
+	<power>75</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Bug</type>
+	<effect>76</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Signal_Beam.xml</anim>
+</move>

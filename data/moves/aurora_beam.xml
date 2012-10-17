@@ -1,0 +1,13 @@
+<move>
+	<name>Aurora Beam</name>
+	<desc>A rainbow-colored attack beam. It may lower the foe's ATTACK stat.</desc>
+	<power>65</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Ice</type>
+	<effect>68</effect>
+	<effectacc>10</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Aurora_Beam.xml</anim>
+</move>

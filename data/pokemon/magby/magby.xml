@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/magby/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/magby/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>magby</name>
+	<!-- proper name -->
+	<show_name>Magby</show_name>
+	<!-- number of the pokemon -->
+	<num>240</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Live Coal</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>28</height> <!-- height of pokemon in inches -->
+		<weight>47.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is found in volcanic craters. Its body heat exceeds 1,100 degrees Fahrenheit, so don't underestimate it.</desc>
+		<color>red</color>
+		<num>240</num>
+	</pokedex>
+	<ability>
+		<normal>flame_body</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>75.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>117</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>45|75|37|70|55|83</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">ember</move>
+			<move level="7">leer</move>
+			<move level="13">smog</move>
+			<move level="19">fire_punch</move>
+			<move level="25">smokescreen</move>
+			<move level="31">sunny_day</move>
+			<move level="37">flamethrower</move>
+			<move level="43">confuse_ray</move>
+			<move level="49">fire_blast</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

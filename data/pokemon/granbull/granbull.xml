@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/granbull/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/granbull/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>granbull</name>
+	<!-- proper name -->
+	<show_name>Granbull</show_name>
+	<!-- number of the pokemon -->
+	<num>210</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Fairy</species>
+	<type>normal</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>55</height> <!-- height of pokemon in inches -->
+		<weight>107.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>Because its fangs are too heavy, it always keeps its head tilted down. However, its BITE is powerful.</desc>
+		<color>purple</color>
+		<num>210</num>
+	</pokedex>
+	<ability>
+		<normal>intimidate</normal> <!-- various abilities -->
+		<normal>intimidate</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>25.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground|fairy</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>178</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>90|120|75|60|60|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">scary_face</move>
+			<move level="4">tail_whip</move>
+			<move level="8">charm</move>
+			<move level="13">bite</move>
+			<move level="19">lick</move>
+			<move level="28">roar</move>
+			<move level="38">rage</move>
+			<move level="49">take_down</move>
+			<move level="61">crunch</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

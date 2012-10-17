@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/phanpy/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/phanpy/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>phanpy</name>
+	<!-- proper name -->
+	<show_name>Phanpy</show_name>
+	<!-- number of the pokemon -->
+	<num>231</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Long Nose</species>
+	<type>ground</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>73.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>As a sign of affection, it bumps with its snout. However, it is so strong, it may send you flying.</desc>
+		<color>blue</color>
+		<num>231</num>
+	</pokedex>
+	<ability>
+		<normal>pickup</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>120</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>124</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>90|60|60|40|40|40</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">psybeam</move>
+			<move level="0">tackle</move>
+			<move level="0">growl</move>
+			<move level="9">defense_curl</move>
+			<move level="17">flail</move>
+			<move level="25">take_down</move>
+			<move level="33">rollout</move>
+			<move level="41">endure</move>
+			<move level="49">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

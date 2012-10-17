@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/squirtle/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/squirtle/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>squirtle</name>
+	<!-- proper name -->
+	<show_name>Squirtle</show_name>
+	<!-- number of the pokemon -->
+	<num>7</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Tiny Turtle</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>19.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>When it retracts its long neck into its shell, it squirts out water with vigorous force.</desc>
+		<color>blue</color>
+		<num>7</num>
+	</pokedex>
+	<ability>
+		<normal>torrent</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|water_1</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>66</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>44|48|65|50|64|43</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="4">tail_whip</move>
+			<move level="7">bubble</move>
+			<move level="10">withdraw</move>
+			<move level="13">water_gun</move>
+			<move level="18">bite</move>
+			<move level="23">rapid_spin</move>
+			<move level="28">protect</move>
+			<move level="33">rain_dance</move>
+			<move level="40">skull_bash</move>
+			<move level="47">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

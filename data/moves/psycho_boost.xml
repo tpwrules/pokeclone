@@ -1,0 +1,13 @@
+<move>
+	<name>Psycho Boost</name>
+	<desc>An intense attack that also sharply reduces the user's SP. ATK stat</desc>
+	<power>140</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>204</effect>
+	<effectacc>100</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Psycho_Boost.xml</anim>
+</move>

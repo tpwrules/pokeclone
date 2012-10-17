@@ -1,0 +1,13 @@
+<move>
+	<name>Hidden Power</name>
+	<desc>An attack that varies in type and intensity depending on the user.</desc>
+	<power>1</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>135</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Hidden_Power.xml</anim>
+</move>

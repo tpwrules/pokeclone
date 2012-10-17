@@ -1,0 +1,13 @@
+<move>
+	<name>Fly</name>
+	<desc>A 2-turn move that hits on the 2nd turn. Use it to fly to any known town.</desc>
+	<power>70</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Flying</type>
+	<effect>155</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Fly.xml</anim>
+</move>

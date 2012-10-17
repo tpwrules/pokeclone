@@ -1,0 +1,13 @@
+<move>
+	<name>Mind Reader</name>
+	<desc>The user predicts the foe's action to ensure its next attack hits.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>94</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Mind_Reader.xml</anim>
+</move>

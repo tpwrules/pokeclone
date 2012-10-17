@@ -1,0 +1,13 @@
+<move>
+	<name>Astonish</name>
+	<desc>An attack using a startling shout. It also may make the foe flinch.</desc>
+	<power>30</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Ghost</type>
+	<effect>150</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Astonish.xml</anim>
+</move>

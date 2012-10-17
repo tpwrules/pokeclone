@@ -1,0 +1,13 @@
+<move>
+	<name>Extrasensory</name>
+	<desc>The user attacks with an odd power that may make the foe flinch.</desc>
+	<power>80</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Psychic</type>
+	<effect>150</effect>
+	<effectacc>10</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Extrasensory.xml</anim>
+</move>

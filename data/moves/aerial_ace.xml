@@ -1,0 +1,13 @@
+<move>
+	<name>Aerial Ace</name>
+	<desc>An extremely fast attack against one target. It can't be evaded.</desc>
+	<power>60</power>
+	<acc>0</acc>
+	<cat>Physical</cat>
+	<type>Flying</type>
+	<effect>17</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Aerial_Ace.xml</anim>
+</move>

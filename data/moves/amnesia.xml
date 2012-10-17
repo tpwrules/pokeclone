@@ -1,0 +1,13 @@
+<move>
+	<name>Amnesia</name>
+	<desc>Forgets about something and sharply raises SP. DEF.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>54</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Amnesia.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Fake Out</name>
+	<desc>An attack that hits first and causes flinching. Usable only on 1st turn.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>158</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Fake_Out.xml</anim>
+</move>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/mankey/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/mankey/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>mankey</name>
+	<!-- proper name -->
+	<show_name>Mankey</show_name>
+	<!-- number of the pokemon -->
+	<num>56</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Pig Monkey</species>
+	<type>fighting</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>61.7</weight> <!-- weight of pokemon in pounds -->
+		<desc>Light and agile on its feet, and ferocious in temperament. When angered, it flies into an uncontrollable frenzy.</desc>
+		<color>brown</color>
+		<num>56</num>
+	</pokedex>
+	<ability>
+		<normal>vital_spirit</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>74</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>40|80|35|35|45|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">scratch</move>
+			<move level="0">leer</move>
+			<move level="6">low_kick</move>
+			<move level="11">karate_chop</move>
+			<move level="16">fury_swipes</move>
+			<move level="21">focus_energy</move>
+			<move level="26">seismic_toss</move>
+			<move level="31">cross_chop</move>
+			<move level="36">swagger</move>
+			<move level="41">screech</move>
+			<move level="46">thrash</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

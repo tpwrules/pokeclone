@@ -1,0 +1,13 @@
+<move>
+	<name>Leech Seed</name>
+	<desc>A seed is planted on the foe to steal some HP for the  user on every turn.</desc>
+	<power>0</power>
+	<acc>90</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>84</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Leech_Seed.xml</anim>
+</move>

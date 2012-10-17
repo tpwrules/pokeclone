@@ -1,0 +1,13 @@
+<move>
+	<name>Refresh</name>
+	<desc>A self-healing move that cures the user of a poisoning, burn, or paralysis.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>193</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Refresh.xml</anim>
+</move>

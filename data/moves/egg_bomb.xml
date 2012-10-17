@@ -1,0 +1,13 @@
+<move>
+	<name>Egg Bomb</name>
+	<desc>A large egg is hurled with great force at the foe to inflict damage.</desc>
+	<power>100</power>
+	<acc>75</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Egg_Bomb.xml</anim>
+</move>

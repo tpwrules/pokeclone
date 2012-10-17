@@ -1,0 +1,51 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/vileplume/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/vileplume/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>vileplume</name>
+	<!-- proper name -->
+	<show_name>Vileplume</show_name>
+	<!-- number of the pokemon -->
+	<num>45</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Flower</species>
+	<type>grass|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>41.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its petals are the largest in the world. It fiendishly scatters allergy-causing pollen from its petals.</desc>
+		<color>red</color>
+		<num>45</num>
+	</pokedex>
+	<ability>
+		<normal>chlorophyll</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>184</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|3|0|0</ev> <!-- ev yield data -->
+		<stats>75|80|85|100|90|50</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">absorb</move>
+			<move level="0">hydro_pump</move>
+			<move level="0">stun_spore</move>
+			<move level="0">mega_drain</move>
+			<move level="44">petal_dance</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

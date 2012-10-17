@@ -1,0 +1,13 @@
+<move>
+	<name>Peck</name>
+	<desc>The foe is jabbed with a sharply pointed beak or horn.</desc>
+	<power>35</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Flying</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Peck.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Screech</name>
+	<desc>An ear-splitting screech is emitted to sharply reduce the foe's DEFENSE.</desc>
+	<power>0</power>
+	<acc>85</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>59</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Screech.xml</anim>
+</move>

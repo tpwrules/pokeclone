@@ -1,0 +1,13 @@
+<move>
+	<name>Superpower</name>
+	<desc>A powerful attack, but it also lowers the user's ATTACK and DEFENSE stats.</desc>
+	<power>120</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>182</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Superpower.xml</anim>
+</move>

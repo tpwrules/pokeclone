@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/charmeleon/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/charmeleon/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>charmeleon</name>
+	<!-- proper name -->
+	<show_name>Charmeleon</show_name>
+	<!-- number of the pokemon -->
+	<num>5</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Flame</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>41.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>It lashes about with its tail to knock down its foe. It then tears up the fallen opponent with sharp claws.</desc>
+		<color>red</color>
+		<num>5</num>
+	</pokedex>
+	<ability>
+		<normal>blaze</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>142</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|1</ev> <!-- ev yield data -->
+		<stats>58|64|58|80|65|80</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">scratch</move>
+			<move level="0">growl</move>
+			<move level="0">ember</move>
+			<move level="7">ember</move>
+			<move level="13">metal_claw</move>
+			<move level="20">smokescreen</move>
+			<move level="27">scary_face</move>
+			<move level="34">flamethrower</move>
+			<move level="41">slash</move>
+			<move level="48">dragon_rage</move>
+			<move level="55">fire_spin</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

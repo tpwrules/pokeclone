@@ -1,0 +1,13 @@
+<move>
+	<name>Water Spout</name>
+	<desc>The higher the user's HP, the more powerful this attack becomes.</desc>
+	<power>150</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>190</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Water_Spout.xml</anim>
+</move>

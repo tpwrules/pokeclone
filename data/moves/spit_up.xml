@@ -1,0 +1,13 @@
+<move>
+	<name>Spit Up</name>
+	<desc>The power built using STOCKPILE is released at once for attack.</desc>
+	<power>100</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>161</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Spit_Up.xml</anim>
+</move>

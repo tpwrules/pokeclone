@@ -1,0 +1,13 @@
+<move>
+	<name>Hyper Fang</name>
+	<desc>The foe is attacked with sharp fangs. It may make the foe flinch.</desc>
+	<power>80</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>31</effect>
+	<effectacc>10</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Hyper_Fang.xml</anim>
+</move>

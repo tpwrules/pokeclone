@@ -1,0 +1,13 @@
+<move>
+	<name>Dynamicpunch</name>
+	<desc>The foe is punched with the user's full power. It confuses the foe if it hits.</desc>
+	<power>100</power>
+	<acc>50</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>76</effect>
+	<effectacc>100</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Dynamicpunch.xml</anim>
+</move>

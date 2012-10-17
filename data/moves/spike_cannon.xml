@@ -1,0 +1,13 @@
+<move>
+	<name>Spike Cannon</name>
+	<desc>Sharp spikes are fired at the foe to strike two to five times.</desc>
+	<power>20</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Spike_Cannon.xml</anim>
+</move>

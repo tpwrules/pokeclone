@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/ledyba/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/ledyba/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>ledyba</name>
+	<!-- proper name -->
+	<show_name>Ledyba</show_name>
+	<!-- number of the pokemon -->
+	<num>165</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Five Star</species>
+	<type>bug|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>23.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>When the weather turns cold, numerous LEDYBA gather from everywhere to cluster and keep each other warm.</desc>
+		<color>red</color>
+		<num>165</num>
+	</pokedex>
+	<ability>
+		<normal>swarm</normal> <!-- various abilities -->
+		<normal>early_bird</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>54</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|1|0</ev> <!-- ev yield data -->
+		<stats>40|20|30|40|80|55</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="8">supersonic</move>
+			<move level="15">comet_punch</move>
+			<move level="22">light_screen</move>
+			<move level="22">reflect</move>
+			<move level="22">safeguard</move>
+			<move level="29">baton_pass</move>
+			<move level="36">swift</move>
+			<move level="43">agility</move>
+			<move level="50">double-edge</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Sand Tomb</name>
+	<desc>The foe is trapped inside a painful sandstorm for two to five turns.</desc>
+	<power>15</power>
+	<acc>70</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>42</effect>
+	<effectacc>100</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Sand_Tomb.xml</anim>
+</move>

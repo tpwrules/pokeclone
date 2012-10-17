@@ -1,0 +1,13 @@
+<move>
+	<name>Cut</name>
+	<desc>A basic attack. It can be used to cut down thin trees and grass.</desc>
+	<power>50</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Cut.xml</anim>
+</move>

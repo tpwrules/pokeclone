@@ -1,0 +1,13 @@
+<move>
+	<name>Arm Thrust</name>
+	<desc>A quick flurry of straight-arm punches that hit two to five times.</desc>
+	<power>15</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>29</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Arm_Thrust.xml</anim>
+</move>

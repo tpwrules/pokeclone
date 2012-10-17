@@ -1,0 +1,13 @@
+<move>
+	<name>Rest</name>
+	<desc>The user sleeps for two turns to fully restore HP and heal any status problem.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>37</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Rest.xml</anim>
+</move>

@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/nidoranmale/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/nidoranmale/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>nidoranmale</name>
+	<!-- proper name -->
+	<show_name>Nidoranmale</show_name>
+	<!-- number of the pokemon -->
+	<num>29</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Poison Pin</species>
+	<type>poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>16</height> <!-- height of pokemon in inches -->
+		<weight>15.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>Though small, it must be treated with caution because of its powerfully toxic barbs. The female has smaller horns.</desc>
+		<color>blue</color>
+		<num>29</num>
+	</pokedex>
+	<ability>
+		<normal>poison_point</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>235</catch>
+	<gender>0.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>monster|ground</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>59</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|0|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>55|47|52|40|40|41</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">growl</move>
+			<move level="0">scratch</move>
+			<move level="8">tail_whip</move>
+			<move level="12">double_kick</move>
+			<move level="17">poison_sting</move>
+			<move level="20">bite</move>
+			<move level="23">swords_dance</move>
+			<move level="30">fury_swipes</move>
+			<move level="38">comet_punch</move>
+			<move level="47">crunch</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

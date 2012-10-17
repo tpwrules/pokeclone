@@ -1,0 +1,13 @@
+<move>
+	<name>Needle Arm</name>
+	<desc>An attack using thorny arms. It may make the foe flinch.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Grass</type>
+	<effect>150</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Needle_Arm.xml</anim>
+</move>

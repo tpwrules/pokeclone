@@ -1,0 +1,13 @@
+<move>
+	<name>Solarbeam</name>
+	<desc>A 2-turn move that blasts the foe with absorbed energy in the 2nd turn.</desc>
+	<power>120</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Grass</type>
+	<effect>151</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Solarbeam.xml</anim>
+</move>

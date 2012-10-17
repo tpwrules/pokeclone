@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/octillery/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/octillery/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>octillery</name>
+	<!-- proper name -->
+	<show_name>Octillery</show_name>
+	<!-- number of the pokemon -->
+	<num>224</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Jet</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>35</height> <!-- height of pokemon in inches -->
+		<weight>62.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>It instinctively sneaks into rocky holes. If it gets sleepy, it steals the nest of a fellow OCTILLERY.</desc>
+		<color>red</color>
+		<num>224</num>
+	</pokedex>
+	<ability>
+		<normal>suction_cups</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|water_2</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>164</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>75|105|75|105|75|45</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">water_gun</move>
+			<move level="11">constrict</move>
+			<move level="22">psybeam</move>
+			<move level="22">aurora_beam</move>
+			<move level="22">bubblebeam</move>
+			<move level="25">octazooka</move>
+			<move level="38">focus_energy</move>
+			<move level="54">ice_beam</move>
+			<move level="70">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

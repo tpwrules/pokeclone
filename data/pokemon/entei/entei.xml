@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/entei/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/entei/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>entei</name>
+	<!-- proper name -->
+	<show_name>Entei</show_name>
+	<!-- number of the pokemon -->
+	<num>244</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Volcano</species>
+	<type>fire</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>83</height> <!-- height of pokemon in inches -->
+		<weight>436.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>A Pok{ae}mon that races across the land. It is said that one is born every time a new volcano appears.</desc>
+		<color>brown</color>
+		<num>244</num>
+	</pokedex>
+	<ability>
+		<normal>pressure</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>3</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>80</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>217</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>1|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>115|115|85|90|75|100</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">bite</move>
+			<move level="0">leer</move>
+			<move level="11">ember</move>
+			<move level="21">roar</move>
+			<move level="31">fire_spin</move>
+			<move level="41">stomp</move>
+			<move level="51">flamethrower</move>
+			<move level="61">swagger</move>
+			<move level="71">fire_blast</move>
+			<move level="81">dig</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Sacred Fire</name>
+	<desc>A mystical and powerful fire attack that may inflict a burn.</desc>
+	<power>100</power>
+	<acc>95</acc>
+	<cat>Special</cat>
+	<type>Fire</type>
+	<effect>125</effect>
+	<effectacc>50</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Sacred_Fire.xml</anim>
+</move>

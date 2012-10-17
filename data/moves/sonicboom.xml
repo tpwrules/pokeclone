@@ -1,0 +1,13 @@
+<move>
+	<name>Sonicboom</name>
+	<desc>The foe is hit with a shock wave that always inflicts 20- HP damage.</desc>
+	<power>1</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>130</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Sonicboom.xml</anim>
+</move>

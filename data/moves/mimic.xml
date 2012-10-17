@@ -1,0 +1,13 @@
+<move>
+	<name>Mimic</name>
+	<desc>The user copies the move last used by the foe for the rest of the battle.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>82</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Mimic.xml</anim>
+</move>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/pidgeotto/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/pidgeotto/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>pidgeotto</name>
+	<!-- proper name -->
+	<show_name>Pidgeotto</show_name>
+	<!-- number of the pokemon -->
+	<num>17</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Bird</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>66.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>The claws on its feet are well developed. It can carry prey such as an EXEGGCUTE to its nest over 60 miles away.</desc>
+		<color>brown</color>
+		<num>17</num>
+	</pokedex>
+	<ability>
+		<normal>keen_eye</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>120</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>113</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|2</ev> <!-- ev yield data -->
+		<stats>63|60|55|50|50|71</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">sand-attack</move>
+			<move level="0">gust</move>
+			<move level="5">sand-attack</move>
+			<move level="9">gust</move>
+			<move level="13">quick_attack</move>
+			<move level="20">whirlwind</move>
+			<move level="27">wing_attack</move>
+			<move level="34">twineedle</move>
+			<move level="43">agility</move>
+			<move level="52">mirror_move</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

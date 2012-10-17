@@ -1,0 +1,13 @@
+<move>
+	<name>Overheat</name>
+	<desc>An intense attack that also sharply reduces the user's SP. ATK stat.</desc>
+	<power>140</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Fire</type>
+	<effect>204</effect>
+	<effectacc>100</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Overheat.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Scary Face</name>
+	<desc>Frightens the foe with a scary face to sharply reduce its SPEED.</desc>
+	<power>0</power>
+	<acc>90</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>60</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Scary_Face.xml</anim>
+</move>

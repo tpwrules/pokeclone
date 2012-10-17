@@ -1,0 +1,47 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/tyrogue/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/tyrogue/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>tyrogue</name>
+	<!-- proper name -->
+	<show_name>Tyrogue</show_name>
+	<!-- number of the pokemon -->
+	<num>236</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Scuffle</species>
+	<type>fighting</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>28</height> <!-- height of pokemon in inches -->
+		<weight>46.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>Even though it is small, it can't be ignored because it will slug any handy target without warning.</desc>
+		<color>purple</color>
+		<num>236</num>
+	</pokedex>
+	<ability>
+		<normal>guts</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>75</catch>
+	<gender>100</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>91</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>35|35|35|35|35|35</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

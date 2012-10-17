@@ -1,0 +1,13 @@
+<move>
+	<name>Submission</name>
+	<desc>A reckless, full- body throw attack that also hurts the user a little.</desc>
+	<power>80</power>
+	<acc>80</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>48</effect>
+	<effectacc>0</effectacc>
+	<pp>25</pp>
+	<maxpp>40</maxpp>
+	<anim>anim_Submission.xml</anim>
+</move>

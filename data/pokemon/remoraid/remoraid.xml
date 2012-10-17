@@ -1,0 +1,54 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/remoraid/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/remoraid/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>remoraid</name>
+	<!-- proper name -->
+	<show_name>Remoraid</show_name>
+	<!-- number of the pokemon -->
+	<num>223</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Jet</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>26.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>Using its dorsal fin as a suction pad, it clings to a MANTINE's underside to scavenge for leftovers.</desc>
+		<color>gray</color>
+		<num>223</num>
+	</pokedex>
+	<ability>
+		<normal>hustle</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|water_2</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>78</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|1|0|0</ev> <!-- ev yield data -->
+		<stats>35|65|35|65|35|65</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">water_gun</move>
+			<move level="11">lock-on</move>
+			<move level="22">psybeam</move>
+			<move level="22">aurora_beam</move>
+			<move level="22">bubblebeam</move>
+			<move level="33">focus_energy</move>
+			<move level="44">ice_beam</move>
+			<move level="55">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,13 @@
+<move>
+	<name>Follow Me</name>
+	<desc>The user draws attention to itself, making foes attack only the user.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>172</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Follow_Me.xml</anim>
+</move>

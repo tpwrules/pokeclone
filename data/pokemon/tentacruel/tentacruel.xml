@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/tentacruel/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/tentacruel/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>tentacruel</name>
+	<!-- proper name -->
+	<show_name>Tentacruel</show_name>
+	<!-- number of the pokemon -->
+	<num>73</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Jellyfish</species>
+	<type>water|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>63</height> <!-- height of pokemon in inches -->
+		<weight>121.3</weight> <!-- weight of pokemon in pounds -->
+		<desc>It has 80 tentacles that move about freely. They can sting, causing poisoning and sharp, stabbing pain.</desc>
+		<color>blue</color>
+		<num>73</num>
+	</pokedex>
+	<ability>
+		<normal>clear_body</normal> <!-- various abilities -->
+		<normal>liquid_ooze</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>205</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|2|0</ev> <!-- ev yield data -->
+		<stats>80|70|65|80|120|100</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">poison_sting</move>
+			<move level="0">supersonic</move>
+			<move level="0">constrict</move>
+			<move level="6">supersonic</move>
+			<move level="12">constrict</move>
+			<move level="19">acid</move>
+			<move level="25">bubblebeam</move>
+			<move level="30">wrap</move>
+			<move level="38">barrier</move>
+			<move level="47">screech</move>
+			<move level="55">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

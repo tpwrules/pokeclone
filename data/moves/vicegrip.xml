@@ -1,0 +1,13 @@
+<move>
+	<name>Vicegrip</name>
+	<desc>Huge, impressive pincers grip and squeeze the foe.</desc>
+	<power>55</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Vicegrip.xml</anim>
+</move>

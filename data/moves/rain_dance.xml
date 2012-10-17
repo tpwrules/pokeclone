@@ -1,0 +1,13 @@
+<move>
+	<name>Rain Dance</name>
+	<desc>A heavy rain falls for five turns, powering up WATER- type moves.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Water</type>
+	<effect>136</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Rain_Dance.xml</anim>
+</move>

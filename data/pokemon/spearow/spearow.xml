@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/spearow/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/spearow/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>spearow</name>
+	<!-- proper name -->
+	<show_name>Spearow</show_name>
+	<!-- number of the pokemon -->
+	<num>21</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Tiny Bird</species>
+	<type>normal|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>12</height> <!-- height of pokemon in inches -->
+		<weight>4.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>It busily flits around here and there. Even if it is frail, it can be a tough foe that uses MIRROR MOVE.</desc>
+		<color>brown</color>
+		<num>21</num>
+	</pokedex>
+	<ability>
+		<normal>keen_eye</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>flying</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>58</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>40|60|30|31|31|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">peck</move>
+			<move level="0">growl</move>
+			<move level="7">leer</move>
+			<move level="13">fury_attack</move>
+			<move level="19">pursuit</move>
+			<move level="25">solarbeam</move>
+			<move level="31">mirror_move</move>
+			<move level="37">drill_peck</move>
+			<move level="43">agility</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

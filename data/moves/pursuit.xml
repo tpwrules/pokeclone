@@ -1,0 +1,13 @@
+<move>
+	<name>Pursuit</name>
+	<desc>An attack move that works especially well on a foe that is switching out.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Dark</type>
+	<effect>128</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Pursuit.xml</anim>
+</move>

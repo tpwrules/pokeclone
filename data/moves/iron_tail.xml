@@ -1,0 +1,13 @@
+<move>
+	<name>Iron Tail</name>
+	<desc>An attack with a steel-hard tail. It may lower the foe's DEFENSE stat.</desc>
+	<power>100</power>
+	<acc>75</acc>
+	<cat>Physical</cat>
+	<type>Steel</type>
+	<effect>69</effect>
+	<effectacc>30</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Iron_Tail.xml</anim>
+</move>

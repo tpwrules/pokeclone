@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/dragonite/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/dragonite/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>dragonite</name>
+	<!-- proper name -->
+	<show_name>Dragonite</show_name>
+	<!-- number of the pokemon -->
+	<num>149</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Dragon</species>
+	<type>dragon|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>87</height> <!-- height of pokemon in inches -->
+		<weight>463.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>It can fly in spite of its big and bulky physique. It circles the globe in just 16 hours.</desc>
+		<color>brown</color>
+		<num>149</num>
+	</pokedex>
+	<ability>
+		<normal>inner_focus</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>40</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>218</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|3|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>91|134|95|100|100|80</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">wrap</move>
+			<move level="0">leer</move>
+			<move level="0">thunder_wave</move>
+			<move level="0">twister</move>
+			<move level="8">thunder_wave</move>
+			<move level="15">twister</move>
+			<move level="22">dragon_rage</move>
+			<move level="29">slam</move>
+			<move level="38">agility</move>
+			<move level="47">safeguard</move>
+			<move level="55">wing_attack</move>
+			<move level="61">outrage</move>
+			<move level="75">hyper_beam</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

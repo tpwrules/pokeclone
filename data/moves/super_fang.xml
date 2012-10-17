@@ -1,0 +1,13 @@
+<move>
+	<name>Super Fang</name>
+	<desc>The user attacks with sharp fangs and halves the foe's HP.</desc>
+	<power>1</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Normal</type>
+	<effect>40</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Super_Fang.xml</anim>
+</move>

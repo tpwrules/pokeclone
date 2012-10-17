@@ -1,0 +1,13 @@
+<move>
+	<name>Focus Punch</name>
+	<desc>An attack that is executed last. The user flinches if hit beforehand.</desc>
+	<power>150</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>170</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Focus_Punch.xml</anim>
+</move>

@@ -1,0 +1,13 @@
+<move>
+	<name>Bulk Up</name>
+	<desc>The user bulks up its body to boost both its ATTACK and DEFENSE stats.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Fighting</type>
+	<effect>208</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Bulk_Up.xml</anim>
+</move>

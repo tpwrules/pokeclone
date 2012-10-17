@@ -69,9 +69,9 @@ class Battle: #class to manage a battle
         self.task_list.append([self.wait_dialog, None])
         self.task_list.append([self.set_player_mon, None])
         for mon in trainer.party:
-            self.task_list.append([self.set_enemy_mon, (mon[0], mon[1])])
             self.task_list.append([self.draw_text, ("Trainer %(classname)s %(trainername)s sent out a level %(level)s {br}%(monstername)s!{wait}{br}{br}" % dict(classname=trainer.class_name, trainername=trainer.trainer_name, level=str(mon[1]), monstername=mon[0]),)])
             self.task_list.append([self.wait_dialog, None])
+            self.task_list.append([self.set_enemy_mon, (mon[0], mon[1])])
         #self.dlog.draw_text(s)
         #self.task_list.append([self.wait_dialog, None])
         self.task_list.append([self.done, None])

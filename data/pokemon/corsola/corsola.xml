@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/corsola/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/corsola/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>corsola</name>
+	<!-- proper name -->
+	<show_name>Corsola</show_name>
+	<!-- number of the pokemon -->
+	<num>222</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Coral</species>
+	<type>water|rock</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>11.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>In a south sea nation, the people live in communities that are built on groups of these Pok{ae}mon.</desc>
+		<color>pink</color>
+		<num>222</num>
+	</pokedex>
+	<ability>
+		<normal>hustle</normal> <!-- various abilities -->
+		<normal>natural_cure</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>25.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>113</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|1|0</ev> <!-- ev yield data -->
+		<stats>55|55|85|65|85|35</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="6">harden</move>
+			<move level="12">bubble</move>
+			<move level="17">recover</move>
+			<move level="17">fury_attack</move>
+			<move level="23">bubblebeam</move>
+			<move level="28">spike_cannon</move>
+			<move level="34">psychic</move>
+			<move level="39">mirror_coat</move>
+			<move level="45">ancientpower</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

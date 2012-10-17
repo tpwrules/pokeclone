@@ -1,0 +1,13 @@
+<move>
+	<name>Howl</name>
+	<desc>The user howls to raise its spirit and boost its ATTACK stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>10</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Howl.xml</anim>
+</move>

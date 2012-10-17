@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/staryu/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/staryu/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>staryu</name>
+	<!-- proper name -->
+	<show_name>Staryu</show_name>
+	<!-- number of the pokemon -->
+	<num>120</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Star Shape</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>31</height> <!-- height of pokemon in inches -->
+		<weight>76.1</weight> <!-- weight of pokemon in pounds -->
+		<desc>It appears in large numbers by seashores. At night, its central core flashes with a red light.</desc>
+		<color>brown</color>
+		<num>120</num>
+	</pokedex>
+	<ability>
+		<normal>illuminate</normal> <!-- various abilities -->
+		<normal>natural_cure</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>225</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_3</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>106</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>30|45|55|70|55|85</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">tackle</move>
+			<move level="0">harden</move>
+			<move level="6">water_gun</move>
+			<move level="10">rapid_spin</move>
+			<move level="15">recover</move>
+			<move level="19">thrash</move>
+			<move level="24">swift</move>
+			<move level="28">bubblebeam</move>
+			<move level="33">minimize</move>
+			<move level="37">light_screen</move>
+			<move level="42">submission</move>
+			<move level="46">hydro_pump</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

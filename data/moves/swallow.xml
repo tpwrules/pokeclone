@@ -1,0 +1,13 @@
+<move>
+	<name>Swallow</name>
+	<desc>The energy it built using STOCKPILE is absorbed to restore HP.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>162</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Swallow.xml</anim>
+</move>

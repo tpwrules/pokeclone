@@ -1,0 +1,13 @@
+<move>
+	<name>Knock Off</name>
+	<desc>Knocks down the foe's held item to prevent its use during the battle.</desc>
+	<power>20</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Dark</type>
+	<effect>188</effect>
+	<effectacc>100</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Knock_Off.xml</anim>
+</move>

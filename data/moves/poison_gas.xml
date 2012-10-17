@@ -1,0 +1,13 @@
+<move>
+	<name>Poison Gas</name>
+	<desc>The foe is sprayed with a cloud of toxic gas that may poison the foe.</desc>
+	<power>0</power>
+	<acc>55</acc>
+	<cat>Status</cat>
+	<type>Poison</type>
+	<effect>66</effect>
+	<effectacc>0</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Poison_Gas.xml</anim>
+</move>

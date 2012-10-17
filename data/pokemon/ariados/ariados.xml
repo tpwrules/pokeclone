@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/ariados/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/ariados/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>ariados</name>
+	<!-- proper name -->
+	<show_name>Ariados</show_name>
+	<!-- number of the pokemon -->
+	<num>168</num>
+	<!-- type of exp growth -->
+	<exp>fast</exp>
+	<!-- species name -->
+	<species>Long Leg</species>
+	<type>bug|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>43</height> <!-- height of pokemon in inches -->
+		<weight>73.9</weight> <!-- weight of pokemon in pounds -->
+		<desc>A single strand of a special string is endlessly spun out of its rear. The string leads back to its nest.</desc>
+		<color>red</color>
+		<num>168</num>
+	</pokedex>
+	<ability>
+		<normal>swarm</normal> <!-- various abilities -->
+		<normal>insomnia</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>90</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>134</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>70|90|70|60|60|40</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">poison_sting</move>
+			<move level="0">string_shot</move>
+			<move level="0">scary_face</move>
+			<move level="0">constrict</move>
+			<move level="6">scary_face</move>
+			<move level="11">constrict</move>
+			<move level="17">night_shade</move>
+			<move level="25">leech_life</move>
+			<move level="34">fury_swipes</move>
+			<move level="43">spider_web</move>
+			<move level="53">agility</move>
+			<move level="63">psychic</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

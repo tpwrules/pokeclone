@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/scyther/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/scyther/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>scyther</name>
+	<!-- proper name -->
+	<show_name>Scyther</show_name>
+	<!-- number of the pokemon -->
+	<num>123</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Mantis</species>
+	<type>bug|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>59</height> <!-- height of pokemon in inches -->
+		<weight>123.5</weight> <!-- weight of pokemon in pounds -->
+		<desc>It tears and shreds prey with its wickedly sharp scythes. It very rarely spreads its wings to fly.</desc>
+		<color>green</color>
+		<num>123</num>
+	</pokedex>
+	<ability>
+		<normal>swarm</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>25</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>187</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|1|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>70|110|80|55|80|105</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">quick_attack</move>
+			<move level="0">leer</move>
+			<move level="6">focus_energy</move>
+			<move level="11">pursuit</move>
+			<move level="16">false_swipe</move>
+			<move level="21">agility</move>
+			<move level="26">wing_attack</move>
+			<move level="31">slash</move>
+			<move level="36">swords_dance</move>
+			<move level="41">double_team</move>
+			<move level="46">fury_cutter</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

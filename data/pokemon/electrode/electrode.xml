@@ -1,0 +1,60 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/electrode/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/electrode/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>electrode</name>
+	<!-- proper name -->
+	<show_name>Electrode</show_name>
+	<!-- number of the pokemon -->
+	<num>101</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Ball</species>
+	<type>electric</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>47</height> <!-- height of pokemon in inches -->
+		<weight>146.8</weight> <!-- weight of pokemon in pounds -->
+		<desc>It explodes in response to even minor stimuli. It is feared, with the nickname of "The Bomb Ball."</desc>
+		<color>red</color>
+		<num>101</num>
+	</pokedex>
+	<ability>
+		<normal>soundproof</normal> <!-- various abilities -->
+		<normal>static</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>60</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>mineral</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>150</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|2</ev> <!-- ev yield data -->
+		<stats>60|50|70|80|80|140</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">guillotine</move>
+			<move level="0">tackle</move>
+			<move level="0">screech</move>
+			<move level="0">sonicboom</move>
+			<move level="8">screech</move>
+			<move level="15">sonicboom</move>
+			<move level="21">spark</move>
+			<move level="27">selfdestruct</move>
+			<move level="34">rollout</move>
+			<move level="41">light_screen</move>
+			<move level="48">swift</move>
+			<move level="54">explosion</move>
+			<move level="59">mirror_coat</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

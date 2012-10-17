@@ -1,0 +1,13 @@
+<move>
+	<name>Spikes</name>
+	<desc>A trap of spikes is laid around the foe's party to hurt foes switching in.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Ground</type>
+	<effect>112</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Spikes.xml</anim>
+</move>

@@ -1,0 +1,55 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/beedrill/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/beedrill/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>beedrill</name>
+	<!-- proper name -->
+	<show_name>Beedrill</show_name>
+	<!-- number of the pokemon -->
+	<num>15</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Poison Bee</species>
+	<type>bug|poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>65.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>May appear in a swarm. Flies at violent speeds, all the while stabbing with the toxic stinger on its rear.</desc>
+		<color>yellow</color>
+		<num>15</num>
+	</pokedex>
+	<ability>
+		<normal>swarm</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>bug</group> <!-- breeding group of pokemon -->
+		<cycles>15</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>159</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|2|0|0|1|0</ev> <!-- ev yield data -->
+		<stats>65|80|40|45|80|75</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">fury_attack</move>
+			<move level="10">fury_attack</move>
+			<move level="15">focus_energy</move>
+			<move level="20">twineedle</move>
+			<move level="25">rage</move>
+			<move level="30">pursuit</move>
+			<move level="35">pin_missile</move>
+			<move level="40">agility</move>
+			<move level="45">rolling_kick</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

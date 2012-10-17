@@ -1,0 +1,13 @@
+<move>
+	<name>Magic Coat</name>
+	<desc>Reflects back the foe's LEECH SEED and any status- damaging move.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>183</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Magic_Coat.xml</anim>
+</move>

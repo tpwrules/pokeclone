@@ -1,0 +1,13 @@
+<move>
+	<name>Metal Claw</name>
+	<desc>The foe is attacked with steel claws. It may also raise the user's ATTACK.</desc>
+	<power>50</power>
+	<acc>95</acc>
+	<cat>Physical</cat>
+	<type>Steel</type>
+	<effect>139</effect>
+	<effectacc>10</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Metal_Claw.xml</anim>
+</move>

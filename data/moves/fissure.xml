@@ -1,0 +1,13 @@
+<move>
+	<name>Fissure</name>
+	<desc>The foe is dropped into a fissure. The foe faints if it hits.</desc>
+	<power>1</power>
+	<acc>30</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>38</effect>
+	<effectacc>0</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Fissure.xml</anim>
+</move>

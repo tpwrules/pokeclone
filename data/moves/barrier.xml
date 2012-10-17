@@ -1,0 +1,13 @@
+<move>
+	<name>Barrier</name>
+	<desc>The user creates a sturdy wall that sharply raises its DEFENSE stat.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Psychic</type>
+	<effect>51</effect>
+	<effectacc>0</effectacc>
+	<pp>30</pp>
+	<maxpp>48</maxpp>
+	<anim>anim_Barrier.xml</anim>
+</move>

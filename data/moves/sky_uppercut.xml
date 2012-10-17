@@ -1,0 +1,13 @@
+<move>
+	<name>Sky Uppercut</name>
+	<desc>The user attacks with an uppercut thrown skywards with force.</desc>
+	<power>85</power>
+	<acc>90</acc>
+	<cat>Physical</cat>
+	<type>Fighting</type>
+	<effect>207</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Sky_Uppercut.xml</anim>
+</move>

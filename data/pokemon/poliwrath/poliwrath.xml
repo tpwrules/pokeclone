@@ -1,0 +1,53 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/poliwrath/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/poliwrath/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>poliwrath</name>
+	<!-- proper name -->
+	<show_name>Poliwrath</show_name>
+	<!-- number of the pokemon -->
+	<num>62</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Tadpole</species>
+	<type>water|fighting</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>51</height> <!-- height of pokemon in inches -->
+		<weight>119.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>An adept swimmer, it knows the front crawl, butterfly, and more. It is faster than the best human swimmers.</desc>
+		<color>blue</color>
+		<num>62</num>
+	</pokedex>
+	<ability>
+		<normal>water_absorb</normal> <!-- various abilities -->
+		<normal>damp</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>185</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|3|0|0|0</ev> <!-- ev yield data -->
+		<stats>90|85|95|70|90|70</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">water_gun</move>
+			<move level="0">hypnosis</move>
+			<move level="0">doubleslap</move>
+			<move level="0">submission</move>
+			<move level="35">submission</move>
+			<move level="51">mind_reader</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

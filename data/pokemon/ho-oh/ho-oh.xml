@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/ho-oh/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/ho-oh/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>ho-oh</name>
+	<!-- proper name -->
+	<show_name>Ho-oh</show_name>
+	<!-- number of the pokemon -->
+	<num>250</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Rainbow</species>
+	<type>fire|flying</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>150</height> <!-- height of pokemon in inches -->
+		<weight>438.7</weight> <!-- weight of pokemon in pounds -->
+		<desc>A legend says that its body glows in seven colors. A rainbow is said to form behind it when it flies.</desc>
+		<color>red</color>
+		<num>250</num>
+	</pokedex>
+	<ability>
+		<normal>pressure</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>3</catch>
+	<gender>-1</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>no_egg</group> <!-- breeding group of pokemon -->
+		<cycles>120</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>220</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|3|0</ev> <!-- ev yield data -->
+		<stats>106|130|90|110|154|90</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">whirlwind</move>
+			<move level="11">safeguard</move>
+			<move level="22">gust</move>
+			<move level="33">recover</move>
+			<move level="44">fire_blast</move>
+			<move level="55">sunny_day</move>
+			<move level="66">swift</move>
+			<move level="77">sacred_fire</move>
+			<move level="88">ancientpower</move>
+			<move level="99">future_sight</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

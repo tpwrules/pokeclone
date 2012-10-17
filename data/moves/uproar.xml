@@ -1,0 +1,13 @@
+<move>
+	<name>Uproar</name>
+	<desc>The user attacks in an uproar that prevents sleep for two to five turns.</desc>
+	<power>50</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>159</effect>
+	<effectacc>100</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Uproar.xml</anim>
+</move>

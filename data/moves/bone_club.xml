@@ -1,0 +1,13 @@
+<move>
+	<name>Bone Club</name>
+	<desc>The foe is clubbed with a bone held in hand. It may make the foe flinch.</desc>
+	<power>65</power>
+	<acc>85</acc>
+	<cat>Special</cat>
+	<type>Ground</type>
+	<effect>31</effect>
+	<effectacc>10</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Bone_Club.xml</anim>
+</move>

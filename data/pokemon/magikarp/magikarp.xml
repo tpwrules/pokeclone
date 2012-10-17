@@ -1,0 +1,49 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/magikarp/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/magikarp/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>magikarp</name>
+	<!-- proper name -->
+	<show_name>Magikarp</show_name>
+	<!-- number of the pokemon -->
+	<num>129</num>
+	<!-- type of exp growth -->
+	<exp>slow</exp>
+	<!-- species name -->
+	<species>Fish</species>
+	<type>water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>35</height> <!-- height of pokemon in inches -->
+		<weight>22.0</weight> <!-- weight of pokemon in pounds -->
+		<desc>It is virtually worthless in terms of both power and speed. It is the most weak and pathetic Pok{ae}mon in the world.</desc>
+		<color>red</color>
+		<num>129</num>
+	</pokedex>
+	<ability>
+		<normal>swift_swim</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>255</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_2|dragon</group> <!-- breeding group of pokemon -->
+		<cycles>5</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>20</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|0|0|0|1</ev> <!-- ev yield data -->
+		<stats>20|10|55|15|20|80</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">splash</move>
+			<move level="15">tackle</move>
+			<move level="30">flail</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

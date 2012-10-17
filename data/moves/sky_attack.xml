@@ -1,0 +1,13 @@
+<move>
+	<name>Sky Attack</name>
+	<desc>A 2nd-turn attack move with a high critical-hit ratio. The foe may flinch.</desc>
+	<power>140</power>
+	<acc>90</acc>
+	<cat>Special</cat>
+	<type>Flying</type>
+	<effect>75</effect>
+	<effectacc>30</effectacc>
+	<pp>5</pp>
+	<maxpp>8</maxpp>
+	<anim>anim_Sky_Attack.xml</anim>
+</move>

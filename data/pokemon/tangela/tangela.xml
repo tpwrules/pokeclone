@@ -1,0 +1,58 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/tangela/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/tangela/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>tangela</name>
+	<!-- proper name -->
+	<show_name>Tangela</show_name>
+	<!-- number of the pokemon -->
+	<num>114</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Vine</species>
+	<type>grass</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>39</height> <!-- height of pokemon in inches -->
+		<weight>77.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>Blue plant vines cloak the Pok{ae}mon's identity in a tangled mass. It entangles anything that gets close.</desc>
+		<color>blue</color>
+		<num>114</num>
+	</pokedex>
+	<ability>
+		<normal>chlorophyll</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>plant</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>166</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>65|55|115|100|40|60</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">fly</move>
+			<move level="0">constrict</move>
+			<move level="4">sleep_powder</move>
+			<move level="10">absorb</move>
+			<move level="13">growth</move>
+			<move level="19">poisonpowder</move>
+			<move level="22">vine_whip</move>
+			<move level="28">bind</move>
+			<move level="31">mega_drain</move>
+			<move level="37">stun_spore</move>
+			<move level="40">slam</move>
+			<move level="46">drill_peck</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

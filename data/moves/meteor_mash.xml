@@ -1,0 +1,13 @@
+<move>
+	<name>Meteor Mash</name>
+	<desc>The foe is hit with a hard, fast punch. It may also raise the user's ATTACK.</desc>
+	<power>100</power>
+	<acc>85</acc>
+	<cat>Physical</cat>
+	<type>Steel</type>
+	<effect>139</effect>
+	<effectacc>20</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Meteor_Mash.xml</anim>
+</move>

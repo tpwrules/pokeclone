@@ -1,0 +1,13 @@
+<move>
+	<name>Tail Glow</name>
+	<desc>The user flashes a light that sharply raises its SP. ATK stat.</desc>
+	<power>0</power>
+	<acc>100</acc>
+	<cat>Status</cat>
+	<type>Bug</type>
+	<effect>53</effect>
+	<effectacc>0</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Tail_Glow.xml</anim>
+</move>

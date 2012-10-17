@@ -1,0 +1,13 @@
+<move>
+	<name>Wing Attack</name>
+	<desc>The foe is struck with large, imposing wings spread wide.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Physical</cat>
+	<type>Flying</type>
+	<effect>0</effect>
+	<effectacc>0</effectacc>
+	<pp>35</pp>
+	<maxpp>56</maxpp>
+	<anim>anim_Wing_Attack.xml</anim>
+</move>

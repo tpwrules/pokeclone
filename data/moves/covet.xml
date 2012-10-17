@@ -1,0 +1,13 @@
+<move>
+	<name>Covet</name>
+	<desc>A cutely executed attack that also steals the foe's hold item.</desc>
+	<power>40</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Normal</type>
+	<effect>105</effect>
+	<effectacc>100</effectacc>
+	<pp>40</pp>
+	<maxpp>64</maxpp>
+	<anim>anim_Covet.xml</anim>
+</move>

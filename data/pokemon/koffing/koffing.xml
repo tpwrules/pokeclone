@@ -1,0 +1,56 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/koffing/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/koffing/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>koffing</name>
+	<!-- proper name -->
+	<show_name>Koffing</show_name>
+	<!-- number of the pokemon -->
+	<num>109</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Poison Gas</species>
+	<type>poison</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>24</height> <!-- height of pokemon in inches -->
+		<weight>2.2</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its thin, balloon-like body is inflated by horribly toxic gases. It reeks when it is nearby.</desc>
+		<color>purple</color>
+		<num>109</num>
+	</pokedex>
+	<ability>
+		<normal>levitate</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>190</catch>
+	<gender>50</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>indeterminate</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>114</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>40|65|95|60|45|35</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">poison_gas</move>
+			<move level="0">tackle</move>
+			<move level="9">smog</move>
+			<move level="17">selfdestruct</move>
+			<move level="21">sludge</move>
+			<move level="25">smokescreen</move>
+			<move level="33">haze</move>
+			<move level="41">explosion</move>
+			<move level="45">destiny_bond</move>
+			<move level="49">pay_day</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

@@ -1,0 +1,57 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/kabuto/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/kabuto/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>kabuto</name>
+	<!-- proper name -->
+	<show_name>Kabuto</show_name>
+	<!-- number of the pokemon -->
+	<num>140</num>
+	<!-- type of exp growth -->
+	<exp>medfast</exp>
+	<!-- species name -->
+	<species>Shellfish</species>
+	<type>rock|water</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>20</height> <!-- height of pokemon in inches -->
+		<weight>25.4</weight> <!-- weight of pokemon in pounds -->
+		<desc>This Pok{ae}mon was regenerated from the fossil of an ancient creature. It protects itself with a hard shell.</desc>
+		<color>brown</color>
+		<num>140</num>
+	</pokedex>
+	<ability>
+		<normal>swift_swim</normal> <!-- various abilities -->
+		<normal>battle_armor</normal> <!-- are chosen from at random when generated -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>88.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>water_1|water_3</group> <!-- breeding group of pokemon -->
+		<cycles>30</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>119</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|0|1|0|0|0</ev> <!-- ev yield data -->
+		<stats>30|80|90|55|45|55</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">scratch</move>
+			<move level="0">harden</move>
+			<move level="13">absorb</move>
+			<move level="19">leer</move>
+			<move level="25">thunderbolt</move>
+			<move level="31">sand-attack</move>
+			<move level="37">endure</move>
+			<move level="43">hyper_beam</move>
+			<move level="49">mega_drain</move>
+			<move level="55">ancientpower</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>

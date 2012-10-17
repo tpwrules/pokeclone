@@ -1,0 +1,13 @@
+<move>
+	<name>Belly Drum</name>
+	<desc>The user maximizes its ATTACK stat at the cost of half its full HP.</desc>
+	<power>0</power>
+	<acc>0</acc>
+	<cat>Status</cat>
+	<type>Normal</type>
+	<effect>142</effect>
+	<effectacc>0</effectacc>
+	<pp>10</pp>
+	<maxpp>16</maxpp>
+	<anim>anim_Belly_Drum.xml</anim>
+</move>

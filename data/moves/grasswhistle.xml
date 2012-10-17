@@ -1,0 +1,13 @@
+<move>
+	<name>Grasswhistle</name>
+	<desc>A pleasant melody is played to lull the foe into a deep sleep.</desc>
+	<power>0</power>
+	<acc>55</acc>
+	<cat>Status</cat>
+	<type>Grass</type>
+	<effect>1</effect>
+	<effectacc>0</effectacc>
+	<pp>15</pp>
+	<maxpp>24</maxpp>
+	<anim>anim_Grasswhistle.xml</anim>
+</move>

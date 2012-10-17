@@ -1,0 +1,13 @@
+<move>
+	<name>Water Pulse</name>
+	<desc>An attack with a pulsing blast of water. It may also confuse the foe.</desc>
+	<power>60</power>
+	<acc>100</acc>
+	<cat>Special</cat>
+	<type>Water</type>
+	<effect>76</effect>
+	<effectacc>20</effectacc>
+	<pp>20</pp>
+	<maxpp>32</maxpp>
+	<anim>anim_Water_Pulse.xml</anim>
+</move>

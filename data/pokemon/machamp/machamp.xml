@@ -1,0 +1,59 @@
+<pokemon_data> <!-- data for one pokemon -->
+    <anim_front>pokemon/machamp/anim.xml</anim_front> <!-- path to animation data for front -->
+    <anim_back>pokemon/machamp/anim_back.xml</anim_back> <!-- path to animation data for back -->
+	<!-- internal name of pokemon -->
+	<name>machamp</name>
+	<!-- proper name -->
+	<show_name>Machamp</show_name>
+	<!-- number of the pokemon -->
+	<num>68</num>
+	<!-- type of exp growth -->
+	<exp>medslow</exp>
+	<!-- species name -->
+	<species>Superpower</species>
+	<type>fighting</type>
+	<pokedex> <!-- various pokedex metrics -->
+		<height>63</height> <!-- height of pokemon in inches -->
+		<weight>286.6</weight> <!-- weight of pokemon in pounds -->
+		<desc>Its four ruggedly developed arms can launch a flurry of 1,000 punches in just two seconds.</desc>
+		<color>gray</color>
+		<num>68</num>
+	</pokedex>
+	<ability>
+		<normal>guts</normal> <!-- various abilities -->
+		<hidden></hidden>
+	</ability>
+	<catch>45</catch>
+	<gender>75.0</gender> <!-- likelihood of pokemon being male. if -1, pokemon is genderless -->
+	<breed>
+		<group>humanshape</group> <!-- breeding group of pokemon -->
+		<cycles>20</cycles> <!-- number of cycles necessary -->
+	</breed>
+	<base> <!-- base yield data -->
+		<exp>193</exp>
+		<!-- hp|atk|def|sp.atk|sp.def|speed -->
+		<ev>0|3|0|0|0|0</ev> <!-- ev yield data -->
+		<stats>90|130|80|65|85|55</stats>
+	</base>
+	<learnset> <!-- learnset of pokemon -->
+		<level> <!-- moves learned at a specific level -->
+			<!-- level at which move is learned + move id -->
+			<move level="0">low_kick</move>
+			<move level="0">leer</move>
+			<move level="0">focus_energy</move>
+			<move level="7">focus_energy</move>
+			<move level="13">karate_chop</move>
+			<move level="19">seismic_toss</move>
+			<move level="22">foresight</move>
+			<move level="25">stomp</move>
+			<move level="33">vital_throw</move>
+			<move level="41">submission</move>
+			<move level="46">cross_chop</move>
+			<move level="51">scary_face</move>
+			<move level="59">dynamicpunch</move>
+		</level>
+		<!-- which TMs and HMs this pokemon can learn -->
+		<tm></tm>
+		<hm></hm>
+	</learnset>
+</pokemon_data>
