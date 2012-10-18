@@ -32,6 +32,7 @@ class Player(objects.RenderedNPC):
         self.collidepoint = (16, 23) #set where to check for collisions
         self.size = (32, 32) #set sprite size
         self.tile_pos = self.g.save.get_prop("player", "pos", [5, 8]) #load current position
+        self.game.set_obj_pos(self, self.tile_pos)
         self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set position in pixels
         self.rect = pygame.Rect(self.pos, self.size) #turn it into a rect
         self.move_direction = (0, 0) #we aren't moving in a particular direction

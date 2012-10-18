@@ -297,6 +297,7 @@ class NPC(RenderedNPC):
         self.game = game
         t = element.getAttribute("pos").split(",") #load tile position
         self.tile_pos = [int(t[0].strip()), int(t[1].strip())]
+        self.game.set_obj_pos(self, self.tile_pos)
         self.pos = [((self.tile_pos[0]-1)*16)+8, (self.tile_pos[1]-1)*16] #set real position
         self.interacting = False #mark that we're not interacting
         self.should_interact = False #and that we shouldn't be yet

@@ -1,6 +1,6 @@
-import cPickle as pickle #load libraries for writing out save files
+#load libraries for writing out save files
 import zlib
-
+import cerealizer
 import settings #import game settings so they can be saved
 
 class SaveGame: #class to manage a savegame
@@ -12,14 +12,16 @@ class SaveGame: #class to manage a savegame
         self.obj_props = {} #empty dictionaries
         self.game_props = {}
     def load(self, filename): #load savegame data
-        data = open(filename, "rb").read() #read in save data
+        datafileobj = open(filename, "rb")
+        data = datafileobj.read()#read in save data
+        datafileobj.close()
         data = zlib.decompress(data) #decompress it
-        data = pickle.loads(data) #depickle data
+        data = cerealizer.loads(data)
         self.obj_props = data[0] #get object properties
         self.game_props = data[1] #and game properties
     def save(self, filename): #write savegame data
         f = open(filename, "wb") #open file to write out data
-        data = pickle.dumps([self.obj_props, self.game_props]) #pickle object data
+        data = cerealizer.dumps([self.obj_props, self.game_props]) #cerealize object data
         data = zlib.compress(data, 9) #compress pickled data
         f.write(data) #write out data
         f.close() #and close written file
