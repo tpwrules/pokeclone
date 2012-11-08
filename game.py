@@ -12,7 +12,11 @@ import transition #import all the transitions
 import menu #import menu manager
 import battle
 import data
-import thread, readline, traceback
+import thread, traceback
+try:
+    import readline
+except:
+    pass
 def evalinput(self) :
     while self.g.keeprunning :
         try :
